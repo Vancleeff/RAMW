@@ -1,0 +1,778 @@
+[
+  {
+    "id": "MQ_0",
+    "parent_id": "",
+    "name": "Welcome to Vvanderfell",
+    "description": "Finish your paperworks at the Census and Excise office and start your journey",
+    "points": 1,
+    "icon": "random",
+    "category": "Quest",
+    "order": 0,
+    "target_value": 0,
+    "tracked_stat": "",
+    "notification_step": 1,
+    "objectives": [],
+    "trigger": null
+  },
+  {
+    "id": "MQ_1",
+    "parent_id": "",
+    "name": "First Contact",
+    "description": "Talk to Caius Cosades in Balmora",
+    "points": 5,
+    "icon": "random",
+    "category": "Quest",
+    "order": 1,
+    "target_value": 0,
+    "tracked_stat": "",
+    "notification_step": 1,
+    "objectives": [
+      {
+        "stat_name": "quest_finished_A1_1_FindSpymaster",
+        "display_label": "Report to Caius Cosades",
+        "amount": 1
+      }
+    ],
+    "trigger": {
+      "type": "QuestComplete"
+    }
+  },
+  {
+    "id": "MQ_2",
+    "parent_id": "",
+    "name": "Antabolis Informant",
+    "description": "Bring Hasphat a Dwemer puzzle box and return to Caius Cosades",
+    "points": 5,
+    "icon": "random",
+    "category": "Quest",
+    "order": 2,
+    "target_value": 0,
+    "tracked_stat": "",
+    "notification_step": 1,
+    "trigger": {
+      "type": "QuestComplete"
+    },
+    "objectives": [
+      {
+        "stat_name": "quest_finished_A1_2_AntabolisInformant",
+        "display_label": "Antabolis Informant",
+        "amount": 1
+      }
+    ]
+  },
+  {
+    "id": "LOCK_10",
+    "parent_id": "",
+    "name": "This is Mine Now",
+    "description": "Successfully perform a lockpicking",
+    "points": 1,
+    "icon": "random",
+    "category": "Misc",
+    "order": 3,
+    "target_value": 0,
+    "tracked_stat": "",
+    "notification_step": 1,
+    "objectives": []
+  },
+  {
+    "id": "LOCK_50",
+    "parent_id": "LOCK_10",
+    "name": "Click Clack",
+    "description": "Successfully perform a lockpicking with a difficulty of 50",
+    "points": 50,
+    "icon": "random",
+    "category": "Combat",
+    "order": 4,
+    "target_value": 0,
+    "tracked_stat": "",
+    "notification_step": 1,
+    "objectives": []
+  },
+  {
+    "id": "LOCK_100",
+    "parent_id": "LOCK_10",
+    "name": "The Lockwhisperer",
+    "description": "Successfully perform a lockpicking with a difficulty of 100",
+    "points": 50,
+    "icon": "random",
+    "category": "Combat",
+    "order": 5,
+    "target_value": 0,
+    "tracked_stat": "",
+    "notification_step": 1,
+    "objectives": []
+  },
+  {
+    "id": "SKILLBOOK_1",
+    "parent_id": "",
+    "name": "Student",
+    "description": "Increase one of your skill with a book",
+    "points": 1,
+    "icon": "random",
+    "category": "Quest",
+    "order": 6,
+    "target_value": 0,
+    "tracked_stat": "",
+    "notification_step": 1,
+    "objectives": []
+  },
+  {
+    "id": "STEAL_100",
+    "parent_id": "",
+    "name": "Burglar",
+    "description": "Steal a total of 100 items",
+    "points": 5,
+    "icon": "random",
+    "category": "Exploration",
+    "order": 7,
+    "target_value": 100,
+    "tracked_stat": "items_stolen",
+    "notification_step": 10,
+    "objectives": []
+  },
+  {
+    "id": "PICK_GOLD",
+    "parent_id": "",
+    "name": "Cold Hard Cash",
+    "description": "Steal some gold without being detected",
+    "points": 2,
+    "icon": "random",
+    "category": "Misc",
+    "order": 8,
+    "target_value": 0,
+    "tracked_stat": "",
+    "notification_step": 1,
+    "objectives": []
+  },
+  {
+    "id": "BESTIARY_BITTER_COAST",
+    "parent_id": "",
+    "name": "Bitter Coast Bestiary",
+    "description": "Kill various creatures on the Bitter Coast",
+    "points": 10,
+    "icon": "random",
+    "category": "Combat",
+    "order": 9,
+    "target_value": 0,
+    "tracked_stat": "",
+    "notification_step": 1,
+    "objectives": [
+      {
+        "stat_name": "creature_kill_mudcrab",
+        "display_label": "Kill 10 Mudcrabs",
+        "amount": 10
+      },
+      {
+        "stat_name": "creature_kill_Rat",
+        "display_label": "Kill 5 Rats",
+        "amount": 5
+      },
+      {
+        "stat_name": "creature_kill_scrib",
+        "display_label": "Kill 5 Scribs",
+        "amount": 5
+      },
+      {
+        "stat_name": "creature_kill_kwama forager",
+        "display_label": "Kill 5 Kwama Foragers",
+        "amount": 5
+      }
+    ],
+    "trigger": {
+      "type": "Kill"
+    }
+  },
+  {
+    "id": "FG_QUEST_1",
+    "parent_id": "",
+    "name": "The New Fighter",
+    "description": "Finish 3 quests for Eydis Fire-Eye at Balmora's Fighters Guild",
+    "points": 10,
+    "icon": "random",
+    "category": "Quest",
+    "order": 10,
+    "target_value": 0,
+    "tracked_stat": "",
+    "notification_step": 1,
+    "trigger": {
+      "type": "QuestComplete"
+    },
+    "objectives": [
+      {
+        "stat_name": "quest_finished_FG_RatHunt",
+        "display_label": "Exterminator",
+        "amount": 1
+      },
+      {
+        "stat_name": "quest_finished_FG_Egg_Poachers",
+        "display_label": "The Egg Poachers",
+        "amount": 1
+      },
+      {
+        "stat_name": "quest_finished_FG_Telvanni_agents",
+        "display_label": "The Telvanni Agents",
+        "amount": 1
+      }
+    ]
+  },
+  {
+    "id": "FG_QUEST_2",
+    "parent_id": "",
+    "name": "Eyris' Underling",
+    "description": "Finish 3 quests for Eydis Fire-Eye at Balmora's Fighters Guild",
+    "points": 10,
+    "icon": "random",
+    "category": "Quest",
+    "order": 11,
+    "target_value": 0,
+    "tracked_stat": "",
+    "notification_step": 1,
+    "trigger": {
+      "type": "QuestComplete"
+    },
+    "objectives": [
+      {
+        "stat_name": "quest_finished_FG_Sottilde",
+        "display_label": "The Code Book",
+        "amount": 1
+      },
+      {
+        "stat_name": "quest_finished_FG_DeseleDebt",
+        "display_label": "Desele's Debt",
+        "amount": 1
+      },
+      {
+        "stat_name": "quest_finished_FG_OrcBounty",
+        "display_label": "Gra-Bol's Bounty",
+        "amount": 1
+      }
+    ]
+  },
+  {
+    "id": "FG_QUEST_3",
+    "parent_id": "",
+    "name": "Eyris' Favorite",
+    "description": "Finish every quest for Eydis Fire-Eye at Balmora's Fighters Guild",
+    "points": 10,
+    "icon": "random",
+    "category": "Quest",
+    "order": 12,
+    "target_value": 0,
+    "tracked_stat": "",
+    "notification_step": 1,
+    "trigger": {
+      "type": "QuestComplete"
+    },
+    "objectives": [
+      {
+        "stat_name": "quest_finished_FG_AlofsFarm",
+        "display_label": "Alof and the Orcs",
+        "amount": 1
+      },
+      {
+        "stat_name": "quest_finished_FG_VerethiGang",
+        "display_label": "The Verethi Gang",
+        "amount": 1
+      },
+      {
+        "stat_name": "quest_finished_FG_HungerLoose",
+        "display_label": "Hunger in the Sarano Tomb",
+        "amount": 1
+      }
+    ]
+  },
+  {
+    "id": "FG_QUEST_4",
+    "parent_id": "",
+    "name": "Lorbumol gro-Aglakh's Underling",
+    "description": "Finish 3 quests for Lorbumol gro-Aglakh at Vivec's Fighters Guild",
+    "points": 10,
+    "icon": "random",
+    "category": "Quest",
+    "order": 13,
+    "target_value": 0,
+    "tracked_stat": "",
+    "notification_step": 1,
+    "trigger": {
+      "type": "QuestComplete"
+    },
+    "objectives": [
+      {
+        "stat_name": "quest_finished_FG_DebtOrc",
+        "display_label": "Juicedaw Ring",
+        "amount": 1
+      },
+      {
+        "stat_name": "quest_finished_FG_TongueToad",
+        "display_label": "Silence Tongue-Toad",
+        "amount": 1
+      },
+      {
+        "stat_name": "quest_finished_FG_KhajiitBounty",
+        "display_label": "Dro'Sakhar's Bounty",
+        "amount": 1
+      }
+    ]
+  },
+  {
+    "id": "FG_QUEST_5",
+    "parent_id": "",
+    "name": "Lorbumol gro-Aglakh's Favorite",
+    "description": "Finish every quest for Lorbumol gro-Aglakh at Vivec's Fighters Guild",
+    "points": 10,
+    "icon": "random",
+    "category": "Quest",
+    "order": 14,
+    "target_value": 0,
+    "tracked_stat": "",
+    "notification_step": 1,
+    "trigger": {
+      "type": "QuestComplete"
+    },
+    "objectives": [
+      {
+        "stat_name": "quest_finished_FG_DebtStoine",
+        "display_label": "Lirielle's Debt",
+        "amount": 1
+      },
+      {
+        "stat_name": "quest_finished_FG_SilenceTaxgirl",
+        "display_label": "Vandacia's Bounty",
+        "amount": 1
+      },
+      {
+        "stat_name": "quest_finished_FG_SilenceMagistrate",
+        "display_label": "Alleius' Bounty",
+        "amount": 1
+      }
+    ]
+  },
+  {
+    "id": "FG_QUEST_6",
+    "parent_id": "",
+    "name": "Hrundi's Underling",
+    "description": "Finish 3 quests for Hrundi at Wolverine Hall's Fighters Guild",
+    "points": 10,
+    "icon": "random",
+    "category": "Quest",
+    "order": 15,
+    "target_value": 0,
+    "tracked_stat": "",
+    "notification_step": 1,
+    "trigger": {
+      "type": "QuestComplete"
+    },
+    "objectives": [
+      {
+        "stat_name": "quest_finished_FG_Nchurdamz",
+        "display_label": "Battle at Nchurdamz",
+        "amount": 1
+      },
+      {
+        "stat_name": "quest_finished_FG_DissaplaMine",
+        "display_label": "The Dissapla Mine",
+        "amount": 1
+      },
+      {
+        "stat_name": "quest_finished_FG_CorprusStalker",
+        "display_label": "Berwen's Stalker",
+        "amount": 1
+      },
+      {
+        "stat_name": "quest_finished_FG_TenimBounty",
+        "display_label": "Tenim's Bounty",
+        "amount": 1
+      }
+    ]
+  },
+  {
+    "id": "FG_QUEST_7",
+    "parent_id": "",
+    "name": "Hrundi's Favorite",
+    "description": "Finish every quest for Hrundi at Wolverine Hall's Fighters Guild",
+    "points": 10,
+    "icon": "random",
+    "category": "Quest",
+    "order": 16,
+    "target_value": 0,
+    "tracked_stat": "",
+    "notification_step": 1,
+    "trigger": {
+      "type": "QuestComplete"
+    },
+    "objectives": [
+      {
+        "stat_name": "quest_finished_FG_DuniraiSupply",
+        "display_label": "Sujamma to Dunirai",
+        "amount": 1
+      },
+      {
+        "stat_name": "quest_finished_FG_Telasero",
+        "display_label": "Sondaale",
+        "amount": 1
+      },
+      {
+        "stat_name": "quest_finished_FG_EngaerBounty",
+        "display_label": "Engaer's Bounty",
+        "amount": 1
+      },
+      {
+        "stat_name": "quest_finished_FG_FindPudai",
+        "display_label": "The Pudai Eggmine",
+        "amount": 1
+      }
+    ]
+  },
+  {
+    "id": "FG_QUEST_8",
+    "parent_id": "",
+    "name": "Percius Mercius' Underling",
+    "description": "Finish 3 quests for Percius Mercius at Ald'ruhn's Fighters Guild",
+    "points": 10,
+    "icon": "random",
+    "category": "Quest",
+    "order": 17,
+    "target_value": 0,
+    "tracked_stat": "",
+    "notification_step": 1,
+    "trigger": {
+      "type": "QuestComplete"
+    },
+    "objectives": [
+      {
+        "stat_name": "quest_finished_FG_Vas",
+        "display_label": "The Necromancer of Vas",
+        "amount": 1
+      },
+      {
+        "stat_name": "quest_finished_FG_BeneranBounty",
+        "display_label": "Beneran's Bounty",
+        "amount": 1
+      }
+    ]
+  },
+  {
+    "id": "FG_QUEST_9",
+    "parent_id": "",
+    "name": "Percius Mercius' Favorite",
+    "description": "Finish every quest for Percius Mercius at Ald'ruhn's Fighters Guild",
+    "points": 10,
+    "icon": "random",
+    "category": "Quest",
+    "order": 18,
+    "target_value": 0,
+    "tracked_stat": "",
+    "notification_step": 1,
+    "trigger": {
+      "type": "QuestComplete"
+    },
+    "objectives": [
+      {
+        "stat_name": "quest_finished_FG_ElithPalSupply",
+        "display_label": "Flin for Elith-Pal",
+        "amount": 1
+      },
+      {
+        "stat_name": "quest_finished_FG_KillCronies",
+        "display_label": "Remove Sjoring's Supporters",
+        "amount": 1
+      },
+      {
+        "stat_name": "quest_finished_FG_KillHardHeart",
+        "display_label": "Kill Hard-Heart",
+        "amount": 1
+      }
+    ]
+  },
+  {
+    "id": "FG_QUEST_10",
+    "parent_id": "",
+    "name": "Master of the Fighters Guild",
+    "description": "Finish the Fighters Guild questline and become Master of the Fighters Guild",
+    "points": 25,
+    "icon": "random",
+    "category": "Quest",
+    "order": 19,
+    "target_value": 0,
+    "tracked_stat": "",
+    "notification_step": 1,
+    "trigger": {
+      "type": "QuestComplete"
+    },
+    "objectives": [
+      {
+        "stat_name": "quest_finished_FG_KillBosses",
+        "display_label": "Remove the Heads of the Thieves Guild",
+        "amount": 1
+      },
+      {
+        "stat_name": "quest_finished_FG_BigBosses",
+        "display_label": "Kill the Master Thief",
+        "amount": 1
+      }
+    ]
+  },
+  {
+    "id": "MORROWIND_LEVEL_2",
+    "parent_id": "MORROWIND_LEVEL_2",
+    "name": "Novice",
+    "description": "Reach level 2",
+    "points": 2,
+    "icon": "random",
+    "category": "Combat",
+    "order": 20,
+    "target_value": 0,
+    "tracked_stat": "",
+    "notification_step": 1,
+    "objectives": [
+      {
+        "stat_name": "level",
+        "display_label": "level",
+        "amount": 2
+      }
+    ],
+    "trigger": {
+      "type": "HeroStats"
+    }
+  },
+  {
+    "id": "MORROWIND_LEVEL_5",
+    "parent_id": "MORROWIND_LEVEL_2",
+    "name": "Traveler",
+    "description": "Reach level 5",
+    "points": 5,
+    "icon": "random",
+    "category": "Combat",
+    "order": 21,
+    "target_value": 0,
+    "tracked_stat": "",
+    "notification_step": 1,
+    "objectives": [
+      {
+        "stat_name": "level",
+        "display_label": "",
+        "amount": 5
+      }
+    ],
+    "trigger": {
+      "type": "HeroStats"
+    }
+  },
+  {
+    "id": "MORROWIND_LEVEL_10",
+    "parent_id": "MORROWIND_LEVEL_2",
+    "name": "Adventurer",
+    "description": "Reach level 10",
+    "points": 10,
+    "icon": "random",
+    "category": "Combat",
+    "order": 22,
+    "target_value": 0,
+    "tracked_stat": "",
+    "notification_step": 1,
+    "objectives": [
+      {
+        "stat_name": "level",
+        "display_label": "",
+        "amount": 10
+      }
+    ],
+    "trigger": {
+      "type": "HeroStats"
+    }
+  },
+  {
+    "id": "MORROWIND_LEVEL_25",
+    "parent_id": "MORROWIND_LEVEL_2",
+    "name": "Champion",
+    "description": "Reach level 25",
+    "points": 25,
+    "icon": "random",
+    "category": "Combat",
+    "order": 23,
+    "target_value": 0,
+    "tracked_stat": "",
+    "notification_step": 1,
+    "objectives": [
+      {
+        "stat_name": "level",
+        "display_label": "",
+        "amount": 25
+      }
+    ],
+    "trigger": {
+      "type": "HeroStats"
+    }
+  },
+  {
+    "id": "MORROWIND_LEVEL_50",
+    "parent_id": "MORROWIND_LEVEL_2",
+    "name": "Vvardenfell Legend",
+    "description": "Reach level 50",
+    "points": 50,
+    "icon": "random",
+    "category": "Combat",
+    "order": 24,
+    "target_value": 0,
+    "tracked_stat": "",
+    "notification_step": 1,
+    "objectives": [
+      {
+        "stat_name": "level",
+        "display_label": "",
+        "amount": 50
+      }
+    ],
+    "trigger": {
+      "type": "HeroStats"
+    }
+  },
+  {
+    "id": "QUEST_FARGOTH_RING",
+    "parent_id": "",
+    "name": "My Precious",
+    "description": "Return the missing ring to Fargoth in Seyda Neen",
+    "points": 5,
+    "icon": "random",
+    "category": "Quest",
+    "order": 25,
+    "target_value": 0,
+    "tracked_stat": "",
+    "notification_step": 1,
+    "trigger": {
+      "type": "QuestComplete"
+    },
+    "objectives": [
+      {
+        "stat_name": "quest_finished_MS_FargothRing",
+        "display_label": "Fargoth's Ring",
+        "amount": 1
+      }
+    ]
+  },
+  {
+    "id": "QUEST_FARGOTH_HIDING",
+    "parent_id": "",
+    "name": "Fargoth's Hiding Place",
+    "description": "Find Fargoth's hidden stash and bring back the money to Hrisskar in Seyda Neen",
+    "points": 5,
+    "icon": "random",
+    "category": "Quest",
+    "order": 26,
+    "target_value": 0,
+    "tracked_stat": "",
+    "notification_step": 1,
+    "objectives": [
+      {
+        "stat_name": "quest_finished_MS_Lookout",
+        "display_label": "Fargoth's Hiding Place",
+        "amount": 1
+      }
+    ],
+    "trigger": {
+      "type": "QuestComplete"
+    }
+  },
+  {
+    "id": "QUEST_TAXMAN",
+    "parent_id": "",
+    "name": "Death of a Taxman",
+    "description": "Finish the questline around the death of a taxman in Seyda Neen",
+    "points": 5,
+    "icon": "random",
+    "category": "Quest",
+    "order": 27,
+    "target_value": 0,
+    "tracked_stat": "",
+    "notification_step": 1,
+    "trigger": {
+      "type": "QuestComplete"
+    },
+    "objectives": [
+      {
+        "stat_name": "quest_finished_TR_TaxmanMurder",
+        "display_label": "Death of a Taxman",
+        "amount": 1
+      }
+    ]
+  },
+  {
+    "id": "QUEST_NUCCIUS",
+    "parent_id": "",
+    "name": "The Cursed Ring",
+    "description": "Buy a Cursed Ring from Vodunius Nuccius in Seyda Neen",
+    "points": 2,
+    "icon": "random",
+    "category": "Quest",
+    "order": 28,
+    "target_value": 0,
+    "tracked_stat": "",
+    "notification_step": 1,
+    "objectives": [
+      {
+        "stat_name": "quest_finished_MS_Nuccius",
+        "display_label": "The Cursed Ring",
+        "amount": 1
+      }
+    ],
+    "trigger": {
+      "type": "QuestComplete"
+    }
+  },
+  {
+    "id": "CLEAR_ADDAMASARTUS",
+    "parent_id": "",
+    "name": "Bandit Slayer",
+    "description": "Kill the three bandits of Addamasartus",
+    "points": 2,
+    "icon": "random",
+    "category": "Combat",
+    "order": 29,
+    "target_value": 0,
+    "tracked_stat": "",
+    "notification_step": 1,
+    "objectives": [
+      {
+        "stat_name": "npc_kill_Melar Baram",
+        "display_label": "Kill Melar Baram",
+        "amount": 1
+      },
+      {
+        "stat_name": "npc_kill_Mulvisie Othril",
+        "display_label": "Kill Mulvisie Othril",
+        "amount": 1
+      },
+      {
+        "stat_name": "npc_kill_Tanisie Verethi",
+        "display_label": "Kill Tanisie Verethi",
+        "amount": 1
+      }
+    ],
+    "trigger": {
+      "type": "Kill"
+    }
+  },
+  {
+    "id": "TEST_LOCKPICKING",
+    "parent_id": "",
+    "name": "Burglar",
+    "description": "Reach level 11 in security",
+    "points": 1,
+    "icon": "random",
+    "category": "Misc",
+    "order": 30,
+    "target_value": 0,
+    "tracked_stat": "",
+    "notification_step": 1,
+    "trigger": {
+      "type": "HeroStats"
+    },
+    "objectives": [
+      {
+        "stat_name": "skill_security",
+        "display_label": "",
+        "amount": 11
+      }
+    ]
+  }
+]
