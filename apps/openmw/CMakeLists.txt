@@ -116,6 +116,10 @@ add_openmw_dir (mwbase
     inputmanager windowmanager statemanager luamanager
     )
 
+add_openmw_dir (ramw
+    racore raclient rastats ramods raconsole rarichpresence
+)
+
 # Main executable
 
 add_library(openmw-lib STATIC
@@ -153,7 +157,8 @@ if(BUILD_OPENMW)
         )
     endif()
 
-    target_link_libraries(openmw openmw-lib)
+    find_package(CURL REQUIRED)
+    target_link_libraries(openmw openmw-lib CURL::libcurl)
 
     # Workaround necessary to ensure osgAnimation::MatrixLinearSampler dynamic casts work under Clang
     # NOTE: it's unclear whether the broken behavior is spec-compliant

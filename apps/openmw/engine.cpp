@@ -85,6 +85,8 @@
 
 #include "profile.hpp"
 
+#include "ramw/racore.hpp"
+
 namespace
 {
     void checkSDLError(int ret)
@@ -1043,6 +1045,8 @@ void OMW::Engine::go()
             std::this_thread::sleep_for(std::chrono::milliseconds(5));
             continue;
         }
+        RAMW::RACore::update(static_cast<float>(dt));
+
         timeManager.updateIsPaused();
         if (!timeManager.isPaused())
         {
@@ -1074,6 +1078,7 @@ void OMW::Engine::go()
     Settings::Manager::saveUser(mCfgMgr.getUserConfigPath() / "settings.cfg");
     Settings::ShaderManager::get().save();
     mLuaManager->savePermanentStorage(mCfgMgr.getUserConfigPath());
+    RAMW::RACore::shutdown();
 }
 
 void OMW::Engine::setCompileAll(bool all)
