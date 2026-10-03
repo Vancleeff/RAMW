@@ -234,7 +234,7 @@ namespace RAMW
                 return;
             }
 
-            const AchievementInfo* info = RAAchievement::getAchievementInfo(achievementId);
+            const AchievementData* info = RAAchievementManager::getAchievementData(achievementId);
             if (!info)
             {
                 console->printError("Achievement not found: " + achievementId);
@@ -247,7 +247,7 @@ namespace RAMW
                 return;
             }
 
-            RAAchievement::unlock(achievementId);
+            RAAchievementManager::unlock(achievementId);
             console->printOK("Achievement unlocked: " + achievementId);
             return;
         }

@@ -53,6 +53,8 @@
 #include "classmodel.hpp"
 #include "nameorid.hpp"
 
+#include "../ramw/raeventprocessor.hpp"
+
 namespace
 {
     bool isFlagBitSet(const MWWorld::ConstPtr& ptr, ESM::Creature::Flags bitMask)
@@ -357,6 +359,7 @@ namespace MWClass
 
         // Self defense
         bool setOnPcHitMe = true;
+        bool wasDead = stats.isDead(); //RAMW - needed to detect killing blow from player
 
         // NOTE: 'object' and/or 'attacker' may be empty.
         if (!attacker.isEmpty() && attacker.getClass().isActor() && !stats.getAiSequence().isInCombat(attacker))
@@ -453,6 +456,12 @@ namespace MWClass
                 else
                     stats.setHitRecovery(true); // Is this supposed to always occur?
             }
+        }
+
+        //RAMW - hook for creature kills
+        if (!wasDead && getCreatureStats(ptr).isDead())
+        {
+            RAMW::RAEventProcessor::onCreatureKilled(ptr, attacker);
         }
     }
 

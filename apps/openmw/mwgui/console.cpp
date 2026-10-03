@@ -1,4 +1,5 @@
 #include "console.hpp"
+#include "../ramw/raconsole.hpp" //RAMW integration
 
 #include <MyGUI_Button.h>
 #include <MyGUI_EditBox.h>
@@ -224,6 +225,11 @@ namespace MWGui
 
     void Console::execute(const std::string& command)
     {
+        if (!RAMW::RAConsole::interceptCommand(this, command)) //RAMW - hook for cheat prevention
+        {
+            return;
+        }
+
         // Log the command
         if (mConsoleMode.empty())
             print("> " + command + "\n");

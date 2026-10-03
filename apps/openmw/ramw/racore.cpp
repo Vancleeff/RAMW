@@ -48,7 +48,7 @@ namespace RAMW
         }
 
         mInitialized = true;
-        RAAchievement::init();
+        RAAchievementManager::init();
         if (!mWidgetsCreated)
             onGameReady();
         Log(Debug::Info) << "[RAMW] RA Integration initialized";
@@ -72,7 +72,7 @@ namespace RAMW
         }
 
         if (RAConfig::TEST_MODE)
-            RAAchievement::restoreFromStats();
+            RAAchievementManager::restoreFromStats();
 
         sAchievementListWindow->update();
     }

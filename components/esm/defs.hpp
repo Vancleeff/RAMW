@@ -147,6 +147,8 @@ namespace ESM
 
         REC_ATTR = esm3Recname("ATTR"), // Attribute
 
+        REC_RAST = esm3Recname("RAST"), // RAMW integration
+
         REC_AACT4 = esm4Recname(ESM4::REC_AACT), // Action
         REC_ACHR4 = esm4Recname(ESM4::REC_ACHR), // Actor Reference
         REC_ACTI4 = esm4Recname(ESM4::REC_ACTI), // Activator

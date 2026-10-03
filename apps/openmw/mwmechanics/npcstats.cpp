@@ -18,6 +18,8 @@
 #include "../mwbase/environment.hpp"
 #include "../mwbase/windowmanager.hpp"
 
+#include "../ramw/raeventprocessor.hpp" //RAMW integration
+
 MWMechanics::NpcStats::NpcStats()
     : mDisposition(0)
     , mCrimeDispositionModifier(0)
@@ -80,7 +82,12 @@ void MWMechanics::NpcStats::setSkill(ESM::RefId id, const MWMechanics::SkillValu
     auto it = mSkills.find(id);
     if (it == mSkills.end())
         throw std::runtime_error("skill not found");
+
+    int oldBase = it->second.getBase();
     it->second = value;
+    //RAMW - hook for skill progression
+    if (value.getBase() > oldBase)
+        RAMW::RAEventProcessor::onSkillLevelUp(id.serializeText(), value.getBase(), this);
 }
 
 const std::map<ESM::RefId, int>& MWMechanics::NpcStats::getFactionRanks() const

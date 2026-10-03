@@ -14,6 +14,8 @@
 #include "../mwbase/windowmanager.hpp"
 #include "../mwbase/world.hpp"
 
+#include "../ramw/raeventprocessor.hpp" //RAMW integration
+
 namespace MWGui
 {
 
@@ -130,6 +132,7 @@ namespace MWGui
         }
         else
             player.getClass().skillUsageSucceeded(player, ESM::Skill::Sneak, ESM::Skill::Sneak_PickPocket);
+            RAMW::RAEventProcessor::onPickpocketing(item, count); //RAMW - hook for pickpocketing
 
         return true;
     }

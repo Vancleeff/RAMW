@@ -42,7 +42,7 @@ namespace RAMW
             {
                 for (const auto& entry : indexIt->second)
                 {
-                    if (RAAchievement::isUnlocked(entry.achievementId) || currentValue > entry.target)
+                    if (RAAchievementManager::isUnlocked(entry.achievementId) || currentValue > entry.target)
                         continue;
 
                     const std::string msg = (entry.target == 1)
@@ -150,7 +150,7 @@ namespace RAMW
     void RAStats::buildProgressIndex()
     {
         mProgressIndex.clear();
-        for (const auto& [id, info] : RAAchievement::getAllAchievements())
+        for (const auto& [id, info] : RAAchievementManager::getAllAchievements())
         {
             if (info.unlocked)
                 continue;
@@ -181,7 +181,7 @@ namespace RAMW
         bool shouldNotify = false;
         for (const auto& entry : indexIt->second)
         {
-            const AchievementInfo* info = RAAchievement::getAchievementInfo(entry.achievementId);
+            const AchievementData* info = RAAchievementManager::getAchievementData(entry.achievementId);
             if (!info)
                 continue;
             int step = info->notification_step > 1 ? info->notification_step : 1;

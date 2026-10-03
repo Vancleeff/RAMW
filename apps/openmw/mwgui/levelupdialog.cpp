@@ -27,6 +27,8 @@
 
 #include "class.hpp"
 
+#include "../ramw/raeventprocessor.hpp" //RAMW integration
+
 namespace
 {
     constexpr unsigned int sMaxCoins = 3;
@@ -233,6 +235,9 @@ namespace MWGui
             for (size_t i = 0; i < mAttributeButtons.size(); i++)
                 mAttributeButtons[i]->setStateSelected(i == 0);
         }
+
+        //RAMW - hook for levelup
+        RAMW::RAEventProcessor::onLevelUp(level);
 
         // Play LevelUp Music
         MWBase::Environment::get().getSoundManager()->streamMusic(MWSound::triumphMusic, MWSound::MusicType::Normal);

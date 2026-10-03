@@ -28,6 +28,8 @@
 #include "refdata.hpp"
 #include "worldmodel.hpp"
 
+#include "../ramw/raeventprocessor.hpp" //RAMW integration
+
 namespace
 {
     void addScripts(MWWorld::ContainerStore& store, MWWorld::CellStore* cell)
@@ -467,6 +469,11 @@ MWWorld::ContainerStoreIterator MWWorld::ContainerStore::add(
         mListener->itemAdded(item, count);
     MWBase::Environment::get().getWindowManager()->inventoryUpdated(contPtr);
 
+    // RAMW - hook for loot
+    if (getPtr() == player && count > 0)
+    {
+        RAMW::RAEventProcessor::onAddItem(item, count);
+    }
     return it;
 }
 

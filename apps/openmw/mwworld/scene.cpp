@@ -43,6 +43,8 @@
 
 #include "../mwworld/actionteleport.hpp"
 
+#include "../ramw/raeventprocessor.hpp" //RAMW integration
+
 #include "cellpreloader.hpp"
 #include "cellstore.hpp"
 #include "cellvisitors.hpp"
@@ -432,6 +434,7 @@ namespace MWWorld
         mActiveCells.insert(&cell);
 
         Log(Debug::Info) << "Loading cell " << cell.getCell()->getDescription();
+        RAMW::RAEventProcessor::onLoadCell(cell); //RAMW - hook for cell transition
 
         const int cellX = cell.getCell()->getGridX();
         const int cellY = cell.getCell()->getGridY();
@@ -1119,7 +1122,7 @@ namespace MWWorld
     {
         const VFS::Path::Normalized meshPath = useAnim
             ? Misc::ResourceHelpers::correctActorModelPath(
-                VFS::Path::toNormalized(mesh), mRendering.getResourceSystem()->getVFS())
+                  VFS::Path::toNormalized(mesh), mRendering.getResourceSystem()->getVFS())
             : VFS::Path::toNormalized(mesh);
 
         if (mRendering.getResourceSystem()->getSceneManager()->checkLoaded(meshPath, mRendering.getReferenceTime()))

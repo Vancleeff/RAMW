@@ -52,6 +52,8 @@
 #include "filter.hpp"
 #include "keywordsearch.hpp"
 
+#include "../ramw/raeventprocessor.hpp" //RAMW integration
+
 namespace MWDialogue
 {
     DialogueManager::DialogueManager(
@@ -166,6 +168,10 @@ namespace MWDialogue
         const MWWorld::Store<ESM::Dialogue>& dialogs = MWBase::Environment::get().getESMStore()->get<ESM::Dialogue>();
 
         Filter filter(actor, mChoice, mTalkedTo);
+
+        // RAMW - hook for dialogs
+        if (actor.getCellRef().getRefId() != "")
+            RAMW::RAEventProcessor::onDialogueStarted(mActor.getCellRef().getRefId().toString());
 
         for (const ESM::Dialogue& dialogue : dialogs)
         {

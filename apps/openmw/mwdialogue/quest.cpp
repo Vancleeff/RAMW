@@ -9,6 +9,8 @@
 
 #include "../mwbase/environment.hpp"
 
+#include "../ramw/raeventprocessor.hpp" //RAMW integration
+
 namespace MWDialogue
 {
     Quest::Quest()
@@ -78,12 +80,17 @@ namespace MWDialogue
             throw std::runtime_error("unknown journal entry for topic " + mTopic.toDebugString());
 
         if (info->mQuestStatus == ESM::DialInfo::QS_Finished || info->mQuestStatus == ESM::DialInfo::QS_Restart)
+        {
             mFinished = info->mQuestStatus == ESM::DialInfo::QS_Finished;
+            if (mFinished) //RAMW - hook for quest completion
+                RAMW::RAEventProcessor::onQuestFinished(mTopic.getRefIdString());
+        }
 
         if (info->mData.mJournalIndex > mIndex)
         {
             mIndex = info->mData.mJournalIndex;
             MWBase::Environment::get().getLuaManager()->questUpdated(mTopic, mIndex);
+            RAMW::RAEventProcessor::onQuestProgress(mTopic.getRefIdString(), mIndex); //RAMW - hook for quest progression
         }
 
         for (TEntryIter iter(mEntries.begin()); iter != mEntries.end(); ++iter)

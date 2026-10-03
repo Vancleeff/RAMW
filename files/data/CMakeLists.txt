@@ -256,6 +256,9 @@ set(BUILTIN_DATA_FILES
     mygui/openmw_postprocessor_hud.layout
     mygui/openmw_postprocessor_hud.skin.xml
     mygui/openmw_jail_screen.layout
+    mygui/ramw_achievement_list.layout
+    mygui/ramw_stats.layout
+    ramw/ramw_achievements.json
     mygui/OpenMWResourcePlugin.xml
     mygui/skins.xml
 )

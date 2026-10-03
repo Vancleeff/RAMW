@@ -13,6 +13,8 @@
 #include "creaturestats.hpp"
 #include "spellutil.hpp"
 
+#include "../ramw/raeventprocessor.hpp" //RAMW integration
+
 namespace MWMechanics
 {
 
@@ -66,6 +68,7 @@ namespace MWMechanics
                 resultMessage = "#{sLockSuccess}";
                 resultSound = "Open Lock";
                 mActor.getClass().skillUsageSucceeded(mActor, ESM::Skill::Security, ESM::Skill::Security_PickLock);
+                RAMW::RAEventProcessor::onOpenLock(lockStrength); //RAMW - hook for lockpipcking
             }
             else
                 resultMessage = "#{sLockFail}";

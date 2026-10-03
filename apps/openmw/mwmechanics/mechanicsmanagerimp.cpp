@@ -41,6 +41,8 @@
 #include "npcstats.hpp"
 #include "spellutil.hpp"
 
+#include "../ramw/raeventprocessor.hpp" //RAMW integration
+
 namespace
 {
 
@@ -1110,6 +1112,8 @@ namespace MWMechanics
         if (isAllowed)
             return;
 
+        RAMW::RAEventProcessor::onItemStolen(item, count); //RAMW - hook for stealing
+
         Owner owner;
         owner.second = false;
         if (!container.isEmpty() && container.getClass().isActor())
@@ -1578,6 +1582,7 @@ namespace MWMechanics
 
     void MechanicsManager::actorKilled(const MWWorld::Ptr& victim, const MWWorld::Ptr& attacker)
     {
+        RAMW::RAEventProcessor::onNpcKilled(victim, attacker); //RAMW - hook for npc kill
         if (attacker.isEmpty() || victim.isEmpty())
             return;
 

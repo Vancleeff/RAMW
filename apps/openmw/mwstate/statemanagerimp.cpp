@@ -48,6 +48,10 @@
 
 #include "../mwscript/globalscripts.hpp"
 
+//RAMW integration
+#include "../ramw/raeventprocessor.hpp"
+#include "../ramw/racore.hpp"
+
 #include "quicksavemanager.hpp"
 
 void MWState::StateManager::cleanup(bool force)
@@ -75,6 +79,9 @@ void MWState::StateManager::cleanup(bool force)
         // TODO: do we need this cleanup?
         MWBase::Environment::get().getLuaManager()->clear();
     }
+    //RAMW - hook for game cleanup
+    RAMW::RACore::init(MWBase::Environment::get().getWorld()->getContentFiles());
+    RAMW::RAEventProcessor::onGameCleanup();
 }
 
 std::map<int, int> MWState::StateManager::buildContentFileIndexMap(const ESM::ESMReader& reader) const
@@ -320,6 +327,7 @@ void MWState::StateManager::saveGame(std::string_view description, const Slot* s
         MWBase::Environment::get().getMechanicsManager()->write(writer, listener);
         MWBase::Environment::get().getInputManager()->write(writer, listener);
         MWBase::Environment::get().getWindowManager()->write(writer, listener);
+        RAMW::RAEventProcessor::onGameSaved(writer);
 
         // Ensure we have written the number of records that was estimated
         if (static_cast<size_t>(writer.getRecordCount()) != recordCount + 1) // 1 extra for TES3 record
@@ -581,6 +589,10 @@ void MWState::StateManager::loadGame(const Character* character, const std::file
 
                 case ESM::REC_LUAM:
                     MWBase::Environment::get().getLuaManager()->readRecord(reader, n.toInt());
+                    break;
+
+                case ESM::REC_RAST:
+                    RAMW::RAEventProcessor::onGameLoaded(reader);
                     break;
 
                 default:

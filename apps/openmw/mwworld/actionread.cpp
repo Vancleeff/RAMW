@@ -11,6 +11,8 @@
 #include "../mwmechanics/actorutil.hpp"
 #include "../mwmechanics/npcstats.hpp"
 
+#include "../ramw/raeventprocessor.hpp" //RAMW integration
+
 #include "class.hpp"
 #include "esmstore.hpp"
 
@@ -38,6 +40,8 @@ namespace MWWorld
         }
 
         LiveCellRef<ESM::Book>* ref = getTarget().get<ESM::Book>();
+
+        RAMW::RAEventProcessor::onReadBook(ref); //RAMW - hook for books
 
         if (ref->mBase->mData.mIsScroll)
             MWBase::Environment::get().getWindowManager()->pushGuiMode(MWGui::GM_Scroll, getTarget());

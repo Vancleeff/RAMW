@@ -153,7 +153,7 @@ namespace RAMW
 
         Log(Debug::Info) << "[RAMW] User icon downloaded : " << pngData.size() << " bytes";
 
-        return AchievementNotification::createTextureFromPNG("ra_usericon_" + username, pngData);
+        return AchievementNotification::convertPNGtoMGUI("ra_usericon_" + username, pngData);
     }
 
     bool RAClient::startSession(int gameId, const std::string& playerUsername)
