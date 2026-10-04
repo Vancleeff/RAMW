@@ -16,6 +16,8 @@
 #include "class.hpp"
 #include "containerstore.hpp"
 
+#include "../ramw/raeventprocessor.hpp" //RAMW integration
+
 namespace MWWorld
 {
     ActionHarvest::ActionHarvest(const MWWorld::Ptr& container)
@@ -89,6 +91,9 @@ namespace MWWorld
 
             if (tooltip.size() > 0)
                 MWBase::Environment::get().getWindowManager()->messageBox(tooltip);
+
+            // RAMW - hook for harvesting (for graphic herbalism)
+            RAMW::RAEventProcessor::onHarvest(target.getCellRef().getRefId().serializeText());
         }
 
         auto world = MWBase::Environment::get().getWorld();

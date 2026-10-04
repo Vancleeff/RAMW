@@ -29,6 +29,10 @@ namespace RAMW
         inline constexpr const char* NpcKillPrefix = "npc_kill_";
         inline constexpr const char* QuestFinishedPrefix = "quest_finished_";
         inline constexpr const char* AchievementTestPrefix = "ACH_TEST_";
+        inline constexpr const char* HarvestCount = "harvest_count";
+        inline constexpr const char* HarvestPrefix = "harvest_";
+        inline constexpr const char* LootPrefix = "loot_";
+        inline constexpr const char* InventoryPrefix = "inv_";
     }
 
     /// RetroAchievements Stat Manager

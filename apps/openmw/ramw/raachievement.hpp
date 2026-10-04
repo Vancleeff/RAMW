@@ -2,10 +2,7 @@
 #define RAMW_RAACHIEVEMENTS_HPP
 
 #include "rastats.hpp"
-#include "ratriggerQuestComplete.hpp"
-#include "ratriggerherostats.hpp"
-#include "ratriggerkill.hpp"
-#include "ratriggers.hpp"
+#include "ratriggers.hpp" 
 #include <functional>
 #include <map>
 #include <memory>

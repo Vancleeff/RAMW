@@ -11,8 +11,16 @@
     "target_value": 0,
     "tracked_stat": "",
     "notification_step": 1,
-    "objectives": [],
-    "trigger": null
+    "objectives": [
+      {
+        "stat_name": "loot_chargen statssheet",
+        "display_label": "",
+        "amount": 1
+      }
+    ],
+    "trigger": {
+      "type": "Loot"
+    }
   },
   {
     "id": "MQ_1",
@@ -61,10 +69,10 @@
     ]
   },
   {
-    "id": "LOCK_10",
+    "id": "LOCK_25",
     "parent_id": "",
     "name": "This is Mine Now",
-    "description": "Successfully perform a lockpicking",
+    "description": "Successfully perform a lockpicking with a difficulty of 25",
     "points": 1,
     "icon": "random",
     "category": "Misc",
@@ -72,11 +80,20 @@
     "target_value": 0,
     "tracked_stat": "",
     "notification_step": 1,
-    "objectives": []
+    "objectives": [
+      {
+        "stat_name": "lock_difficulty",
+        "display_label": "Pick a lock of difficulty 25",
+        "amount": 25
+      }
+    ],
+    "trigger": {
+      "type": "Lockpick"
+    }
   },
   {
     "id": "LOCK_50",
-    "parent_id": "LOCK_10",
+    "parent_id": "LOCK_25",
     "name": "Click Clack",
     "description": "Successfully perform a lockpicking with a difficulty of 50",
     "points": 50,
@@ -86,21 +103,39 @@
     "target_value": 0,
     "tracked_stat": "",
     "notification_step": 1,
-    "objectives": []
+    "objectives": [
+      {
+        "stat_name": "lock_difficulty",
+        "display_label": "Pick a lock of difficulty 50",
+        "amount": 50
+      }
+    ],
+    "trigger": {
+      "type": "Lockpick"
+    }
   },
   {
     "id": "LOCK_100",
-    "parent_id": "LOCK_10",
+    "parent_id": "LOCK_25",
     "name": "The Lockwhisperer",
     "description": "Successfully perform a lockpicking with a difficulty of 100",
-    "points": 50,
+    "points": 5,
     "icon": "random",
     "category": "Combat",
     "order": 5,
     "target_value": 0,
     "tracked_stat": "",
     "notification_step": 1,
-    "objectives": []
+    "objectives": [
+      {
+        "stat_name": "lock_difficulty",
+        "display_label": "Pick a lock of difficulty 100",
+        "amount": 100
+      }
+    ],
+    "trigger": {
+      "type": "Lockpick"
+    }
   },
   {
     "id": "SKILLBOOK_1",
@@ -686,13 +721,13 @@
     "tracked_stat": "",
     "notification_step": 1,
     "trigger": {
-      "type": "QuestComplete"
+      "type": "QuestProgress"
     },
     "objectives": [
       {
-        "stat_name": "quest_finished_TR_TaxmanMurder",
+        "stat_name": "quest_stage_MV_DeadTaxman",
         "display_label": "Death of a Taxman",
-        "amount": 1
+        "amount": 90
       }
     ]
   },
@@ -772,6 +807,98 @@
         "stat_name": "skill_security",
         "display_label": "",
         "amount": 11
+      }
+    ]
+  },
+  {
+    "id": "HARVEST_1",
+    "parent_id": "",
+    "name": "Gardener",
+    "description": "Harvest a total of 10 plants",
+    "points": 1,
+    "icon": "random",
+    "category": "Misc",
+    "order": 31,
+    "target_value": 0,
+    "tracked_stat": "",
+    "notification_step": 10,
+    "trigger": {
+      "type": "Harvest"
+    },
+    "objectives": [
+      {
+        "stat_name": "harvest_count",
+        "display_label": "",
+        "amount": 10
+      }
+    ]
+  },
+  {
+    "id": "HARVEST_2",
+    "parent_id": "HARVEST_1",
+    "name": "Herborist",
+    "description": "Harvest a total of 100 plants",
+    "points": 5,
+    "icon": "random",
+    "category": "Misc",
+    "order": 32,
+    "target_value": 0,
+    "tracked_stat": "",
+    "notification_step": 10,
+    "trigger": {
+      "type": "Harvest"
+    },
+    "objectives": [
+      {
+        "stat_name": "harvest_count",
+        "display_label": "",
+        "amount": 100
+      }
+    ]
+  },
+  {
+    "id": "HARVEST_3",
+    "parent_id": "HARVEST_1",
+    "name": "Flower Power",
+    "description": "Harvest a total of 250 plants",
+    "points": 10,
+    "icon": "random",
+    "category": "Misc",
+    "order": 33,
+    "target_value": 0,
+    "tracked_stat": "",
+    "notification_step": 10,
+    "trigger": {
+      "type": "Harvest"
+    },
+    "objectives": [
+      {
+        "stat_name": "harvest_count",
+        "display_label": "",
+        "amount": 250
+      }
+    ]
+  },
+  {
+    "id": "LOOT_TARHIEL_JOURNAL",
+    "parent_id": "",
+    "name": "It's Raining Men",
+    "description": "Find Tarhiel's Journal",
+    "points": 2,
+    "icon": "random",
+    "category": "Exploration",
+    "order": 34,
+    "target_value": 0,
+    "tracked_stat": "",
+    "notification_step": 1,
+    "trigger": {
+      "type": "Loot"
+    },
+    "objectives": [
+      {
+        "stat_name": "loot_bk_falljournal_unique",
+        "display_label": "Loot Journal of Tarhiel",
+        "amount": 1
       }
     ]
   }

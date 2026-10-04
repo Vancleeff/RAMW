@@ -1,16 +1,22 @@
-#include <yaml-cpp/yaml.h>
+#include "raachievement.hpp"
 #include "../mwbase/environment.hpp"
 #include "achievementnotification.hpp"
-#include "raachievement.hpp"
 #include "raconfig.hpp"
-#include "rastats.hpp" 
+#include "rastats.hpp"
+#include "ratriggerQuestComplete.hpp"
+#include "ratriggerQuestProgress.hpp"
+#include "ratriggerherostats.hpp"
+#include "ratriggerkill.hpp"
+#include "ratriggerlockpick.hpp"
+#include "ratriggerharvest.hpp"
+#include "ratriggerloot.hpp"
 #include <components/debug/debuglog.hpp>
+#include <yaml-cpp/yaml.h>
 
 namespace RAMW
 {
     std::map<std::string, AchievementData> RAAchievementManager::mAchievements;
     std::function<void()> RAAchievementManager::mOnUnlockCallback = nullptr;
-    
 
     static std::string getRandomTestIcon()
     {
@@ -31,8 +37,6 @@ namespace RAMW
         return RAConfig::TEST_ICON_POOL[index];
     }
 
-     
-
     void RAAchievementManager::init()
     {
         mAchievements.clear();
@@ -40,7 +44,7 @@ namespace RAMW
         if (RAConfig::TEST_MODE)
             loadAchievements("resources/vfs/ramw/ramw_achievements.json");
 
-        //todo getting json from a webserver and define with RA devs how to serve it
+        // todo getting json from a webserver and define with RA devs how to serve it
 
         Log(Debug::Info) << "[RA Achievement] Loaded " << mAchievements.size() << " achievements";
     }
@@ -63,10 +67,16 @@ namespace RAMW
                 info.unlocked = false;
                 info.category = getCategoryFlag(node["category"].as<std::string>());
                 info.order = node["order"].as<int>();
-                info.target_value = node["target_value"] && node["target_value"].IsScalar() ? node["target_value"].as<int>() : 0;
-                info.tracked_stat = node["tracked_stat"] && node["tracked_stat"].IsScalar() ? node["tracked_stat"].as<std::string>() : "";
-                info.notification_step = node["notification_step"] && node["notification_step"].IsScalar() ? node["notification_step"].as<int>() : 1;
-                info.parent_id = node["parent_id"] && node["parent_id"].IsScalar() ? node["parent_id"].as<std::string>() : "";
+                info.target_value
+                    = node["target_value"] && node["target_value"].IsScalar() ? node["target_value"].as<int>() : 0;
+                info.tracked_stat = node["tracked_stat"] && node["tracked_stat"].IsScalar()
+                    ? node["tracked_stat"].as<std::string>()
+                    : "";
+                info.notification_step = node["notification_step"] && node["notification_step"].IsScalar()
+                    ? node["notification_step"].as<int>()
+                    : 1;
+                info.parent_id
+                    = node["parent_id"] && node["parent_id"].IsScalar() ? node["parent_id"].as<std::string>() : "";
 
                 std::string icon = node["icon"] ? node["icon"].as<std::string>() : "random";
                 info.iconPath = (icon == "random") ? getRandomTestIcon() : icon;
@@ -92,19 +102,19 @@ namespace RAMW
                 {
                     std::string triggerType = node["trigger"]["type"].as<std::string>("");
                     if (triggerType == "QuestComplete")
-                    {
                         info.trigger = std::make_unique<RATriggerQuestComplete>();
-                    }
+                    else if (triggerType == "QuestProgress")
+                        info.trigger = std::make_unique<RATriggerQuestProgress>();
                     else if (triggerType == "HeroStats")
-                    {
-                        Log(Debug::Info) << "[RAMW] parse HeroStats trigger : " << info.name;
                         info.trigger = std::make_unique<RATriggerHeroStats>();
-                    }
                     else if (triggerType == "Kill")
-                    {
-                        Log(Debug::Info) << "[RAMW] parse Kill trigger : " << info.name;
                         info.trigger = std::make_unique<RATriggerKill>();
-                    }
+                    else if (triggerType == "Lockpick")
+                        info.trigger = std::make_unique<RATriggerLockpick>();
+                    else if (triggerType == "Harvest")
+                        info.trigger = std::make_unique<RATriggerHarvest>();
+                    else if (triggerType == "Loot")
+                        info.trigger = std::make_unique<RATriggerLoot>();
                 }
 
                 mAchievements[info.id] = std::move(info);

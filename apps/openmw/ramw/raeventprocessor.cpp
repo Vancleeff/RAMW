@@ -3,7 +3,12 @@
 #include "racore.hpp"
 #include "rastats.hpp"
 #include "ratriggerHerostats.hpp"
-#include "ratriggerQuestComplete.hpp"
+#include "ratriggerquestcomplete.hpp"
+#include "ratriggerquestprogress.hpp"
+#include "ratriggerkill.hpp"
+#include "ratriggerlockpick.hpp"
+#include "ratriggerharvest.hpp"
+#include "ratriggerloot.hpp"
 
 #include <components/debug/debuglog.hpp>
 #include <components/esm/refid.hpp>
@@ -22,6 +27,7 @@
 #include "../mwworld/cellstore.hpp"
 #include "../mwworld/class.hpp"
 #include "../mwworld/ptr.hpp"
+#include "../mwworld/containerstore.hpp"
 
 namespace RAMW
 {
@@ -64,13 +70,17 @@ namespace RAMW
 
     void RAEventProcessor::onQuestProgress(const std::string& questId, int stage)
     {
-        Log(Debug::Info) << "[RAMW Events] Quest progressed - Topic: " << questId << " Index: " << stage;
+        Log(Debug::Info) << "[RA Events] Quest progressed - " << questId << " stage " << stage;
 
-        if (questId == "MV_DeadTaxman" && (stage >= 90))
-        {
-            RAAchievementManager::unlock("QUEST_TAXMAN");
-        }
-        // todo - migrate to ratriggers
+        RATriggerContext ctx{ "quest_stage_" + questId, stage };
+        for (AchievementData* info : RAAchievementManager::getAchievementsByTrigger<RATriggerQuestProgress>())
+            if (info->trigger->evaluate(ctx, *info))
+                RAAchievementManager::unlock(info->id);
+
+        if (mOnEventCallback)
+            mOnEventCallback();
+        if (mOntrackedCallback)
+            mOntrackedCallback();
     }
 
     void RAEventProcessor::onQuestFinished(const std::string& questId)
@@ -126,21 +136,21 @@ namespace RAMW
             mOntrackedCallback();
     }
 
-    void RAEventProcessor::onOpenLock(int lock_str)
+    void RAEventProcessor::onOpenLock(int lockStrength)
     {
-        Log(Debug::Info) << "[RAMW Events] Lock succeeded - lock level : " << std::to_string(lock_str);
+        Log(Debug::Info) << "[RA Events] Lock picked - strength " << lockStrength;
+
         RAStats::increment(RAStatKeys::LockpickCount);
+
+        RATriggerContext ctx{ "lock_difficulty", lockStrength };
+        for (AchievementData* info : RAAchievementManager::getAchievementsByTrigger<RATriggerLockpick>())
+            if (info->trigger->evaluate(ctx, *info))
+                RAAchievementManager::unlock(info->id);
+
         if (mOnEventCallback)
             mOnEventCallback();
-        if (lock_str >= 100)
-            RAAchievementManager::unlock("LOCK_100");
-        if (lock_str >= 50)
-            RAAchievementManager::unlock("LOCK_50");
-        if (lock_str >= 25)
-            RAAchievementManager::unlock("LOCK_25");
-        if (lock_str > 0)
-            RAAchievementManager::unlock("LOCK_10");
-        // todo - migrate to ratriggers
+        if (mOntrackedCallback)
+            mOntrackedCallback();
     }
 
     void RAEventProcessor::onCreatureKilled(const MWWorld::Ptr& victim, const MWWorld::Ptr& attacker)
@@ -191,31 +201,25 @@ namespace RAMW
 
     void RAEventProcessor::onAddItem(const MWWorld::Ptr& item, size_t count)
     {
-        Log(Debug::Info) << "[RAMW Events] Add item : " << item.getCellRef().getRefId() << " x" << count
-                         << " from Owner : " << item.getCellRef().getOwner();
+        const std::string itemId = item.getCellRef().getRefId().serializeText();
+        const std::string lootKey = RAStatKeys::LootPrefix + itemId;
 
-        if (item.getCellRef().getOwner() == ESM::RefId::stringRefId("Player"))
-            return;
+        RAStats::increment(lootKey, static_cast<int>(count));
+
         if (item.getCellRef().getRefId().getRefIdString() == "gold_001")
             RAStats::increment(RAStatKeys::GoldLooted, count);
         else
             RAStats::increment(RAStatKeys::ItemsLooted, count);
+
+        RATriggerContext ctx{ lootKey };
+        for (AchievementData* info : RAAchievementManager::getAchievementsByTrigger<RATriggerLoot>())
+            if (info->trigger->evaluate(ctx, *info))
+                RAAchievementManager::unlock(info->id);
+
         if (mOnEventCallback)
             mOnEventCallback();
         if (mOntrackedCallback)
             mOntrackedCallback();
-
-        if (item.getCellRef().getRefId().getRefIdString() == "bk_falljournal_unique")
-        {
-            RAAchievementManager::unlock("LOOT_TARHIEL_JOURNAL");
-            // todo - migrate to ratriggers
-        }
-
-        if (item.getCellRef().getRefId().getRefIdString() == "chargen statssheet")
-        {
-            RAAchievementManager::unlock("MQ_0");
-            // todo - migrate to ratriggers
-        }
     }
 
     // Very clunky atm, needs to find a better way to distinct the initial action from a fake one
@@ -270,6 +274,45 @@ namespace RAMW
             RAStats::readBook(bookId);
         if (mOnEventCallback)
             mOnEventCallback();
+    }
+
+    //Handle harvesting for graphic herbalism mode (one clic harvesting)
+    void RAEventProcessor::onHarvest(const std::string& plantId)
+    {
+        Log(Debug::Info) << "[RA Events] Harvested - " << plantId;
+
+        const std::string spotKey = RAStatKeys::HarvestPrefix + plantId;
+
+        RAStats::increment(RAStatKeys::HarvestCount);
+        RAStats::increment(spotKey);
+
+        RATriggerContext ctx{ spotKey };
+        for (AchievementData* info : RAAchievementManager::getAchievementsByTrigger<RATriggerHarvest>())
+            if (info->trigger->evaluate(ctx, *info))
+                RAAchievementManager::unlock(info->id);
+
+        if (mOnEventCallback)
+            mOnEventCallback();
+        if (mOntrackedCallback)
+            mOntrackedCallback();
+    }
+
+    //To handle harvesting on legacy mode, we need to check if a container is organic and fully empty when we close 
+    //the container. It's done in order to avoid exploit by splitting the pile and increase the counter artificially 
+    //and to align with the graphic herbalism mode : harvest == empty plant container
+    void RAEventProcessor::onContainerClosed(const MWWorld::Ptr& container)
+    {
+        if (container.getType() != ESM::Container::sRecordId)
+            return;
+
+        const MWWorld::LiveCellRef<ESM::Container>* ref = container.get<ESM::Container>();
+        if (!(ref->mBase->mFlags & ESM::Container::Organic))
+            return;
+
+        if (container.getClass().getContainerStore(container).hasVisibleItems())
+            return; // plant is not fully harvested
+
+        onHarvest(container.getCellRef().getRefId().serializeText());
     }
 
     void RAEventProcessor::setOnEventCallback(std::function<void()> callback)

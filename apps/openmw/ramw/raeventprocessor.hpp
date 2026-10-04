@@ -45,6 +45,9 @@ namespace RAMW
         static void onPickpocketing(const MWWorld::Ptr& victim, int count);
         static void onLoadCell(MWWorld::CellStore& Cell);
         static void onReadBook(MWWorld::LiveCellRef<ESM::Book>* book);
+        static void onHarvest(const std::string& plantId);
+        static void onContainerClosed(const MWWorld::Ptr& container);
+
 
         static void setOnEventCallback(std::function<void()> callback);
         static void setOntrackedCallback(std::function<void()> callback);
