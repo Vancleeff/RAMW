@@ -9,6 +9,11 @@
 #include "ratriggerlockpick.hpp"
 #include "ratriggerharvest.hpp"
 #include "ratriggerloot.hpp"
+#include "ratriggercellclear.hpp"
+#include "ratriggerdiscovery.hpp"
+#include "racelltracker.hpp"
+#include "radiscoverynotification.hpp"
+#include "../mwbase/soundmanager.hpp"
 
 #include <components/debug/debuglog.hpp>
 #include <components/esm/refid.hpp>
@@ -28,6 +33,17 @@
 #include "../mwworld/class.hpp"
 #include "../mwworld/ptr.hpp"
 #include "../mwworld/containerstore.hpp"
+
+#include <algorithm>, <cctype>
+
+namespace
+{
+    std::string normalizeName(std::string s)
+    {
+        std::transform(s.begin(), s.end(), s.begin(), [](unsigned char c) { return std::tolower(c); });
+        return s;
+    }
+}
 
 namespace RAMW
 {
@@ -156,12 +172,16 @@ namespace RAMW
     void RAEventProcessor::onCreatureKilled(const MWWorld::Ptr& victim, const MWWorld::Ptr& attacker)
     {
         Log(Debug::Info) << "[RAMW Events] Creature Killed : " << victim.getCellRef().getRefId();
-        std::string creature_refid = victim.getCellRef().getRefId().toString();
+        std::string creature_refid = normalizeName(std::string(victim.getClass().getName(victim)));
         MWWorld::Ptr player = MWBase::Environment::get().getWorld()->getPlayerPtr();
         MWWorld::CellStore* currentCell = player.getCell();
 
-        if (currentCell && !currentCell->isExterior())
-            RAEventProcessor::countEnemiesInCell(currentCell);
+        if (currentCell && !currentCell->isExterior() && countEnemiesInCell(currentCell) == 0)
+        {
+            const std::string cellKey
+                = RAStatKeys::CellClearPrefix + std::string(currentCell->getCell()->getDisplayName());
+            RAStats::set(cellKey, 1);
+        }
 
         RAStats::kill(creature_refid, false);
 
@@ -169,6 +189,8 @@ namespace RAMW
         for (AchievementData* info : RAAchievementManager::getAchievementsByTrigger<RATriggerKill>())
             if (info->trigger->evaluate(ctx, *info))
                 RAAchievementManager::unlock(info->id);
+
+        evaluateCellClear(ctx);
 
         if (mOnEventCallback)
             mOnEventCallback();
@@ -180,18 +202,25 @@ namespace RAMW
     {
         Log(Debug::Info) << "[RAMW Events] NPC Killed : " << victim.getCellRef().getRefId();
 
-        std::string npc_name = victim.getCellRef().getRefId().toString();
+        std::string npc_name = normalizeName(std::string(victim.getClass().getName(victim)));
         RAStats::kill(npc_name, true);
 
         MWWorld::Ptr player = MWBase::Environment::get().getWorld()->getPlayerPtr();
         MWWorld::CellStore* currentCell = player.getCell();
-        if (currentCell && !currentCell->isExterior())
-            RAEventProcessor::countEnemiesInCell(currentCell);
+
+        if (currentCell && !currentCell->isExterior() && countEnemiesInCell(currentCell) == 0)
+        {
+            const std::string cellKey
+                = RAStatKeys::CellClearPrefix + std::string(currentCell->getCell()->getDisplayName());
+            RAStats::set(cellKey, 1);
+        }
 
         RATriggerContext ctx{ "npc_kill_" + npc_name };
         for (AchievementData* info : RAAchievementManager::getAchievementsByTrigger<RATriggerKill>())
             if (info->trigger->evaluate(ctx, *info))
                 RAAchievementManager::unlock(info->id);
+
+        evaluateCellClear(ctx);
 
         if (mOnEventCallback)
             mOnEventCallback();
@@ -215,6 +244,8 @@ namespace RAMW
         for (AchievementData* info : RAAchievementManager::getAchievementsByTrigger<RATriggerLoot>())
             if (info->trigger->evaluate(ctx, *info))
                 RAAchievementManager::unlock(info->id);
+
+        evaluateCellClear(ctx);
 
         if (mOnEventCallback)
             mOnEventCallback();
@@ -252,11 +283,24 @@ namespace RAMW
     void RAEventProcessor::onLoadCell(MWWorld::CellStore& cell)
     {
         const MWWorld::Cell* new_cell = cell.getCell();
+
         if (!new_cell->isExterior())
         {
-            Log(Debug::Info) << "[RAMW Events] Interior Cell Loaded : " << cell.getCell()->getDisplayName();
-            RAEventProcessor::countEnemiesInCell(&cell);
+            Log(Debug::Info) << "[RAMW Events] Interior Cell Loaded : " << new_cell->getDisplayName();
+            const std::string cellName(new_cell->getDisplayName());
+
+            // Dungeons/caves/tombs,etc have no comma in their display name like urban buildings
+            if (!cellName.empty() && cellName.find(',') == std::string::npos)
+            {
+                const std::string key = RAStatKeys::DiscoveryPrefix + normalizeName(cellName);
+                if (RAStats::get(key) == 0)
+                    onLocationDiscovered(cellName);
+            }
+            countEnemiesInCell(&cell);
         }
+
+        if (RACore::getCellTracker())
+            RACore::getCellTracker()->setCell(std::string(new_cell->getDisplayName()));
     }
 
     void RAEventProcessor::onReadBook(MWWorld::LiveCellRef<ESM::Book>* book)
@@ -315,6 +359,31 @@ namespace RAMW
         onHarvest(container.getCellRef().getRefId().serializeText());
     }
 
+    void RAEventProcessor::onLocationDiscovered(const std::string& locationName)
+    {
+        // The engine passes "Region, Place" for some cells; keep the place only.
+        const std::string shortName = locationName.substr(0, locationName.find(','));
+        const std::string key = RAStatKeys::DiscoveryPrefix + normalizeName(shortName);
+
+        RAStats::increment(RAStatKeys::LocationsDiscovered);
+        RAStats::set(key, 1);
+
+        if (RADiscoveryNotification::hasInstance())
+            RADiscoveryNotification::getInstance().show(shortName);
+
+        MWBase::Environment::get().getSoundManager()->playSound(ESM::RefId::stringRefId("wind calm5"), 2.0f, 1.0f);
+
+        RATriggerContext ctx{ key };
+        for (AchievementData* info : RAAchievementManager::getAchievementsByTrigger<RATriggerDiscovery>())
+            if (info->trigger->evaluate(ctx, *info))
+                RAAchievementManager::unlock(info->id);
+
+        if (mOnEventCallback)
+            mOnEventCallback();
+        if (mOntrackedCallback)
+            mOntrackedCallback();
+    }
+
     void RAEventProcessor::setOnEventCallback(std::function<void()> callback)
     {
         mOnEventCallback = callback;
@@ -325,9 +394,19 @@ namespace RAMW
         mOntrackedCallback = callback;
     }
 
+    void RAEventProcessor::evaluateCellClear(const RATriggerContext& ctx)
+    {
+        for (AchievementData* info : RAAchievementManager::getAchievementsByTrigger<RATriggerCellClear>())
+            if (info->trigger->evaluate(ctx, *info))
+                RAAchievementManager::unlock(info->id);
+
+        if (RACore::getCellTracker())
+            RACore::getCellTracker()->refresh();
+    }
+
     // Seems very reliable now with levListVisitor included. To test massively.
     // Could be used to define "clean location x" kind of achievement when no other strict condition is possible.
-    void RAEventProcessor::countEnemiesInCell(MWWorld::CellStore* cell)
+    int RAEventProcessor::countEnemiesInCell(MWWorld::CellStore* cell)
     {
         int aliveCreatures = 0;
         int deadCreatures = 0;
@@ -357,6 +436,8 @@ namespace RAMW
 
         Log(Debug::Info) << "[RAMW] Cell " << cell->getCell()->getDisplayName() << " - Alive: " << aliveCreatures
                          << ", Dead: " << deadCreatures;
+
+        return aliveCreatures;
     }
 
 }

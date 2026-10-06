@@ -35,6 +35,8 @@
 
 #include <numeric>
 
+#include "../ramw/raeventprocessor.hpp"// RAMW integration
+
 namespace
 {
 
@@ -1126,6 +1128,8 @@ namespace MWGui
         cell.second = y;
         if (mMarkers.insert(cell).second)
         {
+            RAMW::RAEventProcessor::onLocationDiscovered(name); //RAMW - Hook for location discovery
+
             const osg::Vec2f pos(static_cast<float>(x), static_cast<float>(y));
             MapMarkerType mapMarkerWidget = { pos, createMarker(name, pos.x(), pos.y(), 0) };
             mGlobalMapMarkers.emplace(mapMarkerWidget, std::vector<MapMarkerType>());

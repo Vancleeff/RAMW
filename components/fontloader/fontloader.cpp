@@ -249,6 +249,7 @@ namespace Gui
         constexpr FontId defaultFontId{ "DefaultFont" };
         constexpr FontId scrollFontId{ "ScrollFont" };
         constexpr FontId monoFontId{ "MonoFont" };
+        constexpr FontId ramwTitleFontId{ "RAMWTitleFont" };
 
         const std::string_view defaultFont = Fallback::Map::getString("Fonts_Font_0");
         const std::string_view scrollFont = Fallback::Map::getString("Fonts_Font_2");
@@ -257,6 +258,7 @@ namespace Gui
         loadFont(scrollFontId, scrollFont);
         // We need to use a TrueType monospace font to display debug texts properly.
         loadFont(monoFontId, "DejaVuLGCSansMono");
+        loadFont(ramwTitleFontId, "RAMWTitle");
 
         // Use our TrueType fonts as a fallback.
         if (!MyGUI::ResourceManager::getInstance().isExist(defaultFontId.mValue)
@@ -359,13 +361,20 @@ namespace Gui
 
         resolutionNode->setAttribute("value", MyGUI::utility::toString(resolution * std::ceil(mScalingFactor)));
 
-        MyGUI::xml::ElementPtr sizeNode = resourceNode->createChild("Property");
-        sizeNode->addAttribute("key", "Size");
-        sizeNode->addAttribute("value", std::to_string(Settings::gui().mFontSize));
+        MyGUI::xml::ElementPtr sizeNode = getProperty(resourceNode.current(), "Size");
+        if (sizeNode == nullptr)
+        {
+            sizeNode = resourceNode->createChild("Property");
+            sizeNode->addAttribute("key", "Size");
+            sizeNode->addAttribute("value", std::to_string(Settings::gui().mFontSize));
+        }
 
         MyGUI::ResourceTrueTypeFont* font = static_cast<MyGUI::ResourceTrueTypeFont*>(
             MyGUI::FactoryManager::getInstance().createObject("Resource", "ResourceTrueTypeFont"));
         font->deserialization(resourceNode.current(), MyGUI::Version(3, 2, 0));
+        Log(Debug::Info) << "[FONT] " << fontId.mValue
+                         << " size=" << (sizeNode ? sizeNode->findAttribute("value") : "none")
+                         << " resolution=" << resolutionNode->findAttribute("value");
         font->setResourceName(fontId.mValue);
         MyGUI::ResourceManager::getInstance().addResource(font);
 

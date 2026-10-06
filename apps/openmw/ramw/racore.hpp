@@ -1,8 +1,10 @@
 #ifndef RAMW_RACORE_HPP
 #define RAMW_RACORE_HPP
 #include "achievementlistwindow.hpp"
+#include "radiscoverynotification.hpp"
 #include "rastatswindow.hpp"
-#include <future> 
+#include "racelltracker.hpp"
+#include <future>, <memory>
 
 namespace RAMW
 {
@@ -21,6 +23,7 @@ namespace RAMW
         static void setNotificationWidget(AchievementNotification* widget);
         static AchievementListWindow* getAchievementListWindow();
         static RAStatsWindow* getStatsWindow();
+        static RACellTracker* getCellTracker() { return sCellTracker.get(); }
 
     private:
         static bool mInitialized;
@@ -31,6 +34,7 @@ namespace RAMW
         static AchievementNotification* mNotificationWidget;
         static std::unique_ptr<AchievementListWindow> sAchievementListWindow;
         static std::unique_ptr<RAStatsWindow> sStatsWindow;
+        static std::unique_ptr<RACellTracker> sCellTracker;
     };
 
 }

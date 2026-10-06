@@ -15,6 +15,7 @@ namespace RAMW
     {
         std::string stat_name;
         std::string display_label;
+        std::string group; //only used for display for "clear location" achievements
         int amount = 1;
 
         bool isCompleted() const { return RAStats::get(stat_name) >= amount; }
@@ -56,6 +57,30 @@ namespace RAMW
                 if (trigger->isObjectiveCompleted(obj))
                     count++;
             return count;
+        }
+
+        bool isListedObjective(const AchievementObjective& obj) const
+        {
+            return obj.group.empty() || obj.stat_name.rfind(RAStatKeys::CellClearPrefix, 0) == 0;
+        }
+
+        int getListedObjectivesCount() const
+        {
+            int n = 0;
+            for (const auto& obj : objectives)
+                if (isListedObjective(obj))
+                    n++;
+            return n;
+        }
+
+        bool isGroupCompleted(const std::string& group) const
+        {
+            if (!trigger)
+                return false;
+            for (const auto& obj : objectives)
+                if (obj.group == group && !trigger->isObjectiveCompleted(obj))
+                    return false;
+            return true;
         }
 
         int getProgress() const;

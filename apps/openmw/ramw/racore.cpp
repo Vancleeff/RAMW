@@ -6,6 +6,7 @@
 #include "raeventprocessor.hpp"
 #include "ramods.hpp"
 #include "rarichpresence.hpp"
+#include "racelltracker.hpp"
 
 #include "../mwbase/environment.hpp"
 #include <iostream>
@@ -19,6 +20,7 @@ namespace RAMW
     AchievementNotification* RACore::mNotificationWidget = nullptr;
     std::unique_ptr<AchievementListWindow> RACore::sAchievementListWindow = nullptr;
     std::unique_ptr<RAStatsWindow> RACore::sStatsWindow = nullptr;
+    std::unique_ptr<RACellTracker> RACore::sCellTracker;
 
     void RACore::init(const std::vector<std::string>& contentFiles)
     {
@@ -67,6 +69,8 @@ namespace RAMW
             sAchievementListWindow = std::make_unique<AchievementListWindow>();
             sStatsWindow = std::make_unique<RAStatsWindow>();
             sAchievementListWindow->setStatsWindow(sStatsWindow.get());
+            sCellTracker = std::make_unique<RACellTracker>();
+            RADiscoveryNotification::createInstance();
             mWidgetsCreated = true;
             Log(Debug::Info) << "[RAMW] RA widgets created";
         }
@@ -96,6 +100,12 @@ namespace RAMW
         {
             getStatsWindow()->update(dt);
         }
+
+        if (sCellTracker)
+            sCellTracker->update(dt);
+
+        if (RADiscoveryNotification::hasInstance())
+            RADiscoveryNotification::getInstance().update(dt);
 
         RARichPresence::update();
         RAStats::update(dt);
@@ -137,7 +147,9 @@ namespace RAMW
         Log(Debug::Info) << "[RAMW] RA Integration shutting down";
         sAchievementListWindow.reset();
         sStatsWindow.reset();
+        sCellTracker.reset();
         AchievementNotification::destroyInstance();
+        RADiscoveryNotification::destroyInstance();
         mInitialized = false;
     }
 

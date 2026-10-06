@@ -31,6 +31,8 @@
 #include "sortfilteritemmodel.hpp"
 #include "tooltips.hpp"
 
+#include "../ramw/raeventprocessor.hpp" //RAMW integration
+
 namespace MWGui
 {
 
@@ -215,7 +217,11 @@ namespace MWGui
             mModel->onClose();
 
         if (!mPtr.isEmpty())
+        {
             MWBase::Environment::get().getMechanicsManager()->onClose(mPtr);
+            RAMW::RAEventProcessor::onContainerClosed(mPtr); // RAMW - hook for harvesting (legacy)
+        }
+            
         resetReference();
 
         mItemTransfer->removeTarget(*mItemView);

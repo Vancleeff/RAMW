@@ -50,6 +50,7 @@ set(BUILTIN_DATA_FILES
     fonts/MysticCards.ttf
     fonts/MysticCards.omwfont
     fonts/MysticCardsFontLicense.txt
+    fonts/RAMWTitle.omwfont
 
     # Default animation blending config
     animations/animation-config.yaml
@@ -257,6 +258,7 @@ set(BUILTIN_DATA_FILES
     mygui/openmw_postprocessor_hud.skin.xml
     mygui/openmw_jail_screen.layout
     mygui/ramw_achievement_list.layout
+    mygui/ramw_cell_tracker.layout
     mygui/ramw_stats.layout
     ramw/ramw_achievements.json
     mygui/OpenMWResourcePlugin.xml

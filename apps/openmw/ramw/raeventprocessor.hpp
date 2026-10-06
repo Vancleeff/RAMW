@@ -3,6 +3,7 @@
 
 #include <string>
 #include "../mwworld/ptr.hpp"
+#include "ratriggers.hpp"
 
 #include "../mwbase/environment.hpp"
 #include <components/esm3/loadbook.hpp>
@@ -47,12 +48,13 @@ namespace RAMW
         static void onReadBook(MWWorld::LiveCellRef<ESM::Book>* book);
         static void onHarvest(const std::string& plantId);
         static void onContainerClosed(const MWWorld::Ptr& container);
-
+        static void onLocationDiscovered(const std::string& locationName);
+        static void evaluateCellClear(const RATriggerContext& ctx);
 
         static void setOnEventCallback(std::function<void()> callback);
         static void setOntrackedCallback(std::function<void()> callback);
 
-        static void countEnemiesInCell(MWWorld::CellStore* cell);
+        static int countEnemiesInCell(MWWorld::CellStore* cell);
 
 
     private:

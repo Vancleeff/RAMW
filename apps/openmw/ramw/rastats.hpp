@@ -33,6 +33,9 @@ namespace RAMW
         inline constexpr const char* HarvestPrefix = "harvest_";
         inline constexpr const char* LootPrefix = "loot_";
         inline constexpr const char* InventoryPrefix = "inv_";
+        inline constexpr const char* CellClearPrefix = "cellclear_";
+        inline constexpr const char* LocationsDiscovered = "locations_discovered";
+        inline constexpr const char* DiscoveryPrefix = "discovered_";
     }
 
     /// RetroAchievements Stat Manager

@@ -198,7 +198,7 @@
         "amount": 10
       },
       {
-        "stat_name": "creature_kill_Rat",
+        "stat_name": "creature_kill_rat",
         "display_label": "Kill 5 Rats",
         "amount": 5
       },
@@ -899,6 +899,72 @@
         "stat_name": "loot_bk_falljournal_unique",
         "display_label": "Loot Journal of Tarhiel",
         "amount": 1
+      }
+    ]
+  },
+  {
+    "id": "TEST_SAMARYS",
+    "parent_id": "",
+    "name": "Bitter Coast Tomb Raiser",
+    "description": "Clear every Ancestral Tombs on the Bitter Coast",
+    "points": 5,
+    "icon": "random",
+    "category": "Misc",
+    "order": 35,
+    "target_value": 0,
+    "tracked_stat": "",
+    "notification_step": 1,
+    "trigger": {
+      "type": "CellClear"
+    },
+    "objectives": [
+      {
+        "stat_name": "cellclear_Samarys Ancestral Tomb",
+        "display_label": "Clear Samarys Ancestral Tomb",
+        "amount": 1,
+        "group": "g1"
+      },
+      {
+        "stat_name": "loot_devote_brinne_dust_00",
+        "display_label": "Find Ashes of Lord Brinne",
+        "amount": 1,
+        "group": "g1"
+      },
+      {
+        "stat_name": "loot_ring_mentor_unique",
+        "display_label": "Find Mentor's Ring",
+        "amount": 1,
+        "group": "g1"
+      },
+      {
+        "stat_name": "cellclear_Alas Ancestral Tomb",
+        "display_label": "Clear Alas Ancestral Tomb",
+        "amount": 1,
+        "group": "g2"
+      },
+      {
+        "stat_name": "cellclear_Alen Ancestral Tomb",
+        "display_label": "Clear Alen Ancestral Tomb",
+        "amount": 1,
+        "group": "g3"
+      },
+      {
+        "stat_name": "cellclear_Andalen Ancestral Tomb",
+        "display_label": "Clear Andalen Ancestral Tomb",
+        "amount": 1,
+        "group": "g4"
+      },
+      {
+        "stat_name": "cellclear_Arano Ancestral Tomb",
+        "display_label": "Clear Arano Ancestral Tomb",
+        "amount": 1,
+        "group": "g5"
+      },
+      {
+        "stat_name": "cellclear_Andrano Ancestral Tomb",
+        "display_label": "Clear Andrano Ancestral Tomb",
+        "amount": 1,
+        "group": "g6"
       }
     ]
   }

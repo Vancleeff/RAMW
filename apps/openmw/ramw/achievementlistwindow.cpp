@@ -14,7 +14,7 @@
 #include <MyGUI_TextBox.h>
 #include <curl/curl.h>
 
-#include <iostream>
+#include <iostream>, <cstring>
 
 #include "../mwbase/environment.hpp"
 #include "../mwbase/windowmanager.hpp"
@@ -277,9 +277,9 @@ namespace RAMW
         {
             tileHeight = (groupAchievements.size() > 1) ? 160 : 120;
         }
-        else if (mainAchievement->hasObjectives() && mainAchievement->objectives.size() > 1)
+        else if (mainAchievement->hasObjectives() && mainAchievement->getListedObjectivesCount() > 1)
         {
-            int objectiveHeight = mainAchievement->objectives.size() * 20;
+            int objectiveHeight = mainAchievement->getListedObjectivesCount() * 20;
             tileHeight = 60 + objectiveHeight + 10;
         }
         else
@@ -420,13 +420,19 @@ namespace RAMW
             progressText->setFontHeight(18);
         }
 
-        if (mainAchievement->hasObjectives() && mainAchievement->objectives.size() > 1)
+        if (mainAchievement->hasObjectives() && mainAchievement->getListedObjectivesCount() > 1)
         {
             int objectiveY = 60;
 
             for (const auto& objective : mainAchievement->objectives)
             {
-                bool completed = mainAchievement->trigger && mainAchievement->trigger->isObjectiveCompleted(objective);
+                if (!mainAchievement->isListedObjective(objective))
+                    continue;
+
+                // A location header is only ticked once every condition of its group is met.
+                bool completed = objective.group.empty()
+                    ? (mainAchievement->trigger && mainAchievement->trigger->isObjectiveCompleted(objective))
+                    : mainAchievement->isGroupCompleted(objective.group);
 
                 MyGUI::TextBox* checkbox = tile->createWidget<MyGUI::TextBox>(
                     "SandText", MyGUI::IntCoord(84, objectiveY, 20, 18), MyGUI::Align::Left | MyGUI::Align::Top);
@@ -440,11 +446,17 @@ namespace RAMW
                     MyGUI::IntCoord(110, objectiveY, tileWidth - 45, 18), MyGUI::Align::Left | MyGUI::Align::Top);
 
                 int stat = RAStats::get(objective.stat_name);
-                label->setCaption(objective.display_label
-                    + (objective.amount > 1
-                            ? " " + (stat > objective.amount ? std::to_string(objective.amount) : std::to_string(stat))
-                                + "/" + std::to_string(objective.amount)
-                            : ""));
+
+                // Clear location objectives show the cell name and display label is used on the tracker
+                if (objective.stat_name.rfind(RAStatKeys::CellClearPrefix, 0) == 0)
+                    label->setCaption(objective.stat_name.substr(std::strlen(RAStatKeys::CellClearPrefix)));
+                else
+                    label->setCaption(objective.display_label
+                        + (objective.amount > 1 ? " "
+                                    + (stat > objective.amount ? std::to_string(objective.amount)
+                                                               : std::to_string(stat))
+                                    + "/" + std::to_string(objective.amount)
+                                                : ""));
                 if (stat > 0 and objective.amount > 1 and !completed)
                     label->setTextColour(MyGUI::Colour(1.0f, 0.84f, 0.0f, 0.5f));
                 else

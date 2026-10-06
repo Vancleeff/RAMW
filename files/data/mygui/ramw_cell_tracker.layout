@@ -1,0 +1,5 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<MyGUI type="Layout">
+    <Widget type="Widget" skin="PanelEmpty" layer="HUD" position="0 0 260 200" name="_Main">
+    </Widget>
+</MyGUI>

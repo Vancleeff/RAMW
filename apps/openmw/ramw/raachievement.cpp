@@ -9,7 +9,9 @@
 #include "ratriggerkill.hpp"
 #include "ratriggerlockpick.hpp"
 #include "ratriggerharvest.hpp"
+#include "ratriggercellclear.hpp"
 #include "ratriggerloot.hpp"
+#include "ratriggerdiscovery.hpp"
 #include <components/debug/debuglog.hpp>
 #include <yaml-cpp/yaml.h>
 
@@ -93,6 +95,7 @@ namespace RAMW
                         objective.stat_name = obj["stat_name"].as<std::string>("");
                         objective.display_label = obj["display_label"].as<std::string>("");
                         objective.amount = obj["amount"].as<int>(1);
+                        objective.group = obj["group"].as<std::string>("");
                         info.objectives.push_back(objective);
                     }
                 }
@@ -115,6 +118,10 @@ namespace RAMW
                         info.trigger = std::make_unique<RATriggerHarvest>();
                     else if (triggerType == "Loot")
                         info.trigger = std::make_unique<RATriggerLoot>();
+                    else if (triggerType == "CellClear")
+                        info.trigger = std::make_unique<RATriggerCellClear>();
+                    else if (triggerType == "Discovery")
+                        info.trigger = std::make_unique<RATriggerDiscovery>();
                 }
 
                 mAchievements[info.id] = std::move(info);
