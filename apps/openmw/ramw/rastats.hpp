@@ -23,6 +23,7 @@ namespace RAMW
         inline constexpr const char* GoldLooted = "gold_looted";
         inline constexpr const char* QuestsFinished = "quests_finished";
         inline constexpr const char* LockpickCount = "lockpick_count";
+        inline constexpr const char* CellUnlockedPrefix = "cellunlocked_";
         inline constexpr const char* BooksRead = "books_read";
         inline constexpr const char* SkillBooksRead = "skillbooks_read";
         inline constexpr const char* CreatureKillPrefix = "creature_kill_";
@@ -34,6 +35,7 @@ namespace RAMW
         inline constexpr const char* LootPrefix = "loot_";
         inline constexpr const char* InventoryPrefix = "inv_";
         inline constexpr const char* CellClearPrefix = "cellclear_";
+        inline constexpr const char* CellLootPrefix = "cellloot_";
         inline constexpr const char* LocationsDiscovered = "locations_discovered";
         inline constexpr const char* DiscoveryPrefix = "discovered_";
     }
@@ -56,9 +58,9 @@ namespace RAMW
 
         static void kill(const std::string& targetId, bool isNpc);
         static void readBook(const std::string& bookId, bool isSkillBook = false);
-        
+
         static const std::map<std::string, int>& getAllStats();
-        
+
     private:
         struct ProgressEntry
         {

@@ -903,13 +903,13 @@
     ]
   },
   {
-    "id": "TEST_SAMARYS",
+    "id": "TOMB_BITTER_COAST",
     "parent_id": "",
-    "name": "Bitter Coast Tomb Raiser",
+    "name": "Bitter Coast Tomb Raider",
     "description": "Clear every Ancestral Tombs on the Bitter Coast",
     "points": 5,
     "icon": "random",
-    "category": "Misc",
+    "category": "Exploration",
     "order": 35,
     "target_value": 0,
     "tracked_stat": "",
@@ -937,34 +937,831 @@
         "group": "g1"
       },
       {
-        "stat_name": "cellclear_Alas Ancestral Tomb",
-        "display_label": "Clear Alas Ancestral Tomb",
+        "stat_name": "cellclear_Heran Ancestral Tomb",
+        "display_label": "Clear Heran Ancestral Tomb",
         "amount": 1,
         "group": "g2"
       },
       {
-        "stat_name": "cellclear_Alen Ancestral Tomb",
-        "display_label": "Clear Alen Ancestral Tomb",
+        "stat_name": "loot_bookskill_light armor5",
+        "display_label": "Find 36 Lessons of Vivec, Sermon 28",
+        "amount": 1,
+        "group": "g2"
+      },
+      {
+        "stat_name": "cellclear_Norvayn Ancestral Tomb",
+        "display_label": "Clear Norvayn Ancestral Tomb",
         "amount": 1,
         "group": "g3"
       },
       {
+        "stat_name": "cellunlocked_Norvayn Ancestral Tomb",
+        "display_label": "Unlock everything in Norvayn Ancestral Tomb",
+        "amount": 1,
+        "group": "g3"
+      },
+      {
+        "stat_name": "cellclear_Sarys Ancestral Tomb",
+        "display_label": "Clear Sarys Ancestral Tomb",
+        "amount": 1,
+        "group": "g4"
+      },
+      {
+        "stat_name": "cellunlocked_Sarys Ancestral Tomb",
+        "display_label": "Unlock everything in Sarys Ancestral Tomb",
+        "amount": 1,
+        "group": "g4"
+      },
+      {
+        "stat_name": "cellclear_Thelas Ancestral Tomb",
+        "display_label": "Clear Thelas Ancestral Tomb",
+        "amount": 1,
+        "group": "g5"
+      },
+      {
+        "stat_name": "cellunlocked_Thelas Ancestral Tomb",
+        "display_label": "Unlock everything in Thelas Ancestral Tomb",
+        "amount": 1,
+        "group": "g5"
+      }
+    ]
+  },
+  {
+    "id": "SLAVE_1",
+    "parent_id": "",
+    "name": "Good Samaritan",
+    "description": "Save at least 5 slaves",
+    "points": 2,
+    "icon": "random",
+    "category": "Misc",
+    "order": 36,
+    "target_value": 0,
+    "tracked_stat": "",
+    "notification_step": 1,
+    "trigger": {
+      "type": "Global"
+    },
+    "objectives": [
+      {
+        "stat_name": "global_freedslavescounter",
+        "display_label": "Slaves freed",
+        "amount": 5
+      }
+    ]
+  },
+  {
+    "id": "TOMB_ASHLANDS",
+    "parent_id": "",
+    "name": "Ashlands Tomb Raider",
+    "description": "Clear every Ancestral Tomb in the Ashlands",
+    "points": 25,
+    "icon": "random",
+    "category": "Exploration",
+    "order": 37,
+    "target_value": 0,
+    "tracked_stat": "",
+    "notification_step": 1,
+    "trigger": {
+      "type": "CellClear"
+    },
+    "objectives": [
+      {
+        "stat_name": "cellclear_Aryon Ancestral Tomb",
+        "display_label": "Clear Aryon Ancestral Tomb",
+        "amount": 1,
+        "group": "g1"
+      },
+      {
+        "stat_name": "cellloot_aryon ancestral tomb_bookskill_alteration5",
+        "display_label": "Find The Lunar Lorkhan",
+        "amount": 1,
+        "group": "g1"
+      },
+      {
+        "stat_name": "cellclear_Dareleth Ancestral Tomb",
+        "display_label": "Clear Dareleth Ancestral Tomb",
+        "amount": 1,
+        "group": "g2"
+      },
+      {
+        "stat_name": "cellloot_dareleth ancestral tomb_bk_ancestorsandthedunmer",
+        "display_label": "Find Ancestors and the Dunmer",
+        "amount": 1,
+        "group": "g2"
+      },
+      {
+        "stat_name": "cellclear_Drath Ancestral Tomb",
+        "display_label": "Clear Drath Ancestral Tomb",
+        "amount": 1,
+        "group": "g3"
+      },
+      {
+        "stat_name": "cellloot_drath ancestral tomb_bookskill_blunt weapon1",
+        "display_label": "Find The Hope of the Redoran",
+        "amount": 1,
+        "group": "g3"
+      },
+      {
+        "stat_name": "cellclear_Drinith Ancestral Tomb",
+        "display_label": "Clear Drinith Ancestral Tomb",
+        "amount": 1,
+        "group": "g4"
+      },
+      {
+        "stat_name": "cellloot_drinith ancestral tomb_bookskill_short blade5",
+        "display_label": "Find 36 Lessons of Vivec, Sermon 30",
+        "amount": 1,
+        "group": "g4"
+      },
+      {
+        "stat_name": "cellclear_Fadathram Ancestral Tomb",
+        "display_label": "Clear Fadathram Ancestral Tomb",
+        "amount": 1,
+        "group": "g5"
+      },
+      {
+        "stat_name": "cellloot_fadathram ancestral tomb_bonemold_tshield_redoranguard",
+        "display_label": "Find Redoran Guard Shield",
+        "amount": 1,
+        "group": "g5"
+      },
+      {
+        "stat_name": "cellclear_Helas Ancestral Tomb",
+        "display_label": "Clear Helas Ancestral Tomb",
+        "amount": 1,
+        "group": "g6"
+      },
+      {
+        "stat_name": "cellloot_helas ancestral tomb_bookskill_sneak5",
+        "display_label": "Find 36 Lessons of Vivec, Sermon 26",
+        "amount": 1,
+        "group": "g6"
+      },
+      {
+        "stat_name": "cellloot_helas ancestral tomb_bookskill_unarmored5",
+        "display_label": "Find 36 Lessons of Vivec, Sermon 34",
+        "amount": 1,
+        "group": "g6"
+      },
+      {
+        "stat_name": "cellclear_Indaren Ancestral Tomb",
+        "display_label": "Clear Indaren Ancestral Tomb",
+        "amount": 1,
+        "group": "g7"
+      },
+      {
+        "stat_name": "cellloot_indaren ancestral tomb_ingred_dae_cursed_emerald_01",
+        "display_label": "Find Emerald",
+        "amount": 1,
+        "group": "g7"
+      },
+      {
+        "stat_name": "cellclear_Llando Ancestral Tomb",
+        "display_label": "Clear Llando Ancestral Tomb",
+        "amount": 1,
+        "group": "g8"
+      },
+      {
+        "stat_name": "cellloot_llando ancestral tomb_sc_celerity",
+        "display_label": "Find Scroll of Celerity",
+        "amount": 1,
+        "group": "g8"
+      },
+      {
+        "stat_name": "cellclear_Omalen Ancestral Tomb",
+        "display_label": "Clear Omalen Ancestral Tomb",
+        "amount": 1,
+        "group": "g9"
+      },
+      {
+        "stat_name": "cellloot_omalen ancestral tomb_bk_homiliesofblessedalmalexia",
+        "display_label": "Find Homilies of Blessed Almalexia",
+        "amount": 1,
+        "group": "g9"
+      },
+      {
+        "stat_name": "cellloot_omalen ancestral tomb_bookskill_block1",
+        "display_label": "Find Death Blow of Abernanit",
+        "amount": 1,
+        "group": "g9"
+      },
+      {
+        "stat_name": "cellloot_omalen ancestral tomb_sc_indie",
+        "display_label": "Find A dying man's last words",
+        "amount": 1,
+        "group": "g9"
+      },
+      {
+        "stat_name": "cellclear_Rothan Ancestral Tomb",
+        "display_label": "Clear Rothan Ancestral Tomb",
+        "amount": 1,
+        "group": "g10"
+      },
+      {
+        "stat_name": "cellclear_Salvel Ancestral Tomb",
+        "display_label": "Clear Salvel Ancestral Tomb",
+        "amount": 1,
+        "group": "g11"
+      },
+      {
+        "stat_name": "cellloot_salvel ancestral tomb_bk_doorsofthespirit",
+        "display_label": "Find The Doors of the Spirit",
+        "amount": 1,
+        "group": "g11"
+      },
+      {
+        "stat_name": "cellloot_salvel ancestral tomb_dust_adept_helm",
+        "display_label": "Find Telvanni Dust Adept Helm",
+        "amount": 1,
+        "group": "g11"
+      },
+      {
+        "stat_name": "cellclear_Sandus Ancestral Tomb",
+        "display_label": "Clear Sandus Ancestral Tomb",
+        "amount": 1,
+        "group": "g12"
+      },
+      {
+        "stat_name": "cellloot_sandus ancestral tomb_bonemold_chuzei_helm",
+        "display_label": "Find Native Chuzei Bonemold Helm",
+        "amount": 1,
+        "group": "g12"
+      },
+      {
+        "stat_name": "cellclear_Thalas Ancestral Tomb",
+        "display_label": "Clear Thalas Ancestral Tomb",
+        "amount": 1,
+        "group": "g13"
+      },
+      {
+        "stat_name": "cellloot_thalas ancestral tomb_bk_overviewofgodsandworship",
+        "display_label": "Find Overview of Gods and Worship",
+        "amount": 1,
+        "group": "g13"
+      }
+    ]
+  },
+  {
+    "id": "TOMB_AZURA_COAST",
+    "parent_id": "",
+    "name": "Azura's Coast Tomb Raider",
+    "description": "Clear every Ancestral Tomb on Azura's Coast",
+    "points": 25,
+    "icon": "random",
+    "category": "Exploration",
+    "order": 38,
+    "target_value": 0,
+    "tracked_stat": "",
+    "notification_step": 1,
+    "trigger": {
+      "type": "CellClear"
+    },
+    "objectives": [
+      {
         "stat_name": "cellclear_Andalen Ancestral Tomb",
         "display_label": "Clear Andalen Ancestral Tomb",
         "amount": 1,
-        "group": "g4"
+        "group": "g1"
+      },
+      {
+        "stat_name": "cellclear_Andas Ancestral Tomb",
+        "display_label": "Clear Andas Ancestral Tomb",
+        "amount": 1,
+        "group": "g2"
       },
       {
         "stat_name": "cellclear_Arano Ancestral Tomb",
         "display_label": "Clear Arano Ancestral Tomb",
         "amount": 1,
+        "group": "g3"
+      },
+      {
+        "stat_name": "cellclear_Arenim Ancestral Tomb",
+        "display_label": "Clear Arenim Ancestral Tomb",
+        "amount": 1,
+        "group": "g4"
+      },
+      {
+        "stat_name": "cellclear_Arys Ancestral Tomb",
+        "display_label": "Clear Arys Ancestral Tomb",
+        "amount": 1,
         "group": "g5"
       },
+      {
+        "stat_name": "cellclear_Baram Ancestral Tomb",
+        "display_label": "Clear Baram Ancestral Tomb",
+        "amount": 1,
+        "group": "g6"
+      },
+      {
+        "stat_name": "cellclear_Beran Ancestral Tomb",
+        "display_label": "Clear Beran Ancestral Tomb",
+        "amount": 1,
+        "group": "g7"
+      },
+      {
+        "stat_name": "cellclear_Dreloth Ancestral Tomb",
+        "display_label": "Clear Dreloth Ancestral Tomb",
+        "amount": 1,
+        "group": "g8"
+      },
+      {
+        "stat_name": "cellclear_Hlaalu Ancestral Tomb",
+        "display_label": "Clear Hlaalu Ancestral Tomb",
+        "amount": 1,
+        "group": "g9"
+      },
+      {
+        "stat_name": "cellclear_Hlervi Ancestral Tomb",
+        "display_label": "Clear Hlervi Ancestral Tomb",
+        "amount": 1,
+        "group": "g10"
+      },
+      {
+        "stat_name": "cellclear_Hlervu Ancestral Tomb",
+        "display_label": "Clear Hlervu Ancestral Tomb",
+        "amount": 1,
+        "group": "g11"
+      },
+      {
+        "stat_name": "cellclear_Marvani Ancestral Tomb",
+        "display_label": "Clear Marvani Ancestral Tomb",
+        "amount": 1,
+        "group": "g12"
+      },
+      {
+        "stat_name": "cellclear_Omaren Ancestral Tomb",
+        "display_label": "Clear Omaren Ancestral Tomb",
+        "amount": 1,
+        "group": "g13"
+      },
+      {
+        "stat_name": "cellclear_Ravel Ancestral Tomb",
+        "display_label": "Clear Ravel Ancestral Tomb",
+        "amount": 1,
+        "group": "g14"
+      },
+      {
+        "stat_name": "cellclear_Redas Ancestral Tomb",
+        "display_label": "Clear Redas Ancestral Tomb",
+        "amount": 1,
+        "group": "g15"
+      },
+      {
+        "stat_name": "cellclear_Releth Ancestral Tomb",
+        "display_label": "Clear Releth Ancestral Tomb",
+        "amount": 1,
+        "group": "g16"
+      },
+      {
+        "stat_name": "cellclear_Sadryon Ancestral Tomb",
+        "display_label": "Clear Sadryon Ancestral Tomb",
+        "amount": 1,
+        "group": "g17"
+      },
+      {
+        "stat_name": "cellclear_Savel Ancestral Tomb",
+        "display_label": "Clear Savel Ancestral Tomb",
+        "amount": 1,
+        "group": "g18"
+      },
+      {
+        "stat_name": "cellclear_Tukushapal",
+        "display_label": "Clear Tukushapal",
+        "amount": 1,
+        "group": "g19"
+      },
+      {
+        "stat_name": "cellclear_Verelnim Ancestral Tomb",
+        "display_label": "Clear Verelnim Ancestral Tomb",
+        "amount": 1,
+        "group": "g20"
+      }
+    ]
+  },
+  {
+    "id": "TOMB_WEST_GASH",
+    "parent_id": "",
+    "name": "West Gash Tomb Raider",
+    "description": "Clear every Ancestral Tomb in the West Gash",
+    "points": 25,
+    "icon": "random",
+    "category": "Exploration",
+    "order": 39,
+    "target_value": 0,
+    "tracked_stat": "",
+    "notification_step": 1,
+    "trigger": {
+      "type": "CellClear"
+    },
+    "objectives": [
+      {
+        "stat_name": "cellclear_Alen Ancestral Tomb",
+        "display_label": "Clear Alen Ancestral Tomb",
+        "amount": 1,
+        "group": "g1"
+      },
+      {
+        "stat_name": "cellclear_Andrethi Ancestral Tomb",
+        "display_label": "Clear Andrethi Ancestral Tomb",
+        "amount": 1,
+        "group": "g2"
+      },
+      {
+        "stat_name": "cellclear_Falas Ancestral Tomb",
+        "display_label": "Clear Falas Ancestral Tomb",
+        "amount": 1,
+        "group": "g3"
+      },
+      {
+        "stat_name": "cellclear_Ginith Ancestral Tomb",
+        "display_label": "Clear Ginith Ancestral Tomb",
+        "amount": 1,
+        "group": "g4"
+      },
+      {
+        "stat_name": "cellclear_Heleran Ancestral Tomb",
+        "display_label": "Clear Heleran Ancestral Tomb",
+        "amount": 1,
+        "group": "g5"
+      },
+      {
+        "stat_name": "cellclear_Hleran Ancestral Tomb",
+        "display_label": "Clear Hleran Ancestral Tomb",
+        "amount": 1,
+        "group": "g6"
+      },
+      {
+        "stat_name": "cellclear_Indalen Ancestral Tomb",
+        "display_label": "Clear Indalen Ancestral Tomb",
+        "amount": 1,
+        "group": "g7"
+      },
+      {
+        "stat_name": "cellclear_Llervu Ancestral Tomb",
+        "display_label": "Clear Llervu Ancestral Tomb",
+        "amount": 1,
+        "group": "g8"
+      },
+      {
+        "stat_name": "cellclear_Randas Ancestral Tomb",
+        "display_label": "Clear Randas Ancestral Tomb",
+        "amount": 1,
+        "group": "g9"
+      },
+      {
+        "stat_name": "cellclear_Reloth Ancestral Tomb",
+        "display_label": "Clear Reloth Ancestral Tomb",
+        "amount": 1,
+        "group": "g10"
+      },
+      {
+        "stat_name": "cellclear_Rethandus Ancestral Tomb",
+        "display_label": "Clear Rethandus Ancestral Tomb",
+        "amount": 1,
+        "group": "g11"
+      },
+      {
+        "stat_name": "cellclear_Salothan Ancestral Tomb",
+        "display_label": "Clear Salothan Ancestral Tomb",
+        "amount": 1,
+        "group": "g12"
+      },
+      {
+        "stat_name": "cellclear_Salothran Ancestral Tomb",
+        "display_label": "Clear Salothran Ancestral Tomb",
+        "amount": 1,
+        "group": "g13"
+      },
+      {
+        "stat_name": "cellclear_Sarethi Ancestral Tomb",
+        "display_label": "Clear Sarethi Ancestral Tomb",
+        "amount": 1,
+        "group": "g14"
+      },
+      {
+        "stat_name": "cellclear_Seran Ancestral Tomb",
+        "display_label": "Clear Seran Ancestral Tomb",
+        "amount": 1,
+        "group": "g15"
+      },
+      {
+        "stat_name": "cellclear_Telvayn Ancestral Tomb",
+        "display_label": "Clear Telvayn Ancestral Tomb",
+        "amount": 1,
+        "group": "g16"
+      },
+      {
+        "stat_name": "cellclear_Tharys Ancestral Tomb",
+        "display_label": "Clear Tharys Ancestral Tomb",
+        "amount": 1,
+        "group": "g17"
+      },
+      {
+        "stat_name": "cellclear_Uveran Ancestral Tomb",
+        "display_label": "Clear Uveran Ancestral Tomb",
+        "amount": 1,
+        "group": "g18"
+      },
+      {
+        "stat_name": "cellclear_Veloth Ancestral Tomb",
+        "display_label": "Clear Veloth Ancestral Tomb",
+        "amount": 1,
+        "group": "g19"
+      }
+    ]
+  },
+  {
+    "id": "TOMB_ASCADIAN_ISLES",
+    "parent_id": "",
+    "name": "Ascadian Isles Tomb Raider",
+    "description": "Clear every Ancestral Tomb in the Ascadian Isles",
+    "points": 5,
+    "icon": "random",
+    "category": "Exploration",
+    "order": 40,
+    "target_value": 0,
+    "tracked_stat": "",
+    "notification_step": 1,
+    "trigger": {
+      "type": "CellClear"
+    },
+    "objectives": [
       {
         "stat_name": "cellclear_Andrano Ancestral Tomb",
         "display_label": "Clear Andrano Ancestral Tomb",
         "amount": 1,
+        "group": "g1"
+      },
+      {
+        "stat_name": "cellclear_Lleran Ancestral Tomb",
+        "display_label": "Clear Lleran Ancestral Tomb",
+        "amount": 1,
+        "group": "g2"
+      },
+      {
+        "stat_name": "cellclear_Sandas Ancestral Tomb",
+        "display_label": "Clear Sandas Ancestral Tomb",
+        "amount": 1,
+        "group": "g3"
+      },
+      {
+        "stat_name": "cellclear_Sarano Ancestral Tomb",
+        "display_label": "Clear Sarano Ancestral Tomb",
+        "amount": 1,
+        "group": "g4"
+      }
+    ]
+  },
+  {
+    "id": "TOMB_GRAZELANDS",
+    "parent_id": "",
+    "name": "Grazelands Tomb Raider",
+    "description": "Clear every Ancestral Tomb in the Grazelands",
+    "points": 10,
+    "icon": "random",
+    "category": "Exploration",
+    "order": 41,
+    "target_value": 0,
+    "tracked_stat": "",
+    "notification_step": 1,
+    "trigger": {
+      "type": "CellClear"
+    },
+    "objectives": [
+      {
+        "stat_name": "cellclear_Andalor Ancestral Tomb",
+        "display_label": "Clear Andalor Ancestral Tomb",
+        "amount": 1,
+        "group": "g1"
+      },
+      {
+        "stat_name": "cellclear_Aralen Ancestral Tomb",
+        "display_label": "Clear Aralen Ancestral Tomb",
+        "amount": 1,
+        "group": "g2"
+      },
+      {
+        "stat_name": "cellclear_Favel Ancestral Tomb",
+        "display_label": "Clear Favel Ancestral Tomb",
+        "amount": 1,
+        "group": "g3"
+      },
+      {
+        "stat_name": "cellclear_Ienith Ancestral Tomb",
+        "display_label": "Clear Ienith Ancestral Tomb",
+        "amount": 1,
+        "group": "g4"
+      },
+      {
+        "stat_name": "cellclear_Nerano Ancestral Tomb",
+        "display_label": "Clear Nerano Ancestral Tomb",
+        "amount": 1,
+        "group": "g5"
+      },
+      {
+        "stat_name": "cellclear_Sethan Ancestral Tomb",
+        "display_label": "Clear Sethan Ancestral Tomb",
+        "amount": 1,
         "group": "g6"
+      },
+      {
+        "stat_name": "cellclear_Thiralas Ancestral Tomb",
+        "display_label": "Clear Thiralas Ancestral Tomb",
+        "amount": 1,
+        "group": "g7"
+      },
+      {
+        "stat_name": "cellclear_Venim Ancestral Tomb",
+        "display_label": "Clear Venim Ancestral Tomb",
+        "amount": 1,
+        "group": "g8"
+      }
+    ]
+  },
+  {
+    "id": "TOMB_MOLAG_AMUR",
+    "parent_id": "",
+    "name": "Molag Amur Tomb Raider",
+    "description": "Clear every Ancestral Tomb in Molag Amur",
+    "points": 10,
+    "icon": "random",
+    "category": "Exploration",
+    "order": 42,
+    "target_value": 0,
+    "tracked_stat": "",
+    "notification_step": 1,
+    "trigger": {
+      "type": "CellClear"
+    },
+    "objectives": [
+      {
+        "stat_name": "cellclear_Andules Ancestral Tomb",
+        "display_label": "Clear Andules Ancestral Tomb",
+        "amount": 1,
+        "group": "g1"
+      },
+      {
+        "stat_name": "cellclear_Aran Ancestral Tomb",
+        "display_label": "Clear Aran Ancestral Tomb",
+        "amount": 1,
+        "group": "g2"
+      },
+      {
+        "stat_name": "cellclear_Arethan Ancestral Tomb",
+        "display_label": "Clear Arethan Ancestral Tomb",
+        "amount": 1,
+        "group": "g3"
+      },
+      {
+        "stat_name": "cellclear_Dulo Ancestral Tomb",
+        "display_label": "Clear Dulo Ancestral Tomb",
+        "amount": 1,
+        "group": "g4"
+      },
+      {
+        "stat_name": "cellclear_Gimothran Ancestral Tomb",
+        "display_label": "Clear Gimothran Ancestral Tomb",
+        "amount": 1,
+        "group": "g5"
+      },
+      {
+        "stat_name": "cellclear_Helan Ancestral Tomb",
+        "display_label": "Clear Helan Ancestral Tomb",
+        "amount": 1,
+        "group": "g6"
+      },
+      {
+        "stat_name": "cellclear_Maren Ancestral Tomb",
+        "display_label": "Clear Maren Ancestral Tomb",
+        "amount": 1,
+        "group": "g7"
+      },
+      {
+        "stat_name": "cellclear_Raviro Ancestral Tomb",
+        "display_label": "Clear Raviro Ancestral Tomb",
+        "amount": 1,
+        "group": "g8"
+      },
+      {
+        "stat_name": "cellclear_Serano Ancestral Tomb",
+        "display_label": "Clear Serano Ancestral Tomb",
+        "amount": 1,
+        "group": "g9"
+      },
+      {
+        "stat_name": "cellclear_Vandus Ancestral Tomb",
+        "display_label": "Clear Vandus Ancestral Tomb",
+        "amount": 1,
+        "group": "g10"
+      },
+      {
+        "stat_name": "cellclear_Velas Ancestral Tomb",
+        "display_label": "Clear Velas Ancestral Tomb",
+        "amount": 1,
+        "group": "g11"
+      }
+    ]
+  },
+  {
+    "id": "TOMB_SHEOGORAD",
+    "parent_id": "",
+    "name": "Sheogorad Tomb Raider",
+    "description": "Clear every Ancestral Tomb in Sheogorad",
+    "points": 10,
+    "icon": "random",
+    "category": "Exploration",
+    "order": 43,
+    "target_value": 0,
+    "tracked_stat": "",
+    "notification_step": 1,
+    "trigger": {
+      "type": "CellClear"
+    },
+    "objectives": [
+      {
+        "stat_name": "cellclear_Andavel Ancestral Tomb",
+        "display_label": "Clear Andavel Ancestral Tomb",
+        "amount": 1,
+        "group": "g1"
+      },
+      {
+        "stat_name": "cellclear_Ashmelech",
+        "display_label": "Clear Ashmelech",
+        "amount": 1,
+        "group": "g2"
+      },
+      {
+        "stat_name": "cellclear_Dralas Ancestral Tomb",
+        "display_label": "Clear Dralas Ancestral Tomb",
+        "amount": 1,
+        "group": "g3"
+      },
+      {
+        "stat_name": "cellclear_Drethan Ancestral Tomb",
+        "display_label": "Clear Drethan Ancestral Tomb",
+        "amount": 1,
+        "group": "g4"
+      },
+      {
+        "stat_name": "cellclear_Nelas Ancestral Tomb",
+        "display_label": "Clear Nelas Ancestral Tomb",
+        "amount": 1,
+        "group": "g5"
+      },
+      {
+        "stat_name": "cellclear_Orethi Ancestral Tomb",
+        "display_label": "Clear Orethi Ancestral Tomb",
+        "amount": 1,
+        "group": "g6"
+      },
+      {
+        "stat_name": "cellclear_Senim Ancestral Tomb",
+        "display_label": "Clear Senim Ancestral Tomb",
+        "amount": 1,
+        "group": "g7"
+      }
+    ]
+  },
+  {
+    "id": "TOMB_VIVEC",
+    "parent_id": "",
+    "name": "Vivec Tomb Raider",
+    "description": "Clear every tomb hidden beneath Vivec",
+    "points": 5,
+    "icon": "random",
+    "category": "Exploration",
+    "order": 44,
+    "target_value": 0,
+    "tracked_stat": "",
+    "notification_step": 1,
+    "trigger": {
+      "type": "CellClear"
+    },
+    "objectives": [
+      {
+        "stat_name": "cellclear_Vivec, Foreign Quarter Tomb",
+        "display_label": "Clear Vivec, Foreign Quarter Tomb",
+        "amount": 1,
+        "group": "g1"
+      },
+      {
+        "stat_name": "cellclear_Vivec, Hlaalu Ancestral Vaults",
+        "display_label": "Clear Vivec, Hlaalu Ancestral Vaults",
+        "amount": 1,
+        "group": "g2"
+      },
+      {
+        "stat_name": "cellclear_Vivec, Redoran Ancestral Vaults",
+        "display_label": "Clear Vivec, Redoran Ancestral Vaults",
+        "amount": 1,
+        "group": "g3"
+      },
+      {
+        "stat_name": "cellclear_Othrelas Ancestral Tomb",
+        "display_label": "Clear Othrelas Ancestral Tomb",
+        "amount": 1,
+        "group": "g4"
       }
     ]
   }

@@ -13,25 +13,39 @@ namespace MyGUI
     class Widget;
 }
 
+namespace MWWorld
+{
+    class CellStore;
+}
+
 namespace RAMW
 {
     struct AchievementData;
 
-    /// Non-intrusive HUD overlay listing the objectives of the achievement
-    /// attached to the cell the player currently stands in.
+    /// HUD overlay listing the objectives of location achievement
     class RACellTracker : public MWGui::WindowBase
     {
     public:
         RACellTracker();
 
-        /// Shows the tracker for the given cell, or fades it out when no
-        /// achievement covers that cell.
-        void setCell(const std::string& cellName);
+        void setCell(const std::string& cellName, MWWorld::CellStore* cell);
 
         void update(float dt);
         void refresh();
 
         void onFrame(float dt) override { update(dt); }
+        bool inTrackedCell(const std::string& statName) const;
+
+        /// How much of a cell objective is left, and how much there was to begin
+        /// with, so the overlay can show a done/total.
+        struct CellCount
+        {
+            int remaining = 0;
+            int total = 0;
+        };
+
+        CellCount countLivingActors(MWWorld::CellStore* cell) const;
+        CellCount countLockedContainers(MWWorld::CellStore* cell) const;
 
     private:
         struct Line
@@ -39,6 +53,8 @@ namespace RAMW
             std::string label;
             int current = 0;
             int target = 1;
+            int remaining = -1;
+            int cellTotal = 0;
         };
 
         void rebuildLines();
@@ -47,6 +63,7 @@ namespace RAMW
                                 int fontHeight, const MyGUI::Colour& colour);
 
         std::string mCellName;
+        MWWorld::CellStore* mCell = nullptr;
         const AchievementData* mTracked = nullptr;
         std::vector<Line> mLines;
         std::vector<MyGUI::Widget*> mCreatedWidgets;

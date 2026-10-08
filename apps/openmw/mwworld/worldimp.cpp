@@ -106,6 +106,8 @@
 #include "contentloader.hpp"
 #include "esmloader.hpp"
 
+#include "../ramw/raeventprocessor.hpp" //RAMW integration
+
 namespace MWWorld
 {
     namespace
@@ -531,6 +533,8 @@ namespace MWWorld
     {
         mTimeManager->updateGlobalInt(name, value);
         mGlobalVariables[name].setInteger(value);
+
+        RAMW::RAEventProcessor::onGlobalChanged(name.getValue(), value); // RAMW hook for global changes
     }
 
     void World::setGlobalFloat(GlobalVariableName name, float value)

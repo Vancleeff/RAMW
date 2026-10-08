@@ -114,7 +114,7 @@ namespace RAMW
                 std::string creatureRefIdStr = statName.substr(14);
                 std::string displayName = getCreatureDisplayName(creatureRefIdStr);
 
-                killsByName[displayName] += value; 
+                killsByName[displayName] += value;
             }
         }
 
@@ -159,11 +159,6 @@ namespace RAMW
     {
         int screenWidth = MyGUI::RenderManager::getInstance().getViewSize().width;
         int contentWidth = windowWidth;
-
-        Log(Debug::Info) << "[RAMW] ScrollView width: " << mScrollView->getWidth()
-                         << " canvasSize: " << mScrollView->getCanvasSize().width << " windowWidth var: " << windowWidth
-                         << " mainWidget width: " << mMainWidget->getWidth();
-
         MyGUI::TextBox* header = mScrollView->createWidget<MyGUI::TextBox>(
             "SandText", MyGUI::IntCoord(10, yPos, contentWidth - 20, 24), MyGUI::Align::Left | MyGUI::Align::Top);
         header->setCaption("Stats");
@@ -179,9 +174,10 @@ namespace RAMW
             std::string displayLabel;
         };
 
-        //based on RAstats names
+        // based on RAstats names
         std::vector<StatDisplay> statsToDisplay = {
             { "quests_finished", "Quests Finished" },
+            { "locations_discovered", "Locations Discovered" },
             { "kill_creature_total", "Total Creatures Killed" },
             { "kill_npc_total", "Total NPC Killed" },
             { "lockpick_count", "Container Lockpicked" },

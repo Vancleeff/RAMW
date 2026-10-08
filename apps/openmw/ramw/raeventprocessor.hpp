@@ -2,6 +2,7 @@
 #define RAMW_RAEVENTPROCESSOR_HPP
 
 #include <string>
+#include <unordered_set>
 #include "../mwworld/ptr.hpp"
 #include "ratriggers.hpp"
 
@@ -49,17 +50,19 @@ namespace RAMW
         static void onHarvest(const std::string& plantId);
         static void onContainerClosed(const MWWorld::Ptr& container);
         static void onLocationDiscovered(const std::string& locationName);
-        static void evaluateCellClear(const RATriggerContext& ctx);
+        static void onGlobalChanged(std::string_view name, int value);
 
+        static void evaluateCellClear(const RATriggerContext& ctx);
         static void setOnEventCallback(std::function<void()> callback);
         static void setOntrackedCallback(std::function<void()> callback);
 
-        static int countEnemiesInCell(MWWorld::CellStore* cell);
-
+        // rebuild the set of globals we need to track, based on the achievements json
+        static void rebuildTrackedGlobals();
 
     private:
         static std::function<void()> mOnEventCallback;
         static std::function<void()> mOntrackedCallback;
+        static std::unordered_set<std::string> sTrackedGlobals;
     };
 
 }

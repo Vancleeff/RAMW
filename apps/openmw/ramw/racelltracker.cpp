@@ -9,14 +9,39 @@
 #include <MyGUI_TextBox.h>
 #include <MyGUI_Widget.h>
 
+#include "../mwworld/esmstore.hpp"
+#include <components/debug/debuglog.hpp>
+#include <components/esm3/loadcont.hpp>
+#include <components/esm3/loadcrea.hpp>
+#include <components/esm3/loaddoor.hpp>
+#include <components/esm3/loadlevlist.hpp>
+#include <components/esm3/loadnpc.hpp>
+
+#include "../mwbase/environment.hpp"
+#include "../mwbase/mechanicsmanager.hpp"
+#include "../mwbase/world.hpp"
+#include "../mwmechanics/creaturestats.hpp"
+#include "../mwworld/cellstore.hpp"
+#include "../mwworld/class.hpp"
+
 #include <algorithm>
 
 namespace RAMW
 {
+    int hostileAt()
+    {
+        static const int base = MWBase::Environment::get()
+                                    .getESMStore()
+                                    ->get<ESM::GameSetting>()
+                                    .find("iFightDistanceBase")
+                                    ->mValue.getInteger();
+        return 100 - base;
+    }
+
     namespace
     {
-        constexpr float sFadeSpeed = 3.0f;   // full fade in about a third of a second
-        constexpr int sWidth = 260;
+        constexpr float sFadeSpeed = 3.0f; // full fade in about a third of a second
+        constexpr int sWidth = 320;
         constexpr int sPadding = 8;
         constexpr int sLineHeight = 20;
         constexpr int sTitleHeight = 24;
@@ -34,12 +59,13 @@ namespace RAMW
         mMainWidget->setAlpha(0.0f);
     }
 
-    void RACellTracker::setCell(const std::string& cellName)
+    void RACellTracker::setCell(const std::string& cellName, MWWorld::CellStore* cell)
     {
         if (cellName == mCellName)
             return;
 
         mCellName = cellName;
+        mCell = cell;
         rebuildLines();
 
         mFadingIn = (mTracked != nullptr);
@@ -88,14 +114,26 @@ namespace RAMW
             line.label = obj.display_label;
             line.target = obj.amount;
             line.current = std::min(RAStats::get(obj.stat_name), obj.amount);
+            if (mCell && obj.stat_name.rfind(RAStatKeys::CellClearPrefix, 0) == 0 && line.current == 0)
+            {
+                const CellCount count = countLivingActors(mCell);
+                line.remaining = count.remaining;
+                line.cellTotal = count.total;
+            }
+            else if (mCell && obj.stat_name.rfind(RAStatKeys::CellUnlockedPrefix, 0) == 0 && line.current == 0)
+            {
+                const CellCount count = countLockedContainers(mCell);
+                line.remaining = count.remaining;
+                line.cellTotal = count.total;
+            }
             mLines.push_back(line);
         }
 
         layoutWidgets();
     }
 
-    MyGUI::TextBox* RACellTracker::addText(const std::string& caption, int x, int y, int w,
-                                           int fontHeight, const MyGUI::Colour& colour)
+    MyGUI::TextBox* RACellTracker::addText(
+        const std::string& caption, int x, int y, int w, int fontHeight, const MyGUI::Colour& colour)
     {
         // Drop shadow first so the text stays readable over any background.
         MyGUI::TextBox* shadow = mMainWidget->createWidget<MyGUI::TextBox>(
@@ -146,7 +184,10 @@ namespace RAMW
 
             std::string caption = done ? "[X] " : "[ ] ";
             caption += line.label;
-            if (line.target > 1)
+            if (line.remaining >= 0 && line.cellTotal > 0)
+                caption
+                    += "  " + std::to_string(line.cellTotal - line.remaining) + "/" + std::to_string(line.cellTotal);
+            else if (line.target > 1)
                 caption += "  " + std::to_string(line.current) + "/" + std::to_string(line.target);
 
             addText(caption, sPadding, y, innerWidth, 15, done ? sDoneColour : sPendingColour);
@@ -180,5 +221,100 @@ namespace RAMW
 
         mMainWidget->setVisible(mAlpha > 0.0f);
         mMainWidget->setAlpha(mAlpha);
+    }
+
+    bool RACellTracker::inTrackedCell(const std::string& statName) const
+    {
+        if (!mTracked)
+            return false;
+
+        for (const AchievementObjective& obj : mTracked->objectives)
+            if (obj.stat_name == statName)
+                return true;
+
+        return false;
+    }
+
+    // Seems very reliable now with levListVisitor included. To test massively.
+    // Could be used to define "clean location x" kind of achievement when no other strict condition is possible.
+    RACellTracker::CellCount RACellTracker::countLivingActors(MWWorld::CellStore* cell) const
+    {
+        CellCount result;
+
+        MWWorld::Ptr player = MWBase::Environment::get().getWorld()->getPlayerPtr();
+
+        auto creatureVisitor = [&](const MWWorld::Ptr& ptr) {
+            if (!MWWorld::CellStore::isAccessible(ptr.getRefData(), ptr.getCellRef()))
+                return true;
+
+            const MWMechanics::CreatureStats& stats = ptr.getClass().getCreatureStats(ptr);
+            const bool dead = stats.isDead();
+
+            const bool hostile = stats.getAiSetting(MWMechanics::AiSetting::Fight).getBase() >= hostileAt()
+                || (!player.isEmpty() && stats.getAiSequence().isInCombat(player));
+
+            if (!dead && !hostile)
+                return true;
+
+            result.total++;
+            if (!dead)
+                result.remaining++;
+            return true;
+        };
+
+        auto levListVisitor = [&](const MWWorld::Ptr& ptr) {
+            if (!MWWorld::CellStore::isAccessible(ptr.getRefData(), ptr.getCellRef()))
+                return true;
+
+            if (ptr.getRefData().getCustomData() != nullptr)
+                return true;
+
+            const MWWorld::ESMStore& store = *MWBase::Environment::get().getESMStore();
+            const ESM::CreatureLevList* list = store.get<ESM::CreatureLevList>().search(ptr.getCellRef().getRefId());
+            if (!list)
+                return true;
+
+            const int playerLevel = player.getClass().getCreatureStats(player).getLevel();
+            const bool canSpawn = std::any_of(list->mList.begin(), list->mList.end(),
+                [&](const ESM::LevelledListBase::LevelItem& e) { return e.mLevel <= playerLevel; });
+
+            if (canSpawn)
+            {
+                result.total++;
+                result.remaining++;
+            }
+            return true;
+        };
+
+        cell->forEachType<ESM::Creature>(creatureVisitor, true);
+        cell->forEachType<ESM::NPC>(creatureVisitor, true);
+        cell->forEachType<ESM::CreatureLevList>(levListVisitor, true);
+
+        return result;
+    }
+
+    RACellTracker::CellCount RACellTracker::countLockedContainers(MWWorld::CellStore* cell) const
+    {
+        CellCount result;
+
+        auto visitor = [&](const MWWorld::Ptr& ptr) {
+            if (!MWWorld::CellStore::isAccessible(ptr.getRefData(), ptr.getCellRef()))
+                return true;
+
+            // unlock() negates the level rather than clearing it, so a non-zero
+            // value means the container had a lock to begin with.
+            if (ptr.getCellRef().getLockLevel() != 0)
+            {
+                result.total++;
+                if (ptr.getCellRef().isLocked())
+                    result.remaining++;
+            }
+            return true;
+        };
+
+        cell->forEachType<ESM::Container>(visitor, true);
+        cell->forEachType<ESM::Door>(visitor, true);
+
+        return result;
     }
 }

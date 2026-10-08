@@ -5,13 +5,16 @@
 #include "rastats.hpp"
 #include "ratriggerQuestComplete.hpp"
 #include "ratriggerQuestProgress.hpp"
+#include "ratriggercellclear.hpp"
+#include "ratriggerdiscovery.hpp"
+#include "ratriggerglobal.hpp"
+#include "ratriggerharvest.hpp"
 #include "ratriggerherostats.hpp"
 #include "ratriggerkill.hpp"
 #include "ratriggerlockpick.hpp"
-#include "ratriggerharvest.hpp"
-#include "ratriggercellclear.hpp"
 #include "ratriggerloot.hpp"
-#include "ratriggerdiscovery.hpp"
+#include "raeventprocessor.hpp"
+
 #include <components/debug/debuglog.hpp>
 #include <yaml-cpp/yaml.h>
 
@@ -49,6 +52,8 @@ namespace RAMW
         // todo getting json from a webserver and define with RA devs how to serve it
 
         Log(Debug::Info) << "[RA Achievement] Loaded " << mAchievements.size() << " achievements";
+
+        RAEventProcessor::rebuildTrackedGlobals();
     }
 
     void RAAchievementManager::loadAchievements(const std::string& path)
@@ -122,6 +127,8 @@ namespace RAMW
                         info.trigger = std::make_unique<RATriggerCellClear>();
                     else if (triggerType == "Discovery")
                         info.trigger = std::make_unique<RATriggerDiscovery>();
+                    else if (triggerType == "Global")
+                        info.trigger = std::make_unique<RATriggerGlobal>();
                 }
 
                 mAchievements[info.id] = std::move(info);
