@@ -11,6 +11,7 @@
 #include "ratriggerloot.hpp"
 #include "ratriggercellclear.hpp"
 #include "ratriggerdiscovery.hpp"
+#include "ratriggerreadbook.hpp"
 #include "ratriggerglobal.hpp"
 #include "racelltracker.hpp"
 #include "radiscoverynotification.hpp"
@@ -83,7 +84,7 @@ namespace RAMW
     {
         if (npcId == "caius cosades")
         {
-            RAAchievementManager::unlock("MQ_1");
+            RAAchievementManager::unlock("MW_MQ_1");
         }
         // todo - migrate to ratriggers
     }
@@ -290,11 +291,11 @@ namespace RAMW
         if (item.getCellRef().getRefId().getRefIdString() != "gold_001")
             RAStats::increment(RAStatKeys::ItemsStolen, count);
 
-        if (init_value < RAAchievementManager::getAchievementData("STEAL_100")->target_value
+        if (init_value < RAAchievementManager::getAchievementData("MW_STEAL_100")->target_value
             && RAStats::get(RAStatKeys::ItemsLooted)
-                >= RAAchievementManager::getAchievementData("STEAL_100")->target_value)
+                >= RAAchievementManager::getAchievementData("MW_STEAL_100")->target_value)
         {
-            RAAchievementManager::unlock("STEAL_100");
+            RAAchievementManager::unlock("MW_STEAL_100");
             // todo - migrate to ratriggers
         }
     }
@@ -304,7 +305,7 @@ namespace RAMW
         Log(Debug::Info) << "[RAMW Events] Pickpocketing succeed : " << item.getCellRef().getRefId() << " x" << count;
         if (item.getCellRef().getRefId().getRefIdString() == "gold_001")
         {
-            RAAchievementManager::unlock("PICK_GOLD");
+            RAAchievementManager::unlock("MW_PICK_GOLD");
             // todo - migrate to ratriggers
         }
     }
@@ -333,19 +334,29 @@ namespace RAMW
 
     void RAEventProcessor::onReadBook(MWWorld::LiveCellRef<ESM::Book>* book)
     {
-        Log(Debug::Info) << "[RAMW Events] Read Book : " << book->mBase->mName
-                         << " (SKILL ID : " << book->mBase->mData.mSkillId;
-        std::string bookId = book->mBase->mId.toString();
-        if (book->mBase->mData.mSkillId && book->mBase->mData.mSkillId != 0xffffffff)
-        {
-            RAStats::readBook(bookId, true);
-            RAAchievementManager::unlock("SKILLBOOK_1");
-            // todo - migrate to ratriggers
-        }
-        else
-            RAStats::readBook(bookId);
+        const std::string bookId = normalizeName(book->mBase->mId.toString());
+        const bool isSkillBook = book->mBase->mData.mSkillId && book->mBase->mData.mSkillId != 0xffffffff;
+        const bool isScroll = book->mBase->mData.mIsScroll != 0;
+
+        if (!RAStats::readBook(bookId, isSkillBook, isScroll))
+            return;
+
+        Log(Debug::Info) << "[RA Events] Read Book - " << book->mBase->mName << " (" << bookId << ")";
+
+        if (isSkillBook)
+            RAAchievementManager::unlock("MW_SKILLBOOK_1"); // todo - migrate to ratriggers
+
+        const std::string key = RAStatKeys::BookReadPrefix + bookId;
+
+        RATriggerContext ctx{ key };
+        for (AchievementData* info : RAAchievementManager::getAchievementsByTrigger<RATriggerReadBook>())
+            if (info->trigger->evaluate(ctx, *info))
+                RAAchievementManager::unlock(info->id);
+
         if (mOnEventCallback)
             mOnEventCallback();
+        if (mOntrackedCallback)
+            mOntrackedCallback();
     }
 
     //Handle harvesting for graphic herbalism mode (one clic harvesting)
