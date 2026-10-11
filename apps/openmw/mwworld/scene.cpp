@@ -695,6 +695,7 @@ namespace MWWorld
 
         CellStore& current = mWorld.getWorldModel().getExterior(playerCellIndex);
         MWBase::Environment::get().getWindowManager()->changeCell(&current);
+        RAMW::RAEventProcessor::onCellEntered(current); //RAMW - hook for player cell change
 
         if (changeEvent)
             mCellChanged = true;
@@ -993,6 +994,7 @@ namespace MWWorld
             MWBase::Environment::get().getWindowManager()->fadeScreenIn(0.5);
 
         MWBase::Environment::get().getWindowManager()->changeCell(mCurrentCell);
+        RAMW::RAEventProcessor::onCellEntered(*mCurrentCell); //RAMW - hook for player cell change
 
         MWBase::Environment::get().getWorld()->getPostProcessor()->setExteriorFlag(cell.getCell()->isQuasiExterior());
     }

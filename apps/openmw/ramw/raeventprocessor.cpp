@@ -11,6 +11,7 @@
 #include "ratriggerloot.hpp"
 #include "ratriggercellclear.hpp"
 #include "ratriggerdiscovery.hpp"
+#include "ratriggerlocation.hpp"
 #include "ratriggerreadbook.hpp"
 #include "ratriggerglobal.hpp"
 #include "racelltracker.hpp"
@@ -330,6 +331,25 @@ namespace RAMW
 
         if (RACore::getCellTracker())
             RACore::getCellTracker()->setCell(std::string(new_cell->getDisplayName()), &cell);
+    }
+
+    void RAEventProcessor::onCellEntered(MWWorld::CellStore& cell)
+    {
+        const std::string cellName(cell.getCell()->getDisplayName());
+        if (cellName.empty())
+            return;
+
+        const std::string key = RATriggerLocation::Prefix + normalizeName(cellName);
+
+        RATriggerContext ctx{ key };
+        for (AchievementData* info : RAAchievementManager::getAchievementsByTrigger<RATriggerLocation>())
+            if (info->trigger->evaluate(ctx, *info))
+                RAAchievementManager::unlock(info->id);
+
+        if (mOnEventCallback)
+            mOnEventCallback();
+        if (mOntrackedCallback)
+            mOntrackedCallback();
     }
 
     void RAEventProcessor::onReadBook(MWWorld::LiveCellRef<ESM::Book>* book)
