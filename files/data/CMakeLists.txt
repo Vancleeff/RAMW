@@ -259,8 +259,9 @@ set(BUILTIN_DATA_FILES
     mygui/openmw_jail_screen.layout
     mygui/ramw_achievement_list.layout
     mygui/ramw_cell_tracker.layout
-    mygui/ramw_stats.layout
     ramw/ramw_achievements.json
+    ramw/ramw_achievements_tribunal.json
+    ramw/ramw_achievements_bloodmoon.json
     mygui/OpenMWResourcePlugin.xml
     mygui/skins.xml
 )

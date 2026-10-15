@@ -8,6 +8,7 @@
 #include <components/debug/debuglog.hpp>
 #include <components/esm3/esmreader.hpp>
 #include <components/esm3/esmwriter.hpp>
+#include <components/esm3/loadcrea.hpp>
 
 namespace RAMW
 {
@@ -40,14 +41,25 @@ namespace RAMW
             auto indexIt = mProgressIndex.find(statName);
             if (indexIt != mProgressIndex.end())
             {
+                // a notification on grouped achievement is triggered only for the current tier
+                const ProgressEntry* tier = nullptr;
                 for (const auto& entry : indexIt->second)
                 {
                     if (RAAchievementManager::isUnlocked(entry.achievementId) || currentValue > entry.target)
                         continue;
+                    if (!tier || entry.target < tier->target)
+                        tier = &entry;
+                }
 
-                    const std::string msg = (entry.target == 1)
-                        ? entry.label + " Completed"
-                        : entry.label + ": " + std::to_string(currentValue) + " / " + std::to_string(entry.target);
+                const AchievementData* info
+                    = tier ? RAAchievementManager::getAchievementData(tier->achievementId) : nullptr;
+                const int step = (info && info->notification_step > 1) ? info->notification_step : 1;
+
+                if (tier && (step == 1 || currentValue % step == 0))
+                {
+                    const std::string msg = (tier->target == 1)
+                        ? tier->label + " Completed"
+                        : tier->label + ": " + std::to_string(currentValue) + " / " + std::to_string(tier->target);
 
                     MWBase::Environment::get().getWindowManager()->scheduleMessageBox(
                         msg, MWGui::ShowInDialogueMode_Never);
@@ -62,6 +74,7 @@ namespace RAMW
     {
         mStats[statName] += amount;
         checkProgressNotification(statName);
+        RAEventProcessor::onStatChanged(statName, mStats[statName]);
         Log(Debug::Verbose) << "[RAMW] Stat incremented: " << statName << " += " << amount
                             << " (now: " << mStats[statName] << ")";
     }
@@ -76,6 +89,7 @@ namespace RAMW
     {
         mStats[statName] = value;
         checkProgressNotification(statName);
+        RAEventProcessor::onStatChanged(statName, value);
         Log(Debug::Verbose) << "[RAMW] Stat set: " << statName << " = " << value;
     }
 
@@ -121,25 +135,45 @@ namespace RAMW
         Log(Debug::Info) << "[RAMW] Loaded " << mStats.size() << " RA stats from save file";
     }
 
-    void RAStats::kill(const std::string& targetId, bool isNpc)
+    void RAStats::kill(const std::string& targetId, bool isNpc, int creatureType)
     {
         increment((isNpc ? RAStatKeys::NpcKillPrefix : RAStatKeys::CreatureKillPrefix) + targetId);
-        std::string statName = isNpc ? RAStatKeys::KillNpcTotal : RAStatKeys::KillCreatureTotal;
-        increment(statName, 1);
+
+        if (isNpc)
+        {
+            increment(RAStatKeys::KillNpcTotal);
+            return;
+        }
+
+        if (creatureType == ESM::Creature::Daedra)
+            increment(RAStatKeys::KillDaedraTotal);
+        else if (creatureType == ESM::Creature::Undead)
+            increment(RAStatKeys::KillUndeadTotal);
+        else if (creatureType == ESM::Creature::Humanoid) // Humanoid != NPC (sixth house mobs mostly)
+            increment(RAStatKeys::KillHumanoidTotal);
+        else
+            increment(RAStatKeys::KillCreatureTotal);
     }
 
-    void RAStats::readBook(const std::string& bookId, bool isSkillBook)
+    bool RAStats::readBook(const std::string& bookId, bool isSkillBook, bool isScroll)
     {
-        if (!get(bookId))
-            return;
+        const std::string key = RAStatKeys::BookReadPrefix + bookId;
 
-        increment(RAStatKeys::BooksRead);
-        set(bookId, 1);
+        if (get(key))
+            return false;
 
-        if (isSkillBook)
+        // We don't count Scroll and note as book but we track them in case of achievement condition
+        set(key, 1);
+
+        if (!isScroll)
         {
-            increment(RAStatKeys::SkillBooksRead);
+            increment(RAStatKeys::BooksRead);
+
+            if (isSkillBook)
+                increment(RAStatKeys::SkillBooksRead);
         }
+
+        return true;
     }
 
     const std::map<std::string, int>& RAStats::getAllStats()
@@ -173,26 +207,7 @@ namespace RAMW
 
     void RAStats::checkProgressNotification(const std::string& statName)
     {
-        auto indexIt = mProgressIndex.find(statName);
-        if (indexIt == mProgressIndex.end())
-            return;
-
-        int currentValue = get(statName);
-        bool shouldNotify = false;
-        for (const auto& entry : indexIt->second)
-        {
-            const AchievementData* info = RAAchievementManager::getAchievementData(entry.achievementId);
-            if (!info)
-                continue;
-            int step = info->notification_step > 1 ? info->notification_step : 1;
-            if (step == 1 or currentValue % step == 0)
-            {
-                shouldNotify = true;
-                break;
-            }
-        }
-
-        if (!shouldNotify)
+        if (mProgressIndex.find(statName) == mProgressIndex.end())
             return;
 
         auto it = mPendingNotifications.find(statName);

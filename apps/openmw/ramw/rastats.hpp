@@ -17,6 +17,9 @@ namespace RAMW
     namespace RAStatKeys
     {
         inline constexpr const char* KillCreatureTotal = "kill_creature_total";
+        inline constexpr const char* KillDaedraTotal = "kill_daedra_total";
+        inline constexpr const char* KillUndeadTotal = "kill_undead_total";
+        inline constexpr const char* KillHumanoidTotal = "kill_humanoid_total";
         inline constexpr const char* KillNpcTotal = "kill_npc_total";
         inline constexpr const char* ItemsLooted = "items_looted";
         inline constexpr const char* ItemsStolen = "items_stolen";
@@ -25,9 +28,12 @@ namespace RAMW
         inline constexpr const char* LockpickCount = "lockpick_count";
         inline constexpr const char* CellUnlockedPrefix = "cellunlocked_";
         inline constexpr const char* BooksRead = "books_read";
+        inline constexpr const char* BookReadPrefix = "book_read_";
         inline constexpr const char* SkillBooksRead = "skillbooks_read";
         inline constexpr const char* CreatureKillPrefix = "creature_kill_";
         inline constexpr const char* NpcKillPrefix = "npc_kill_";
+        inline constexpr const char* RaceKillPrefix = "kill_race_";
+        inline constexpr const char* FactionKillPrefix = "kill_faction_";
         inline constexpr const char* QuestFinishedPrefix = "quest_finished_";
         inline constexpr const char* AchievementTestPrefix = "ACH_TEST_";
         inline constexpr const char* HarvestCount = "harvest_count";
@@ -56,8 +62,8 @@ namespace RAMW
         static void write(ESM::ESMWriter& writer);
         static void readRecord(ESM::ESMReader& reader);
 
-        static void kill(const std::string& targetId, bool isNpc);
-        static void readBook(const std::string& bookId, bool isSkillBook = false);
+        static void kill(const std::string& targetId, bool isNpc, int creatureType = -1);
+        static bool readBook(const std::string& bookId, bool isSkillBook = false, bool isScroll = false);
 
         static const std::map<std::string, int>& getAllStats();
 
@@ -75,6 +81,7 @@ namespace RAMW
         static constexpr float kNotificationDelay = 2.0f;
 
         static void checkProgressNotification(const std::string& statName);
+
     };
 }
 

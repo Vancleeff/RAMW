@@ -1,32 +1,32 @@
 #include "raeventprocessor.hpp"
+#include "../mwbase/soundmanager.hpp"
 #include "raachievement.hpp"
+#include "racelltracker.hpp"
 #include "racore.hpp"
+#include "radiscoverynotification.hpp"
 #include "rastats.hpp"
 #include "ratriggerHerostats.hpp"
-#include "ratriggerquestcomplete.hpp"
-#include "ratriggerquestprogress.hpp"
-#include "ratriggerkill.hpp"
-#include "ratriggerlockpick.hpp"
-#include "ratriggerharvest.hpp"
-#include "ratriggerloot.hpp"
 #include "ratriggercellclear.hpp"
 #include "ratriggerdiscovery.hpp"
-#include "ratriggerlocation.hpp"
-#include "ratriggerreadbook.hpp"
 #include "ratriggerglobal.hpp"
-#include "racelltracker.hpp"
-#include "radiscoverynotification.hpp"
-#include "../mwbase/soundmanager.hpp"
+#include "ratriggerharvest.hpp"
+#include "ratriggerkill.hpp"
+#include "ratriggerlocation.hpp"
+#include "ratriggerlockpick.hpp"
+#include "ratriggerloot.hpp"
+#include "ratriggerquestcomplete.hpp"
+#include "ratriggerquestprogress.hpp"
+#include "ratriggerreadbook.hpp"
 
 #include <components/debug/debuglog.hpp>
 #include <components/esm/refid.hpp>
 #include <components/esm3/esmreader.hpp>
 #include <components/esm3/esmwriter.hpp>
+#include <components/esm3/loadcont.hpp>
 #include <components/esm3/loadcrea.hpp>
+#include <components/esm3/loaddoor.hpp>
 #include <components/esm3/loadlevlist.hpp>
 #include <components/esm3/loadnpc.hpp>
-#include <components/esm3/loaddoor.hpp>
-#include <components/esm3/loadcont.hpp>
 
 #include "../mwbase/environment.hpp"
 #include "../mwbase/windowmanager.hpp"
@@ -36,8 +36,8 @@
 #include "../mwworld/cellref.hpp"
 #include "../mwworld/cellstore.hpp"
 #include "../mwworld/class.hpp"
-#include "../mwworld/ptr.hpp"
 #include "../mwworld/containerstore.hpp"
+#include "../mwworld/ptr.hpp"
 
 #include <algorithm>, <cctype>
 
@@ -54,7 +54,9 @@ namespace RAMW
 {
     std::function<void()> RAEventProcessor::mOnEventCallback = nullptr;
     std::function<void()> RAEventProcessor::mOntrackedCallback = nullptr;
+    std::function<void(const std::string&)> RAEventProcessor::mOnStatChangedCallback = nullptr;
     std::unordered_set<std::string> RAEventProcessor::sTrackedGlobals;
+    std::unordered_set<std::string> RAEventProcessor::sTrackedStats;
 
     void RAEventProcessor::init()
     {
@@ -74,6 +76,10 @@ namespace RAMW
     void RAEventProcessor::onGameLoaded(ESM::ESMReader& reader)
     {
         RAStats::readRecord(reader);
+        for (const std::string& key : sTrackedGlobals)
+            RAStats::set(key,
+                MWBase::Environment::get().getWorld()->getGlobalInt(
+                    MWWorld::GlobalVariableName(std::string_view(key).substr(std::strlen(RATriggerGlobal::Prefix)))));
         RACore::onGameReady();
         if (mOnEventCallback && RAMW::RACore::isInitialized())
             mOnEventCallback();
@@ -201,7 +207,8 @@ namespace RAMW
             RAStats::set(cellKey, 1);
         }
 
-        RAStats::kill(creature_refid, false);
+        const MWWorld::LiveCellRef<ESM::Creature>* creatureRef = victim.get<ESM::Creature>();
+        RAStats::kill(creature_refid, false, creatureRef ? creatureRef->mBase->mData.mType : -1);
 
         RATriggerContext ctx{ "creature_kill_" + creature_refid };
         for (AchievementData* info : RAAchievementManager::getAchievementsByTrigger<RATriggerKill>())
@@ -222,6 +229,18 @@ namespace RAMW
 
         std::string npc_name = normalizeName(std::string(victim.getClass().getName(victim)));
         RAStats::kill(npc_name, true);
+
+        //tracking by race/faction
+        if (const MWWorld::LiveCellRef<ESM::NPC>* npcRef = victim.get<ESM::NPC>())
+        {
+            if (!npcRef->mBase->mRace.empty())
+                RAStats::increment(
+                    RAStatKeys::RaceKillPrefix + normalizeName(npcRef->mBase->mRace.serializeText()));
+
+            if (!npcRef->mBase->mFaction.empty())
+                RAStats::increment(
+                    RAStatKeys::FactionKillPrefix + normalizeName(npcRef->mBase->mFaction.serializeText()));
+        }
 
         MWWorld::Ptr player = MWBase::Environment::get().getWorld()->getPlayerPtr();
         MWWorld::CellStore* currentCell = player.getCell();
@@ -379,7 +398,7 @@ namespace RAMW
             mOntrackedCallback();
     }
 
-    //Handle harvesting for graphic herbalism mode (one clic harvesting)
+    // Handle harvesting for graphic herbalism mode (one clic harvesting)
     void RAEventProcessor::onHarvest(const std::string& plantId)
     {
         Log(Debug::Info) << "[RA Events] Harvested - " << plantId;
@@ -400,9 +419,9 @@ namespace RAMW
             mOntrackedCallback();
     }
 
-    //To handle harvesting on legacy mode, we need to check if a container is organic and fully empty when we close 
-    //the container. It's done in order to avoid exploit by splitting the pile and increase the counter artificially 
-    //and to align with the graphic herbalism mode : harvest == empty plant container
+    // To handle harvesting on legacy mode, we need to check if a container is organic and fully empty when we close
+    // the container. It's done in order to avoid exploit by splitting the pile and increase the counter artificially
+    // and to align with the graphic herbalism mode : harvest == empty plant container
     void RAEventProcessor::onContainerClosed(const MWWorld::Ptr& container)
     {
         if (container.getType() != ESM::Container::sRecordId)
@@ -420,7 +439,7 @@ namespace RAMW
 
     void RAEventProcessor::onLocationDiscovered(const std::string& locationName)
     {
-        // The engine passes "Region, Place" for some cells; keep the place only.
+        // keep the place only, not region
         const std::string shortName = locationName.substr(0, locationName.find(','));
         const std::string key = RAStatKeys::DiscoveryPrefix + normalizeName(shortName);
 
@@ -450,6 +469,9 @@ namespace RAMW
         if (sTrackedGlobals.find(key) == sTrackedGlobals.end())
             return;
 
+        // Copy the global to RAstats to allow progress bar and notification
+        RAStats::set(key, value);
+
         RATriggerContext ctx{ key, value };
         for (AchievementData* info : RAAchievementManager::getAchievementsByTrigger<RATriggerGlobal>())
             if (info->trigger->evaluate(ctx, *info))
@@ -464,6 +486,7 @@ namespace RAMW
     void RAEventProcessor::rebuildTrackedGlobals()
     {
         sTrackedGlobals.clear();
+        sTrackedStats.clear();
 
         const std::string_view prefix(RATriggerGlobal::Prefix);
 
@@ -471,14 +494,32 @@ namespace RAMW
         {
             for (const AchievementObjective& obj : info->objectives)
             {
-                if (!obj.stat_name.starts_with(prefix))
-                    continue;
-
-                sTrackedGlobals.insert(normalizeName(obj.stat_name));
+                if (obj.stat_name.starts_with(prefix))
+                    sTrackedGlobals.insert(normalizeName(obj.stat_name));
+                else if (!obj.stat_name.empty())
+                    sTrackedStats.insert(obj.stat_name);
             }
         }
+    }
 
-        Log(Debug::Info) << "[RAMW] Watching " << sTrackedGlobals.size() << " global variables";
+    void RAEventProcessor::onStatChanged(const std::string& statName, int value)
+    {
+        if (mOnStatChangedCallback)
+            mOnStatChangedCallback(statName);
+
+        if (sTrackedStats.find(statName) == sTrackedStats.end())
+            return;
+
+        static bool evaluating = false;
+        if (evaluating)
+            return;
+
+        evaluating = true;
+        RATriggerContext ctx{ statName, value };
+        for (AchievementData* info : RAAchievementManager::getAchievementsByTrigger<RATriggerGlobal>())
+            if (info->trigger->evaluate(ctx, *info))
+                RAAchievementManager::unlock(info->id);
+        evaluating = false;
     }
 
     void RAEventProcessor::setOnEventCallback(std::function<void()> callback)
@@ -489,6 +530,11 @@ namespace RAMW
     void RAEventProcessor::setOntrackedCallback(std::function<void()> callback)
     {
         mOntrackedCallback = callback;
+    }
+
+    void RAEventProcessor::setOnStatChangedCallback(std::function<void(const std::string&)> callback)
+    {
+        mOnStatChangedCallback = callback;
     }
 
     void RAEventProcessor::evaluateCellClear(const RATriggerContext& ctx)

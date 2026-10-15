@@ -52,10 +52,12 @@ namespace RAMW
         static void onContainerClosed(const MWWorld::Ptr& container);
         static void onLocationDiscovered(const std::string& locationName);
         static void onGlobalChanged(std::string_view name, int value);
+        static void onStatChanged(const std::string& statName, int value);
 
         static void evaluateCellClear(const RATriggerContext& ctx);
         static void setOnEventCallback(std::function<void()> callback);
         static void setOntrackedCallback(std::function<void()> callback);
+        static void setOnStatChangedCallback(std::function<void(const std::string&)> callback);
 
         // rebuild the set of globals we need to track, based on the achievements json
         static void rebuildTrackedGlobals();
@@ -63,7 +65,9 @@ namespace RAMW
     private:
         static std::function<void()> mOnEventCallback;
         static std::function<void()> mOntrackedCallback;
+        static std::function<void(const std::string&)> mOnStatChangedCallback;
         static std::unordered_set<std::string> sTrackedGlobals;
+        static std::unordered_set<std::string> sTrackedStats;
     };
 
 }
