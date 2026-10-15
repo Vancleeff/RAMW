@@ -68,6 +68,8 @@ namespace MWInput
 
         A_TogglePostProcessorHUD = 50,
 
+        A_RAMWAchievements = 51, // RAMW Achievement window toggle
+
         A_Last // Marker for the last item
     };
 }

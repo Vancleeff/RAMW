@@ -1879,7 +1879,11 @@ namespace MWGui
             if (luaWidget)
                 capturesInput = luaWidget->isTextInput();
             else
-                capturesInput = widget->castType<MyGUI::EditBox>(false);
+            {
+                // A static EditBox takes no typed text, and active SDL text input prevent key bindings
+                MyGUI::EditBox* edit = widget->castType<MyGUI::EditBox>(false);
+                capturesInput = edit && !edit->getEditStatic();
+            }
         }
 
         // The SDL_IsTextInputActive() check helps to avoid duplicate calls in SDL2.

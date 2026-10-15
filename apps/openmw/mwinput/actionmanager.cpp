@@ -24,6 +24,8 @@
 #include "actions.hpp"
 #include "bindingsmanager.hpp"
 
+#include "../ramw/racore.hpp" // RAMW integration
+
 namespace MWInput
 {
 
@@ -150,6 +152,9 @@ namespace MWInput
             case A_Journal:
             case A_QuickKeysMenu:
                 // Handled in Lua
+                break;
+            case A_RAMWAchievements: // RAMW Achievement window toggle
+                RAMW::RACore::toggleAchievementWindow();
                 break;
         }
     }

@@ -45,7 +45,9 @@ namespace MWGui
         GM_LoadingWallpaper,
         GM_Jail,
 
-        GM_QuickKeysMenu
+        GM_QuickKeysMenu,
+
+        GM_RAMWAchievements // RAMW Achievement window
     };
 
     // Windows shown in inventory mode

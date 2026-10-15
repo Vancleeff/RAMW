@@ -291,6 +291,7 @@ namespace MWInput
         defaultKeyBindings[A_QuickSave] = SDL_SCANCODE_F5;
         defaultKeyBindings[A_QuickLoad] = SDL_SCANCODE_F9;
         defaultKeyBindings[A_TogglePostProcessorHUD] = SDL_SCANCODE_F2;
+        defaultKeyBindings[A_RAMWAchievements] = SDL_SCANCODE_Y; //RAMW Achievement Windows toggle
 
         std::map<int, int> defaultMouseButtonBindings;
         defaultMouseButtonBindings[A_Inventory] = SDL_BUTTON_RIGHT;
@@ -516,6 +517,8 @@ namespace MWInput
                 return "#{sQuickLoadCmd}";
             case A_TogglePostProcessorHUD:
                 return "#{OMWEngine:TogglePostProcessorHUD}";
+            case A_RAMWAchievements:
+                return "Achievements"; // RAMW Achievement window toggle
             default:
                 return {}; // not configurable
         }
@@ -579,7 +582,7 @@ namespace MWInput
             A_ToggleSpell, A_CycleSpellLeft, A_CycleSpellRight, A_CycleWeaponLeft, A_CycleWeaponRight, A_AutoMove,
             A_Jump, A_Inventory, A_Journal, A_Rest, A_Console, A_QuickSave, A_QuickLoad, A_ToggleHUD, A_Screenshot,
             A_QuickKeysMenu, A_QuickKey1, A_QuickKey2, A_QuickKey3, A_QuickKey4, A_QuickKey5, A_QuickKey6, A_QuickKey7,
-            A_QuickKey8, A_QuickKey9, A_QuickKey10, A_TogglePostProcessorHUD };
+            A_QuickKey8, A_QuickKey9, A_QuickKey10, A_TogglePostProcessorHUD, A_RAMWAchievements};
 
         return actions;
     }

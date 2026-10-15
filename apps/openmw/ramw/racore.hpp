@@ -2,9 +2,9 @@
 #define RAMW_RACORE_HPP
 #include "achievementlistwindow.hpp"
 #include "radiscoverynotification.hpp"
-#include "rastatswindow.hpp"
 #include "racelltracker.hpp"
-#include <future>, <memory>
+#include <future>
+#include <memory>
 
 namespace RAMW
 {
@@ -22,8 +22,8 @@ namespace RAMW
 
         static void setNotificationWidget(AchievementNotification* widget);
         static AchievementListWindow* getAchievementListWindow();
-        static RAStatsWindow* getStatsWindow();
         static RACellTracker* getCellTracker() { return sCellTracker.get(); }
+        static void toggleAchievementWindow();
 
     private:
         static bool mInitialized;
@@ -33,7 +33,6 @@ namespace RAMW
         static float mHeartbeatTimer;
         static AchievementNotification* mNotificationWidget;
         static std::unique_ptr<AchievementListWindow> sAchievementListWindow;
-        static std::unique_ptr<RAStatsWindow> sStatsWindow;
         static std::unique_ptr<RACellTracker> sCellTracker;
     };
 

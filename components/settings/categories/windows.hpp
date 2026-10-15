@@ -169,6 +169,11 @@ namespace Settings
         SettingValue<float> mDebugMaximizedW{ mIndex, "Windows", "debug maximized w" };
         SettingValue<float> mDebugMaximizedH{ mIndex, "Windows", "debug maximized h" };
         SettingValue<bool> mDebugMaximized{ mIndex, "Windows", "debug maximized" };
+        SettingValue<float> mRamwAchievementsX{ mIndex, "Windows", "ramw achievements x" };
+        SettingValue<float> mRamwAchievementsY{ mIndex, "Windows", "ramw achievements y" };
+        SettingValue<float> mRamwAchievementsW{ mIndex, "Windows", "ramw achievements w" };
+        SettingValue<float> mRamwAchievementsH{ mIndex, "Windows", "ramw achievements h" };
+        SettingValue<bool> mRamwAchievementsPin{ mIndex, "Windows", "ramw achievements pin" };
     };
 }
 

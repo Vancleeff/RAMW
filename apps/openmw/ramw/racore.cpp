@@ -1,14 +1,18 @@
 #include "racore.hpp"
 #include "achievementnotification.hpp"
 #include "raachievement.hpp"
+#include "racelltracker.hpp"
 #include "raclient.hpp"
 #include "raconfig.hpp"
 #include "raeventprocessor.hpp"
 #include "ramods.hpp"
 #include "rarichpresence.hpp"
-#include "racelltracker.hpp"
 
 #include "../mwbase/environment.hpp"
+#include "../mwbase/windowmanager.hpp"
+
+#include <MyGUI_EditBox.h>
+#include <MyGUI_InputManager.h>
 #include <iostream>
 
 namespace RAMW
@@ -19,7 +23,6 @@ namespace RAMW
     float RACore::mHeartbeatTimer = 0.0f;
     AchievementNotification* RACore::mNotificationWidget = nullptr;
     std::unique_ptr<AchievementListWindow> RACore::sAchievementListWindow = nullptr;
-    std::unique_ptr<RAStatsWindow> RACore::sStatsWindow = nullptr;
     std::unique_ptr<RACellTracker> RACore::sCellTracker;
 
     void RACore::init(const std::vector<std::string>& contentFiles)
@@ -67,8 +70,6 @@ namespace RAMW
         if (!mWidgetsCreated)
         {
             sAchievementListWindow = std::make_unique<AchievementListWindow>();
-            sStatsWindow = std::make_unique<RAStatsWindow>();
-            sAchievementListWindow->setStatsWindow(sStatsWindow.get());
             sCellTracker = std::make_unique<RACellTracker>();
             RADiscoveryNotification::createInstance();
             mWidgetsCreated = true;
@@ -94,11 +95,6 @@ namespace RAMW
         if (getAchievementListWindow())
         {
             getAchievementListWindow()->update();
-        }
-
-        if (getStatsWindow())
-        {
-            getStatsWindow()->update(dt);
         }
 
         if (sCellTracker)
@@ -146,7 +142,6 @@ namespace RAMW
 
         Log(Debug::Info) << "[RAMW] RA Integration shutting down";
         sAchievementListWindow.reset();
-        sStatsWindow.reset();
         sCellTracker.reset();
         AchievementNotification::destroyInstance();
         RADiscoveryNotification::destroyInstance();
@@ -163,8 +158,44 @@ namespace RAMW
         return sAchievementListWindow.get();
     }
 
-    RAStatsWindow* RACore::getStatsWindow()
+    void RACore::toggleAchievementWindow()
     {
-        return sStatsWindow.get();
+        if (!sAchievementListWindow)
+            return;
+
+        const auto windowManager = MWBase::Environment::get().getWindowManager();
+
+        if (MyGUI::InputManager::getInstance().isModalAny() || windowManager->isConsoleMode())
+            return;
+
+        MyGUI::Widget* focus = MyGUI::InputManager::getInstance().getKeyFocusWidget();
+        MyGUI::EditBox* edit = focus ? focus->castType<MyGUI::EditBox>(false) : nullptr;
+        if (edit && !edit->getEditStatic())
+            return;
+
+        const bool wasInOwnMode = windowManager->isGuiMode() && windowManager->getMode() == MWGui::GM_RAMWAchievements;
+
+        if (sAchievementListWindow->pinned())
+        {
+            if (wasInOwnMode)
+                windowManager->popGuiMode();
+            else if (!windowManager->isGuiMode())
+                windowManager->pushGuiMode(MWGui::GM_RAMWAchievements);
+
+            sAchievementListWindow->setVisible(true);
+            return;
+        }
+
+        sAchievementListWindow->toggle();
+
+        if (sAchievementListWindow->isVisible())
+        {
+            if (!windowManager->isGuiMode())
+                windowManager->pushGuiMode(MWGui::GM_RAMWAchievements);
+        }
+        else if (wasInOwnMode)
+        {
+            windowManager->popGuiMode();
+        }
     }
 }

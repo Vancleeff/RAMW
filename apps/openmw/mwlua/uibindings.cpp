@@ -54,7 +54,8 @@ namespace MWLua
             { MWGui::GM_Loading, "Loading" },
             { MWGui::GM_LoadingWallpaper, "LoadingWallpaper" },
             { MWGui::GM_Jail, "Jail" },
-            { MWGui::GM_QuickKeysMenu, "QuickKeysMenu" },
+            { MWGui::GM_QuickKeysMenu, "QuickKeysMenu" }, 
+            { MWGui::GM_RAMWAchievements, "RAMWAchievements" }, // RAMW Achievement window toggle
         };
 
         const auto nameToMode = [] {
