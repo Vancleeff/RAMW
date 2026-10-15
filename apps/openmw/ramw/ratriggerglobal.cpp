@@ -14,10 +14,12 @@ namespace RAMW
 {
     bool RATriggerGlobal::isObjectiveCompleted(const AchievementObjective& obj) const
     {
+        // unprefixed names are RAMW stats, global_ reads the engine ones
         if (obj.stat_name.rfind(Prefix, 0) != 0)
-            return false;
+            return obj.matches(RAStats::get(obj.stat_name));
 
         const std::string_view varName = std::string_view(obj.stat_name).substr(std::strlen(Prefix));
-        return MWBase::Environment::get().getWorld()->getGlobalInt(MWWorld::GlobalVariableName(varName)) >= obj.amount;
+        return obj.matches(
+            MWBase::Environment::get().getWorld()->getGlobalInt(MWWorld::GlobalVariableName(varName)));
     }
 }

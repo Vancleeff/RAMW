@@ -22,6 +22,7 @@ namespace RAMW
         virtual std::string getType() const = 0;
         virtual bool evaluate(const RATriggerContext& ctx, const AchievementData& info) const;
         virtual bool isObjectiveCompleted(const AchievementObjective& obj) const = 0;
+        virtual int getProgress(const AchievementData& info) const;
     };
 }
 

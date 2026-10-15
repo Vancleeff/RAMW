@@ -11,30 +11,62 @@
 
 namespace RAMW
 {
+    enum AchievementType
+    {
+        Type_Normal = 0,
+        Type_Missable,
+        Type_Progression,
+        Type_WinCondition
+    };
+
+    enum CompareOp
+    {
+        Cmp_AtLeast = 0, // >=
+        Cmp_Exactly,     // ==
+        Cmp_AtMost       // <=
+    };
+
     struct AchievementObjective
     {
         std::string stat_name;
         std::string display_label;
-        std::string group; //only used for display for "clear location" achievements
+        std::string group;
         int amount = 1;
+        int op = Cmp_AtLeast;
+        bool any_of = false;
 
-        bool isCompleted() const { return RAStats::get(stat_name) >= amount; }
+        bool matches(int value) const
+        {
+            if (op == Cmp_Exactly)
+                return value == amount;
+            if (op == Cmp_AtMost)
+                return value <= amount;
+            return value >= amount;
+        }
+
+        bool isCompleted() const { return matches(RAStats::get(stat_name)); }
     };
 
     struct AchievementData
     {
+        int points = 0;
+        bool unlocked = false;
+        int category = 0;
+        int type = Type_Normal;
+        int order = 0;
+        int target_value = 0;
+        int notification_step = 1;
+
         std::string id;
         std::string parent_id;
         std::string name;
         std::string description;
-        int points = 0;
         std::string iconPath;
-        bool unlocked = false;
-        int category = 0;
-        int order = 0;
-        int target_value = 0;
+        std::string set;
         std::string tracked_stat = "";
-        int notification_step = 1;
+        std::vector<std::string> regions;
+        std::vector<std::string> factions;
+
         std::vector<AchievementObjective> objectives;
         std::unique_ptr<RATrigger> trigger;
 
@@ -61,7 +93,23 @@ namespace RAMW
 
         bool isListedObjective(const AchievementObjective& obj) const
         {
-            return obj.group.empty() || obj.stat_name.rfind(RAStatKeys::CellClearPrefix, 0) == 0;
+            if (obj.group.empty())
+                return true;
+
+            const AchievementObjective* anchor = nullptr;
+            for (const auto& other : objectives)
+            {
+                if (other.group != obj.group)
+                    continue;
+                if (other.stat_name.rfind(RAStatKeys::CellClearPrefix, 0) == 0)
+                {
+                    anchor = &other;
+                    break;
+                }
+                if (!anchor)
+                    anchor = &other;
+            }
+            return anchor == &obj;
         }
 
         int getListedObjectivesCount() const
@@ -77,10 +125,24 @@ namespace RAMW
         {
             if (!trigger)
                 return false;
+
+            bool anyOf = false;
             for (const auto& obj : objectives)
-                if (obj.group == group && !trigger->isObjectiveCompleted(obj))
+                if (obj.group == group && obj.any_of)
+                    anyOf = true;
+
+            for (const auto& obj : objectives)
+            {
+                if (obj.group != group)
+                    continue;
+
+                const bool done = trigger->isObjectiveCompleted(obj);
+                if (anyOf && done)
+                    return true;
+                if (!anyOf && !done)
                     return false;
-            return true;
+            }
+            return !anyOf;
         }
 
         int getProgress() const;
@@ -94,11 +156,16 @@ namespace RAMW
         static void restoreFromStats();
         static void loadAchievements(const std::string& path);
         static int getCategoryFlag(const std::string& cat);
+        static int getTypeFlag(const std::string& type);
+        static int getCompareOp(const std::string& op);
         static bool isUnlocked(const std::string& id);
         static int getUnlocked();
 
         static const AchievementData* getAchievementData(const std::string& id);
         static std::map<std::string, AchievementData>& getAllAchievements();
+        static const std::vector<std::string>& getSets();
+        static std::vector<std::string> getRegions();
+        static std::vector<std::string> getFactions();
 
         template <typename T>
         static std::vector<AchievementData*> getAchievementsByTrigger()
@@ -114,18 +181,22 @@ namespace RAMW
             return result;
         }
 
-        static void setOnUnlockCallback(std::function<void()> callback);
+        static void setOnUnlockCallback(std::function<void(const std::string&)> callback);
 
         // bitfields for category filtering
         static constexpr int Category_Quest = (1 << 0);
         static constexpr int Category_Exploration = (1 << 1);
         static constexpr int Category_Combat = (1 << 2);
         static constexpr int Category_Misc = (1 << 3);
+        static constexpr int Category_Loot = (1 << 4);
+        static constexpr int Category_Character = (1 << 5);
+        static constexpr int Category_Collection = (1 << 6);
         static constexpr int Category_All = ~0;
 
     private:
         static std::map<std::string, AchievementData> mAchievements;
-        static std::function<void()> mOnUnlockCallback;
+        static std::function<void(const std::string&)> mOnUnlockCallback;
+        static std::vector<std::string> mSets;
     };
 }
 

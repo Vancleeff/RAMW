@@ -23,9 +23,9 @@ namespace RAMW
 
             const std::string itemId = obj.stat_name.substr(std::strlen(RAStatKeys::InventoryPrefix));
             const MWWorld::ContainerStore& store = player.getClass().getContainerStore(player);
-            return store.count(ESM::RefId::deserializeText(itemId)) >= obj.amount;
+            return obj.matches(store.count(ESM::RefId::deserializeText(itemId)));
         }
 
-        return RAStats::get(obj.stat_name) >= obj.amount;
+        return obj.matches(RAStats::get(obj.stat_name));
     }
 }

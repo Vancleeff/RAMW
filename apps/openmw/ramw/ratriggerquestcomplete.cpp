@@ -6,6 +6,6 @@ namespace RAMW
 {
     bool RATriggerQuestComplete::isObjectiveCompleted(const AchievementObjective& obj) const
     {
-        return RAStats::get(obj.stat_name) >= obj.amount;
+        return obj.matches(RAStats::get(obj.stat_name));
     }
 }

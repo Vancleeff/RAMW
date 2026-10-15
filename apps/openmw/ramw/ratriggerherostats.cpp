@@ -18,8 +18,8 @@ namespace RAMW
     bool RATriggerHeroStats::evaluate(const RATriggerContext& ctx, const AchievementData& info) const
     {
         for (const auto& obj : info.objectives)
-            if (obj.stat_name == ctx.key)
-                return ctx.value >= obj.amount;
+            if (obj.stat_name == ctx.key && obj.matches(ctx.value))
+                return true;
         return false;
     }
 }
