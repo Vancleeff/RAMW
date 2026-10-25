@@ -11,12 +11,14 @@
 #include "ratriggerglobal.hpp"
 #include "ratriggerharvest.hpp"
 #include "ratriggerkill.hpp"
+#include "ratriggersoultrap.hpp"
 #include "ratriggerlocation.hpp"
 #include "ratriggerlockpick.hpp"
 #include "ratriggerloot.hpp"
 #include "ratriggerquestcomplete.hpp"
 #include "ratriggerquestprogress.hpp"
 #include "ratriggerreadbook.hpp"
+#include "ratriggerdialog.hpp"
 
 #include <components/debug/debuglog.hpp>
 #include <components/esm/refid.hpp>
@@ -27,12 +29,14 @@
 #include <components/esm3/loaddoor.hpp>
 #include <components/esm3/loadlevlist.hpp>
 #include <components/esm3/loadnpc.hpp>
+#include <components/esm3/loadspel.hpp>
 
 #include "../mwbase/environment.hpp"
 #include "../mwbase/windowmanager.hpp"
 #include "../mwbase/world.hpp"
 #include "../mwclass/nameorid.hpp"
 #include "../mwmechanics/creaturestats.hpp"
+#include "../mwmechanics/spells.hpp"
 #include "../mwworld/cellref.hpp"
 #include "../mwworld/cellstore.hpp"
 #include "../mwworld/class.hpp"
@@ -57,6 +61,8 @@ namespace RAMW
     std::function<void(const std::string&)> RAEventProcessor::mOnStatChangedCallback = nullptr;
     std::unordered_set<std::string> RAEventProcessor::sTrackedGlobals;
     std::unordered_set<std::string> RAEventProcessor::sTrackedStats;
+    std::unordered_set<std::string> RAEventProcessor::sTrackedObjects;
+    bool RAEventProcessor::sLoading = false;
 
     void RAEventProcessor::init()
     {
@@ -68,18 +74,27 @@ namespace RAMW
         RAStats::write(writer);
     }
 
+    bool RAEventProcessor::isLoading()
+    {
+        return sLoading;
+    }
+
+    void RAEventProcessor::setLoading(bool loading)
+    {
+        sLoading = loading;
+    }
+
     void RAEventProcessor::onGameCleanup()
     {
+        sLoading = true;
         RAStats::init();
     }
 
     void RAEventProcessor::onGameLoaded(ESM::ESMReader& reader)
     {
         RAStats::readRecord(reader);
-        for (const std::string& key : sTrackedGlobals)
-            RAStats::set(key,
-                MWBase::Environment::get().getWorld()->getGlobalInt(
-                    MWWorld::GlobalVariableName(std::string_view(key).substr(std::strlen(RATriggerGlobal::Prefix)))));
+        RAAchievementManager::restoreFromStats();
+
         RACore::onGameReady();
         if (mOnEventCallback && RAMW::RACore::isInitialized())
             mOnEventCallback();
@@ -87,13 +102,19 @@ namespace RAMW
             mOntrackedCallback();
     }
 
-    void RAEventProcessor::onDialogueStarted(const std::string& npcId)
+    void RAEventProcessor::onTopic(const std::string& topicId, const std::string& npcId)
     {
-        if (npcId == "caius cosades")
-        {
-            RAAchievementManager::unlock("MW_MQ_1");
-        }
-        // todo - migrate to ratriggers
+        if (isLoading())
+            return;
+
+        RATriggerContext ctx{ RAStatKeys::TopicPrefix + normalizeName(topicId) + "@" + normalizeName(npcId) };
+
+        for (AchievementData* info : RAAchievementManager::getAchievementsByTrigger<RATriggerDialog>())
+            if (info->trigger->evaluate(ctx, *info))
+                RAAchievementManager::unlock(info->id);
+
+        if (mOnEventCallback)
+            mOnEventCallback();
     }
 
     void RAEventProcessor::onQuestProgress(const std::string& questId, int stage)
@@ -134,7 +155,7 @@ namespace RAMW
     {
         Log(Debug::Info) << "[RAMW Events] Level up to: " << newLevel;
 
-        RATriggerContext ctx{ "level", newLevel };
+        RATriggerContext ctx{ RATriggerHeroStats::LevelKey, newLevel };
         for (AchievementData* info : RAAchievementManager::getAchievementsByTrigger<RATriggerHeroStats>())
             if (info->trigger->evaluate(ctx, *info))
                 RAAchievementManager::unlock(info->id);
@@ -153,10 +174,82 @@ namespace RAMW
         if (player.isEmpty() || &player.getClass().getNpcStats(player) != statsPtr)
             return;
 
-        RATriggerContext ctx{ "skill_" + skillId, newValue };
+        RATriggerContext ctx{ RATriggerHeroStats::SkillPrefix + skillId, newValue };
         for (AchievementData* info : RAAchievementManager::getAchievementsByTrigger<RATriggerHeroStats>())
             if (info->trigger->evaluate(ctx, *info))
                 RAAchievementManager::unlock(info->id);
+
+        if (mOnEventCallback)
+            mOnEventCallback();
+        if (mOntrackedCallback)
+            mOntrackedCallback();
+    }
+
+    void RAEventProcessor::onReputationChanged(int newValue, const void* statsPtr)
+    {
+        MWWorld::Ptr player = MWBase::Environment::get().getWorld()->getPlayerPtr();
+        if (player.isEmpty() || &player.getClass().getNpcStats(player) != statsPtr)
+            return;
+
+        Log(Debug::Info) << "[RAMW Events] Reputation: " << std::to_string(newValue);
+
+        RATriggerContext ctx{ RATriggerHeroStats::ReputationKey, newValue };
+        for (AchievementData* info : RAAchievementManager::getAchievementsByTrigger<RATriggerHeroStats>())
+            if (info->trigger->evaluate(ctx, *info))
+                RAAchievementManager::unlock(info->id);
+
+        RAStats::notifyProgress(RATriggerHeroStats::ReputationKey, newValue);
+
+        onStatChanged(RATriggerHeroStats::ReputationKey, newValue);
+
+        if (mOnEventCallback)
+            mOnEventCallback();
+        if (mOntrackedCallback)
+            mOntrackedCallback();
+    }
+
+    void RAEventProcessor::updateSpellCount(float dt)
+    {
+        static float elapsed = 0.0f;
+        static int known = -1;
+
+        if (isLoading())
+        {
+            known = -1;
+            return;
+        }
+
+        elapsed += dt;
+        if (elapsed < 1.0f)
+            return;
+        elapsed = 0.0f;
+
+        const MWWorld::Ptr player = MWBase::Environment::get().getWorld()->getPlayerPtr();
+        if (player.isEmpty())
+            return;
+
+        int count = 0;
+
+        for (const ESM::Spell* spell : player.getClass().getCreatureStats(player).getSpells())
+            if (spell->mData.mType == ESM::Spell::ST_Spell)
+                count++;
+
+        if (count == known)
+            return;
+
+        const bool step1 = known < 0;
+        known = count;
+
+        RATriggerContext ctx{ RATriggerHeroStats::SpellsKey, count };
+        for (AchievementData* info : RAAchievementManager::getAchievementsByTrigger<RATriggerHeroStats>())
+            if (info->trigger->evaluate(ctx, *info))
+                RAAchievementManager::unlock(info->id);
+
+        // avoid useless notification during loading
+        if (!step1)
+            RAStats::notifyProgress(RATriggerHeroStats::SpellsKey, count);
+
+        onStatChanged(RATriggerHeroStats::SpellsKey, count);
 
         if (mOnEventCallback)
             mOnEventCallback();
@@ -190,6 +283,18 @@ namespace RAMW
             mOnEventCallback();
         if (mOntrackedCallback)
             mOntrackedCallback();
+    }
+
+    // The engine reports every actor death here, creatures included
+    void RAEventProcessor::onActorKilled(const MWWorld::Ptr& victim, const MWWorld::Ptr& attacker)
+    {
+        if (victim.isEmpty())
+            return;
+
+        if (victim.getType() == ESM::NPC::sRecordId)
+            onNpcKilled(victim, attacker);
+        else if (victim.getType() == ESM::Creature::sRecordId)
+            onCreatureKilled(victim, attacker);
     }
 
     void RAEventProcessor::onCreatureKilled(const MWWorld::Ptr& victim, const MWWorld::Ptr& attacker)
@@ -240,6 +345,10 @@ namespace RAMW
             if (!npcRef->mBase->mFaction.empty())
                 RAStats::increment(
                     RAStatKeys::FactionKillPrefix + normalizeName(npcRef->mBase->mFaction.serializeText()));
+
+            // Vampire NPCs run one of the three clan scripts
+            if (normalizeName(npcRef->mBase->mScript.serializeText()).rfind("vampire_", 0) == 0)
+                RAStats::increment(RAStatKeys::KillVampireTotal);
         }
 
         MWWorld::Ptr player = MWBase::Environment::get().getWorld()->getPlayerPtr();
@@ -258,6 +367,52 @@ namespace RAMW
             if (info->trigger->evaluate(ctx, *info))
                 RAAchievementManager::unlock(info->id);
 
+        evaluateCellClear(ctx);
+
+        if (mOnEventCallback)
+            mOnEventCallback();
+        if (mOntrackedCallback)
+            mOntrackedCallback();
+    }
+
+    void RAEventProcessor::onSoulTrapped(const MWWorld::Ptr& creature)
+    {
+        const std::string soul = normalizeName(std::string(creature.getClass().getName(creature)));
+
+        Log(Debug::Info) << "[RAMW Events] Soul trapped : " << soul;
+
+        RAStats::increment(RAStatKeys::SoulsTrapped);
+        RAStats::increment(RAStatKeys::SoulPrefix + soul);
+
+        RATriggerContext ctx{ RAStatKeys::SoulPrefix + soul };
+        for (AchievementData* info : RAAchievementManager::getAchievementsByTrigger<RATriggerSoulTrap>())
+            if (info->trigger->evaluate(ctx, *info))
+                RAAchievementManager::unlock(info->id);
+
+        onStatChanged(RAStatKeys::SoulsTrapped, RAStats::get(RAStatKeys::SoulsTrapped));
+
+        if (mOnEventCallback)
+            mOnEventCallback();
+        if (mOntrackedCallback)
+            mOntrackedCallback();
+    }
+
+    // Scripts reveal museum pieces, shrines and props with Enable
+    void RAEventProcessor::onObjectEnabled(const MWWorld::Ptr& reference)
+    {
+        if (sTrackedObjects.empty() || isLoading())
+            return;
+
+        const std::string key = RAStatKeys::EnabledPrefix + normalizeName(reference.getCellRef().getRefId().serializeText());
+
+        if (sTrackedObjects.find(key) == sTrackedObjects.end())
+            return;
+
+        Log(Debug::Info) << "[RAMW Events] Object enabled : " << key;
+
+        RAStats::set(key, 1);
+
+        RATriggerContext ctx{ key };
         evaluateCellClear(ctx);
 
         if (mOnEventCallback)
@@ -307,17 +462,8 @@ namespace RAMW
     // We can easily drop a stolen object inside a chest and steal it again, making it trivial
     void RAEventProcessor::onItemStolen(const MWWorld::Ptr& item, size_t count)
     {
-        int init_value = RAStats::get(RAStatKeys::ItemsLooted);
         if (item.getCellRef().getRefId().getRefIdString() != "gold_001")
             RAStats::increment(RAStatKeys::ItemsStolen, count);
-
-        if (init_value < RAAchievementManager::getAchievementData("MW_STEAL_100")->target_value
-            && RAStats::get(RAStatKeys::ItemsLooted)
-                >= RAAchievementManager::getAchievementData("MW_STEAL_100")->target_value)
-        {
-            RAAchievementManager::unlock("MW_STEAL_100");
-            // todo - migrate to ratriggers
-        }
     }
 
     void RAEventProcessor::onPickpocketing(const MWWorld::Ptr& item, int count)
@@ -469,8 +615,8 @@ namespace RAMW
         if (sTrackedGlobals.find(key) == sTrackedGlobals.end())
             return;
 
-        // Copy the global to RAstats to allow progress bar and notification
-        RAStats::set(key, value);
+        RAStats::notifyProgress(key, value);
+        onStatChanged(key, value);
 
         RATriggerContext ctx{ key, value };
         for (AchievementData* info : RAAchievementManager::getAchievementsByTrigger<RATriggerGlobal>())
@@ -487,6 +633,12 @@ namespace RAMW
     {
         sTrackedGlobals.clear();
         sTrackedStats.clear();
+        sTrackedObjects.clear();
+
+        for (AchievementData* info : RAAchievementManager::getAchievementsByTrigger<RATriggerCellClear>())
+            for (const AchievementObjective& obj : info->objectives)
+                if (obj.stat_name.starts_with(RAStatKeys::EnabledPrefix))
+                    sTrackedObjects.insert(obj.stat_name);
 
         const std::string_view prefix(RATriggerGlobal::Prefix);
 

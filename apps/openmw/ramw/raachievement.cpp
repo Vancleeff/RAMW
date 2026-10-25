@@ -11,11 +11,14 @@
 #include "ratriggerharvest.hpp"
 #include "ratriggerherostats.hpp"
 #include "ratriggerkill.hpp"
+#include "ratriggersoultrap.hpp"
 #include "ratriggerlocation.hpp"
 #include "ratriggerlockpick.hpp"
 #include "ratriggerloot.hpp"
 #include "ratriggerreadbook.hpp"
 #include "raeventprocessor.hpp"
+#include "ratriggerdialog.hpp"
+#include "raplayer.hpp"
 
 #include <components/debug/debuglog.hpp>
 #include <yaml-cpp/yaml.h>
@@ -136,7 +139,13 @@ namespace RAMW
                     : 1;
                 info.parent_id
                     = node["parent_id"] && node["parent_id"].IsScalar() ? node["parent_id"].as<std::string>() : "";
+                info.quest_line
+                    = node["quest_line"] && node["quest_line"].IsScalar() ? node["quest_line"].as<std::string>() : "";
                 info.set = setName;
+
+                if (node["locations"] && node["locations"].IsSequence())
+                    for (const auto& l : node["locations"])
+                        info.locations.push_back(l.as<std::string>(""));
 
                 if (node["regions"] && node["regions"].IsSequence())
                     for (const auto& r : node["regions"])
@@ -145,6 +154,29 @@ namespace RAMW
                 if (node["factions"] && node["factions"].IsSequence())
                     for (const auto& f : node["factions"])
                         info.factions.push_back(f.as<std::string>(""));
+
+                // includes extra requirements such as player level, classe, etc
+                if (node["requirements"] && node["requirements"].IsSequence()) 
+                {
+                    for (const auto& req : node["requirements"])
+                    {
+                        if (!req.IsMap())
+                            continue;
+
+                        PlayerRequirement requirement;
+                        requirement.key = req["stat"].as<std::string>("");
+                        requirement.amount = req["amount"].as<int>(0);
+                        requirement.op = getCompareOp(req["op"].as<std::string>(""));
+
+                        if (req["value"] && req["value"].IsSequence())
+                            for (const auto& value : req["value"])
+                                requirement.values.push_back(value.as<std::string>(""));
+                        else if (req["value"] && req["value"].IsScalar())
+                            requirement.values.push_back(req["value"].as<std::string>(""));
+
+                        info.requirements.push_back(std::move(requirement));
+                    }
+                }
 
                 std::string icon = node["icon"] ? node["icon"].as<std::string>() : "random";
                 info.iconPath = (icon == "random") ? getRandomTestIcon() : icon;
@@ -186,6 +218,8 @@ namespace RAMW
                         info.trigger = std::make_unique<RATriggerHeroStats>();
                     else if (triggerType == "Kill")
                         info.trigger = std::make_unique<RATriggerKill>(node["trigger"]["sum"].as<bool>(false));
+                    else if (triggerType == "SoulTrap")
+                        info.trigger = std::make_unique<RATriggerSoulTrap>(node["trigger"]["sum"].as<bool>(false));
                     else if (triggerType == "Lockpick")
                         info.trigger = std::make_unique<RATriggerLockpick>();
                     else if (triggerType == "Harvest")
@@ -202,6 +236,8 @@ namespace RAMW
                         info.trigger = std::make_unique<RATriggerGlobal>();
                     else if (triggerType == "ReadBook")
                         info.trigger = std::make_unique<RATriggerReadBook>();
+                    else if (triggerType == "Dialog")
+                        info.trigger = std::make_unique<RATriggerDialog>();
 
                 }
 
@@ -270,12 +306,17 @@ namespace RAMW
         {
             if (!it->second.unlocked)
             {
+                if (!RAPlayer::checkRequirements(it->second))
+                {
+                    return;
+                }
+
                 it->second.unlocked = true;
                 Log(Debug::Info) << "[RAMW] UNLOCKED: " << it->second.name;
                 if (RAConfig::TEST_MODE)
                     RAStats::set("ACH_TEST_" + achievementId, 1);
                 RAStats::buildProgressIndex();
-                if (AchievementNotification::hasInstance())
+                if (AchievementNotification::hasInstance() && !RAEventProcessor::isLoading())
                     AchievementNotification::getInstance().show(achievementId);
 
                 if (mOnUnlockCallback)
@@ -290,6 +331,9 @@ namespace RAMW
 
     void RAAchievementManager::restoreFromStats()
     {
+        if (!RAConfig::TEST_MODE)
+            return;
+
         for (auto& [id, info] : mAchievements)
         {
             info.unlocked = false;

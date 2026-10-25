@@ -119,7 +119,8 @@ add_openmw_dir (mwbase
 add_openmw_dir (ramw
     racore raclient rastats ramods raconsole rarichpresence raachievement ratriggers raeventprocessor achievementnotification  
     achievementlistwindow racelltracker radiscoverynotification ratriggerquestcomplete ratriggerherostats ratriggerkill ratriggerquestprogress ratriggerlockpick
-    ratriggerharvest ratriggerloot ratriggercellclear ratriggerdiscovery ratriggerglobal ratriggerreadbook ratriggerlocation
+    ratriggerharvest ratriggerloot ratriggercellclear ratriggerdiscovery ratriggerglobal ratriggerreadbook ratriggerlocation ratriggersoultrap ratriggerdialog
+    raplayer
 )
 
 # Main executable

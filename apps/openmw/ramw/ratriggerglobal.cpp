@@ -22,4 +22,17 @@ namespace RAMW
         return obj.matches(
             MWBase::Environment::get().getWorld()->getGlobalInt(MWWorld::GlobalVariableName(varName)));
     }
+
+    int RATriggerGlobal::getProgress(const AchievementData& info) const
+    {
+        // same two sources as isObjectiveCompleted
+        if (info.tracked_stat.rfind(Prefix, 0) != 0)
+            return RAStats::get(info.tracked_stat);
+
+        const MWWorld::GlobalVariableName name(std::string_view(info.tracked_stat).substr(std::strlen(Prefix)));
+        const MWBase::World* world = MWBase::Environment::get().getWorld();
+
+        // Globals::find throws on an unknown name, getType answers with a space
+        return world->getGlobalVariableType(name) == ' ' ? 0 : world->getGlobalInt(name);
+    }
 }

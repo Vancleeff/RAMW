@@ -1582,7 +1582,7 @@ namespace MWMechanics
 
     void MechanicsManager::actorKilled(const MWWorld::Ptr& victim, const MWWorld::Ptr& attacker)
     {
-        RAMW::RAEventProcessor::onNpcKilled(victim, attacker); //RAMW - hook for npc kill
+        RAMW::RAEventProcessor::onActorKilled(victim, attacker); //RAMW - hook for kills
         if (attacker.isEmpty() || victim.isEmpty())
             return;
 

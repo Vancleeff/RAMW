@@ -65,6 +65,8 @@ namespace RAMW
             return;
 
         RARichPresence::init();
+
+        RAAchievementManager::restoreFromStats();
         RAStats::buildProgressIndex();
 
         if (!mWidgetsCreated)
@@ -76,9 +78,6 @@ namespace RAMW
             Log(Debug::Info) << "[RAMW] RA widgets created";
         }
 
-        if (RAConfig::TEST_MODE)
-            RAAchievementManager::restoreFromStats();
-
         sAchievementListWindow->update();
     }
 
@@ -86,6 +85,8 @@ namespace RAMW
     {
         if (!mInitialized || !mWidgetsCreated)
             return;
+
+        RAEventProcessor::setLoading(false);
 
         if (AchievementNotification::hasInstance())
         {
@@ -105,6 +106,7 @@ namespace RAMW
 
         RARichPresence::update();
         RAStats::update(dt);
+        RAEventProcessor::updateSpellCount(dt);
 
         if (!mSessionStarted)
         {

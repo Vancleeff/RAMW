@@ -26,6 +26,25 @@ namespace RAMW
         Cmp_AtMost       // <=
     };
 
+    inline bool compareValue(int value, int amount, int op)
+    {
+        if (op == Cmp_Exactly)
+            return value == amount;
+        if (op == Cmp_AtMost)
+            return value <= amount;
+        return value >= amount;
+    }
+
+    struct PlayerRequirement
+    {
+        std::string key;
+        std::vector<std::string> values;
+        int amount = 0;
+        int op = Cmp_AtLeast;
+
+        bool matches(int value) const { return compareValue(value, amount, op); }
+    };
+
     struct AchievementObjective
     {
         std::string stat_name;
@@ -35,14 +54,7 @@ namespace RAMW
         int op = Cmp_AtLeast;
         bool any_of = false;
 
-        bool matches(int value) const
-        {
-            if (op == Cmp_Exactly)
-                return value == amount;
-            if (op == Cmp_AtMost)
-                return value <= amount;
-            return value >= amount;
-        }
+        bool matches(int value) const { return compareValue(value, amount, op); }
 
         bool isCompleted() const { return matches(RAStats::get(stat_name)); }
     };
@@ -59,13 +71,16 @@ namespace RAMW
 
         std::string id;
         std::string parent_id;
+        std::string quest_line;
         std::string name;
         std::string description;
         std::string iconPath;
         std::string set;
         std::string tracked_stat = "";
+        std::vector<std::string> locations;
         std::vector<std::string> regions;
         std::vector<std::string> factions;
+        std::vector<PlayerRequirement> requirements;
 
         std::vector<AchievementObjective> objectives;
         std::unique_ptr<RATrigger> trigger;

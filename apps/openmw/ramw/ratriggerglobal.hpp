@@ -11,6 +11,7 @@ namespace RAMW
         static constexpr const char* Prefix = "global_";
 
         bool isObjectiveCompleted(const AchievementObjective& obj) const override;
+        int getProgress(const AchievementData& info) const override;
         std::string getType() const override { return "Global"; }
     };
 }

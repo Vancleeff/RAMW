@@ -57,6 +57,8 @@
 #include "steering.hpp"
 #include "summoning.hpp"
 
+#include "../ramw/raeventprocessor.hpp" //RAMW integration
+
 namespace
 {
 
@@ -213,7 +215,10 @@ namespace
                 gem->getContainerStore()->restack(*gem);
 
                 if (caster == MWMechanics::getPlayer())
+                {
                     MWBase::Environment::get().getWindowManager()->messageBox("#{sSoultrapSuccess}");
+                    RAMW::RAEventProcessor::onSoulTrapped(creature); // RAMW - hook for soul capture
+                }
 
                 const ESM::Static* const fx
                     = world->getStore().get<ESM::Static>().search(ESM::RefId::stringRefId("VFX_Soul_Trap"));

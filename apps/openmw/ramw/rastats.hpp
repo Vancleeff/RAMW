@@ -21,6 +21,9 @@ namespace RAMW
         inline constexpr const char* KillUndeadTotal = "kill_undead_total";
         inline constexpr const char* KillHumanoidTotal = "kill_humanoid_total";
         inline constexpr const char* KillNpcTotal = "kill_npc_total";
+        inline constexpr const char* KillVampireTotal = "kill_vampire_total";
+        inline constexpr const char* SoulsTrapped = "souls_trapped";
+        inline constexpr const char* SoulPrefix = "soul_";
         inline constexpr const char* ItemsLooted = "items_looted";
         inline constexpr const char* ItemsStolen = "items_stolen";
         inline constexpr const char* GoldLooted = "gold_looted";
@@ -36,14 +39,17 @@ namespace RAMW
         inline constexpr const char* FactionKillPrefix = "kill_faction_";
         inline constexpr const char* QuestFinishedPrefix = "quest_finished_";
         inline constexpr const char* AchievementTestPrefix = "ACH_TEST_";
+        inline constexpr const char* FavoritePrefix = "fav_";
         inline constexpr const char* HarvestCount = "harvest_count";
         inline constexpr const char* HarvestPrefix = "harvest_";
         inline constexpr const char* LootPrefix = "loot_";
         inline constexpr const char* InventoryPrefix = "inv_";
         inline constexpr const char* CellClearPrefix = "cellclear_";
         inline constexpr const char* CellLootPrefix = "cellloot_";
+        inline constexpr const char* EnabledPrefix = "enabled_";
         inline constexpr const char* LocationsDiscovered = "locations_discovered";
         inline constexpr const char* DiscoveryPrefix = "discovered_";
+        inline constexpr const char* TopicPrefix = "topic_";
     }
 
     /// RetroAchievements Stat Manager
@@ -67,6 +73,9 @@ namespace RAMW
 
         static const std::map<std::string, int>& getAllStats();
 
+        // Schedules a progress toast for any stat, stored or read live
+        static void notifyProgress(const std::string& statName, int value);
+
     private:
         struct ProgressEntry
         {
@@ -75,12 +84,16 @@ namespace RAMW
             int target;
         };
 
+        struct PendingNotification
+        {
+            float mElapsed = 0.0f;
+            int mValue = 0;
+        };
+
         static std::map<std::string, int> mStats;
         static std::map<std::string, std::vector<ProgressEntry>> mProgressIndex;
-        static std::map<std::string, float> mPendingNotifications;
+        static std::map<std::string, PendingNotification> mPendingNotifications;
         static constexpr float kNotificationDelay = 2.0f;
-
-        static void checkProgressNotification(const std::string& statName);
 
     };
 }

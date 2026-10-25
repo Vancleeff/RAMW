@@ -169,10 +169,6 @@ namespace MWDialogue
 
         Filter filter(actor, mChoice, mTalkedTo);
 
-        // RAMW - hook for dialogs
-        if (actor.getCellRef().getRefId() != "")
-            RAMW::RAEventProcessor::onDialogueStarted(mActor.getCellRef().getRefId().toString());
-
         for (const ESM::Dialogue& dialogue : dialogs)
         {
             if (dialogue.mType == ESM::Dialogue::Greeting)
@@ -326,7 +322,11 @@ namespace MWDialogue
                 // Make sure the returned DialInfo is from the Dialogue we supplied. If could also be from the Info
                 // refusal group, in which case it should not be added to the journal.
                 if (responseTopic == &dialogue)
+                {
                     MWBase::Environment::get().getJournal()->addTopic(topic, info->mId, mActor);
+                    RAMW::RAEventProcessor::onTopic(topic.toString(),
+                        mActor.getCellRef().getRefId().toString()); // RAMW - hook for dialogue topics
+                }
             }
 
             mLastTopic = topic;

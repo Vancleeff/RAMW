@@ -327,7 +327,11 @@ int MWMechanics::NpcStats::getReputation() const
 void MWMechanics::NpcStats::setReputation(int reputation)
 {
     // Reputation is capped in original engine
+    const int oldReputation = mReputation;
     mReputation = std::clamp(reputation, 0, 255);
+    //RAMW - hook for reputation progression
+    if (mReputation > oldReputation)
+        RAMW::RAEventProcessor::onReputationChanged(mReputation, this);
 }
 
 int MWMechanics::NpcStats::getCrimeId() const

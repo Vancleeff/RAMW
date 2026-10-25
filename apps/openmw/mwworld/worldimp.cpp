@@ -738,6 +738,8 @@ namespace MWWorld
                 if (mRendering->pagingEnableObject(type, reference, true))
                     mWorldScene->reloadTerrain();
             }
+
+            RAMW::RAEventProcessor::onObjectEnabled(reference); //RAMW - hook for revealed references
         }
     }
 

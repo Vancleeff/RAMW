@@ -14,7 +14,7 @@ namespace RAMW
 {
     std::map<std::string, int> RAStats::mStats;
     std::map<std::string, std::vector<RAStats::ProgressEntry>> RAStats::mProgressIndex;
-    std::map<std::string, float> RAStats::mPendingNotifications;
+    std::map<std::string, RAStats::PendingNotification> RAStats::mPendingNotifications;
 
     void RAStats::init()
     {
@@ -28,15 +28,15 @@ namespace RAMW
     {
         for (auto it = mPendingNotifications.begin(); it != mPendingNotifications.end();)
         {
-            it->second += dt;
-            if (it->second < kNotificationDelay)
+            it->second.mElapsed += dt;
+            if (it->second.mElapsed < kNotificationDelay)
             {
                 ++it;
                 continue;
             }
 
             const std::string& statName = it->first;
-            const int currentValue = get(statName);
+            const int currentValue = it->second.mValue;
 
             auto indexIt = mProgressIndex.find(statName);
             if (indexIt != mProgressIndex.end())
@@ -73,7 +73,7 @@ namespace RAMW
     void RAStats::increment(const std::string& statName, int amount)
     {
         mStats[statName] += amount;
-        checkProgressNotification(statName);
+        notifyProgress(statName, mStats[statName]);
         RAEventProcessor::onStatChanged(statName, mStats[statName]);
         Log(Debug::Verbose) << "[RAMW] Stat incremented: " << statName << " += " << amount
                             << " (now: " << mStats[statName] << ")";
@@ -88,7 +88,7 @@ namespace RAMW
     void RAStats::set(const std::string& statName, int value)
     {
         mStats[statName] = value;
-        checkProgressNotification(statName);
+        notifyProgress(statName, mStats[statName]);
         RAEventProcessor::onStatChanged(statName, value);
         Log(Debug::Verbose) << "[RAMW] Stat set: " << statName << " = " << value;
     }
@@ -205,15 +205,16 @@ namespace RAMW
         Log(Debug::Info) << "[RAMW] Progress index built: " << mProgressIndex.size() << " tracked stats";
     }
 
-    void RAStats::checkProgressNotification(const std::string& statName)
+    void RAStats::notifyProgress(const std::string& statName, int value)
     {
-        if (mProgressIndex.find(statName) == mProgressIndex.end())
+        if (RAEventProcessor::isLoading() || mProgressIndex.find(statName) == mProgressIndex.end())
             return;
 
         auto it = mPendingNotifications.find(statName);
+
         if (it == mPendingNotifications.end())
-            mPendingNotifications[statName] = kNotificationDelay;
+            mPendingNotifications[statName] = { kNotificationDelay, value };
         else
-            it->second = 0.0f;
+            it->second = { 0.0f, value };
     }
 }
