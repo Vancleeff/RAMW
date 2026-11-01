@@ -22,6 +22,8 @@
 
 #include "tooltips.hpp"
 
+#include "../ramw/raeventprocessor.hpp" //RAMW integration
+
 namespace MWGui
 {
 
@@ -193,6 +195,8 @@ namespace MWGui
 
         // increase skill
         MWBase::Environment::get().getLuaManager()->skillLevelUp(player, skill->mId, "trainer");
+
+        RAMW::RAEventProcessor::onTraining(skill->mId.toString());
 
         // remove gold
         player.getClass().getContainerStore(player).remove(MWWorld::ContainerStore::sGoldId, price);

@@ -13,7 +13,7 @@ namespace
     }
 }
 
-namespace RAMW
+namespace RAMW  
 {
     RATriggerSoulTrap::RATriggerSoulTrap(bool sum)
         : mSum(sum)

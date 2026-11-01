@@ -89,7 +89,7 @@ namespace RAMW
             const auto it = std::find_if(info->objectives.begin(), info->objectives.end(),
                 [&](const AchievementObjective& obj) { return obj.stat_name == cellKey; });
 
-            if (it == info->objectives.end())
+            if (it == info->objectives.end() || !info->qualifies())
                 continue;
 
             mTracked = info;

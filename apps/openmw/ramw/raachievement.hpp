@@ -95,9 +95,19 @@ namespace RAMW
         bool hasObjectives() const { return !objectives.empty(); }
         bool hasTrigger() const { return trigger && trigger->getType() != "None"; }
 
+        bool qualifies() const;
+
+        bool isObjectiveDone(const AchievementObjective& obj) const
+        {
+            if (!trigger || !qualifies())
+                return false;
+
+            return obj.group.empty() ? trigger->isObjectiveCompleted(obj) : isGroupCompleted(obj.group);
+        }
+
         int getCompletedObjectivesCount() const
         {
-            if (!trigger)
+            if (!trigger || !qualifies())
                 return 0;
             int count = 0;
             for (const auto& obj : objectives)
@@ -138,7 +148,7 @@ namespace RAMW
 
         bool isGroupCompleted(const std::string& group) const
         {
-            if (!trigger)
+            if (!trigger || !qualifies())
                 return false;
 
             bool anyOf = false;

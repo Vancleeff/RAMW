@@ -26,6 +26,8 @@
 #include "../mwmechanics/actorutil.hpp"
 #include "../mwmechanics/creaturestats.hpp"
 
+#include "../ramw/raeventprocessor.hpp" //RAMW integration
+
 namespace MWGui
 {
     TravelWindow::TravelWindow()
@@ -200,6 +202,9 @@ namespace MWGui
         ESM::Position pos = *sender->getUserData<ESM::Position>();
         std::string_view cellname = sender->getUserString("Destination");
         bool interior = sender->getUserString("interior") == "y";
+
+        RAMW::RAEventProcessor::onTravel(mPtr, std::string(cellname)); //RAMW - hook for travelling 
+
         if (mPtr.getCell()->isExterior())
         {
             ESM::Position playerPos = player.getRefData().getPosition();

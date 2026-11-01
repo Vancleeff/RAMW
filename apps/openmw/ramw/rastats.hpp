@@ -50,6 +50,13 @@ namespace RAMW
         inline constexpr const char* LocationsDiscovered = "locations_discovered";
         inline constexpr const char* DiscoveryPrefix = "discovered_";
         inline constexpr const char* TopicPrefix = "topic_";
+        inline constexpr const char* TrainingTotal = "train_total";
+        inline constexpr const char* TrainingPrefix = "train_";
+        inline constexpr const char* CastTotal = "cast_total";
+        inline constexpr const char* CastPrefix = "cast_";
+        inline constexpr const char* CastSchoolPrefix = "cast_school_";
+        inline constexpr const char* TravelTotal = "travel_total";
+        inline constexpr const char* TravelPrefix = "travel_";
     }
 
     /// RetroAchievements Stat Manager
@@ -64,6 +71,7 @@ namespace RAMW
         static int get(const std::string& statName);
         static void set(const std::string& statName, int value);
         static void reset(const std::string& statName);
+        static bool erase(const std::string& statName);
         static void clear();
         static void write(ESM::ESMWriter& writer);
         static void readRecord(ESM::ESMReader& reader);

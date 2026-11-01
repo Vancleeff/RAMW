@@ -18,6 +18,7 @@
 #include "ratriggerreadbook.hpp"
 #include "raeventprocessor.hpp"
 #include "ratriggerdialog.hpp"
+#include "ratriggerspell.hpp"
 #include "raplayer.hpp"
 
 #include <components/debug/debuglog.hpp>
@@ -238,6 +239,8 @@ namespace RAMW
                         info.trigger = std::make_unique<RATriggerReadBook>();
                     else if (triggerType == "Dialog")
                         info.trigger = std::make_unique<RATriggerDialog>();
+                    else if (triggerType == "Spell")
+                        info.trigger = std::make_unique<RATriggerSpell>(node["trigger"]["sum"].as<bool>(false));
 
                 }
 
@@ -370,9 +373,14 @@ namespace RAMW
         return mAchievements;
     }
 
+    bool AchievementData::qualifies() const
+    {
+        return RAPlayer::checkRequirements(*this);
+    }
+
     int AchievementData::getProgress() const
     {
-        if (!hasProgressBar())
+        if (!hasProgressBar() || !qualifies())
             return 0;
 
         const int progress = trigger ? trigger->getProgress(*this)

@@ -4,9 +4,40 @@
 #include "rastats.hpp"
 #include <algorithm>
 #include <cctype>
+#include <charconv>
 #include <components/debug/debuglog.hpp>
+#include <components/misc/strings/algorithm.hpp>
 #include <string>
 #include <vector>
+
+namespace
+{
+    // Same contract as a script string argument: quotes keep the spaces, case is left alone
+    std::string nextArgument(std::string& args)
+    {
+        Misc::StringUtils::trim(args);
+
+        if (args.empty())
+            return {};
+
+        if (args.front() == '"')
+        {
+            const size_t end = args.find('"', 1);
+            const std::string value = args.substr(1, end == std::string::npos ? end : end - 1);
+
+            args.erase(0, end == std::string::npos ? std::string::npos : end + 1);
+
+            return value;
+        }
+
+        const size_t end = args.find_first_of(" \t");
+        const std::string value = args.substr(0, end);
+
+        args.erase(0, end == std::string::npos ? std::string::npos : end + 1);
+
+        return value;
+    }
+}
 
 namespace RAMW
 {
@@ -249,6 +280,53 @@ namespace RAMW
 
             RAAchievementManager::unlock(achievementId);
             console->printOK("Achievement unlocked: " + achievementId);
+            return;
+        }
+
+        if (Misc::StringUtils::ciStartsWith(command, "rastat_set ")) // testing command - force a stat value
+        {
+            std::string args = command.substr(11);
+            const std::string statName = nextArgument(args);
+            const std::string rawValue = nextArgument(args);
+
+            if (statName.empty() || rawValue.empty())
+            {
+                console->printError("Usage: rastat_set [stat_name] [value]");
+                return;
+            }
+
+            int value = 0;
+            const auto parsed = std::from_chars(rawValue.data(), rawValue.data() + rawValue.size(), value);
+
+            if (parsed.ec != std::errc() || parsed.ptr != rawValue.data() + rawValue.size())
+            {
+                console->printError("Not a number: " + rawValue);
+                return;
+            }
+
+            RAStats::set(statName, value);
+            console->printOK("Stat set: " + statName + " = " + std::to_string(value));
+            return;
+        }
+
+        if (Misc::StringUtils::ciStartsWith(command, "rastat_del ")) // testing command - drop a stat from the save
+        {
+            std::string args = command.substr(11);
+            const std::string statName = nextArgument(args);
+
+            if (statName.empty())
+            {
+                console->printError("Usage: rastat_del [stat_name]");
+                return;
+            }
+
+            if (!RAStats::erase(statName))
+            {
+                console->printError("Stat not found: " + statName);
+                return;
+            }
+
+            console->printOK("Stat removed: " + statName);
             return;
         }
     }

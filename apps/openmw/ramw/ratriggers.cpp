@@ -7,7 +7,7 @@ namespace RAMW
     {
         for (const auto& obj : info.objectives)
         {
-            const bool done = obj.group.empty() ? isObjectiveCompleted(obj) : info.isGroupCompleted(obj.group);
+            const bool done = info.isObjectiveDone(obj);
             if (!done)
                 return false;
         }

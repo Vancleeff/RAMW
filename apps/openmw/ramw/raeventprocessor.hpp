@@ -57,6 +57,9 @@ namespace RAMW
         static void onLocationDiscovered(const std::string& locationName);
         static void onGlobalChanged(std::string_view name, int value);
         static void onStatChanged(const std::string& statName, int value);
+        static void onTraining(const std::string& skill);
+        static void onSpellCast(const std::string& spellId, const std::string& school);
+        static void onTravel(const MWWorld::Ptr& service, const std::string& destination);
         static void updateSpellCount(float dt);
 
         static void evaluateCellClear(const RATriggerContext& ctx);

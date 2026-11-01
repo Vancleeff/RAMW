@@ -19,6 +19,7 @@
 #include "ratriggerquestprogress.hpp"
 #include "ratriggerreadbook.hpp"
 #include "ratriggerdialog.hpp"
+#include "ratriggerspell.hpp"
 
 #include <components/debug/debuglog.hpp>
 #include <components/esm/refid.hpp>
@@ -43,7 +44,8 @@
 #include "../mwworld/containerstore.hpp"
 #include "../mwworld/ptr.hpp"
 
-#include <algorithm>, <cctype>
+#include <algorithm>
+#include <cctype>
 
 namespace
 {
@@ -51,6 +53,26 @@ namespace
     {
         std::transform(s.begin(), s.end(), s.begin(), [](unsigned char c) { return std::tolower(c); });
         return s;
+    }
+
+    std::string travelMode(const MWWorld::Ptr& service)
+    {
+        static const std::map<std::string, std::string> sModes = {
+            { "shipmaster", "boat" },
+            { "caravaner", "strider" },
+            { "gondolier", "gondola" },
+        };
+
+        if (service.getCell() && !service.getCell()->isExterior())
+            return "guild";
+
+        if (!service.getClass().isNpc())
+            return "creature";
+
+        const std::string npcClass = normalizeName(service.get<ESM::NPC>()->mBase->mClass.toString());
+        const auto it = sModes.find(npcClass);
+
+        return it == sModes.end() ? npcClass : it->second;
     }
 }
 
@@ -672,6 +694,40 @@ namespace RAMW
             if (info->trigger->evaluate(ctx, *info))
                 RAAchievementManager::unlock(info->id);
         evaluating = false;
+    }
+
+    void RAEventProcessor::onTraining(const std::string& skill)
+    {
+        RAStats::increment(RAStatKeys::TrainingTotal);
+        RAStats::increment(RAStatKeys::TrainingPrefix + normalizeName(skill));
+    }
+
+    void RAEventProcessor::onSpellCast(const std::string& spellId, const std::string& school)
+    {
+        const std::string spellKey = RAStatKeys::CastPrefix + normalizeName(spellId);
+
+        RAStats::increment(RAStatKeys::CastTotal);
+        RAStats::increment(spellKey);
+        RAStats::increment(RAStatKeys::CastSchoolPrefix + normalizeName(school));
+
+        RATriggerContext ctx{ spellKey };
+        for (AchievementData* info : RAAchievementManager::getAchievementsByTrigger<RATriggerSpell>())
+            if (info->trigger->evaluate(ctx, *info))
+                RAAchievementManager::unlock(info->id);
+
+        if (mOnEventCallback)
+            mOnEventCallback();
+        if (mOntrackedCallback)
+            mOntrackedCallback();
+    }
+
+    void RAEventProcessor::onTravel(const MWWorld::Ptr& service, const std::string& destination)
+    {
+        const std::string mode = travelMode(service);
+
+        RAStats::increment(RAStatKeys::TravelTotal);
+        RAStats::increment(RAStatKeys::TravelPrefix + mode);
+        RAStats::increment(RAStatKeys::TravelPrefix + mode + "_" + normalizeName(destination));
     }
 
     void RAEventProcessor::setOnEventCallback(std::function<void()> callback)

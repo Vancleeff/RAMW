@@ -26,6 +26,8 @@
 #include "spellutil.hpp"
 #include "weapontype.hpp"
 
+#include "../ramw/raeventprocessor.hpp" //RAMW integration
+
 namespace MWMechanics
 {
     CastSpell::CastSpell(
@@ -439,6 +441,10 @@ namespace MWMechanics
             inflict(mTarget, spell->mEffects, ESM::RT_Touch);
 
         launchMagicBolt();
+
+        // RAMW - hook for spell trigger
+        if (!mScriptedSpell && mCaster == getPlayer())
+            RAMW::RAEventProcessor::onSpellCast(spell->mId.toString(), school.toString());
 
         return true;
     }

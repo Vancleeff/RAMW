@@ -1,5 +1,6 @@
 ﻿#include "raplayer.hpp"
 #include "raachievement.hpp"
+#include "rastats.hpp"
 #include "ratriggerherostats.hpp"
 
 #include "../mwbase/environment.hpp"
@@ -93,7 +94,8 @@ namespace RAMW
                     return stats.getAttribute(id).getModified();
             }
 
-            return 0;
+            // if not player related, it's an RAStat
+            return RAStats::get(key);
         }
 
         std::string readTrait(const std::string& key, const MWWorld::Ptr& player)

@@ -45,7 +45,9 @@ namespace RAMW
                 const ProgressEntry* tier = nullptr;
                 for (const auto& entry : indexIt->second)
                 {
-                    if (RAAchievementManager::isUnlocked(entry.achievementId) || currentValue > entry.target)
+                    const AchievementData* info = RAAchievementManager::getAchievementData(entry.achievementId);
+
+                    if (!info || info->unlocked || !info->qualifies() || currentValue > entry.target)
                         continue;
                     if (!tier || entry.target < tier->target)
                         tier = &entry;
@@ -97,6 +99,17 @@ namespace RAMW
     {
         mStats[statName] = 0;
         Log(Debug::Verbose) << "[RAMW] Stat reset: " << statName;
+    }
+
+    bool RAStats::erase(const std::string& statName)
+    {
+        if (mStats.erase(statName) == 0)
+            return false;
+
+        RAEventProcessor::onStatChanged(statName, 0);
+        Log(Debug::Verbose) << "[RAMW] Stat removed: " << statName;
+
+        return true;
     }
 
     void RAStats::clear()
