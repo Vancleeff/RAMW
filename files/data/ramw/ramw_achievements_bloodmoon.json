@@ -1,0 +1,2770 @@
+{
+  "set": "Bloodmoon",
+  "prefix": "BM",
+  "achievements": [
+    {
+      "id": "BM_MQ_1",
+      "parent_id": "",
+      "name": "An Island to the North",
+      "description": "Reach Solstheim",
+      "points": 2,
+      "icon": "random",
+      "category": "Quest",
+      "order": 0,
+      "regions": [
+        "Solstheim, Hirstaang Forest",
+        "West Gash Region"
+      ],
+      "factions": [],
+      "target_value": 0,
+      "tracked_stat": "",
+      "notification_step": 1,
+      "trigger": {
+        "type": "Location"
+      },
+      "objectives": [
+        {
+          "stat_name": "visited_fort frostmoth",
+          "display_label": "Fort Frostmoth",
+          "amount": 1
+        }
+      ],
+      "type": "progression",
+      "locations": [
+        "Khuul",
+        "Fort Frostmoth"
+      ]
+    },
+    {
+      "id": "BM_MQ_2",
+      "parent_id": "",
+      "name": "Rebellion at Frostmoth",
+      "description": "Investigate the low morale of Fort Frostmoth for Captain Carius",
+      "points": 5,
+      "icon": "random",
+      "category": "Quest",
+      "order": 1,
+      "regions": [
+        "Solstheim, Hirstaang Forest"
+      ],
+      "factions": [],
+      "target_value": 0,
+      "tracked_stat": "",
+      "notification_step": 1,
+      "trigger": {
+        "type": "QuestComplete"
+      },
+      "objectives": [
+        {
+          "stat_name": "quest_finished_BM_Morale",
+          "display_label": "",
+          "amount": 1
+        }
+      ],
+      "type": "progression",
+      "quest_line": "Fort Frostmoth Quest Line",
+      "locations": [
+        "Fort Frostmoth"
+      ]
+    },
+    {
+      "id": "BM_MQ_3",
+      "parent_id": "BM_MQ_2",
+      "name": "The Frostmoth Smugglers",
+      "description": "Help Captain Falx Carius find out who has been smuggling weapons out of the fort",
+      "points": 5,
+      "icon": "random",
+      "category": "Quest",
+      "order": 2,
+      "regions": [
+        "Solstheim, Hirstaang Forest"
+      ],
+      "factions": [],
+      "target_value": 0,
+      "tracked_stat": "",
+      "notification_step": 1,
+      "trigger": {
+        "type": "QuestComplete"
+      },
+      "objectives": [
+        {
+          "stat_name": "quest_finished_BM_Smugglers",
+          "display_label": "",
+          "amount": 1
+        }
+      ],
+      "type": "progression",
+      "locations": [
+        "Fort Frostmoth"
+      ]
+    },
+    {
+      "id": "BM_MQ_4",
+      "parent_id": "BM_MQ_2",
+      "name": "The Disappearance of Captain Carius",
+      "description": "Investigate the disappearance of captain Carius",
+      "points": 5,
+      "icon": "random",
+      "category": "Quest",
+      "order": 3,
+      "regions": [
+        "Solstheim, Felsaad Coast Region",
+        "Solstheim, Hirstaang Forest"
+      ],
+      "factions": [],
+      "target_value": 0,
+      "tracked_stat": "",
+      "notification_step": 1,
+      "trigger": {
+        "type": "QuestComplete"
+      },
+      "objectives": [
+        {
+          "stat_name": "quest_finished_BM_CariusGone",
+          "display_label": "",
+          "amount": 1
+        }
+      ],
+      "type": "progression",
+      "locations": [
+        "Fort Frostmoth",
+        "Skaal Village"
+      ]
+    },
+    {
+      "id": "BM_MQ5",
+      "parent_id": "",
+      "name": "The Skaal Test of Loyalty",
+      "description": "Complete a ritual for the Skaal in order to gain their trust",
+      "points": 5,
+      "icon": "random",
+      "category": "Quest",
+      "order": 4,
+      "type": "progression",
+      "progress_bar": false,
+      "regions": [
+        "Solstheim, Felsaad Coast Region"
+      ],
+      "factions": [],
+      "target_value": 0,
+      "tracked_stat": "",
+      "notification_step": 1,
+      "trigger": {
+        "type": "QuestComplete"
+      },
+      "objectives": [
+        {
+          "stat_name": "quest_finished_BM_Stones",
+          "display_label": "",
+          "amount": 1
+        }
+      ],
+      "quest_line": "The Skaal Quest Line",
+      "locations": [
+        "Skaal Village"
+      ]
+    },
+    {
+      "id": "BM_MQ6",
+      "parent_id": "BM_MQ5",
+      "name": "The Skaal Test of Wisdom",
+      "description": "Investigate a possible theft of furs within the Skaal Village to determine the fate of the accused",
+      "points": 5,
+      "icon": "random",
+      "category": "Quest",
+      "order": 5,
+      "type": "progression",
+      "progress_bar": false,
+      "regions": [
+        "Solstheim, Felsaad Coast Region"
+      ],
+      "factions": [],
+      "target_value": 0,
+      "tracked_stat": "",
+      "notification_step": 1,
+      "trigger": {
+        "type": "QuestComplete"
+      },
+      "objectives": [
+        {
+          "stat_name": "quest_finished_BM_Trial",
+          "display_label": "",
+          "amount": 1
+        }
+      ],
+      "locations": [
+        "Skaal Village"
+      ]
+    },
+    {
+      "id": "BM_MQ7",
+      "parent_id": "BM_MQ5",
+      "name": "The Skaal Test of Strength",
+      "description": "Prove your strength to the Skaal tribe by investigating the pillar of fire emanating from Lake Fjalding",
+      "points": 5,
+      "icon": "random",
+      "category": "Quest",
+      "order": 6,
+      "type": "progression",
+      "progress_bar": false,
+      "regions": [
+        "Solstheim, Felsaad Coast Region"
+      ],
+      "factions": [],
+      "target_value": 0,
+      "tracked_stat": "",
+      "notification_step": 1,
+      "trigger": {
+        "type": "QuestComplete"
+      },
+      "objectives": [
+        {
+          "stat_name": "quest_finished_BM_Draugr",
+          "display_label": "",
+          "amount": 1
+        }
+      ],
+      "locations": [
+        "Skaal Village"
+      ]
+    },
+    {
+      "id": "BM_MQ8",
+      "parent_id": "BM_MQ5",
+      "name": "The Siege of the Skaal Village",
+      "description": "Defend the town against a vicious attack by werewolves and get infected by one of them",
+      "points": 5,
+      "icon": "random",
+      "category": "Quest",
+      "order": 7,
+      "type": "progression",
+      "progress_bar": false,
+      "regions": [
+        "Solstheim, Felsaad Coast Region"
+      ],
+      "factions": [],
+      "target_value": 0,
+      "tracked_stat": "",
+      "notification_step": 1,
+      "trigger": {
+        "type": "QuestComplete"
+      },
+      "objectives": [
+        {
+          "stat_name": "quest_finished_BM_SkaalAttack",
+          "display_label": "",
+          "amount": 1
+        }
+      ],
+      "locations": [
+        "Skaal Village"
+      ]
+    },
+    {
+      "id": "BM_MQ_9_A",
+      "parent_id": "",
+      "name": "The Totem of Claw and Fang",
+      "description": "Recover the Totem of Claw and Fang for the Skaal",
+      "points": 5,
+      "icon": "random",
+      "category": "Quest",
+      "order": 8,
+      "type": "missable",
+      "progress_bar": false,
+      "regions": [
+        "Solstheim, Felsaad Coast Region"
+      ],
+      "factions": [],
+      "target_value": 0,
+      "tracked_stat": "",
+      "notification_step": 1,
+      "trigger": {
+        "type": "QuestComplete"
+      },
+      "objectives": [
+        {
+          "stat_name": "quest_finished_BM_Ceremony1",
+          "display_label": "",
+          "amount": 1
+        }
+      ],
+      "quest_line": "The Bloodskaal Quest Line",
+      "locations": [
+        "Skaal Village"
+      ]
+    },
+    {
+      "id": "BM_MQ10_A",
+      "parent_id": "BM_MQ_9_A",
+      "name": "The Ristaag",
+      "description": "Perform a Skaal ceremony by hunting the great Spirit Bear",
+      "points": 5,
+      "icon": "random",
+      "category": "Quest",
+      "order": 9,
+      "type": "missable",
+      "progress_bar": false,
+      "regions": [
+        "Solstheim, Felsaad Coast Region"
+      ],
+      "factions": [],
+      "target_value": 0,
+      "tracked_stat": "",
+      "notification_step": 1,
+      "trigger": {
+        "type": "QuestComplete"
+      },
+      "objectives": [
+        {
+          "stat_name": "quest_finished_BM_BearHunt1",
+          "display_label": "",
+          "amount": 1
+        }
+      ],
+      "locations": [
+        "Skaal Village"
+      ]
+    },
+    {
+      "id": "BM_11_A",
+      "parent_id": "BM_MQ_9_A",
+      "name": "The Castle Karstaag",
+      "description": "Investigate the ominous signs which have foretold the Bloodmoon Prophecy by investigating Castle Karstaag",
+      "points": 5,
+      "icon": "random",
+      "category": "Quest",
+      "order": 10,
+      "type": "missable",
+      "progress_bar": false,
+      "regions": [
+        "Solstheim, Felsaad Coast Region"
+      ],
+      "factions": [],
+      "target_value": 0,
+      "tracked_stat": "",
+      "notification_step": 1,
+      "trigger": {
+        "type": "QuestComplete"
+      },
+      "objectives": [
+        {
+          "stat_name": "quest_finished_BM_FrostGiant1",
+          "display_label": "",
+          "amount": 1
+        }
+      ],
+      "locations": [
+        "Skaal Village"
+      ]
+    },
+    {
+      "id": "BM_MQ9_B",
+      "parent_id": "",
+      "name": "Dream of Hircine",
+      "description": "Protect the Totem of Claw and Fang from the Skaal",
+      "points": 5,
+      "icon": "random",
+      "category": "Quest",
+      "order": 11,
+      "type": "missable",
+      "progress_bar": false,
+      "regions": [
+        "Solstheim, Felsaad Coast Region"
+      ],
+      "factions": [],
+      "target_value": 0,
+      "tracked_stat": "",
+      "notification_step": 1,
+      "trigger": {
+        "type": "QuestComplete"
+      },
+      "objectives": [
+        {
+          "stat_name": "quest_finished_BM_Ceremony2",
+          "display_label": "",
+          "amount": 1
+        }
+      ],
+      "quest_line": "The Werewolves Quest Line",
+      "locations": [
+        "Skaal Village"
+      ]
+    },
+    {
+      "id": "BM_MQ10",
+      "parent_id": "BM_MQ9_B",
+      "name": "Disrupt the Skaal Hunt",
+      "description": "Interrupt a Skaal ceremony by killing the participants and the Spirit Bear",
+      "points": 5,
+      "icon": "random",
+      "category": "Quest",
+      "order": 12,
+      "type": "missable",
+      "progress_bar": false,
+      "regions": [
+        "Solstheim, Felsaad Coast Region"
+      ],
+      "factions": [],
+      "target_value": 0,
+      "tracked_stat": "",
+      "notification_step": 1,
+      "trigger": {
+        "type": "QuestComplete"
+      },
+      "objectives": [
+        {
+          "stat_name": "quest_finished_BM_BearHunt2",
+          "display_label": "",
+          "amount": 1
+        }
+      ],
+      "locations": [
+        "Skaal Village"
+      ]
+    },
+    {
+      "id": "BM_MQ11_B",
+      "parent_id": "BM_MQ9_B",
+      "name": "Siege of Castle Karstaag",
+      "description": "Stop a rebellion in this castle far to the north on the island",
+      "points": 5,
+      "icon": "random",
+      "category": "Quest",
+      "order": 13,
+      "type": "missable",
+      "progress_bar": false,
+      "regions": [
+        "Solstheim, Felsaad Coast Region"
+      ],
+      "factions": [],
+      "target_value": 0,
+      "tracked_stat": "",
+      "notification_step": 1,
+      "trigger": {
+        "type": "QuestComplete"
+      },
+      "objectives": [
+        {
+          "stat_name": "quest_finished_BM_FrostGiant2",
+          "display_label": "",
+          "amount": 1
+        }
+      ],
+      "locations": [
+        "Skaal Village"
+      ]
+    },
+    {
+      "id": "BM_MQ12",
+      "parent_id": "",
+      "name": "Hircine's Hunt",
+      "description": "Finish the story line of Morrowind: Bloodmoon",
+      "points": 5,
+      "icon": "random",
+      "category": "Quest",
+      "order": 14,
+      "type": "win_condition",
+      "progress_bar": false,
+      "regions": [
+        "Solstheim, Felsaad Coast Region"
+      ],
+      "factions": [],
+      "target_value": 0,
+      "tracked_stat": "",
+      "notification_step": 1,
+      "trigger": {
+        "type": "QuestComplete"
+      },
+      "objectives": [
+        {
+          "stat_name": "quest_finished_BM_WildHunt",
+          "display_label": "",
+          "amount": 1
+        }
+      ],
+      "locations": [
+        "Skaal Village"
+      ]
+    },
+    {
+      "id": "BM_EEC1",
+      "parent_id": "",
+      "name": "Establish the Mine",
+      "description": "Starting out on the quest to build the Raven Rock colony",
+      "points": 5,
+      "icon": "random",
+      "category": "Quest",
+      "order": 15,
+      "type": "",
+      "progress_bar": false,
+      "regions": [
+        "Solstheim, Hirstaang Forest"
+      ],
+      "factions": [
+        "East Empire Company"
+      ],
+      "target_value": 0,
+      "tracked_stat": "",
+      "notification_step": 1,
+      "trigger": {
+        "type": "QuestProgress"
+      },
+      "objectives": [
+        {
+          "stat_name": "quest_stage_CO_1",
+          "display_label": "",
+          "amount": 50,
+          "op": "=="
+        }
+      ],
+      "locations": [
+        "Fort Frostmoth",
+        "Raven Rock"
+      ]
+    },
+    {
+      "id": "BM_EEC2",
+      "parent_id": "",
+      "name": "A Blocked Door",
+      "description": "Get a crazy Nord to leave the villagers alone",
+      "points": 5,
+      "icon": "random",
+      "category": "Quest",
+      "order": 16,
+      "type": "",
+      "progress_bar": false,
+      "regions": [
+        "Solstheim, Hirstaang Forest"
+      ],
+      "factions": [
+        "East Empire Company"
+      ],
+      "target_value": 0,
+      "tracked_stat": "",
+      "notification_step": 1,
+      "trigger": {
+        "type": "QuestComplete"
+      },
+      "objectives": [
+        {
+          "stat_name": "quest_finished_CO_2",
+          "display_label": "",
+          "amount": 1
+        }
+      ],
+      "locations": [
+        "Fort Frostmoth",
+        "Raven Rock"
+      ]
+    },
+    {
+      "id": "BM_EEC3",
+      "parent_id": "",
+      "name": "Missing Supply Ship",
+      "description": "Search for a missing shipment scheduled to arrive at Raven Rock",
+      "points": 5,
+      "icon": "random",
+      "category": "Quest",
+      "order": 17,
+      "type": "",
+      "progress_bar": false,
+      "regions": [
+        "Solstheim, Hirstaang Forest"
+      ],
+      "factions": [
+        "East Empire Company"
+      ],
+      "target_value": 0,
+      "tracked_stat": "",
+      "notification_step": 1,
+      "trigger": {
+        "type": "QuestComplete"
+      },
+      "objectives": [
+        {
+          "stat_name": "quest_finished_CO_3",
+          "display_label": "",
+          "amount": 1
+        }
+      ],
+      "locations": [
+        "Raven Rock",
+        "Fort Frostmoth"
+      ]
+    },
+    {
+      "id": "BM_EEC4",
+      "parent_id": "",
+      "name": "Setting up Shop",
+      "description": "Help Falco/Carnius decide which shop to build",
+      "points": 5,
+      "icon": "random",
+      "category": "Quest",
+      "order": 18,
+      "type": "",
+      "progress_bar": false,
+      "regions": [
+        "Solstheim, Hirstaang Forest"
+      ],
+      "factions": [
+        "East Empire Company"
+      ],
+      "target_value": 0,
+      "tracked_stat": "",
+      "notification_step": 1,
+      "trigger": {
+        "type": "QuestComplete"
+      },
+      "objectives": [
+        {
+          "stat_name": "quest_finished_CO_4",
+          "display_label": "",
+          "amount": 1
+        }
+      ],
+      "locations": [
+        "Fort Frostmoth",
+        "Raven Rock"
+      ]
+    },
+    {
+      "id": "BM_EEC5",
+      "parent_id": "",
+      "name": "Supply Route Problems",
+      "description": "Deal with a shipper who is demanding extra payments for delivering some ebony ore",
+      "points": 5,
+      "icon": "random",
+      "category": "Quest",
+      "order": 19,
+      "type": "",
+      "progress_bar": false,
+      "regions": [
+        "Solstheim, Hirstaang Forest"
+      ],
+      "factions": [
+        "East Empire Company"
+      ],
+      "target_value": 0,
+      "tracked_stat": "",
+      "notification_step": 1,
+      "trigger": {
+        "type": "QuestComplete"
+      },
+      "objectives": [
+        {
+          "stat_name": "quest_finished_CO_5",
+          "display_label": "",
+          "amount": 1
+        }
+      ],
+      "locations": [
+        "Raven Rock",
+        "Fort Frostmoth"
+      ]
+    },
+    {
+      "id": "BM_EEC6_A",
+      "parent_id": "",
+      "name": "To Catch a Thief",
+      "description": "Track down who is stealing ebony ore from the mine",
+      "points": 5,
+      "icon": "random",
+      "category": "Quest",
+      "order": 20,
+      "type": "missable",
+      "progress_bar": false,
+      "regions": [
+        "Solstheim, Hirstaang Forest"
+      ],
+      "factions": [
+        "East Empire Company"
+      ],
+      "target_value": 0,
+      "tracked_stat": "",
+      "notification_step": 1,
+      "trigger": {
+        "type": "QuestProgress"
+      },
+      "objectives": [
+        {
+          "stat_name": "quest_stage_CO_6",
+          "display_label": "Uryn Maren was found dead in the store room where he was ...",
+          "amount": 80
+        },
+        {
+          "stat_name": "quest_stage_CO_6",
+          "display_label": "I blew my cover, and ruined any chance of catching Uryn M...",
+          "amount": 100,
+          "op": "<="
+        }
+      ],
+      "locations": [
+        "Raven Rock",
+        "Fort Frostmoth"
+      ]
+    },
+    {
+      "id": "BM_EEC6_B",
+      "parent_id": "",
+      "name": "Aiding and Abetting",
+      "description": "Help Carnius and Uryn to smuggle ore out of the Raven Rock mine",
+      "points": 5,
+      "icon": "random",
+      "category": "Quest",
+      "order": 21,
+      "type": "",
+      "progress_bar": false,
+      "regions": [
+        "Solstheim, Hirstaang Forest"
+      ],
+      "factions": [
+        "East Empire Company"
+      ],
+      "target_value": 0,
+      "tracked_stat": "",
+      "notification_step": 1,
+      "trigger": {
+        "type": "QuestComplete"
+      },
+      "objectives": [
+        {
+          "stat_name": "quest_finished_CO_6a",
+          "display_label": "",
+          "amount": 1
+        }
+      ],
+      "locations": [
+        "Fort Frostmoth",
+        "Raven Rock"
+      ]
+    },
+    {
+      "id": "BM_EEC7",
+      "parent_id": "",
+      "name": "Bar Brawl",
+      "description": "Calm down an old man in the bar who is picking fights with everyone",
+      "points": 5,
+      "icon": "random",
+      "category": "Quest",
+      "order": 22,
+      "type": "missable",
+      "progress_bar": false,
+      "regions": [
+        "Solstheim, Hirstaang Forest"
+      ],
+      "factions": [
+        "East Empire Company"
+      ],
+      "target_value": 0,
+      "tracked_stat": "",
+      "notification_step": 1,
+      "trigger": {
+        "type": "QuestComplete"
+      },
+      "objectives": [
+        {
+          "stat_name": "quest_finished_CO_7",
+          "display_label": "",
+          "amount": 1
+        }
+      ],
+      "locations": [
+        "Raven Rock",
+        "Fort Frostmoth"
+      ]
+    },
+    {
+      "id": "BM_EEC8_A",
+      "parent_id": "",
+      "name": "Discovery in the Mine",
+      "description": "Investigate a strange burial chamber just discovered deep within the ebony mine",
+      "points": 5,
+      "icon": "random",
+      "category": "Quest",
+      "order": 23,
+      "type": "missable",
+      "progress_bar": false,
+      "regions": [
+        "Solstheim, Hirstaang Forest"
+      ],
+      "factions": [
+        "East Empire Company"
+      ],
+      "target_value": 0,
+      "tracked_stat": "",
+      "notification_step": 1,
+      "trigger": {
+        "type": "QuestComplete"
+      },
+      "objectives": [
+        {
+          "stat_name": "quest_finished_CO_8",
+          "display_label": "",
+          "amount": 1
+        }
+      ],
+      "locations": [
+        "Fort Frostmoth",
+        "Raven Rock"
+      ]
+    },
+    {
+      "id": "BM_EEC9_A",
+      "parent_id": "",
+      "name": "Race Against the Clock",
+      "description": "Deliver a report quickly to Carnius in Fort Frostmoth",
+      "points": 5,
+      "icon": "random",
+      "category": "Quest",
+      "order": 24,
+      "type": "missable",
+      "progress_bar": false,
+      "regions": [
+        "Solstheim, Hirstaang Forest"
+      ],
+      "factions": [
+        "East Empire Company"
+      ],
+      "target_value": 0,
+      "tracked_stat": "",
+      "notification_step": 1,
+      "trigger": {
+        "type": "QuestProgress"
+      },
+      "objectives": [
+        {
+          "stat_name": "quest_stage_CO_9",
+          "display_label": "Falco thanked me for being able to deliver the report on ...",
+          "amount": 60,
+          "op": "=="
+        }
+      ],
+      "locations": [
+        "Raven Rock",
+        "Fort Frostmoth"
+      ]
+    },
+    {
+      "id": "BM_EEC9_B",
+      "parent_id": "",
+      "name": "Stop the Messenger",
+      "description": "Intercept a report from Falco for Carnius with the help of Hroldar",
+      "points": 5,
+      "icon": "random",
+      "category": "Quest",
+      "order": 25,
+      "type": "",
+      "progress_bar": false,
+      "regions": [
+        "Solstheim, Hirstaang Forest"
+      ],
+      "factions": [
+        "East Empire Company"
+      ],
+      "target_value": 0,
+      "tracked_stat": "",
+      "notification_step": 1,
+      "trigger": {
+        "type": "QuestComplete"
+      },
+      "objectives": [
+        {
+          "stat_name": "quest_finished_CO_9a",
+          "display_label": "",
+          "amount": 1
+        }
+      ],
+      "locations": [
+        "Raven Rock",
+        "Fort Frostmoth"
+      ]
+    },
+    {
+      "id": "BM_EEC10",
+      "parent_id": "",
+      "name": "Razing the Forest",
+      "description": "Take care of some Spriggans that have begun attacking the colony",
+      "points": 5,
+      "icon": "random",
+      "category": "Quest",
+      "order": 26,
+      "type": "missable",
+      "progress_bar": false,
+      "regions": [
+        "Solstheim, Hirstaang Forest",
+        "West Gash Region"
+      ],
+      "factions": [],
+      "target_value": 0,
+      "tracked_stat": "",
+      "notification_step": 1,
+      "trigger": {
+        "type": "QuestComplete"
+      },
+      "objectives": [
+        {
+          "stat_name": "quest_finished_CO_10",
+          "display_label": "",
+          "amount": 1
+        }
+      ],
+      "locations": [
+        "Fort Frostmoth",
+        "Raven Rock",
+        "Gnisis"
+      ]
+    },
+    {
+      "id": "BM_EEC11",
+      "parent_id": "",
+      "name": "Hiring Guards",
+      "description": "Find some guards to protect the colony of Raven Rock",
+      "points": 5,
+      "icon": "random",
+      "category": "Loot",
+      "order": 27,
+      "type": "missable",
+      "progress_bar": false,
+      "regions": [
+        "Solstheim, Hirstaang Forest"
+      ],
+      "factions": [
+        "East Empire Company"
+      ],
+      "target_value": 0,
+      "tracked_stat": "",
+      "notification_step": 1,
+      "trigger": {
+        "type": "QuestComplete"
+      },
+      "objectives": [
+        {
+          "stat_name": "quest_finished_CO_11",
+          "display_label": "",
+          "amount": 1
+        }
+      ],
+      "locations": [
+        "Raven Rock",
+        "Fort Frostmoth"
+      ]
+    },
+    {
+      "id": "BM_EEC12_A",
+      "parent_id": "",
+      "name": "Protect Falco",
+      "description": "Someone wants Falco dead and you have to protect him",
+      "points": 5,
+      "icon": "random",
+      "category": "Quest",
+      "order": 28,
+      "type": "missable",
+      "progress_bar": false,
+      "regions": [
+        "Solstheim, Hirstaang Forest"
+      ],
+      "factions": [
+        "East Empire Company"
+      ],
+      "target_value": 0,
+      "tracked_stat": "",
+      "notification_step": 1,
+      "trigger": {
+        "type": "QuestComplete"
+      },
+      "objectives": [
+        {
+          "stat_name": "quest_finished_CO_12",
+          "display_label": "",
+          "amount": 1
+        }
+      ],
+      "locations": [
+        "Raven Rock",
+        "Fort Frostmoth"
+      ]
+    },
+    {
+      "id": "BM_EEC12_B",
+      "parent_id": "",
+      "name": "The Assassin",
+      "description": "Carnius requires your skills in the assassination of Falco",
+      "points": 5,
+      "icon": "random",
+      "category": "Quest",
+      "order": 29,
+      "type": "",
+      "progress_bar": false,
+      "regions": [
+        "Solstheim, Hirstaang Forest"
+      ],
+      "factions": [
+        "East Empire Company"
+      ],
+      "target_value": 0,
+      "tracked_stat": "",
+      "notification_step": 1,
+      "trigger": {
+        "type": "QuestComplete"
+      },
+      "objectives": [
+        {
+          "stat_name": "quest_finished_CO_12a",
+          "display_label": "",
+          "amount": 1
+        }
+      ],
+      "locations": [
+        "Raven Rock",
+        "Fort Frostmoth"
+      ]
+    },
+    {
+      "id": "BM_EEC13_A",
+      "parent_id": "",
+      "name": "Under Siege",
+      "description": "Protect Raven Rock from a fake Skaal attack",
+      "points": 5,
+      "icon": "random",
+      "category": "Quest",
+      "order": 30,
+      "type": "missable",
+      "progress_bar": false,
+      "regions": [
+        "Solstheim, Hirstaang Forest"
+      ],
+      "factions": [
+        "East Empire Company"
+      ],
+      "target_value": 0,
+      "tracked_stat": "",
+      "notification_step": 1,
+      "trigger": {
+        "type": "QuestComplete"
+      },
+      "objectives": [
+        {
+          "stat_name": "quest_finished_CO_13",
+          "display_label": "",
+          "amount": 1
+        }
+      ],
+      "locations": [
+        "Raven Rock",
+        "Fort Frostmoth"
+      ]
+    },
+    {
+      "id": "BM_EEC_B",
+      "parent_id": "",
+      "name": "Drastic Measures",
+      "description": "Help Carnius Magius plan an attack to slaughter the occupants of Raven Rock",
+      "points": 5,
+      "icon": "random",
+      "category": "Quest",
+      "order": 31,
+      "type": "",
+      "progress_bar": false,
+      "regions": [
+        "Solstheim, Hirstaang Forest"
+      ],
+      "factions": [
+        "East Empire Company"
+      ],
+      "target_value": 0,
+      "tracked_stat": "",
+      "notification_step": 1,
+      "trigger": {
+        "type": "QuestComplete"
+      },
+      "objectives": [
+        {
+          "stat_name": "quest_finished_CO_13a",
+          "display_label": "",
+          "amount": 1
+        }
+      ],
+      "locations": [
+        "Raven Rock",
+        "Fort Frostmoth"
+      ]
+    },
+    {
+      "id": "BM_EEC_END",
+      "parent_id": "",
+      "name": "Raven Rock Estate",
+      "description": "Build your estate as new Factor of Raven Rock",
+      "points": 5,
+      "icon": "random",
+      "category": "Quest",
+      "order": 32,
+      "type": "missable",
+      "progress_bar": false,
+      "regions": [
+        "Solstheim, Hirstaang Forest"
+      ],
+      "factions": [
+        "East Empire Company"
+      ],
+      "target_value": 0,
+      "tracked_stat": "",
+      "notification_step": 1,
+      "trigger": {
+        "type": "QuestComplete"
+      },
+      "objectives": [
+        {
+          "stat_name": "quest_finished_CO_Estate",
+          "display_label": "",
+          "amount": 1
+        }
+      ],
+      "locations": [
+        "Raven Rock"
+      ]
+    },
+    {
+      "id": "BM_QUEST_MOONSUGAR",
+      "parent_id": "",
+      "name": "The Moon Sugar Mystery",
+      "description": "Investigate some jolly poisonings",
+      "points": 5,
+      "icon": "random",
+      "category": "Quest",
+      "order": 33,
+      "type": "",
+      "progress_bar": false,
+      "regions": [
+        "Solstheim, Hirstaang Forest"
+      ],
+      "factions": [
+        "Imperial Legion"
+      ],
+      "target_value": 0,
+      "tracked_stat": "",
+      "notification_step": 1,
+      "trigger": {
+        "type": "QuestComplete"
+      },
+      "objectives": [
+        {
+          "stat_name": "quest_finished_BM_MoonSugar",
+          "display_label": "",
+          "amount": 1
+        }
+      ],
+      "locations": [
+        "Fort Frostmoth"
+      ]
+    },
+    {
+      "id": "BM_QUEST_MISSIONARY",
+      "parent_id": "",
+      "name": "The Missing Missionary",
+      "description": "Track down a wayward teetotaler around Thirsk",
+      "points": 5,
+      "icon": "random",
+      "category": "Quest",
+      "order": 34,
+      "type": "",
+      "progress_bar": false,
+      "regions": [
+        "Solstheim, Felsaad Coast Region",
+        "Solstheim, Hirstaang Forest"
+      ],
+      "factions": [
+        "Imperial Cult"
+      ],
+      "target_value": 0,
+      "tracked_stat": "",
+      "notification_step": 1,
+      "trigger": {
+        "type": "QuestComplete"
+      },
+      "objectives": [
+        {
+          "stat_name": "quest_finished_BM_Missionary",
+          "display_label": "",
+          "amount": 1
+        }
+      ],
+      "locations": [
+        "Fort Frostmoth"
+      ]
+    },
+    {
+      "id": "BM_QUEST_FALMER",
+      "parent_id": "",
+      "name": "In Search of the Falmer",
+      "description": "Find some proof for the existence of Snow Elves for a High Elf in the Raven Rock bar",
+      "points": 5,
+      "icon": "random",
+      "category": "Quest",
+      "order": 35,
+      "type": "",
+      "progress_bar": false,
+      "regions": [
+        "Solstheim, Isinfier Plains",
+        "Solstheim, Hirstaang Forest"
+      ],
+      "factions": [],
+      "target_value": 0,
+      "tracked_stat": "",
+      "notification_step": 1,
+      "trigger": {
+        "type": "QuestComplete"
+      },
+      "objectives": [
+        {
+          "stat_name": "quest_finished_BM_Falmer",
+          "display_label": "",
+          "amount": 1
+        }
+      ],
+      "locations": [
+        "Raven Rock"
+      ]
+    },
+    {
+      "id": "BM_QUEST_TYMVAUL",
+      "parent_id": "",
+      "name": "Tymvaul in the Well",
+      "description": "Lassnr! Tymvaul has fallen in the well!",
+      "points": 5,
+      "icon": "random",
+      "category": "Quest",
+      "order": 36,
+      "type": "",
+      "progress_bar": false,
+      "regions": [
+        "Solstheim, Felsaad Coast Region",
+        "Solstheim, Hirstaang Forest"
+      ],
+      "factions": [],
+      "target_value": 0,
+      "tracked_stat": "",
+      "notification_step": 1,
+      "trigger": {
+        "type": "QuestComplete"
+      },
+      "objectives": [
+        {
+          "stat_name": "quest_finished_BM_Tymvaul",
+          "display_label": "",
+          "amount": 1
+        }
+      ],
+      "locations": [
+        "Raven Rock"
+      ]
+    },
+    {
+      "id": "BM_QUEST_MEAD",
+      "parent_id": "",
+      "name": "The Mead Hall Massacre",
+      "description": "Visit this mead hall and find out what happened to its patrons",
+      "points": 5,
+      "icon": "random",
+      "category": "Quest",
+      "order": 37,
+      "type": "",
+      "progress_bar": false,
+      "regions": [
+        "Solstheim, Felsaad Coast Region",
+        "Solstheim, Moesring Mountains",
+        "Thirsk Region"
+      ],
+      "factions": [],
+      "target_value": 0,
+      "tracked_stat": "",
+      "notification_step": 1,
+      "trigger": {
+        "type": "QuestComplete"
+      },
+      "objectives": [
+        {
+          "stat_name": "quest_finished_BM_MeadHall",
+          "display_label": "",
+          "amount": 1
+        }
+      ],
+      "locations": [
+        "Thirsk"
+      ]
+    },
+    {
+      "id": "BM_QUEST_MEAD2",
+      "parent_id": "",
+      "name": "Mead Business",
+      "description": "Collect the weekly profits from the sale of mead in the Mead Hall",
+      "points": 2,
+      "icon": "random",
+      "category": "Quest",
+      "order": 38,
+      "type": "",
+      "progress_bar": false,
+      "regions": [
+        "Solstheim, Felsaad Coast Region",
+        "Thirsk Region"
+      ],
+      "factions": [],
+      "target_value": 0,
+      "tracked_stat": "",
+      "notification_step": 1,
+      "trigger": {
+        "type": "QuestComplete"
+      },
+      "objectives": [
+        {
+          "stat_name": "quest_finished_BM_MeadHall_b",
+          "display_label": "",
+          "amount": 1
+        }
+      ],
+      "locations": [
+        "Thirsk"
+      ]
+    },
+    {
+      "id": "BM_QUEST_MEAD3",
+      "parent_id": "",
+      "name": "Pelt Business",
+      "description": "Collect some bear and wolf pelts from Svenja in the Mead Hall",
+      "points": 2,
+      "icon": "random",
+      "category": "Quest",
+      "order": 39,
+      "type": "",
+      "progress_bar": false,
+      "regions": [
+        "Solstheim, Felsaad Coast Region",
+        "Thirsk Region"
+      ],
+      "factions": [],
+      "target_value": 0,
+      "tracked_stat": "",
+      "notification_step": 1,
+      "trigger": {
+        "type": "QuestComplete"
+      },
+      "objectives": [
+        {
+          "stat_name": "quest_finished_BM_MeadHall_c",
+          "display_label": "",
+          "amount": 1
+        }
+      ],
+      "locations": [
+        "Thirsk"
+      ]
+    },
+    {
+      "id": "BM_QUEST_BRODIR",
+      "parent_id": "",
+      "name": "Betrayal at Brodir Grove",
+      "description": "Help an old barbarian to find his beloved Sovngarde",
+      "points": 5,
+      "icon": "random",
+      "category": "Quest",
+      "order": 40,
+      "type": "",
+      "progress_bar": false,
+      "regions": [
+        "Solstheim, Hirstaang Forest",
+        "Thirsk Region"
+      ],
+      "factions": [],
+      "target_value": 0,
+      "tracked_stat": "",
+      "notification_step": 1,
+      "trigger": {
+        "type": "QuestComplete"
+      },
+      "objectives": [
+        {
+          "stat_name": "quest_finished_BM_BrodirGrove",
+          "display_label": "",
+          "amount": 1
+        }
+      ],
+      "locations": [
+        "Thirsk"
+      ]
+    },
+    {
+      "id": "BM_QUEST_SEER",
+      "parent_id": "",
+      "name": "The Sad Seer",
+      "description": "A poor old prophet has lost his head",
+      "points": 5,
+      "icon": "random",
+      "category": "Quest",
+      "order": 41,
+      "type": "",
+      "progress_bar": false,
+      "regions": [
+        "Solstheim, Hirstaang Forest"
+      ],
+      "factions": [],
+      "target_value": 0,
+      "tracked_stat": "",
+      "notification_step": 1,
+      "trigger": {
+        "type": "QuestComplete"
+      },
+      "objectives": [
+        {
+          "stat_name": "quest_finished_BM_SadSeer",
+          "display_label": "",
+          "amount": 1
+        }
+      ]
+    },
+    {
+      "id": "BM_QUEST_CURSED_CAPTAIN",
+      "parent_id": "",
+      "name": "The Cursed Captain",
+      "description": "Help a restless sailor find some peace",
+      "points": 5,
+      "icon": "random",
+      "category": "Quest",
+      "order": 42,
+      "type": "",
+      "progress_bar": false,
+      "regions": [
+        "Solstheim, Isinfier Plains",
+        "Thirsk Region"
+      ],
+      "factions": [],
+      "target_value": 0,
+      "tracked_stat": "",
+      "notification_step": 1,
+      "trigger": {
+        "type": "QuestComplete"
+      },
+      "objectives": [
+        {
+          "stat_name": "quest_finished_BM_CursedCaptain",
+          "display_label": "",
+          "amount": 1
+        }
+      ],
+      "locations": [
+        "Thirsk"
+      ]
+    },
+    {
+      "id": "BM_QUEST_INGMAR",
+      "parent_id": "",
+      "name": "Ingmar in a Bind",
+      "description": "A young warrior needs a decoy. Interested?",
+      "points": 5,
+      "icon": "random",
+      "category": "Quest",
+      "order": 43,
+      "type": "",
+      "progress_bar": false,
+      "regions": [
+        "Solstheim, Isinfier Plains"
+      ],
+      "factions": [],
+      "target_value": 0,
+      "tracked_stat": "",
+      "notification_step": 1,
+      "trigger": {
+        "type": "QuestComplete"
+      },
+      "objectives": [
+        {
+          "stat_name": "quest_finished_BM_Ingmar",
+          "display_label": "",
+          "amount": 1
+        }
+      ]
+    },
+    {
+      "id": "BM_QUEST_REVENGE",
+      "parent_id": "",
+      "name": "A Woman Scorned",
+      "description": "Avenge Kjolver's broken heart",
+      "points": 5,
+      "icon": "random",
+      "category": "Quest",
+      "order": 44,
+      "type": "missable",
+      "progress_bar": false,
+      "regions": [
+        "Solstheim, Felsaad Coast Region",
+        "Solstheim, Hirstaang Forest"
+      ],
+      "factions": [],
+      "target_value": 0,
+      "tracked_stat": "",
+      "notification_step": 1,
+      "trigger": {
+        "type": "QuestProgress"
+      },
+      "objectives": [
+        {
+          "stat_name": "quest_stage_BM_WomanScorned",
+          "display_label": "Erna's ring has been delivered to Kjolver as proof of the...",
+          "amount": 100,
+          "op": "=="
+        }
+      ],
+      "locations": [
+        "Skaal Village"
+      ]
+    },
+    {
+      "id": "BM_QUEST_AIRSHIP",
+      "parent_id": "",
+      "name": "The Patchwork Airship",
+      "description": "Discover the remains of a crashed airship in the wilderness of Solstheim and help Louis Beauchamp to understand what happened",
+      "points": 5,
+      "icon": "random",
+      "category": "Quest",
+      "order": 45,
+      "type": "missable",
+      "progress_bar": false,
+      "regions": [
+        "Ashlands Region",
+        "Solstheim, Moesring Mountains"
+      ],
+      "factions": [],
+      "target_value": 0,
+      "tracked_stat": "",
+      "notification_step": 1,
+      "trigger": {
+        "type": "QuestProgress"
+      },
+      "objectives": [
+        {
+          "stat_name": "quest_stage_BM_Airship",
+          "display_label": "Now that I've learned what happened to the airship and re...",
+          "amount": 100,
+          "op": "=="
+        }
+      ],
+      "locations": [
+        "Ald-ruhn"
+      ]
+    },
+    {
+      "id": "BM_QUEST_WIFE_RETRIBUTION",
+      "parent_id": "",
+      "name": "A Wife's Retribution",
+      "description": "Help extract wergild for a grieving widow",
+      "points": 5,
+      "icon": "random",
+      "category": "Quest",
+      "order": 46,
+      "type": "",
+      "progress_bar": false,
+      "regions": [
+        "Solstheim, Hirstaang Forest",
+        "Solstheim, Isinfier Plains"
+      ],
+      "factions": [],
+      "target_value": 0,
+      "tracked_stat": "",
+      "notification_step": 1,
+      "trigger": {
+        "type": "QuestComplete"
+      },
+      "objectives": [
+        {
+          "stat_name": "quest_finished_BM_Retribution",
+          "display_label": "",
+          "amount": 1
+        }
+      ],
+      "locations": [
+        "Raven Rock"
+      ]
+    },
+    {
+      "id": "BM_COL_WOLF_ARMOR",
+      "parent_id": "",
+      "name": "Wolf Armor",
+      "description": "Complete a full set of the Wolf armor",
+      "points": 5,
+      "icon": "random",
+      "category": "Collection",
+      "order": 47,
+      "type": "",
+      "progress_bar": false,
+      "regions": [],
+      "factions": [],
+      "target_value": 0,
+      "tracked_stat": "",
+      "notification_step": 1,
+      "trigger": {
+        "type": "Loot"
+      },
+      "objectives": [
+        {
+          "stat_name": "loot_bm wolf boots",
+          "display_label": "Loot Wolf Boots",
+          "amount": 1
+        },
+        {
+          "stat_name": "loot_bm wolf cuirass",
+          "display_label": "Loot Wolf Cuirass",
+          "amount": 1
+        },
+        {
+          "stat_name": "loot_bm wolf greaves",
+          "display_label": "Loot Wolf Greaves",
+          "amount": 1
+        },
+        {
+          "stat_name": "loot_bm wolf helmet",
+          "display_label": "Loot Wolf Helmet",
+          "amount": 1
+        },
+        {
+          "stat_name": "loot_bm wolf left gauntlet",
+          "display_label": "Loot Wolf Left Gauntlet",
+          "amount": 1
+        },
+        {
+          "stat_name": "loot_bm wolf right gauntlet",
+          "display_label": "Loot Wolf Right Gauntlet",
+          "amount": 1
+        },
+        {
+          "stat_name": "loot_bm wolf left pauldron",
+          "display_label": "Loot Wolf Left Pauldron",
+          "amount": 1
+        },
+        {
+          "stat_name": "loot_bm wolf right pauldron",
+          "display_label": "Loot Wolf Right Pauldron",
+          "amount": 1
+        },
+        {
+          "stat_name": "loot_bm wolf shield",
+          "display_label": "Loot Wolf Shield",
+          "amount": 1
+        }
+      ]
+    },
+    {
+      "id": "BM_COL_BEAR_ARMOR",
+      "parent_id": "",
+      "name": "Bear Armor",
+      "description": "",
+      "points": 5,
+      "icon": "random",
+      "category": "Collection",
+      "order": 48,
+      "type": "",
+      "progress_bar": false,
+      "regions": [],
+      "factions": [],
+      "target_value": 0,
+      "tracked_stat": "",
+      "notification_step": 1,
+      "trigger": {
+        "type": "Loot"
+      },
+      "objectives": [
+        {
+          "stat_name": "inv_bm bear boots",
+          "display_label": "Hold Bear Boots",
+          "amount": 1
+        },
+        {
+          "stat_name": "inv_bm bear cuirass",
+          "display_label": "Hold Bear Cuirass",
+          "amount": 1
+        },
+        {
+          "stat_name": "inv_bm bear greaves",
+          "display_label": "Hold Bear Greaves",
+          "amount": 1
+        },
+        {
+          "stat_name": "inv_bm bear helmet",
+          "display_label": "Hold Bear Helmet",
+          "amount": 1
+        },
+        {
+          "stat_name": "inv_bm bear left gauntlet",
+          "display_label": "Hold Bear Left Gauntlet",
+          "amount": 1
+        },
+        {
+          "stat_name": "inv_bm bear right gauntlet",
+          "display_label": "Hold Bear Right Gauntlet",
+          "amount": 1
+        },
+        {
+          "stat_name": "inv_bm bear left pauldron",
+          "display_label": "Hold Bear Left Pauldron",
+          "amount": 1
+        },
+        {
+          "stat_name": "inv_bm bear right pauldron",
+          "display_label": "Hold Bear Right Pauldron",
+          "amount": 1
+        },
+        {
+          "stat_name": "inv_bm bear shield",
+          "display_label": "Hold Bear Shield",
+          "amount": 1
+        }
+      ]
+    },
+    {
+      "id": "BM_COL_SNOW_WOLF_ARMOR",
+      "parent_id": "",
+      "name": "Snow Wolf Armor",
+      "description": "Complete a full set of the Snow Wolf armor",
+      "points": 5,
+      "icon": "random",
+      "category": "Collection",
+      "order": 49,
+      "type": "",
+      "progress_bar": false,
+      "regions": [],
+      "factions": [],
+      "target_value": 0,
+      "tracked_stat": "",
+      "notification_step": 1,
+      "trigger": {
+        "type": "Loot"
+      },
+      "objectives": [
+        {
+          "stat_name": "inv_bm_wolf_boots_snow",
+          "display_label": "Hold Snow Wolf Boots",
+          "amount": 1
+        },
+        {
+          "stat_name": "inv_bm_wolf_cuirass_snow",
+          "display_label": "Hold Snow Wolf Cuirass",
+          "amount": 1
+        },
+        {
+          "stat_name": "inv_bm_wolf_greaves_snow",
+          "display_label": "Hold Snow Wolf Greaves",
+          "amount": 1
+        },
+        {
+          "stat_name": "inv_bm_wolf_helmet_snow",
+          "display_label": "Hold Snow Wolf Helmet",
+          "amount": 1
+        },
+        {
+          "stat_name": "inv_bm_wolf_left_gauntlet_snow",
+          "display_label": "Hold Snow Wolf Left Gauntlet",
+          "amount": 1
+        },
+        {
+          "stat_name": "inv_bm_wolf_left_pauldron_snow",
+          "display_label": "Hold Snow Wolf Left Pauldron",
+          "amount": 1
+        },
+        {
+          "stat_name": "inv_bm_wolf_right_gauntlet_snow",
+          "display_label": "Hold Snow Wolf Right Gauntlet",
+          "amount": 1
+        },
+        {
+          "stat_name": "inv_bm_wolf_right_pauldron_snow",
+          "display_label": "Hold Snow Wolf Right Pauldron",
+          "amount": 1
+        }
+      ]
+    },
+    {
+      "id": "BM_COL_SNOW_BEAR_ARMOR",
+      "parent_id": "",
+      "name": "Snow Bear Armor",
+      "description": "Complete a full set of the Snow Bear armor",
+      "points": 5,
+      "icon": "random",
+      "category": "Collection",
+      "order": 50,
+      "type": "",
+      "progress_bar": false,
+      "regions": [],
+      "factions": [],
+      "target_value": 0,
+      "tracked_stat": "",
+      "notification_step": 1,
+      "trigger": {
+        "type": "Loot"
+      },
+      "objectives": [
+        {
+          "stat_name": "inv_bm_bear_boots_snow",
+          "display_label": "Hold Snow Bear Boots",
+          "amount": 1
+        },
+        {
+          "stat_name": "inv_bm_bear_cuirass_snow",
+          "display_label": "Hold Snow Bear Cuirass",
+          "amount": 1
+        },
+        {
+          "stat_name": "inv_bm_bear_greaves_snow",
+          "display_label": "Hold Snow Bear Greaves",
+          "amount": 1
+        },
+        {
+          "stat_name": "inv_bm_bear_helmet_snow",
+          "display_label": "Hold Snow Bear Helmet",
+          "amount": 1
+        },
+        {
+          "stat_name": "inv_bm_bear_left_gauntlet_snow",
+          "display_label": "Hold Snow Bear Left Gauntlet",
+          "amount": 1
+        },
+        {
+          "stat_name": "inv_bm_bear_left_pauldron_snow",
+          "display_label": "Hold Snow Bear Left Pauldron",
+          "amount": 1
+        },
+        {
+          "stat_name": "inv_bm_bear_right_gauntlet_snow",
+          "display_label": "Hold Snow Bear Right Gauntlet",
+          "amount": 1
+        },
+        {
+          "stat_name": "inv_bm_bear_right_pauldron_snow",
+          "display_label": "Hold Snow Bear Right Pauldron",
+          "amount": 1
+        }
+      ]
+    },
+    {
+      "id": "BM_COL_NORDIC_MAIL_ARMOR",
+      "parent_id": "",
+      "name": "Nordic Mail Armor",
+      "description": "Complete a full set of the Nordic Mail armor",
+      "points": 5,
+      "icon": "random",
+      "category": "Collection",
+      "order": 51,
+      "type": "",
+      "progress_bar": false,
+      "regions": [],
+      "factions": [],
+      "target_value": 0,
+      "tracked_stat": "",
+      "notification_step": 1,
+      "trigger": {
+        "type": "Loot"
+      },
+      "objectives": [
+        {
+          "stat_name": "inv_bm_nordicmail_boots",
+          "display_label": "Hold Nordic Mail Boots",
+          "amount": 1
+        },
+        {
+          "stat_name": "inv_bm_nordicmail_cuirass",
+          "display_label": "Hold Nordic Mail Cuirass",
+          "amount": 1
+        },
+        {
+          "stat_name": "inv_bm_nordicmail_gauntletl",
+          "display_label": "Hold Nordic Mail Left Gauntlet",
+          "amount": 1
+        },
+        {
+          "stat_name": "inv_bm_nordicmail_gauntletr",
+          "display_label": "Hold Nordic Mail Right Gauntlet",
+          "amount": 1
+        },
+        {
+          "stat_name": "inv_bm_nordicmail_greaves",
+          "display_label": "Hold Nordic Mail Greaves",
+          "amount": 1
+        },
+        {
+          "stat_name": "inv_bm_nordicmail_helmet",
+          "display_label": "Hold Nordic Mail Helmet",
+          "amount": 1
+        },
+        {
+          "stat_name": "inv_bm_nordicmail_pauldronl",
+          "display_label": "Hold Nordic Mail Left Pauldron",
+          "amount": 1
+        },
+        {
+          "stat_name": "inv_bm_nordicmail_pauldronr",
+          "display_label": "Hold Nordic Mail Right Pauldron",
+          "amount": 1
+        },
+        {
+          "stat_name": "inv_bm_nordicmail_shield",
+          "display_label": "Hold Nordic Mail Shield",
+          "amount": 1
+        }
+      ]
+    },
+    {
+      "id": "BM_COL_ICE_ARMOR",
+      "parent_id": "",
+      "name": "Ice Armor",
+      "description": "Complete a full set of the Ice armor",
+      "points": 5,
+      "icon": "random",
+      "category": "Collection",
+      "order": 52,
+      "type": "",
+      "progress_bar": false,
+      "regions": [],
+      "factions": [],
+      "target_value": 0,
+      "tracked_stat": "",
+      "notification_step": 1,
+      "trigger": {
+        "type": "Loot"
+      },
+      "objectives": [
+        {
+          "stat_name": "inv_bm_ice_boots",
+          "display_label": "Hold Ice Armor Boots",
+          "amount": 1
+        },
+        {
+          "stat_name": "inv_bm_ice_cuirass",
+          "display_label": "Hold Ice Armor Cuirass",
+          "amount": 1
+        },
+        {
+          "stat_name": "inv_bm_ice_gauntletl",
+          "display_label": "Hold Ice Armor Left Gauntlet",
+          "amount": 1
+        },
+        {
+          "stat_name": "inv_bm_ice_gauntletr",
+          "display_label": "Hold Ice Armor Right Gauntlet",
+          "amount": 1
+        },
+        {
+          "stat_name": "inv_bm_ice_greaves",
+          "display_label": "Hold Ice Armor Greaves",
+          "amount": 1
+        },
+        {
+          "stat_name": "inv_bm_ice_helmet",
+          "display_label": "Hold Ice Armor Helmet",
+          "amount": 1
+        },
+        {
+          "stat_name": "inv_bm_ice_pauldronl",
+          "display_label": "Hold Ice Armor Left Pauldron",
+          "amount": 1
+        },
+        {
+          "stat_name": "inv_bm_ice_pauldronr",
+          "display_label": "Hold Ice Armor Right Pauldron",
+          "amount": 1
+        },
+        {
+          "stat_name": "inv_bm_ice_shield",
+          "display_label": "Hold Ice Shield",
+          "amount": 1
+        }
+      ]
+    },
+    {
+      "id": "BM_SOUL_ALL",
+      "parent_id": "",
+      "name": "Soulstheim",
+      "description": "Capture every Solthteim's creature souls",
+      "points": 25,
+      "icon": "random",
+      "category": "Combat",
+      "order": 53,
+      "type": "",
+      "progress_bar": true,
+      "regions": [],
+      "factions": [],
+      "notification_step": 1,
+      "trigger": {
+        "type": "SoulTrap"
+      },
+      "objectives": [
+        {
+          "stat_name": "soul_werewolf",
+          "display_label": "Capture the soul of a Werewolf",
+          "amount": 1,
+          "group": "g1",
+          "any_of": true
+        },
+        {
+          "stat_name": "soul_werewolf innocent",
+          "display_label": "Capture the soul of a Werewolf Innocent",
+          "amount": 1,
+          "group": "g1",
+          "any_of": true
+        },
+        {
+          "stat_name": "soul_bonewolf",
+          "display_label": "Capture the soul of a Bonewolf",
+          "amount": 1
+        },
+        {
+          "stat_name": "soul_grahl",
+          "display_label": "Capture the soul of a Grahl",
+          "amount": 1,
+          "group": "g2",
+          "any_of": true
+        },
+        {
+          "stat_name": "soul_fearsome grahl",
+          "display_label": "Capture the soul of a Fearsome Grahl",
+          "amount": 1,
+          "group": "g2",
+          "any_of": true
+        },
+        {
+          "stat_name": "soul_deadly grahl",
+          "display_label": "Capture the soul of a Deadly Grahl",
+          "amount": 1,
+          "group": "g2",
+          "any_of": true
+        },
+        {
+          "stat_name": "soul_grizzly bear",
+          "display_label": "Capture the soul of a Bear",
+          "amount": 1,
+          "group": "g4",
+          "any_of": true
+        },
+        {
+          "stat_name": "soul_snow bear",
+          "display_label": "Capture the soul of a Bear",
+          "amount": 1,
+          "group": "g4",
+          "any_of": true
+        },
+        {
+          "stat_name": "soul_plague bear",
+          "display_label": "Capture the soul of a Bear",
+          "amount": 1,
+          "group": "g4",
+          "any_of": true
+        },
+        {
+          "stat_name": "soul_wolf",
+          "display_label": "Capture the soul of a Wolf",
+          "amount": 1,
+          "group": "g3",
+          "any_of": true
+        },
+        {
+          "stat_name": "soul_plague wolf",
+          "display_label": "Capture the soul of a Wolf",
+          "amount": 1,
+          "group": "g3",
+          "any_of": true
+        },
+        {
+          "stat_name": "soul_snow wolf",
+          "display_label": "Capture the soul of a Wolf",
+          "amount": 1,
+          "group": "g3",
+          "any_of": true
+        },
+        {
+          "stat_name": "soul_caenlorn wolf",
+          "display_label": "Capture the soul of a Caenlorn Wolf",
+          "amount": 1,
+          "group": "g3",
+          "any_of": true
+        },
+        {
+          "stat_name": "soul_riekling",
+          "display_label": "Capture the soul of a Riekling",
+          "amount": 1,
+          "group": "g5",
+          "any_of": true
+        },
+        {
+          "stat_name": "soul_riekling boarmaster",
+          "display_label": "Capture the soul of a Riekling Boarmaster",
+          "amount": 1
+        },
+        {
+          "stat_name": "soul_riekling raider",
+          "display_label": "Capture the soul of a Riekling Raider",
+          "amount": 1
+        },
+        {
+          "stat_name": "soul_horker",
+          "display_label": "Capture the soul of a Horker",
+          "amount": 1
+        },
+        {
+          "stat_name": "soul_tusked bristleback",
+          "display_label": "Capture the soul of a Tusked Bristleback",
+          "amount": 1
+        },
+        {
+          "stat_name": "soul_dire frost atronach",
+          "display_label": "Capture the soul of a Dire Frost Atronach",
+          "amount": 1
+        },
+        {
+          "stat_name": "soul_draugr",
+          "display_label": "Capture the soul of a Draugr",
+          "amount": 1,
+          "group": "g6",
+          "any_of": true
+        },
+        {
+          "stat_name": "soul_greater skeleton champion",
+          "display_label": "Capture the soul of a Greater Skeleton Champion",
+          "amount": 1
+        },
+        {
+          "stat_name": "soul_skeleton pirate",
+          "display_label": "Capture the soul of a Skeleton Pirate",
+          "amount": 1,
+          "group": "g7",
+          "any_of": true
+        },
+        {
+          "stat_name": "soul_skeleton pirate captain",
+          "display_label": "Capture the soul of a Skeleton Pirate",
+          "amount": 1,
+          "group": "g7",
+          "any_of": true
+        },
+        {
+          "stat_name": "soul_skeleton berserker",
+          "display_label": "Capture the soul of a Skeleton Berserker",
+          "amount": 1
+        },
+        {
+          "stat_name": "soul_spriggan",
+          "display_label": "Capture the soul of a Spriggan",
+          "amount": 1
+        }
+      ],
+      "tracked_stat": "",
+      "target_value": 0
+    },
+    {
+      "id": "BM_KILL_BEAR_1",
+      "parent_id": "",
+      "name": "Bear Hunter",
+      "description": "Kill at least 10 Bears",
+      "points": 2,
+      "icon": "random",
+      "category": "Combat",
+      "order": 54,
+      "type": "",
+      "locations": [],
+      "regions": [],
+      "factions": [],
+      "target_value": 10,
+      "notification_step": 1,
+      "trigger": {
+        "type": "Kill",
+        "sum": true
+      },
+      "objectives": [
+        {
+          "stat_name": "creature_kill_grizzly bear",
+          "display_label": "Kill Grizzly Bear",
+          "amount": 1
+        },
+        {
+          "stat_name": "creature_kill_snow bear",
+          "display_label": "Kill Snow Bear",
+          "amount": 1
+        },
+        {
+          "stat_name": "creature_kill_spirit bear",
+          "display_label": "Kill Spirit Bear",
+          "amount": 1
+        },
+        {
+          "stat_name": "creature_kill_plague bear",
+          "display_label": "Kill Plague Bear",
+          "amount": 1
+        }
+      ]
+    },
+    {
+      "id": "BM_KILL_BEAR_2",
+      "parent_id": "BM_KILL_BEAR_1",
+      "name": "Bear Destroyer",
+      "description": "Kill at least 25 Bears",
+      "points": 3,
+      "icon": "random",
+      "category": "Combat",
+      "order": 55,
+      "type": "",
+      "locations": [],
+      "regions": [],
+      "factions": [],
+      "target_value": 25,
+      "notification_step": 1,
+      "trigger": {
+        "type": "Kill",
+        "sum": true
+      },
+      "objectives": [
+        {
+          "stat_name": "creature_kill_grizzly bear",
+          "display_label": "Kill Grizzly Bear",
+          "amount": 1
+        },
+        {
+          "stat_name": "creature_kill_snow bear",
+          "display_label": "Kill Snow Bear",
+          "amount": 1
+        },
+        {
+          "stat_name": "creature_kill_spirit bear",
+          "display_label": "Kill Spirit Bear",
+          "amount": 1
+        },
+        {
+          "stat_name": "creature_kill_plague bear",
+          "display_label": "Kill Plague Bear",
+          "amount": 1
+        }
+      ]
+    },
+    {
+      "id": "BM_KILL_BEAR_3",
+      "parent_id": "BM_KILL_BEAR_1",
+      "name": "Bear Slayer",
+      "description": "Kill at least 50 Bears",
+      "points": 5,
+      "icon": "random",
+      "category": "Combat",
+      "order": 56,
+      "type": "",
+      "locations": [],
+      "regions": [],
+      "factions": [],
+      "target_value": 50,
+      "notification_step": 1,
+      "trigger": {
+        "type": "Kill",
+        "sum": true
+      },
+      "objectives": [
+        {
+          "stat_name": "creature_kill_grizzly bear",
+          "display_label": "Kill Grizzly Bear",
+          "amount": 1
+        },
+        {
+          "stat_name": "creature_kill_snow bear",
+          "display_label": "Kill Snow Bear",
+          "amount": 1
+        },
+        {
+          "stat_name": "creature_kill_spirit bear",
+          "display_label": "Kill Spirit Bear",
+          "amount": 1
+        },
+        {
+          "stat_name": "creature_kill_plague bear",
+          "display_label": "Kill Plague Bear",
+          "amount": 1
+        }
+      ]
+    },
+    {
+      "id": "BM_KILL_WOLF_1",
+      "parent_id": "",
+      "name": "Wolf Hunter",
+      "description": "Kill at least 10 Wolves",
+      "points": 2,
+      "icon": "random",
+      "category": "Combat",
+      "order": 57,
+      "type": "",
+      "locations": [],
+      "regions": [],
+      "factions": [],
+      "target_value": 10,
+      "notification_step": 1,
+      "trigger": {
+        "type": "Kill",
+        "sum": true
+      },
+      "objectives": [
+        {
+          "stat_name": "creature_kill_bonewolf",
+          "display_label": "Kill Bonewolf",
+          "amount": 1
+        },
+        {
+          "stat_name": "creature_kill_plague wolf",
+          "display_label": "Kill Plague Wolf",
+          "amount": 1
+        },
+        {
+          "stat_name": "creature_kill_snow wolf",
+          "display_label": "Kill Snow Wolf",
+          "amount": 1
+        },
+        {
+          "stat_name": "creature_kill_wolf",
+          "display_label": "Kill Wolf",
+          "amount": 1
+        },
+        {
+          "stat_name": "creature_kill_caenlorn wolf",
+          "display_label": "Kill Caenlorn Wolf",
+          "amount": 1
+        }
+      ]
+    },
+    {
+      "id": "BM_KILL_WOLF_2",
+      "parent_id": "BM_KILL_WOLF_1",
+      "name": "Wolf Destroyer",
+      "description": "Kill at least 25 Wolves",
+      "points": 3,
+      "icon": "random",
+      "category": "Combat",
+      "order": 58,
+      "type": "",
+      "locations": [],
+      "regions": [],
+      "factions": [],
+      "target_value": 25,
+      "notification_step": 1,
+      "trigger": {
+        "type": "Kill",
+        "sum": true
+      },
+      "objectives": [
+        {
+          "stat_name": "creature_kill_bonewolf",
+          "display_label": "Kill Bonewolf",
+          "amount": 1
+        },
+        {
+          "stat_name": "creature_kill_plague wolf",
+          "display_label": "Kill Plague Wolf",
+          "amount": 1
+        },
+        {
+          "stat_name": "creature_kill_snow wolf",
+          "display_label": "Kill Snow Wolf",
+          "amount": 1
+        },
+        {
+          "stat_name": "creature_kill_wolf",
+          "display_label": "Kill Wolf",
+          "amount": 1
+        },
+        {
+          "stat_name": "creature_kill_caenlorn wolf",
+          "display_label": "Kill Caenlorn Wolf",
+          "amount": 1
+        }
+      ]
+    },
+    {
+      "id": "BM_KILL_WOLF_3",
+      "parent_id": "BM_KILL_WOLF_1",
+      "name": "Wolf Destroyer",
+      "description": "Kill at least 50 Wolves",
+      "points": 5,
+      "icon": "random",
+      "category": "Combat",
+      "order": 59,
+      "type": "",
+      "locations": [],
+      "regions": [],
+      "factions": [],
+      "target_value": 50,
+      "notification_step": 1,
+      "trigger": {
+        "type": "Kill",
+        "sum": true
+      },
+      "objectives": [
+        {
+          "stat_name": "creature_kill_bonewolf",
+          "display_label": "Kill Bonewolf",
+          "amount": 1
+        },
+        {
+          "stat_name": "creature_kill_plague wolf",
+          "display_label": "Kill Plague Wolf",
+          "amount": 1
+        },
+        {
+          "stat_name": "creature_kill_snow wolf",
+          "display_label": "Kill Snow Wolf",
+          "amount": 1
+        },
+        {
+          "stat_name": "creature_kill_wolf",
+          "display_label": "Kill Wolf",
+          "amount": 1
+        },
+        {
+          "stat_name": "creature_kill_caenlorn wolf",
+          "display_label": "Kill Caenlorn Wolf",
+          "amount": 1
+        }
+      ]
+    },
+    {
+      "id": "BM_KILL_RIEK_1",
+      "parent_id": "",
+      "name": "Riekling Hunter",
+      "description": "Kill at least 10 Rieklings",
+      "points": 2,
+      "icon": "random",
+      "category": "Combat",
+      "order": 60,
+      "type": "",
+      "locations": [],
+      "regions": [],
+      "factions": [],
+      "target_value": 10,
+      "notification_step": 1,
+      "trigger": {
+        "type": "Kill",
+        "sum": true
+      },
+      "objectives": [
+        {
+          "stat_name": "creature_kill_riekling",
+          "display_label": "Kill Riekling",
+          "amount": 1
+        },
+        {
+          "stat_name": "creature_kill_riekling boarmaster",
+          "display_label": "Kill Riekling Boarmaster",
+          "amount": 1
+        },
+        {
+          "stat_name": "creature_kill_riekling raider",
+          "display_label": "Kill Riekling Raider",
+          "amount": 1
+        }
+      ]
+    },
+    {
+      "id": "BM_KILL_RIEK_2",
+      "parent_id": "BM_KILL_RIEK_1",
+      "name": "Riekling Destroyer",
+      "description": "Kill at least 25 Rieklings",
+      "points": 3,
+      "icon": "random",
+      "category": "Combat",
+      "order": 61,
+      "type": "",
+      "locations": [],
+      "regions": [],
+      "factions": [],
+      "target_value": 25,
+      "notification_step": 1,
+      "trigger": {
+        "type": "Kill",
+        "sum": true
+      },
+      "objectives": [
+        {
+          "stat_name": "creature_kill_riekling",
+          "display_label": "Kill Riekling",
+          "amount": 1
+        },
+        {
+          "stat_name": "creature_kill_riekling boarmaster",
+          "display_label": "Kill Riekling Boarmaster",
+          "amount": 1
+        },
+        {
+          "stat_name": "creature_kill_riekling raider",
+          "display_label": "Kill Riekling Raider",
+          "amount": 1
+        }
+      ]
+    },
+    {
+      "id": "BM_KILL_RIEK_3",
+      "parent_id": "BM_KILL_RIEK_1",
+      "name": "Riekling Slayer",
+      "description": "Kill at least 50 Rieklings",
+      "points": 5,
+      "icon": "random",
+      "category": "Combat",
+      "order": 62,
+      "type": "",
+      "locations": [],
+      "regions": [],
+      "factions": [],
+      "target_value": 50,
+      "notification_step": 1,
+      "trigger": {
+        "type": "Kill",
+        "sum": true
+      },
+      "objectives": [
+        {
+          "stat_name": "creature_kill_riekling",
+          "display_label": "Kill Riekling",
+          "amount": 1
+        },
+        {
+          "stat_name": "creature_kill_riekling boarmaster",
+          "display_label": "Kill Riekling Boarmaster",
+          "amount": 1
+        },
+        {
+          "stat_name": "creature_kill_riekling raider",
+          "display_label": "Kill Riekling Raider",
+          "amount": 1
+        }
+      ]
+    },
+    {
+      "id": "BM_KILL_DRAUGR_1",
+      "parent_id": "",
+      "name": "Draugr Hunter",
+      "description": "Kill at least 10 Draugrs",
+      "points": 2,
+      "icon": "random",
+      "category": "Combat",
+      "order": 63,
+      "type": "",
+      "locations": [],
+      "regions": [],
+      "factions": [],
+      "target_value": 10,
+      "notification_step": 1,
+      "trigger": {
+        "type": "Kill",
+        "sum": true
+      },
+      "objectives": [
+        {
+          "stat_name": "creature_kill_draugr",
+          "display_label": "Kill Draugr",
+          "amount": 1
+        },
+        {
+          "stat_name": "creature_kill_valbrandr draugr",
+          "display_label": "Kill Valbrandr draugr",
+          "amount": 1
+        },
+        {
+          "stat_name": "creature_kill_draugr lord aesliip",
+          "display_label": "Kill Draugr Lord Aesliip",
+          "amount": 1
+        }
+      ]
+    },
+    {
+      "id": "BM_KILL_DRAUGR_2",
+      "parent_id": "BM_KILL_DRAUGR_1",
+      "name": "Draugr Destroyer",
+      "description": "Kill at least 25 Draugrs",
+      "points": 3,
+      "icon": "random",
+      "category": "Combat",
+      "order": 64,
+      "type": "",
+      "locations": [],
+      "regions": [],
+      "factions": [],
+      "target_value": 25,
+      "notification_step": 1,
+      "trigger": {
+        "type": "Kill",
+        "sum": true
+      },
+      "objectives": [
+        {
+          "stat_name": "creature_kill_draugr",
+          "display_label": "Kill Draugr",
+          "amount": 1
+        },
+        {
+          "stat_name": "creature_kill_valbrandr draugr",
+          "display_label": "Kill Valbrandr draugr",
+          "amount": 1
+        },
+        {
+          "stat_name": "creature_kill_draugr lord aesliip",
+          "display_label": "Kill Draugr Lord Aesliip",
+          "amount": 1
+        }
+      ]
+    },
+    {
+      "id": "BM_KILL_DRAUGR_3",
+      "parent_id": "BM_KILL_DRAUGR_1",
+      "name": "Draugr Slayer",
+      "description": "Kill at least 50 Draugrs",
+      "points": 5,
+      "icon": "random",
+      "category": "Combat",
+      "order": 65,
+      "type": "",
+      "locations": [],
+      "regions": [],
+      "factions": [],
+      "target_value": 50,
+      "notification_step": 1,
+      "trigger": {
+        "type": "Kill",
+        "sum": true
+      },
+      "objectives": [
+        {
+          "stat_name": "creature_kill_draugr",
+          "display_label": "Kill Draugr",
+          "amount": 1
+        },
+        {
+          "stat_name": "creature_kill_valbrandr draugr",
+          "display_label": "Kill Valbrandr draugr",
+          "amount": 1
+        },
+        {
+          "stat_name": "creature_kill_draugr lord aesliip",
+          "display_label": "Kill Draugr Lord Aesliip",
+          "amount": 1
+        }
+      ]
+    },
+    {
+      "id": "BM_KILL_HORKER",
+      "parent_id": "",
+      "name": "Skaal Doggy",
+      "description": "Kill at least 25 Horkers",
+      "points": 5,
+      "icon": "random",
+      "category": "Combat",
+      "order": 66,
+      "type": "",
+      "locations": [],
+      "regions": [],
+      "factions": [],
+      "target_value": 50,
+      "notification_step": 1,
+      "trigger": {
+        "type": "Kill",
+        "sum": true
+      },
+      "objectives": [
+        {
+          "stat_name": "creature_kill_horker",
+          "display_label": "Kill Horker",
+          "amount": 1
+        }
+      ]
+    },
+    {
+      "id": "BM_KILL_GRAHL",
+      "parent_id": "",
+      "name": "Ice Trolls",
+      "description": "Kill at least 25 Grahls",
+      "points": 5,
+      "icon": "random",
+      "category": "Combat",
+      "order": 67,
+      "type": "",
+      "locations": [],
+      "regions": [],
+      "factions": [],
+      "target_value": 25,
+      "notification_step": 1,
+      "trigger": {
+        "type": "Kill",
+        "sum": true
+      },
+      "objectives": [
+        {
+          "stat_name": "creature_kill_grahl",
+          "display_label": "Kill Grahl",
+          "amount": 1
+        },
+        {
+          "stat_name": "creature_kill_deadly grahl",
+          "display_label": "Kill Deadly Grahl",
+          "amount": 1
+        },
+        {
+          "stat_name": "creature_kill_fearsome grahl",
+          "display_label": "Kill Fearsome Grahl",
+          "amount": 1
+        },
+        {
+          "stat_name": "creature_kill_lightkeeper grahl",
+          "display_label": "Kill Lightkeeper Grahl",
+          "amount": 1
+        }
+      ]
+    },
+    {
+      "id": "BM_KILL_SPRIGGANS",
+      "parent_id": "",
+      "name": "Killing Spreeggans",
+      "description": "Kill at least 25 Spriggans",
+      "points": 5,
+      "icon": "random",
+      "category": "Combat",
+      "order": 68,
+      "type": "",
+      "locations": [],
+      "regions": [],
+      "factions": [],
+      "target_value": 25,
+      "notification_step": 1,
+      "trigger": {
+        "type": "Kill",
+        "sum": true
+      },
+      "objectives": [
+        {
+          "stat_name": "creature_kill_spriggan",
+          "display_label": "Kill Spriggan",
+          "amount": 1
+        }
+      ]
+    },
+    {
+      "id": "BM_KILL_PIGS",
+      "parent_id": "",
+      "name": "Solstheim Pigs",
+      "description": "Kill at least 25 Tusked Bristlebacks\n",
+      "points": 5,
+      "icon": "random",
+      "category": "Combat",
+      "order": 69,
+      "type": "",
+      "locations": [],
+      "regions": [],
+      "factions": [],
+      "target_value": 25,
+      "notification_step": 1,
+      "trigger": {
+        "type": "Kill",
+        "sum": true
+      },
+      "objectives": [
+        {
+          "stat_name": "creature_kill_tusked bristleback",
+          "display_label": "Kill Tusked Bristleback",
+          "amount": 1
+        }
+      ]
+    }
+  ]
+}

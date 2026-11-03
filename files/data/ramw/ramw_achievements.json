@@ -1,1768 +1,5325 @@
-[
-  {
-    "id": "MQ_0",
-    "parent_id": "",
-    "name": "Welcome to Vvanderfell",
-    "description": "Finish your paperworks at the Census and Excise office and start your journey",
-    "points": 1,
-    "icon": "random",
-    "category": "Quest",
-    "order": 0,
-    "target_value": 0,
-    "tracked_stat": "",
-    "notification_step": 1,
-    "objectives": [
-      {
-        "stat_name": "loot_chargen statssheet",
-        "display_label": "",
-        "amount": 1
-      }
-    ],
-    "trigger": {
-      "type": "Loot"
+{
+  "set": "Vanilla",
+  "prefix": "MW",
+  "achievements": [
+    {
+      "id": "MW_MQ_0",
+      "parent_id": "",
+      "name": "Welcome to Vvanderfell",
+      "description": "Finish your paperworks at the Census and Excise office and start your journey",
+      "points": 1,
+      "icon": "random",
+      "category": "Quest",
+      "order": 0,
+      "notification_step": 1,
+      "objectives": [
+        {
+          "stat_name": "loot_chargen statssheet",
+          "display_label": "",
+          "amount": 1
+        }
+      ],
+      "trigger": {
+        "type": "Loot"
+      },
+      "type": "progression",
+      "progress_bar": false,
+      "regions": [
+        "Bitter Coast Region"
+      ]
+    },
+    {
+      "id": "MW_MQ_1",
+      "parent_id": "",
+      "name": "First Contact",
+      "description": "Talk to Caius Cosades in Balmora",
+      "points": 5,
+      "icon": "random",
+      "category": "Quest",
+      "order": 1,
+      "target_value": 0,
+      "tracked_stat": "",
+      "notification_step": 1,
+      "objectives": [
+        {
+          "stat_name": "quest_finished_A1_1_FindSpymaster",
+          "display_label": "Report to Caius Cosades",
+          "amount": 1
+        }
+      ],
+      "trigger": {
+        "type": "QuestComplete"
+      },
+      "type": "progression",
+      "regions": [
+        "West Gash Region"
+      ],
+      "factions": [
+        "Blades"
+      ],
+      "quest_line": "Caius Cosades Quest Line"
+    },
+    {
+      "id": "MW_MQ_2",
+      "parent_id": "MW_MQ_1",
+      "name": "Antabolis Informant",
+      "description": "Bring Hasphat a Dwemer puzzle box and return to Caius Cosades",
+      "points": 5,
+      "icon": "random",
+      "category": "Quest",
+      "order": 2,
+      "target_value": 0,
+      "tracked_stat": "",
+      "notification_step": 1,
+      "trigger": {
+        "type": "QuestComplete"
+      },
+      "objectives": [
+        {
+          "stat_name": "quest_finished_A1_2_AntabolisInformant",
+          "display_label": "Antabolis Informant",
+          "amount": 1
+        }
+      ],
+      "type": "progression",
+      "factions": [
+        "Blades"
+      ],
+      "regions": [
+        "West Gash Region"
+      ]
+    },
+    {
+      "id": "MW_MQ3",
+      "parent_id": "MW_MQ_1",
+      "name": "Gra-Muzgob Informant",
+      "description": "Deliver the Skull of Llevule Andrano to Sharn gra-Muzgob in exchange for information that Caius Cosades desires",
+      "points": 5,
+      "icon": "random",
+      "category": "Quest",
+      "order": 3,
+      "type": "progression",
+      "progress_bar": false,
+      "regions": [],
+      "factions": [],
+      "target_value": 0,
+      "tracked_stat": "",
+      "notification_step": 1,
+      "trigger": {
+        "type": "QuestComplete"
+      },
+      "objectives": [
+        {
+          "stat_name": "quest_finished_A1_4_MuzgobInformant",
+          "display_label": "",
+          "amount": 1
+        }
+      ]
+    },
+    {
+      "id": "MW_MQ4",
+      "parent_id": "MW_MQ_1",
+      "name": "Vivec Informants",
+      "description": "Speak with three informants in Vivec about the Nerevarine Cult and the Sixth House then report to Caius Cosades",
+      "points": 5,
+      "icon": "random",
+      "category": "Quest",
+      "order": 4,
+      "type": "progression",
+      "progress_bar": false,
+      "regions": [],
+      "factions": [],
+      "target_value": 0,
+      "tracked_stat": "",
+      "notification_step": 1,
+      "trigger": {
+        "type": "QuestComplete"
+      },
+      "objectives": [
+        {
+          "stat_name": "quest_finished_A1_V_VivecInformants",
+          "display_label": "",
+          "amount": 1
+        }
+      ]
+    },
+    {
+      "id": "MW_MQ5",
+      "parent_id": "MW_MQ_1",
+      "name": "Zainsubani Informant",
+      "description": "Seek out Hassour Zainsubani in Ald'ruhn and ask him about the Ashlanders and the Nerevarine Cult",
+      "points": 5,
+      "icon": "random",
+      "category": "Quest",
+      "order": 5,
+      "type": "progression",
+      "progress_bar": false,
+      "regions": [],
+      "factions": [],
+      "target_value": 0,
+      "tracked_stat": "",
+      "notification_step": 1,
+      "trigger": {
+        "type": "QuestComplete"
+      },
+      "objectives": [
+        {
+          "stat_name": "quest_finished_A1_11_ZainsubaniInformant",
+          "display_label": "",
+          "amount": 1
+        }
+      ]
+    },
+    {
+      "id": "MW_MQ6",
+      "parent_id": "MW_MQ_1",
+      "name": "Meet Sul-Matuul",
+      "description": "Travel to the northern coast to find out more about the Nerevarine Prophecies and how it relates to you",
+      "points": 5,
+      "icon": "random",
+      "category": "Quest",
+      "order": 6,
+      "type": "progression",
+      "progress_bar": false,
+      "regions": [],
+      "factions": [],
+      "target_value": 0,
+      "tracked_stat": "",
+      "notification_step": 1,
+      "trigger": {
+        "type": "QuestComplete"
+      },
+      "objectives": [
+        {
+          "stat_name": "quest_finished_A2_1_MeetSulMatuul",
+          "display_label": "",
+          "amount": 1
+        }
+      ]
+    },
+    {
+      "id": "MW_MQ7",
+      "parent_id": "MW_MQ_1",
+      "name": "Sixth House Base",
+      "description": "Dispose of a Sixth House base recently discovered near Gnaar Mok",
+      "points": 5,
+      "icon": "random",
+      "category": "Quest",
+      "order": 7,
+      "type": "progression",
+      "progress_bar": false,
+      "regions": [],
+      "factions": [],
+      "target_value": 0,
+      "tracked_stat": "",
+      "notification_step": 1,
+      "trigger": {
+        "type": "QuestComplete"
+      },
+      "objectives": [
+        {
+          "stat_name": "quest_finished_A2_2_6thHouse",
+          "display_label": "",
+          "amount": 1
+        }
+      ]
+    },
+    {
+      "id": "MW_MQ8",
+      "parent_id": "MW_MQ_1",
+      "name": "Corprus Cure",
+      "description": "Find a way to cure the dreaded Corprus disease",
+      "points": 5,
+      "icon": "random",
+      "category": "Quest",
+      "order": 8,
+      "type": "progression",
+      "progress_bar": false,
+      "regions": [],
+      "factions": [],
+      "notification_step": 1,
+      "trigger": {
+        "type": "QuestComplete"
+      },
+      "objectives": [
+        {
+          "stat_name": "quest_finished_A2_3_CorprusCure",
+          "display_label": "",
+          "amount": 1
+        }
+      ]
+    },
+    {
+      "id": "MW_MQ9",
+      "parent_id": "MW_MQ_1",
+      "name": "Mehra Milo and the Lost Prophecies",
+      "description": "Save Mehra Milo in Vivec and receive 'The Lost Prophecy' and 'The Seven Curses' from Gilvas Barelo",
+      "points": 5,
+      "icon": "random",
+      "category": "Quest",
+      "order": 9,
+      "type": "progression",
+      "progress_bar": false,
+      "regions": [],
+      "factions": [],
+      "target_value": 0,
+      "tracked_stat": "",
+      "notification_step": 1,
+      "trigger": {
+        "type": "QuestComplete"
+      },
+      "objectives": [
+        {
+          "stat_name": "quest_finished_A2_4_MiloGone",
+          "display_label": "",
+          "amount": 1
+        }
+      ]
+    },
+    {
+      "id": "MW_MQ10",
+      "parent_id": "",
+      "name": "The Path of the Incarnate",
+      "description": "Visit the Urshilaku Camp and complete the Third Trial of the prophecy",
+      "points": 5,
+      "icon": "random",
+      "category": "Quest",
+      "order": 10,
+      "type": "progression",
+      "progress_bar": false,
+      "regions": [],
+      "factions": [],
+      "target_value": 0,
+      "tracked_stat": "",
+      "notification_step": 1,
+      "trigger": {
+        "type": "QuestComplete"
+      },
+      "objectives": [
+        {
+          "stat_name": "quest_finished_A2_6_Incarnate",
+          "display_label": "",
+          "amount": 1
+        }
+      ],
+      "quest_line": "Hortator and Nerevarine"
+    },
+    {
+      "id": "MW_MQ11",
+      "parent_id": "MW_MQ10",
+      "name": "Redoran Hortator",
+      "description": "Persuade House Redoran to name you their Hortator",
+      "points": 5,
+      "icon": "random",
+      "category": "Quest",
+      "order": 11,
+      "type": "progression",
+      "progress_bar": false,
+      "regions": [],
+      "factions": [],
+      "target_value": 0,
+      "tracked_stat": "",
+      "notification_step": 1,
+      "trigger": {
+        "type": "QuestComplete"
+      },
+      "objectives": [
+        {
+          "stat_name": "quest_finished_B5_RedoranHort",
+          "display_label": "",
+          "amount": 1
+        }
+      ]
+    },
+    {
+      "id": "MW_MQ12",
+      "parent_id": "MW_MQ10",
+      "name": "Hlaalu Hortator",
+      "description": "Persuade House Hlaalu to name you their Hortator",
+      "points": 5,
+      "icon": "random",
+      "category": "Quest",
+      "order": 12,
+      "type": "progression",
+      "progress_bar": false,
+      "regions": [],
+      "factions": [],
+      "target_value": 0,
+      "tracked_stat": "",
+      "notification_step": 1,
+      "trigger": {
+        "type": "QuestComplete"
+      },
+      "objectives": [
+        {
+          "stat_name": "quest_finished_B6_HlaaluHort",
+          "display_label": "",
+          "amount": 1
+        }
+      ]
+    },
+    {
+      "id": "MW_MQ13",
+      "parent_id": "MW_MQ10",
+      "name": "Telvanni Hortator",
+      "description": "Persuade House Telvanni to name you their Hortator",
+      "points": 5,
+      "icon": "random",
+      "category": "Quest",
+      "order": 13,
+      "type": "progression",
+      "progress_bar": false,
+      "regions": [],
+      "factions": [],
+      "target_value": 0,
+      "tracked_stat": "",
+      "notification_step": 1,
+      "trigger": {
+        "type": "QuestComplete"
+      },
+      "objectives": [
+        {
+          "stat_name": "quest_finished_B7_TelvanniHort",
+          "display_label": "",
+          "amount": 1
+        }
+      ]
+    },
+    {
+      "id": "MW_MQ14",
+      "parent_id": "MW_MQ10",
+      "name": "Urshilaku Nerevarine",
+      "description": "Be named Nerevarine by the Urshilakus",
+      "points": 5,
+      "icon": "random",
+      "category": "Quest",
+      "order": 14,
+      "type": "progression",
+      "progress_bar": false,
+      "regions": [],
+      "factions": [],
+      "target_value": 0,
+      "tracked_stat": "",
+      "notification_step": 1,
+      "trigger": {
+        "type": "QuestComplete"
+      },
+      "objectives": [
+        {
+          "stat_name": "quest_finished_B1_UnifyUrshilaku",
+          "display_label": "",
+          "amount": 1
+        }
+      ]
+    },
+    {
+      "id": "MW_MQ15",
+      "parent_id": "MW_MQ10",
+      "name": "Ahemmusa Nerevarine",
+      "description": "Be named Nerevarine by the Ahemmusas",
+      "points": 5,
+      "icon": "random",
+      "category": "Quest",
+      "order": 15,
+      "type": "progression",
+      "progress_bar": false,
+      "regions": [],
+      "factions": [],
+      "target_value": 0,
+      "tracked_stat": "",
+      "notification_step": 1,
+      "trigger": {
+        "type": "QuestComplete"
+      },
+      "objectives": [
+        {
+          "stat_name": "quest_finished_B2_AhemmusaSafe",
+          "display_label": "",
+          "amount": 1
+        }
+      ]
+    },
+    {
+      "id": "MW_MQ16",
+      "parent_id": "MW_MQ10",
+      "name": "Zainab Nerevarine",
+      "description": "Be named Nerevarine by the Zainabs",
+      "points": 5,
+      "icon": "random",
+      "category": "Quest",
+      "order": 16,
+      "type": "progression",
+      "progress_bar": false,
+      "regions": [],
+      "factions": [],
+      "target_value": 0,
+      "tracked_stat": "",
+      "notification_step": 1,
+      "trigger": {
+        "type": "QuestComplete"
+      },
+      "objectives": [
+        {
+          "stat_name": "quest_finished_B3_ZainabBride",
+          "display_label": "",
+          "amount": 1
+        }
+      ]
+    },
+    {
+      "id": "MW_MQ17",
+      "parent_id": "MW_MQ10",
+      "name": "Erabenimsun Nerevarine",
+      "description": "Be named Nerevarine by the Erabenimsuns",
+      "points": 5,
+      "icon": "random",
+      "category": "Quest",
+      "order": 17,
+      "type": "progression",
+      "progress_bar": false,
+      "regions": [],
+      "factions": [],
+      "target_value": 0,
+      "tracked_stat": "",
+      "notification_step": 1,
+      "trigger": {
+        "type": "QuestComplete"
+      },
+      "objectives": [
+        {
+          "stat_name": "quest_finished_B4_KillWarLovers",
+          "display_label": "",
+          "amount": 1
+        }
+      ]
+    },
+    {
+      "id": "MW_MQ18",
+      "parent_id": "MW_MQ10",
+      "name": "Hortator and Nerevarine",
+      "description": "Make the arrangements to meet the god Vivec and receive the plan to defeat Dagoth Ur",
+      "points": 5,
+      "icon": "random",
+      "category": "Quest",
+      "order": 18,
+      "type": "progression",
+      "progress_bar": false,
+      "regions": [],
+      "factions": [],
+      "target_value": 0,
+      "tracked_stat": "",
+      "notification_step": 1,
+      "trigger": {
+        "type": "QuestComplete"
+      },
+      "objectives": [
+        {
+          "stat_name": "quest_finished_B8_MeetVivec",
+          "display_label": "",
+          "amount": 1
+        }
+      ]
+    },
+    {
+      "id": "MW_MQ19",
+      "parent_id": "",
+      "name": "The Citadels of the Sixth House",
+      "description": "Find the Ash Vampires to collect powerful artifacts and make your assault on Dagoth Ur himself",
+      "points": 25,
+      "icon": "random",
+      "category": "Quest",
+      "order": 19,
+      "type": "win_condition",
+      "progress_bar": false,
+      "regions": [],
+      "factions": [],
+      "target_value": 0,
+      "tracked_stat": "",
+      "notification_step": 1,
+      "trigger": {
+        "type": "QuestComplete"
+      },
+      "objectives": [
+        {
+          "stat_name": "quest_finished_C3_DestroyDagoth",
+          "display_label": "",
+          "amount": 1
+        }
+      ]
+    },
+    {
+      "id": "MW_FG_QUEST_1",
+      "parent_id": "",
+      "name": "The New Fighter",
+      "description": "Finish 3 quests for Eydis Fire-Eye at Balmora's Fighters Guild",
+      "points": 10,
+      "icon": "random",
+      "category": "Quest",
+      "order": 20,
+      "target_value": 0,
+      "tracked_stat": "",
+      "notification_step": 1,
+      "trigger": {
+        "type": "QuestComplete"
+      },
+      "objectives": [
+        {
+          "stat_name": "quest_finished_FG_RatHunt",
+          "display_label": "Exterminator",
+          "amount": 1
+        },
+        {
+          "stat_name": "quest_finished_FG_Egg_Poachers",
+          "display_label": "The Egg Poachers",
+          "amount": 1
+        },
+        {
+          "stat_name": "quest_finished_FG_Telvanni_agents",
+          "display_label": "The Telvanni Agents",
+          "amount": 1
+        }
+      ],
+      "factions": [
+        "Fighters Guild"
+      ],
+      "type": "",
+      "quest_line": "The Fighter's Guild Quest Line"
+    },
+    {
+      "id": "MW_FG_QUEST_2",
+      "parent_id": "MW_FG_QUEST_1",
+      "name": "Eyris' Underling",
+      "description": "Finish 6 quests for Eydis Fire-Eye at Balmora's Fighters Guild",
+      "points": 10,
+      "icon": "random",
+      "category": "Quest",
+      "order": 21,
+      "target_value": 0,
+      "tracked_stat": "",
+      "notification_step": 1,
+      "trigger": {
+        "type": "QuestComplete"
+      },
+      "objectives": [
+        {
+          "stat_name": "quest_finished_FG_Sottilde",
+          "display_label": "The Code Book",
+          "amount": 1
+        },
+        {
+          "stat_name": "quest_finished_FG_DeseleDebt",
+          "display_label": "Desele's Debt",
+          "amount": 1
+        },
+        {
+          "stat_name": "quest_finished_FG_OrcBounty",
+          "display_label": "Gra-Bol's Bounty",
+          "amount": 1
+        }
+      ],
+      "factions": [
+        "Fighters Guild"
+      ],
+      "type": ""
+    },
+    {
+      "id": "MW_FG_QUEST_3",
+      "parent_id": "MW_FG_QUEST_1",
+      "name": "Eyris' Favorite",
+      "description": "Finish every quest for Eydis Fire-Eye at Balmora's Fighters Guild",
+      "points": 10,
+      "icon": "random",
+      "category": "Quest",
+      "order": 22,
+      "target_value": 0,
+      "tracked_stat": "",
+      "notification_step": 1,
+      "trigger": {
+        "type": "QuestComplete"
+      },
+      "objectives": [
+        {
+          "stat_name": "quest_finished_FG_AlofsFarm",
+          "display_label": "Alof and the Orcs",
+          "amount": 1
+        },
+        {
+          "stat_name": "quest_finished_FG_VerethiGang",
+          "display_label": "The Verethi Gang",
+          "amount": 1
+        },
+        {
+          "stat_name": "quest_finished_FG_HungerLoose",
+          "display_label": "Hunger in the Sarano Tomb",
+          "amount": 1
+        }
+      ],
+      "factions": [
+        "Fighters Guild"
+      ],
+      "type": ""
+    },
+    {
+      "id": "MW_FG_QUEST_4",
+      "parent_id": "MW_FG_QUEST_1",
+      "name": "Lorbumol gro-Aglakh's Underling",
+      "description": "Finish 3 quests for Lorbumol gro-Aglakh at Vivec's Fighters Guild",
+      "points": 10,
+      "icon": "random",
+      "category": "Quest",
+      "order": 23,
+      "target_value": 0,
+      "tracked_stat": "",
+      "notification_step": 1,
+      "trigger": {
+        "type": "QuestComplete"
+      },
+      "objectives": [
+        {
+          "stat_name": "quest_finished_FG_DebtOrc",
+          "display_label": "Juicedaw Ring",
+          "amount": 1
+        },
+        {
+          "stat_name": "quest_finished_FG_TongueToad",
+          "display_label": "Silence Tongue-Toad",
+          "amount": 1
+        },
+        {
+          "stat_name": "quest_finished_FG_KhajiitBounty",
+          "display_label": "Dro'Sakhar's Bounty",
+          "amount": 1
+        }
+      ],
+      "factions": [
+        "Fighters Guild"
+      ],
+      "type": ""
+    },
+    {
+      "id": "MW_FG_QUEST_5",
+      "parent_id": "MW_FG_QUEST_1",
+      "name": "Lorbumol gro-Aglakh's Favorite",
+      "description": "Finish every quest for Lorbumol gro-Aglakh at Vivec's Fighters Guild",
+      "points": 10,
+      "icon": "random",
+      "category": "Quest",
+      "order": 24,
+      "target_value": 0,
+      "tracked_stat": "",
+      "notification_step": 1,
+      "trigger": {
+        "type": "QuestComplete"
+      },
+      "objectives": [
+        {
+          "stat_name": "quest_finished_FG_DebtStoine",
+          "display_label": "Lirielle's Debt",
+          "amount": 1
+        },
+        {
+          "stat_name": "quest_finished_FG_SilenceTaxgirl",
+          "display_label": "Vandacia's Bounty",
+          "amount": 1
+        },
+        {
+          "stat_name": "quest_finished_FG_SilenceMagistrate",
+          "display_label": "Alleius' Bounty",
+          "amount": 1
+        }
+      ],
+      "factions": [
+        "Fighters Guild"
+      ],
+      "type": ""
+    },
+    {
+      "id": "MW_FG_QUEST_6",
+      "parent_id": "MW_FG_QUEST_1",
+      "name": "Hrundi's Underling",
+      "description": "Finish 3 quests for Hrundi at Wolverine Hall's Fighters Guild",
+      "points": 10,
+      "icon": "random",
+      "category": "Quest",
+      "order": 25,
+      "target_value": 0,
+      "tracked_stat": "",
+      "notification_step": 1,
+      "trigger": {
+        "type": "QuestComplete"
+      },
+      "objectives": [
+        {
+          "stat_name": "quest_finished_FG_Nchurdamz",
+          "display_label": "Battle at Nchurdamz",
+          "amount": 1
+        },
+        {
+          "stat_name": "quest_finished_FG_DissaplaMine",
+          "display_label": "The Dissapla Mine",
+          "amount": 1
+        },
+        {
+          "stat_name": "quest_finished_FG_CorprusStalker",
+          "display_label": "Berwen's Stalker",
+          "amount": 1
+        },
+        {
+          "stat_name": "quest_finished_FG_TenimBounty",
+          "display_label": "Tenim's Bounty",
+          "amount": 1
+        }
+      ],
+      "factions": [
+        "Fighters Guild"
+      ],
+      "type": ""
+    },
+    {
+      "id": "MW_FG_QUEST_7",
+      "parent_id": "MW_FG_QUEST_1",
+      "name": "Hrundi's Favorite",
+      "description": "Finish every quest for Hrundi at Wolverine Hall's Fighters Guild",
+      "points": 10,
+      "icon": "random",
+      "category": "Quest",
+      "order": 26,
+      "target_value": 0,
+      "tracked_stat": "",
+      "notification_step": 1,
+      "trigger": {
+        "type": "QuestComplete"
+      },
+      "objectives": [
+        {
+          "stat_name": "quest_finished_FG_DuniraiSupply",
+          "display_label": "Sujamma to Dunirai",
+          "amount": 1
+        },
+        {
+          "stat_name": "quest_finished_FG_Telasero",
+          "display_label": "Sondaale",
+          "amount": 1
+        },
+        {
+          "stat_name": "quest_finished_FG_EngaerBounty",
+          "display_label": "Engaer's Bounty",
+          "amount": 1
+        },
+        {
+          "stat_name": "quest_finished_FG_FindPudai",
+          "display_label": "The Pudai Eggmine",
+          "amount": 1
+        }
+      ],
+      "factions": [
+        "Fighters Guild"
+      ],
+      "type": ""
+    },
+    {
+      "id": "MW_FG_QUEST_8",
+      "parent_id": "MW_FG_QUEST_1",
+      "name": "Percius Mercius' Underling",
+      "description": "Finish 3 quests for Percius Mercius at Ald'ruhn's Fighters Guild",
+      "points": 10,
+      "icon": "random",
+      "category": "Quest",
+      "order": 27,
+      "target_value": 0,
+      "tracked_stat": "",
+      "notification_step": 1,
+      "trigger": {
+        "type": "QuestComplete"
+      },
+      "objectives": [
+        {
+          "stat_name": "quest_finished_FG_Vas",
+          "display_label": "The Necromancer of Vas",
+          "amount": 1
+        },
+        {
+          "stat_name": "quest_finished_FG_BeneranBounty",
+          "display_label": "Beneran's Bounty",
+          "amount": 1
+        }
+      ],
+      "factions": [
+        "Fighters Guild"
+      ],
+      "type": ""
+    },
+    {
+      "id": "MW_FG_QUEST_9",
+      "parent_id": "MW_FG_QUEST_1",
+      "name": "Percius Mercius' Favorite",
+      "description": "Finish every quest for Percius Mercius at Ald'ruhn's Fighters Guild",
+      "points": 10,
+      "icon": "random",
+      "category": "Quest",
+      "order": 28,
+      "target_value": 0,
+      "tracked_stat": "",
+      "notification_step": 1,
+      "trigger": {
+        "type": "QuestComplete"
+      },
+      "objectives": [
+        {
+          "stat_name": "quest_finished_FG_ElithPalSupply",
+          "display_label": "Flin for Elith-Pal",
+          "amount": 1
+        },
+        {
+          "stat_name": "quest_finished_FG_KillCronies",
+          "display_label": "Remove Sjoring's Supporters",
+          "amount": 1
+        },
+        {
+          "stat_name": "quest_finished_FG_KillHardHeart",
+          "display_label": "Kill Hard-Heart",
+          "amount": 1
+        }
+      ],
+      "factions": [
+        "Fighters Guild"
+      ],
+      "type": ""
+    },
+    {
+      "id": "MW_FG_QUEST_10",
+      "parent_id": "MW_FG_QUEST_1",
+      "name": "Master of the Fighters Guild",
+      "description": "Finish the Fighters Guild questline and become Master of the Fighters Guild",
+      "points": 25,
+      "icon": "random",
+      "category": "Quest",
+      "order": 29,
+      "target_value": 0,
+      "tracked_stat": "",
+      "notification_step": 1,
+      "trigger": {
+        "type": "QuestComplete"
+      },
+      "objectives": [
+        {
+          "stat_name": "quest_finished_FG_KillBosses",
+          "display_label": "Remove the Heads of the Thieves Guild",
+          "amount": 1
+        },
+        {
+          "stat_name": "quest_finished_FG_BigBosses",
+          "display_label": "Kill the Master Thief",
+          "amount": 1
+        }
+      ],
+      "factions": [
+        "Fighters Guild"
+      ],
+      "type": ""
+    },
+    {
+      "id": "MW_QUEST_FARGOTH_RING",
+      "parent_id": "",
+      "name": "My Precious",
+      "description": "Return the missing ring to Fargoth in Seyda Neen",
+      "points": 5,
+      "icon": "random",
+      "category": "Quest",
+      "order": 30,
+      "target_value": 0,
+      "tracked_stat": "",
+      "notification_step": 1,
+      "trigger": {
+        "type": "QuestComplete"
+      },
+      "objectives": [
+        {
+          "stat_name": "quest_finished_MS_FargothRing",
+          "display_label": "Fargoth's Ring",
+          "amount": 1
+        }
+      ],
+      "regions": [
+        "Bitter Coast Region"
+      ],
+      "type": ""
+    },
+    {
+      "id": "MW_QUEST_TAXMAN",
+      "parent_id": "",
+      "name": "Death of a Taxman",
+      "description": "Finish the questline around the death of a taxman in Seyda Neen",
+      "points": 5,
+      "icon": "random",
+      "category": "Quest",
+      "order": 31,
+      "target_value": 0,
+      "tracked_stat": "",
+      "notification_step": 1,
+      "trigger": {
+        "type": "QuestProgress"
+      },
+      "objectives": [
+        {
+          "stat_name": "quest_stage_MV_DeadTaxman",
+          "display_label": "Death of a Taxman",
+          "amount": 90
+        }
+      ],
+      "regions": [
+        "Bitter Coast Region"
+      ],
+      "type": ""
+    },
+    {
+      "id": "MW_QUEST_NUCCIUS",
+      "parent_id": "",
+      "name": "The Cursed Ring",
+      "description": "Buy a Cursed Ring from Vodunius Nuccius in Seyda Neen",
+      "points": 2,
+      "icon": "random",
+      "category": "Quest",
+      "order": 32,
+      "target_value": 0,
+      "tracked_stat": "",
+      "notification_step": 1,
+      "objectives": [
+        {
+          "stat_name": "quest_finished_MS_Nuccius",
+          "display_label": "The Cursed Ring",
+          "amount": 1
+        }
+      ],
+      "trigger": {
+        "type": "QuestComplete"
+      },
+      "regions": [
+        "Bitter Coast Region"
+      ],
+      "type": ""
+    },
+    {
+      "id": "MW_SLEEPERS_1",
+      "parent_id": "",
+      "name": "Meet Your Hero",
+      "description": "Free every sleepers from their Sixth House's influence and meet each of them",
+      "points": 5,
+      "icon": "random",
+      "category": "Misc",
+      "order": 33,
+      "type": "missable",
+      "progress_bar": false,
+      "regions": [],
+      "factions": [],
+      "target_value": 0,
+      "tracked_stat": "",
+      "notification_step": 1,
+      "trigger": {
+        "type": "QuestComplete"
+      },
+      "objectives": [
+        {
+          "stat_name": "quest_finished_A1_Sleepers_Alvura",
+          "display_label": "Meet Alvura",
+          "amount": 1
+        },
+        {
+          "stat_name": "quest_finished_A1_Sleepers_Assi",
+          "display_label": "Meet Assi",
+          "amount": 1
+        },
+        {
+          "stat_name": "quest_finished_A1_Sleepers_Daynasa",
+          "display_label": "Meet Daynasa",
+          "amount": 1
+        },
+        {
+          "stat_name": "quest_finished_A1_Sleepers_Dralas",
+          "display_label": "Meet Dralas",
+          "amount": 1
+        },
+        {
+          "stat_name": "quest_finished_A1_Sleepers_Drarayne",
+          "display_label": "Meet Drarayne",
+          "amount": 1
+        },
+        {
+          "stat_name": "quest_finished_A1_Sleepers_Dravasa",
+          "display_label": "Meet Dravasa",
+          "amount": 1
+        },
+        {
+          "stat_name": "quest_finished_A1_Sleepers_Endris",
+          "display_label": "Meet Endris",
+          "amount": 1
+        },
+        {
+          "stat_name": "quest_finished_A1_Sleepers_Eralane",
+          "display_label": "Meet Eralane",
+          "amount": 1
+        },
+        {
+          "stat_name": "quest_finished_A1_Sleepers_Llandras",
+          "display_label": "Meet Llandras",
+          "amount": 1
+        },
+        {
+          "stat_name": "quest_finished_A1_Sleepers_Neldris",
+          "display_label": "Meet Neldris",
+          "amount": 1
+        },
+        {
+          "stat_name": "quest_finished_A1_Sleepers_Nelmil",
+          "display_label": "Meet Nelmil",
+          "amount": 1
+        },
+        {
+          "stat_name": "quest_finished_A1_Sleepers_Rararyn",
+          "display_label": "Meet Rararyn",
+          "amount": 1
+        },
+        {
+          "stat_name": "quest_finished_A1_Sleepers_Relur",
+          "display_label": "Meet Relur",
+          "amount": 1
+        },
+        {
+          "stat_name": "quest_finished_A1_Sleepers_Vireveri",
+          "display_label": "Meet Vireveri",
+          "amount": 1
+        },
+        {
+          "stat_name": "quest_finished_A1_Sleepers_Vivyne",
+          "display_label": "Meet Vivyne",
+          "amount": 1
+        }
+      ]
+    },
+    {
+      "id": "MW_LOCK_25",
+      "parent_id": "",
+      "name": "This is Mine Now",
+      "description": "Successfully perform a lockpicking with a difficulty of 25",
+      "points": 1,
+      "icon": "random",
+      "category": "Misc",
+      "order": 34,
+      "target_value": 0,
+      "tracked_stat": "",
+      "notification_step": 1,
+      "objectives": [
+        {
+          "stat_name": "lock_difficulty",
+          "display_label": "Pick a lock of difficulty 25",
+          "amount": 25
+        }
+      ],
+      "trigger": {
+        "type": "Lockpick"
+      },
+      "type": ""
+    },
+    {
+      "id": "MW_LOCK_50",
+      "parent_id": "MW_LOCK_25",
+      "name": "Click Clack",
+      "description": "Successfully perform a lockpicking with a difficulty of 50",
+      "points": 50,
+      "icon": "random",
+      "category": "Combat",
+      "order": 35,
+      "target_value": 0,
+      "tracked_stat": "",
+      "notification_step": 1,
+      "objectives": [
+        {
+          "stat_name": "lock_difficulty",
+          "display_label": "Pick a lock of difficulty 50",
+          "amount": 50
+        }
+      ],
+      "trigger": {
+        "type": "Lockpick"
+      },
+      "type": ""
+    },
+    {
+      "id": "MW_LOCK_100",
+      "parent_id": "MW_LOCK_25",
+      "name": "The Lockwhisperer",
+      "description": "Successfully perform a lockpicking with a difficulty of 100",
+      "points": 5,
+      "icon": "random",
+      "category": "Combat",
+      "order": 36,
+      "target_value": 0,
+      "tracked_stat": "",
+      "notification_step": 1,
+      "objectives": [
+        {
+          "stat_name": "lock_difficulty",
+          "display_label": "Pick a lock of difficulty 100",
+          "amount": 100
+        }
+      ],
+      "trigger": {
+        "type": "Lockpick"
+      },
+      "type": ""
+    },
+    {
+      "id": "MW_SKILLBOOK_1",
+      "parent_id": "",
+      "name": "Student",
+      "description": "Increase one of your skill with a book",
+      "points": 1,
+      "icon": "random",
+      "category": "Quest",
+      "order": 37,
+      "target_value": 0,
+      "tracked_stat": "",
+      "notification_step": 1,
+      "objectives": [],
+      "type": "",
+      "progress_bar": false
+    },
+    {
+      "id": "MW_PICK_GOLD",
+      "parent_id": "",
+      "name": "Cold Hard Cash",
+      "description": "Steal some gold without being detected",
+      "points": 2,
+      "icon": "random",
+      "category": "Misc",
+      "order": 38,
+      "target_value": 0,
+      "tracked_stat": "",
+      "notification_step": 1,
+      "objectives": [],
+      "type": "",
+      "progress_bar": false
+    },
+    {
+      "id": "MW_BESTIARY_BITTER_COAST",
+      "parent_id": "",
+      "name": "Bitter Coast Bestiary",
+      "description": "Kill various creatures on the Bitter Coast",
+      "points": 10,
+      "icon": "random",
+      "category": "Combat",
+      "order": 39,
+      "target_value": 0,
+      "tracked_stat": "",
+      "notification_step": 1,
+      "objectives": [
+        {
+          "stat_name": "creature_kill_mudcrab",
+          "display_label": "Kill 10 Mudcrabs",
+          "amount": 10
+        },
+        {
+          "stat_name": "creature_kill_rat",
+          "display_label": "Kill 5 Rats",
+          "amount": 5
+        },
+        {
+          "stat_name": "creature_kill_scrib",
+          "display_label": "Kill 5 Scribs",
+          "amount": 5
+        },
+        {
+          "stat_name": "creature_kill_kwama forager",
+          "display_label": "Kill 5 Kwama Foragers",
+          "amount": 5
+        }
+      ],
+      "trigger": {
+        "type": "Kill"
+      },
+      "regions": [
+        "Bitter Coast Region"
+      ],
+      "type": "",
+      "progress_bar": false
+    },
+    {
+      "id": "MW_MORROWIND_LEVEL_2",
+      "parent_id": "MW_MORROWIND_LEVEL_2",
+      "name": "Novice",
+      "description": "Reach level 2",
+      "points": 2,
+      "icon": "random",
+      "category": "Character",
+      "order": 40,
+      "notification_step": 1,
+      "objectives": [
+        {
+          "stat_name": "level",
+          "display_label": "level",
+          "amount": 2
+        }
+      ],
+      "trigger": {
+        "type": "HeroStats"
+      },
+      "type": "",
+      "progress_bar": false
+    },
+    {
+      "id": "MW_MORROWIND_LEVEL_5",
+      "parent_id": "MW_MORROWIND_LEVEL_2",
+      "name": "Traveler",
+      "description": "Reach level 5",
+      "points": 5,
+      "icon": "random",
+      "category": "Character",
+      "order": 41,
+      "notification_step": 1,
+      "objectives": [
+        {
+          "stat_name": "level",
+          "display_label": "",
+          "amount": 5
+        }
+      ],
+      "trigger": {
+        "type": "HeroStats"
+      },
+      "type": "",
+      "progress_bar": true
+    },
+    {
+      "id": "MW_MORROWIND_LEVEL_10",
+      "parent_id": "MW_MORROWIND_LEVEL_2",
+      "name": "Adventurer",
+      "description": "Reach level 10",
+      "points": 10,
+      "icon": "random",
+      "category": "Character",
+      "order": 42,
+      "notification_step": 1,
+      "objectives": [
+        {
+          "stat_name": "level",
+          "display_label": "",
+          "amount": 10
+        }
+      ],
+      "trigger": {
+        "type": "HeroStats"
+      },
+      "type": "",
+      "progress_bar": true
+    },
+    {
+      "id": "MW_MORROWIND_LEVEL_25",
+      "parent_id": "MW_MORROWIND_LEVEL_2",
+      "name": "Champion",
+      "description": "Reach level 25",
+      "points": 25,
+      "icon": "random",
+      "category": "Character",
+      "order": 43,
+      "notification_step": 1,
+      "objectives": [
+        {
+          "stat_name": "level",
+          "display_label": "",
+          "amount": 25
+        }
+      ],
+      "trigger": {
+        "type": "HeroStats"
+      },
+      "type": "",
+      "progress_bar": true
+    },
+    {
+      "id": "MW_MORROWIND_LEVEL_50",
+      "parent_id": "MW_MORROWIND_LEVEL_2",
+      "name": "Vvardenfell Legend",
+      "description": "Reach level 50",
+      "points": 50,
+      "icon": "random",
+      "category": "Character",
+      "order": 44,
+      "notification_step": 1,
+      "objectives": [
+        {
+          "stat_name": "level",
+          "display_label": "",
+          "amount": 50
+        }
+      ],
+      "trigger": {
+        "type": "HeroStats"
+      },
+      "type": "",
+      "progress_bar": true
+    },
+    {
+      "id": "MW_QUEST_FARGOTH_HIDING",
+      "parent_id": "",
+      "name": "Fargoth's Hiding Place",
+      "description": "Find Fargoth's hidden stash and bring back the money to Hrisskar in Seyda Neen",
+      "points": 5,
+      "icon": "random",
+      "category": "Quest",
+      "order": 45,
+      "target_value": 0,
+      "tracked_stat": "",
+      "notification_step": 1,
+      "objectives": [
+        {
+          "stat_name": "quest_finished_MS_Lookout",
+          "display_label": "Fargoth's Hiding Place",
+          "amount": 1
+        }
+      ],
+      "trigger": {
+        "type": "QuestComplete"
+      },
+      "regions": [
+        "Bitter Coast Region"
+      ],
+      "type": ""
+    },
+    {
+      "id": "MW_CLEAR_ADDAMASARTUS",
+      "parent_id": "",
+      "name": "Bandit Slayer",
+      "description": "Kill the three bandits of Addamasartus",
+      "points": 2,
+      "icon": "random",
+      "category": "Combat",
+      "order": 46,
+      "target_value": 0,
+      "tracked_stat": "",
+      "notification_step": 1,
+      "objectives": [
+        {
+          "stat_name": "npc_kill_Melar Baram",
+          "display_label": "Kill Melar Baram",
+          "amount": 1
+        },
+        {
+          "stat_name": "npc_kill_Mulvisie Othril",
+          "display_label": "Kill Mulvisie Othril",
+          "amount": 1
+        },
+        {
+          "stat_name": "npc_kill_Tanisie Verethi",
+          "display_label": "Kill Tanisie Verethi",
+          "amount": 1
+        }
+      ],
+      "trigger": {
+        "type": "Kill"
+      },
+      "type": "",
+      "progress_bar": false
+    },
+    {
+      "id": "MW_HARVEST_1",
+      "parent_id": "",
+      "name": "Gardener",
+      "description": "Harvest a total of 10 plants",
+      "points": 1,
+      "icon": "random",
+      "category": "Loot",
+      "order": 47,
+      "notification_step": 10,
+      "trigger": {
+        "type": "Harvest"
+      },
+      "objectives": [
+        {
+          "stat_name": "harvest_count",
+          "display_label": "",
+          "amount": 10
+        }
+      ],
+      "type": "",
+      "progress_bar": true
+    },
+    {
+      "id": "MW_HARVEST_2",
+      "parent_id": "MW_HARVEST_1",
+      "name": "Herborist",
+      "description": "Harvest a total of 100 plants",
+      "points": 5,
+      "icon": "random",
+      "category": "Loot",
+      "order": 48,
+      "notification_step": 10,
+      "trigger": {
+        "type": "Harvest"
+      },
+      "objectives": [
+        {
+          "stat_name": "harvest_count",
+          "display_label": "",
+          "amount": 100
+        }
+      ],
+      "type": "",
+      "progress_bar": true
+    },
+    {
+      "id": "MW_HARVEST_3",
+      "parent_id": "MW_HARVEST_1",
+      "name": "Flower Power",
+      "description": "Harvest a total of 250 plants",
+      "points": 10,
+      "icon": "random",
+      "category": "Loot",
+      "order": 49,
+      "notification_step": 10,
+      "trigger": {
+        "type": "Harvest"
+      },
+      "objectives": [
+        {
+          "stat_name": "harvest_count",
+          "display_label": "",
+          "amount": 250
+        }
+      ],
+      "type": "",
+      "progress_bar": true
+    },
+    {
+      "id": "MW_LOOT_TARHIEL_JOURNAL",
+      "parent_id": "",
+      "name": "It's Raining Men",
+      "description": "Find Tarhiel's Journal",
+      "points": 2,
+      "icon": "random",
+      "category": "Loot",
+      "order": 50,
+      "notification_step": 1,
+      "trigger": {
+        "type": "Loot"
+      },
+      "objectives": [
+        {
+          "stat_name": "loot_bk_falljournal_unique",
+          "display_label": "Loot Journal of Tarhiel",
+          "amount": 1
+        }
+      ],
+      "regions": [
+        "Bitter Coast Region"
+      ],
+      "type": "",
+      "progress_bar": false
+    },
+    {
+      "id": "MW_SLAVE_5",
+      "parent_id": "",
+      "name": "Good Samaritan",
+      "description": "Save at least 5 slaves",
+      "points": 2,
+      "icon": "random",
+      "category": "Misc",
+      "order": 51,
+      "notification_step": 1,
+      "trigger": {
+        "type": "Global"
+      },
+      "objectives": [
+        {
+          "stat_name": "global_freedslavescounter",
+          "display_label": "Slaves freed",
+          "amount": 5
+        }
+      ],
+      "type": "",
+      "progress_bar": true
+    },
+    {
+      "id": "MW_SLAVE_25",
+      "parent_id": "MW_SLAVE_5",
+      "name": "Good Samaritan",
+      "description": "Save at least 25 slaves",
+      "points": 5,
+      "icon": "random",
+      "category": "Misc",
+      "order": 52,
+      "notification_step": 1,
+      "trigger": {
+        "type": "Global"
+      },
+      "objectives": [
+        {
+          "stat_name": "global_freedslavescounter",
+          "display_label": "Slaves freed",
+          "amount": 25
+        }
+      ],
+      "type": "",
+      "progress_bar": true
+    },
+    {
+      "id": "MW_SLAVE_75",
+      "parent_id": "MW_SLAVE_5",
+      "name": "Good Samaritan",
+      "description": "Save at least 75 slaves",
+      "points": 10,
+      "icon": "random",
+      "category": "Misc",
+      "order": 53,
+      "notification_step": 1,
+      "trigger": {
+        "type": "Global"
+      },
+      "objectives": [
+        {
+          "stat_name": "global_freedslavescounter",
+          "display_label": "Slaves freed",
+          "amount": 75
+        }
+      ],
+      "type": "",
+      "progress_bar": true
+    },
+    {
+      "id": "MW_SLAVE_150",
+      "parent_id": "MW_SLAVE_5",
+      "name": "Good Samaritan",
+      "description": "Save at least 150 slaves",
+      "points": 25,
+      "icon": "random",
+      "category": "Misc",
+      "order": 54,
+      "notification_step": 1,
+      "trigger": {
+        "type": "Global"
+      },
+      "objectives": [
+        {
+          "stat_name": "global_freedslavescounter",
+          "display_label": "Slaves freed",
+          "amount": 150
+        }
+      ],
+      "type": "",
+      "progress_bar": true
+    },
+    {
+      "id": "MW_TOMB_BITTER_COAST",
+      "parent_id": "",
+      "name": "Bitter Coast Tomb Raider",
+      "description": "Clear every Ancestral Tombs on the Bitter Coast",
+      "points": 5,
+      "icon": "random",
+      "category": "Exploration",
+      "order": 55,
+      "target_value": 0,
+      "tracked_stat": "",
+      "notification_step": 1,
+      "trigger": {
+        "type": "CellClear"
+      },
+      "objectives": [
+        {
+          "stat_name": "cellclear_Samarys Ancestral Tomb",
+          "display_label": "Clear Samarys Ancestral Tomb",
+          "amount": 1,
+          "group": "g1"
+        },
+        {
+          "stat_name": "loot_devote_brinne_dust_00",
+          "display_label": "Find Ashes of Lord Brinne",
+          "amount": 1,
+          "group": "g1"
+        },
+        {
+          "stat_name": "loot_ring_mentor_unique",
+          "display_label": "Find Mentor's Ring",
+          "amount": 1,
+          "group": "g1"
+        },
+        {
+          "stat_name": "cellclear_Heran Ancestral Tomb",
+          "display_label": "Clear Heran Ancestral Tomb",
+          "amount": 1,
+          "group": "g2"
+        },
+        {
+          "stat_name": "loot_bookskill_light armor5",
+          "display_label": "Find 36 Lessons of Vivec, Sermon 28",
+          "amount": 1,
+          "group": "g2"
+        },
+        {
+          "stat_name": "cellclear_Norvayn Ancestral Tomb",
+          "display_label": "Clear Norvayn Ancestral Tomb",
+          "amount": 1,
+          "group": "g3"
+        },
+        {
+          "stat_name": "cellunlocked_Norvayn Ancestral Tomb",
+          "display_label": "Unlock everything in Norvayn Ancestral Tomb",
+          "amount": 1,
+          "group": "g3"
+        },
+        {
+          "stat_name": "cellclear_Sarys Ancestral Tomb",
+          "display_label": "Clear Sarys Ancestral Tomb",
+          "amount": 1,
+          "group": "g4"
+        },
+        {
+          "stat_name": "cellunlocked_Sarys Ancestral Tomb",
+          "display_label": "Unlock everything in Sarys Ancestral Tomb",
+          "amount": 1,
+          "group": "g4"
+        },
+        {
+          "stat_name": "cellclear_Thelas Ancestral Tomb",
+          "display_label": "Clear Thelas Ancestral Tomb",
+          "amount": 1,
+          "group": "g5"
+        },
+        {
+          "stat_name": "cellunlocked_Thelas Ancestral Tomb",
+          "display_label": "Unlock everything in Thelas Ancestral Tomb",
+          "amount": 1,
+          "group": "g5"
+        }
+      ],
+      "regions": [
+        "Bitter Coast Region"
+      ],
+      "type": ""
+    },
+    {
+      "id": "MW_TOMB_ASHLANDS",
+      "parent_id": "",
+      "name": "Ashlands Tomb Raider",
+      "description": "Clear every Ancestral Tomb in the Ashlands",
+      "points": 25,
+      "icon": "random",
+      "category": "Exploration",
+      "order": 56,
+      "target_value": 0,
+      "tracked_stat": "",
+      "notification_step": 1,
+      "trigger": {
+        "type": "CellClear"
+      },
+      "objectives": [
+        {
+          "stat_name": "cellclear_Aryon Ancestral Tomb",
+          "display_label": "Clear Aryon Ancestral Tomb",
+          "amount": 1,
+          "group": "g1"
+        },
+        {
+          "stat_name": "cellloot_aryon ancestral tomb_bookskill_alteration5",
+          "display_label": "Find The Lunar Lorkhan",
+          "amount": 1,
+          "group": "g1"
+        },
+        {
+          "stat_name": "cellclear_Dareleth Ancestral Tomb",
+          "display_label": "Clear Dareleth Ancestral Tomb",
+          "amount": 1,
+          "group": "g2"
+        },
+        {
+          "stat_name": "cellloot_dareleth ancestral tomb_bk_ancestorsandthedunmer",
+          "display_label": "Find Ancestors and the Dunmer",
+          "amount": 1,
+          "group": "g2"
+        },
+        {
+          "stat_name": "cellclear_Drath Ancestral Tomb",
+          "display_label": "Clear Drath Ancestral Tomb",
+          "amount": 1,
+          "group": "g3"
+        },
+        {
+          "stat_name": "cellloot_drath ancestral tomb_bookskill_blunt weapon1",
+          "display_label": "Find The Hope of the Redoran",
+          "amount": 1,
+          "group": "g3"
+        },
+        {
+          "stat_name": "cellclear_Drinith Ancestral Tomb",
+          "display_label": "Clear Drinith Ancestral Tomb",
+          "amount": 1,
+          "group": "g4"
+        },
+        {
+          "stat_name": "cellloot_drinith ancestral tomb_bookskill_short blade5",
+          "display_label": "Find 36 Lessons of Vivec, Sermon 30",
+          "amount": 1,
+          "group": "g4"
+        },
+        {
+          "stat_name": "cellclear_Fadathram Ancestral Tomb",
+          "display_label": "Clear Fadathram Ancestral Tomb",
+          "amount": 1,
+          "group": "g5"
+        },
+        {
+          "stat_name": "cellloot_fadathram ancestral tomb_bonemold_tshield_redoranguard",
+          "display_label": "Find Redoran Guard Shield",
+          "amount": 1,
+          "group": "g5"
+        },
+        {
+          "stat_name": "cellclear_Helas Ancestral Tomb",
+          "display_label": "Clear Helas Ancestral Tomb",
+          "amount": 1,
+          "group": "g6"
+        },
+        {
+          "stat_name": "cellloot_helas ancestral tomb_bookskill_sneak5",
+          "display_label": "Find 36 Lessons of Vivec, Sermon 26",
+          "amount": 1,
+          "group": "g6"
+        },
+        {
+          "stat_name": "cellloot_helas ancestral tomb_bookskill_unarmored5",
+          "display_label": "Find 36 Lessons of Vivec, Sermon 34",
+          "amount": 1,
+          "group": "g6"
+        },
+        {
+          "stat_name": "cellclear_Indaren Ancestral Tomb",
+          "display_label": "Clear Indaren Ancestral Tomb",
+          "amount": 1,
+          "group": "g7"
+        },
+        {
+          "stat_name": "cellloot_indaren ancestral tomb_ingred_dae_cursed_emerald_01",
+          "display_label": "Find Emerald",
+          "amount": 1,
+          "group": "g7"
+        },
+        {
+          "stat_name": "cellclear_Llando Ancestral Tomb",
+          "display_label": "Clear Llando Ancestral Tomb",
+          "amount": 1,
+          "group": "g8"
+        },
+        {
+          "stat_name": "cellloot_llando ancestral tomb_sc_celerity",
+          "display_label": "Find Scroll of Celerity",
+          "amount": 1,
+          "group": "g8"
+        },
+        {
+          "stat_name": "cellclear_Omalen Ancestral Tomb",
+          "display_label": "Clear Omalen Ancestral Tomb",
+          "amount": 1,
+          "group": "g9"
+        },
+        {
+          "stat_name": "cellloot_omalen ancestral tomb_bk_homiliesofblessedalmalexia",
+          "display_label": "Find Homilies of Blessed Almalexia",
+          "amount": 1,
+          "group": "g9"
+        },
+        {
+          "stat_name": "cellloot_omalen ancestral tomb_bookskill_block1",
+          "display_label": "Find Death Blow of Abernanit",
+          "amount": 1,
+          "group": "g9"
+        },
+        {
+          "stat_name": "cellloot_omalen ancestral tomb_sc_indie",
+          "display_label": "Find A dying man's last words",
+          "amount": 1,
+          "group": "g9"
+        },
+        {
+          "stat_name": "cellclear_Rothan Ancestral Tomb",
+          "display_label": "Clear Rothan Ancestral Tomb",
+          "amount": 1,
+          "group": "g10"
+        },
+        {
+          "stat_name": "cellclear_Salvel Ancestral Tomb",
+          "display_label": "Clear Salvel Ancestral Tomb",
+          "amount": 1,
+          "group": "g11"
+        },
+        {
+          "stat_name": "cellloot_salvel ancestral tomb_bk_doorsofthespirit",
+          "display_label": "Find The Doors of the Spirit",
+          "amount": 1,
+          "group": "g11"
+        },
+        {
+          "stat_name": "cellloot_salvel ancestral tomb_dust_adept_helm",
+          "display_label": "Find Telvanni Dust Adept Helm",
+          "amount": 1,
+          "group": "g11"
+        },
+        {
+          "stat_name": "cellclear_Sandus Ancestral Tomb",
+          "display_label": "Clear Sandus Ancestral Tomb",
+          "amount": 1,
+          "group": "g12"
+        },
+        {
+          "stat_name": "cellloot_sandus ancestral tomb_bonemold_chuzei_helm",
+          "display_label": "Find Native Chuzei Bonemold Helm",
+          "amount": 1,
+          "group": "g12"
+        },
+        {
+          "stat_name": "cellclear_Thalas Ancestral Tomb",
+          "display_label": "Clear Thalas Ancestral Tomb",
+          "amount": 1,
+          "group": "g13"
+        },
+        {
+          "stat_name": "cellloot_thalas ancestral tomb_bk_overviewofgodsandworship",
+          "display_label": "Find Overview of Gods and Worship",
+          "amount": 1,
+          "group": "g13"
+        }
+      ],
+      "regions": [
+        "Ashlands Region"
+      ],
+      "type": ""
+    },
+    {
+      "id": "MW_TOMB_AZURA_COAST",
+      "parent_id": "",
+      "name": "Azura's Coast Tomb Raider",
+      "description": "Clear every Ancestral Tomb on Azura's Coast",
+      "points": 25,
+      "icon": "random",
+      "category": "Exploration",
+      "order": 57,
+      "target_value": 0,
+      "tracked_stat": "",
+      "notification_step": 1,
+      "trigger": {
+        "type": "CellClear"
+      },
+      "objectives": [
+        {
+          "stat_name": "cellclear_Andalen Ancestral Tomb",
+          "display_label": "Clear Andalen Ancestral Tomb",
+          "amount": 1,
+          "group": "g1"
+        },
+        {
+          "stat_name": "cellclear_Andas Ancestral Tomb",
+          "display_label": "Clear Andas Ancestral Tomb",
+          "amount": 1,
+          "group": "g2"
+        },
+        {
+          "stat_name": "cellclear_Arano Ancestral Tomb",
+          "display_label": "Clear Arano Ancestral Tomb",
+          "amount": 1,
+          "group": "g3"
+        },
+        {
+          "stat_name": "cellclear_Arenim Ancestral Tomb",
+          "display_label": "Clear Arenim Ancestral Tomb",
+          "amount": 1,
+          "group": "g4"
+        },
+        {
+          "stat_name": "cellclear_Arys Ancestral Tomb",
+          "display_label": "Clear Arys Ancestral Tomb",
+          "amount": 1,
+          "group": "g5"
+        },
+        {
+          "stat_name": "cellclear_Baram Ancestral Tomb",
+          "display_label": "Clear Baram Ancestral Tomb",
+          "amount": 1,
+          "group": "g6"
+        },
+        {
+          "stat_name": "cellclear_Beran Ancestral Tomb",
+          "display_label": "Clear Beran Ancestral Tomb",
+          "amount": 1,
+          "group": "g7"
+        },
+        {
+          "stat_name": "cellclear_Dreloth Ancestral Tomb",
+          "display_label": "Clear Dreloth Ancestral Tomb",
+          "amount": 1,
+          "group": "g8"
+        },
+        {
+          "stat_name": "cellclear_Hlaalu Ancestral Tomb",
+          "display_label": "Clear Hlaalu Ancestral Tomb",
+          "amount": 1,
+          "group": "g9"
+        },
+        {
+          "stat_name": "cellclear_Hlervi Ancestral Tomb",
+          "display_label": "Clear Hlervi Ancestral Tomb",
+          "amount": 1,
+          "group": "g10"
+        },
+        {
+          "stat_name": "cellclear_Hlervu Ancestral Tomb",
+          "display_label": "Clear Hlervu Ancestral Tomb",
+          "amount": 1,
+          "group": "g11"
+        },
+        {
+          "stat_name": "cellclear_Marvani Ancestral Tomb",
+          "display_label": "Clear Marvani Ancestral Tomb",
+          "amount": 1,
+          "group": "g12"
+        },
+        {
+          "stat_name": "cellclear_Omaren Ancestral Tomb",
+          "display_label": "Clear Omaren Ancestral Tomb",
+          "amount": 1,
+          "group": "g13"
+        },
+        {
+          "stat_name": "cellclear_Ravel Ancestral Tomb",
+          "display_label": "Clear Ravel Ancestral Tomb",
+          "amount": 1,
+          "group": "g14"
+        },
+        {
+          "stat_name": "cellclear_Redas Ancestral Tomb",
+          "display_label": "Clear Redas Ancestral Tomb",
+          "amount": 1,
+          "group": "g15"
+        },
+        {
+          "stat_name": "cellclear_Releth Ancestral Tomb",
+          "display_label": "Clear Releth Ancestral Tomb",
+          "amount": 1,
+          "group": "g16"
+        },
+        {
+          "stat_name": "cellclear_Sadryon Ancestral Tomb",
+          "display_label": "Clear Sadryon Ancestral Tomb",
+          "amount": 1,
+          "group": "g17"
+        },
+        {
+          "stat_name": "cellclear_Savel Ancestral Tomb",
+          "display_label": "Clear Savel Ancestral Tomb",
+          "amount": 1,
+          "group": "g18"
+        },
+        {
+          "stat_name": "cellclear_Tukushapal",
+          "display_label": "Clear Tukushapal",
+          "amount": 1,
+          "group": "g19"
+        },
+        {
+          "stat_name": "cellclear_Verelnim Ancestral Tomb",
+          "display_label": "Clear Verelnim Ancestral Tomb",
+          "amount": 1,
+          "group": "g20"
+        }
+      ],
+      "regions": [
+        "Azura's Coast Region"
+      ],
+      "type": ""
+    },
+    {
+      "id": "MW_TOMB_WEST_GASH",
+      "parent_id": "",
+      "name": "West Gash Tomb Raider",
+      "description": "Clear every Ancestral Tomb in the West Gash",
+      "points": 25,
+      "icon": "random",
+      "category": "Exploration",
+      "order": 58,
+      "target_value": 0,
+      "tracked_stat": "",
+      "notification_step": 1,
+      "trigger": {
+        "type": "CellClear"
+      },
+      "objectives": [
+        {
+          "stat_name": "cellclear_Alen Ancestral Tomb",
+          "display_label": "Clear Alen Ancestral Tomb",
+          "amount": 1,
+          "group": "g1"
+        },
+        {
+          "stat_name": "cellclear_Andrethi Ancestral Tomb",
+          "display_label": "Clear Andrethi Ancestral Tomb",
+          "amount": 1,
+          "group": "g2"
+        },
+        {
+          "stat_name": "cellclear_Falas Ancestral Tomb",
+          "display_label": "Clear Falas Ancestral Tomb",
+          "amount": 1,
+          "group": "g3"
+        },
+        {
+          "stat_name": "cellclear_Ginith Ancestral Tomb",
+          "display_label": "Clear Ginith Ancestral Tomb",
+          "amount": 1,
+          "group": "g4"
+        },
+        {
+          "stat_name": "cellclear_Heleran Ancestral Tomb",
+          "display_label": "Clear Heleran Ancestral Tomb",
+          "amount": 1,
+          "group": "g5"
+        },
+        {
+          "stat_name": "cellclear_Hleran Ancestral Tomb",
+          "display_label": "Clear Hleran Ancestral Tomb",
+          "amount": 1,
+          "group": "g6"
+        },
+        {
+          "stat_name": "cellclear_Indalen Ancestral Tomb",
+          "display_label": "Clear Indalen Ancestral Tomb",
+          "amount": 1,
+          "group": "g7"
+        },
+        {
+          "stat_name": "cellclear_Llervu Ancestral Tomb",
+          "display_label": "Clear Llervu Ancestral Tomb",
+          "amount": 1,
+          "group": "g8"
+        },
+        {
+          "stat_name": "cellclear_Randas Ancestral Tomb",
+          "display_label": "Clear Randas Ancestral Tomb",
+          "amount": 1,
+          "group": "g9"
+        },
+        {
+          "stat_name": "cellclear_Reloth Ancestral Tomb",
+          "display_label": "Clear Reloth Ancestral Tomb",
+          "amount": 1,
+          "group": "g10"
+        },
+        {
+          "stat_name": "cellclear_Rethandus Ancestral Tomb",
+          "display_label": "Clear Rethandus Ancestral Tomb",
+          "amount": 1,
+          "group": "g11"
+        },
+        {
+          "stat_name": "cellclear_Salothan Ancestral Tomb",
+          "display_label": "Clear Salothan Ancestral Tomb",
+          "amount": 1,
+          "group": "g12"
+        },
+        {
+          "stat_name": "cellclear_Salothran Ancestral Tomb",
+          "display_label": "Clear Salothran Ancestral Tomb",
+          "amount": 1,
+          "group": "g13"
+        },
+        {
+          "stat_name": "cellclear_Sarethi Ancestral Tomb",
+          "display_label": "Clear Sarethi Ancestral Tomb",
+          "amount": 1,
+          "group": "g14"
+        },
+        {
+          "stat_name": "cellclear_Seran Ancestral Tomb",
+          "display_label": "Clear Seran Ancestral Tomb",
+          "amount": 1,
+          "group": "g15"
+        },
+        {
+          "stat_name": "cellclear_Telvayn Ancestral Tomb",
+          "display_label": "Clear Telvayn Ancestral Tomb",
+          "amount": 1,
+          "group": "g16"
+        },
+        {
+          "stat_name": "cellclear_Tharys Ancestral Tomb",
+          "display_label": "Clear Tharys Ancestral Tomb",
+          "amount": 1,
+          "group": "g17"
+        },
+        {
+          "stat_name": "cellclear_Uveran Ancestral Tomb",
+          "display_label": "Clear Uveran Ancestral Tomb",
+          "amount": 1,
+          "group": "g18"
+        },
+        {
+          "stat_name": "cellclear_Veloth Ancestral Tomb",
+          "display_label": "Clear Veloth Ancestral Tomb",
+          "amount": 1,
+          "group": "g19"
+        }
+      ],
+      "regions": [
+        "West Gash Region"
+      ],
+      "type": ""
+    },
+    {
+      "id": "MW_TOMB_ASCADIAN_ISLES",
+      "parent_id": "",
+      "name": "Ascadian Isles Tomb Raider",
+      "description": "Clear every Ancestral Tomb in the Ascadian Isles",
+      "points": 5,
+      "icon": "random",
+      "category": "Exploration",
+      "order": 59,
+      "target_value": 0,
+      "tracked_stat": "",
+      "notification_step": 1,
+      "trigger": {
+        "type": "CellClear"
+      },
+      "objectives": [
+        {
+          "stat_name": "cellclear_Andrano Ancestral Tomb",
+          "display_label": "Clear Andrano Ancestral Tomb",
+          "amount": 1,
+          "group": "g1"
+        },
+        {
+          "stat_name": "cellloot_andrano ancestral tomb_dagger of judgement",
+          "display_label": "Find Dagger of Judgement",
+          "amount": 1,
+          "group": "g1"
+        },
+        {
+          "stat_name": "cellloot_andrano ancestral tomb_misc_skull_llevule",
+          "display_label": "Find Skull of Llevule Andrano",
+          "amount": 1,
+          "group": "g1"
+        },
+        {
+          "stat_name": "cellclear_Lleran Ancestral Tomb",
+          "display_label": "Clear Lleran Ancestral Tomb",
+          "amount": 1,
+          "group": "g2"
+        },
+        {
+          "stat_name": "cellclear_Sandas Ancestral Tomb",
+          "display_label": "Clear Sandas Ancestral Tomb",
+          "amount": 1,
+          "group": "g3"
+        },
+        {
+          "stat_name": "cellclear_Sarano Ancestral Tomb",
+          "display_label": "Clear Sarano Ancestral Tomb",
+          "amount": 1,
+          "group": "g4"
+        }
+      ],
+      "regions": [
+        "Ascadian Isles Region"
+      ],
+      "type": ""
+    },
+    {
+      "id": "MW_TOMB_GRAZELANDS",
+      "parent_id": "",
+      "name": "Grazelands Tomb Raider",
+      "description": "Clear every Ancestral Tomb in the Grazelands",
+      "points": 10,
+      "icon": "random",
+      "category": "Exploration",
+      "order": 60,
+      "target_value": 0,
+      "tracked_stat": "",
+      "notification_step": 1,
+      "trigger": {
+        "type": "CellClear"
+      },
+      "objectives": [
+        {
+          "stat_name": "cellclear_Andalor Ancestral Tomb",
+          "display_label": "Clear Andalor Ancestral Tomb",
+          "amount": 1,
+          "group": "g1"
+        },
+        {
+          "stat_name": "cellclear_Aralen Ancestral Tomb",
+          "display_label": "Clear Aralen Ancestral Tomb",
+          "amount": 1,
+          "group": "g2"
+        },
+        {
+          "stat_name": "cellclear_Favel Ancestral Tomb",
+          "display_label": "Clear Favel Ancestral Tomb",
+          "amount": 1,
+          "group": "g3"
+        },
+        {
+          "stat_name": "cellclear_Ienith Ancestral Tomb",
+          "display_label": "Clear Ienith Ancestral Tomb",
+          "amount": 1,
+          "group": "g4"
+        },
+        {
+          "stat_name": "cellclear_Nerano Ancestral Tomb",
+          "display_label": "Clear Nerano Ancestral Tomb",
+          "amount": 1,
+          "group": "g5"
+        },
+        {
+          "stat_name": "cellclear_Sethan Ancestral Tomb",
+          "display_label": "Clear Sethan Ancestral Tomb",
+          "amount": 1,
+          "group": "g6"
+        },
+        {
+          "stat_name": "cellclear_Thiralas Ancestral Tomb",
+          "display_label": "Clear Thiralas Ancestral Tomb",
+          "amount": 1,
+          "group": "g7"
+        },
+        {
+          "stat_name": "cellclear_Venim Ancestral Tomb",
+          "display_label": "Clear Venim Ancestral Tomb",
+          "amount": 1,
+          "group": "g8"
+        }
+      ],
+      "regions": [
+        "Grazelands Region"
+      ],
+      "type": ""
+    },
+    {
+      "id": "MW_TOMB_MOLAG_AMUR",
+      "parent_id": "",
+      "name": "Molag Amur Tomb Raider",
+      "description": "Clear every Ancestral Tomb in Molag Amur",
+      "points": 10,
+      "icon": "random",
+      "category": "Exploration",
+      "order": 61,
+      "target_value": 0,
+      "tracked_stat": "",
+      "notification_step": 1,
+      "trigger": {
+        "type": "CellClear"
+      },
+      "objectives": [
+        {
+          "stat_name": "cellclear_Andules Ancestral Tomb",
+          "display_label": "Clear Andules Ancestral Tomb",
+          "amount": 1,
+          "group": "g1"
+        },
+        {
+          "stat_name": "cellclear_Aran Ancestral Tomb",
+          "display_label": "Clear Aran Ancestral Tomb",
+          "amount": 1,
+          "group": "g2"
+        },
+        {
+          "stat_name": "cellclear_Arethan Ancestral Tomb",
+          "display_label": "Clear Arethan Ancestral Tomb",
+          "amount": 1,
+          "group": "g3"
+        },
+        {
+          "stat_name": "cellclear_Dulo Ancestral Tomb",
+          "display_label": "Clear Dulo Ancestral Tomb",
+          "amount": 1,
+          "group": "g4"
+        },
+        {
+          "stat_name": "cellclear_Gimothran Ancestral Tomb",
+          "display_label": "Clear Gimothran Ancestral Tomb",
+          "amount": 1,
+          "group": "g5"
+        },
+        {
+          "stat_name": "cellclear_Helan Ancestral Tomb",
+          "display_label": "Clear Helan Ancestral Tomb",
+          "amount": 1,
+          "group": "g6"
+        },
+        {
+          "stat_name": "cellclear_Maren Ancestral Tomb",
+          "display_label": "Clear Maren Ancestral Tomb",
+          "amount": 1,
+          "group": "g7"
+        },
+        {
+          "stat_name": "cellclear_Raviro Ancestral Tomb",
+          "display_label": "Clear Raviro Ancestral Tomb",
+          "amount": 1,
+          "group": "g8"
+        },
+        {
+          "stat_name": "cellclear_Serano Ancestral Tomb",
+          "display_label": "Clear Serano Ancestral Tomb",
+          "amount": 1,
+          "group": "g9"
+        },
+        {
+          "stat_name": "cellclear_Vandus Ancestral Tomb",
+          "display_label": "Clear Vandus Ancestral Tomb",
+          "amount": 1,
+          "group": "g10"
+        },
+        {
+          "stat_name": "cellclear_Velas Ancestral Tomb",
+          "display_label": "Clear Velas Ancestral Tomb",
+          "amount": 1,
+          "group": "g11"
+        }
+      ],
+      "regions": [
+        "Molag Amur Region"
+      ],
+      "type": ""
+    },
+    {
+      "id": "MW_TOMB_SHEOGORAD",
+      "parent_id": "",
+      "name": "Sheogorad Tomb Raider",
+      "description": "Clear every Ancestral Tomb in Sheogorad",
+      "points": 10,
+      "icon": "random",
+      "category": "Exploration",
+      "order": 62,
+      "target_value": 0,
+      "tracked_stat": "",
+      "notification_step": 1,
+      "trigger": {
+        "type": "CellClear"
+      },
+      "objectives": [
+        {
+          "stat_name": "cellclear_Andavel Ancestral Tomb",
+          "display_label": "Clear Andavel Ancestral Tomb",
+          "amount": 1,
+          "group": "g1"
+        },
+        {
+          "stat_name": "cellclear_Ashmelech",
+          "display_label": "Clear Ashmelech",
+          "amount": 1,
+          "group": "g2"
+        },
+        {
+          "stat_name": "cellclear_Dralas Ancestral Tomb",
+          "display_label": "Clear Dralas Ancestral Tomb",
+          "amount": 1,
+          "group": "g3"
+        },
+        {
+          "stat_name": "cellclear_Drethan Ancestral Tomb",
+          "display_label": "Clear Drethan Ancestral Tomb",
+          "amount": 1,
+          "group": "g4"
+        },
+        {
+          "stat_name": "cellclear_Nelas Ancestral Tomb",
+          "display_label": "Clear Nelas Ancestral Tomb",
+          "amount": 1,
+          "group": "g5"
+        },
+        {
+          "stat_name": "cellclear_Orethi Ancestral Tomb",
+          "display_label": "Clear Orethi Ancestral Tomb",
+          "amount": 1,
+          "group": "g6"
+        },
+        {
+          "stat_name": "cellclear_Senim Ancestral Tomb",
+          "display_label": "Clear Senim Ancestral Tomb",
+          "amount": 1,
+          "group": "g7"
+        }
+      ],
+      "regions": [
+        "Sheogorad Region"
+      ],
+      "type": ""
+    },
+    {
+      "id": "MW_TOMB_VIVEC",
+      "parent_id": "",
+      "name": "Vivec Tomb Raider",
+      "description": "Clear every tomb hidden beneath Vivec",
+      "points": 5,
+      "icon": "random",
+      "category": "Exploration",
+      "order": 63,
+      "target_value": 0,
+      "tracked_stat": "",
+      "notification_step": 1,
+      "trigger": {
+        "type": "CellClear"
+      },
+      "objectives": [
+        {
+          "stat_name": "cellclear_Vivec, Foreign Quarter Tomb",
+          "display_label": "Clear Vivec, Foreign Quarter Tomb",
+          "amount": 1,
+          "group": "g1"
+        },
+        {
+          "stat_name": "cellclear_Vivec, Hlaalu Ancestral Vaults",
+          "display_label": "Clear Vivec, Hlaalu Ancestral Vaults",
+          "amount": 1,
+          "group": "g2"
+        },
+        {
+          "stat_name": "cellclear_Vivec, Redoran Ancestral Vaults",
+          "display_label": "Clear Vivec, Redoran Ancestral Vaults",
+          "amount": 1,
+          "group": "g3"
+        },
+        {
+          "stat_name": "cellclear_Othrelas Ancestral Tomb",
+          "display_label": "Clear Othrelas Ancestral Tomb",
+          "amount": 1,
+          "group": "g4"
+        }
+      ],
+      "type": ""
+    },
+    {
+      "id": "MW_BOOK_VIVEC_LESSONS",
+      "parent_id": "",
+      "name": "The 36 Lessons of Vivec",
+      "description": "Read every book from The 36 Lessons of Vivec",
+      "points": 25,
+      "icon": "random",
+      "category": "Misc",
+      "order": 64,
+      "target_value": 0,
+      "tracked_stat": "",
+      "notification_step": 1,
+      "trigger": {
+        "type": "ReadBook"
+      },
+      "objectives": [
+        {
+          "stat_name": "book_read_bookskill_athletics3",
+          "display_label": "36 Lessons of Vivec, Sermon 1",
+          "amount": 1
+        },
+        {
+          "stat_name": "book_read_bookskill_alchemy4",
+          "display_label": "36 Lessons of Vivec, Sermon 2",
+          "amount": 1
+        },
+        {
+          "stat_name": "book_read_bookskill_blunt weapon4",
+          "display_label": "36 Lessons of Vivec, Sermon 3",
+          "amount": 1
+        },
+        {
+          "stat_name": "book_read_bookskill_mysticism3",
+          "display_label": "36 Lessons of Vivec, Sermon 4",
+          "amount": 1
+        },
+        {
+          "stat_name": "book_read_bookskill_axe4",
+          "display_label": "36 Lessons of Vivec, Sermon 5",
+          "amount": 1
+        },
+        {
+          "stat_name": "book_read_bookskill_armorer3",
+          "display_label": "36 Lessons of Vivec, Sermon 6",
+          "amount": 1
+        },
+        {
+          "stat_name": "book_read_bookskill_block4",
+          "display_label": "36 Lessons of Vivec, Sermon 7",
+          "amount": 1
+        },
+        {
+          "stat_name": "book_read_bookskill_athletics4",
+          "display_label": "36 Lessons of Vivec, Sermon 8",
+          "amount": 1
+        },
+        {
+          "stat_name": "book_read_bookskill_blunt weapon5",
+          "display_label": "36 Lessons of Vivec, Sermon 9",
+          "amount": 1
+        },
+        {
+          "stat_name": "book_read_bookskill_short blade4",
+          "display_label": "36 Lessons of Vivec, Sermon 10",
+          "amount": 1
+        },
+        {
+          "stat_name": "book_read_bookskill_unarmored3",
+          "display_label": "36 Lessons of Vivec, Sermon 11",
+          "amount": 1
+        },
+        {
+          "stat_name": "book_read_bookskill_heavy armor5",
+          "display_label": "36 Lessons of Vivec, Sermon 12",
+          "amount": 1
+        },
+        {
+          "stat_name": "book_read_bookskill_alteration4",
+          "display_label": "36 Lessons of Vivec, Sermon 13",
+          "amount": 1
+        },
+        {
+          "stat_name": "book_read_bookskill_spear3",
+          "display_label": "36 Lessons of Vivec, Sermon 14",
+          "amount": 1
+        },
+        {
+          "stat_name": "book_read_bookskill_unarmored4",
+          "display_label": "36 Lessons of Vivec, Sermon 15",
+          "amount": 1
+        },
+        {
+          "stat_name": "book_read_bookskill_axe5",
+          "display_label": "36 Lessons of Vivec, Sermon 16",
+          "amount": 1
+        },
+        {
+          "stat_name": "book_read_bookskill_long blade3",
+          "display_label": "36 Lessons of Vivec, Sermon 17",
+          "amount": 1
+        },
+        {
+          "stat_name": "book_read_bookskill_alchemy5",
+          "display_label": "36 Lessons of Vivec, Sermon 18",
+          "amount": 1
+        },
+        {
+          "stat_name": "book_read_bookskill_enchant4",
+          "display_label": "36 Lessons of Vivec, Sermon 19",
+          "amount": 1
+        },
+        {
+          "stat_name": "book_read_bookskill_long blade4",
+          "display_label": "36 Lessons of Vivec, Sermon 20",
+          "amount": 1
+        },
+        {
+          "stat_name": "book_read_bookskill_light armor4",
+          "display_label": "36 Lessons of Vivec, Sermon 21",
+          "amount": 1
+        },
+        {
+          "stat_name": "book_read_bookskill_medium armor4",
+          "display_label": "36 Lessons of Vivec, Sermon 22",
+          "amount": 1
+        },
+        {
+          "stat_name": "book_read_bookskill_long blade5",
+          "display_label": "36 Lessons of Vivec, Sermon 23",
+          "amount": 1
+        },
+        {
+          "stat_name": "book_read_bookskill_spear4",
+          "display_label": "36 Lessons of Vivec, Sermon 24",
+          "amount": 1
+        },
+        {
+          "stat_name": "book_read_bookskill_armorer4",
+          "display_label": "36 Lessons of Vivec, Sermon 25",
+          "amount": 1
+        },
+        {
+          "stat_name": "book_read_bookskill_sneak5",
+          "display_label": "36 Lessons of Vivec, Sermon 26",
+          "amount": 1
+        },
+        {
+          "stat_name": "book_read_bookskill_speechcraft5",
+          "display_label": "36 Lessons of Vivec, Sermon 27",
+          "amount": 1
+        },
+        {
+          "stat_name": "book_read_bookskill_light armor5",
+          "display_label": "36 Lessons of Vivec, Sermon 28",
+          "amount": 1
+        },
+        {
+          "stat_name": "book_read_bookskill_armorer5",
+          "display_label": "36 Lessons of Vivec, Sermon 29",
+          "amount": 1
+        },
+        {
+          "stat_name": "book_read_bookskill_short blade5",
+          "display_label": "36 Lessons of Vivec, Sermon 30",
+          "amount": 1
+        },
+        {
+          "stat_name": "book_read_bookskill_athletics5",
+          "display_label": "36 Lessons of Vivec, Sermon 31",
+          "amount": 1
+        },
+        {
+          "stat_name": "book_read_bookskill_block5",
+          "display_label": "36 Lessons of Vivec, Sermon 32",
+          "amount": 1
+        },
+        {
+          "stat_name": "book_read_bookskill_medium armor5",
+          "display_label": "36 Lessons of Vivec, Sermon 33",
+          "amount": 1
+        },
+        {
+          "stat_name": "book_read_bookskill_unarmored5",
+          "display_label": "36 Lessons of Vivec, Sermon 34",
+          "amount": 1
+        },
+        {
+          "stat_name": "book_read_bookskill_spear5",
+          "display_label": "36 Lessons of Vivec, Sermon 35",
+          "amount": 1
+        },
+        {
+          "stat_name": "book_read_bookskill_mysticism4",
+          "display_label": "36 Lessons of Vivec, Sermon 36",
+          "amount": 1
+        }
+      ],
+      "type": ""
+    },
+    {
+      "id": "MW_DISC_10",
+      "parent_id": "",
+      "name": "New Explorer",
+      "description": "Discover 10 locations",
+      "points": 2,
+      "icon": "random",
+      "category": "Exploration",
+      "order": 65,
+      "type": "",
+      "regions": [],
+      "factions": [],
+      "notification_step": 1,
+      "trigger": {
+        "type": "Global"
+      },
+      "objectives": [
+        {
+          "stat_name": "locations_discovered",
+          "display_label": "",
+          "amount": 10,
+          "op": "=="
+        }
+      ],
+      "progress_bar": true
+    },
+    {
+      "id": "MW_DISC_50",
+      "parent_id": "MW_DISC_10",
+      "name": "Capitaine Roberto Jodoin",
+      "description": "Discover 50 locations",
+      "points": 5,
+      "icon": "random",
+      "category": "Exploration",
+      "order": 66,
+      "type": "",
+      "regions": [],
+      "factions": [],
+      "notification_step": 5,
+      "trigger": {
+        "type": "Global"
+      },
+      "objectives": [
+        {
+          "stat_name": "locations_discovered",
+          "display_label": "",
+          "amount": 50,
+          "op": "=="
+        }
+      ],
+      "progress_bar": true
+    },
+    {
+      "id": "MW_DISC_100",
+      "parent_id": "MW_DISC_10",
+      "name": "Ysgramor",
+      "description": "Discover 100 locations",
+      "points": 10,
+      "icon": "random",
+      "category": "Exploration",
+      "order": 67,
+      "type": "",
+      "regions": [],
+      "factions": [],
+      "notification_step": 10,
+      "trigger": {
+        "type": "Global"
+      },
+      "objectives": [
+        {
+          "stat_name": "locations_discovered",
+          "display_label": "",
+          "amount": 100,
+          "op": "=="
+        }
+      ],
+      "progress_bar": true
+    },
+    {
+      "id": "MW_DISC_250",
+      "parent_id": "MW_DISC_10",
+      "name": "Topal the Pilot",
+      "description": "Discover 250 locations",
+      "points": 25,
+      "icon": "random",
+      "category": "Exploration",
+      "order": 68,
+      "type": "",
+      "regions": [],
+      "factions": [],
+      "notification_step": 10,
+      "trigger": {
+        "type": "Global"
+      },
+      "objectives": [
+        {
+          "stat_name": "locations_discovered",
+          "display_label": "",
+          "amount": 250,
+          "op": "=="
+        }
+      ],
+      "progress_bar": true
+    },
+    {
+      "id": "MW_COL_CHITIN_ARMOR",
+      "parent_id": "",
+      "name": "Chitine Armor",
+      "description": "Complete a full set of the Chitin armor",
+      "points": 5,
+      "icon": "random",
+      "category": "Collection",
+      "order": 69,
+      "regions": [],
+      "factions": [],
+      "target_value": 0,
+      "tracked_stat": "",
+      "notification_step": 1,
+      "trigger": {
+        "type": "Loot"
+      },
+      "objectives": [
+        {
+          "stat_name": "inv_chitin boots",
+          "display_label": "Loot Chitin Boots",
+          "amount": 1
+        },
+        {
+          "stat_name": "inv_chitin cuirass",
+          "display_label": "Loot Chitin Cuirass",
+          "amount": 1
+        },
+        {
+          "stat_name": "inv_chitin greaves",
+          "display_label": "Loot Chitin Greaves",
+          "amount": 1
+        },
+        {
+          "stat_name": "inv_chitin guantlet - left",
+          "display_label": "Loot Chitin Left Gauntlet",
+          "amount": 1
+        },
+        {
+          "stat_name": "inv_chitin guantlet - right",
+          "display_label": "Loot Chitin Right Gauntlet",
+          "amount": 1
+        },
+        {
+          "stat_name": "inv_chitin helm",
+          "display_label": "Loot Chitin Helm",
+          "amount": 1,
+          "group": "g1",
+          "any_of": true
+        },
+        {
+          "stat_name": "inv_chitin_mask_helm",
+          "display_label": "Hold Chitin Mask Helm",
+          "amount": 1,
+          "group": "g1",
+          "any_of": true
+        },
+        {
+          "stat_name": "inv_chitin pauldron - left",
+          "display_label": "Loot Chitin Left Pauldron",
+          "amount": 1
+        },
+        {
+          "stat_name": "inv_chitin pauldron - right",
+          "display_label": "Loot Chitin Right Pauldron",
+          "amount": 1
+        },
+        {
+          "stat_name": "inv_chitin_shield",
+          "display_label": "Hold Chitin Shield",
+          "amount": 1
+        },
+        {
+          "stat_name": "inv_chitin_towershield",
+          "display_label": "Hold Chitin Tower Shield",
+          "amount": 1
+        },
+        {
+          "stat_name": "inv_chitin_watchman_helm",
+          "display_label": "Hold Redoran Watchman's Helm",
+          "amount": 1
+        }
+      ],
+      "type": ""
+    },
+    {
+      "id": "MW_COL_CHITIN_WEAPON",
+      "parent_id": "",
+      "name": "Chitin Arsenal",
+      "description": "Own every type of Chitin weapons",
+      "points": 5,
+      "icon": "random",
+      "category": "Collection",
+      "order": 70,
+      "regions": [],
+      "factions": [],
+      "target_value": 0,
+      "tracked_stat": "",
+      "notification_step": 1,
+      "trigger": {
+        "type": "Loot"
+      },
+      "objectives": [
+        {
+          "stat_name": "inv_chitin club",
+          "display_label": "Hold Chitin Club",
+          "amount": 1
+        },
+        {
+          "stat_name": "inv_chitin dagger",
+          "display_label": "Hold Chitin Dagger",
+          "amount": 1
+        },
+        {
+          "stat_name": "inv_chitin short bow",
+          "display_label": "Hold Chitin Short Bow",
+          "amount": 1
+        },
+        {
+          "stat_name": "inv_chitin spear",
+          "display_label": "Hold Chitin Spear",
+          "amount": 1
+        },
+        {
+          "stat_name": "inv_chitin arrow",
+          "display_label": "Hold Chitin Arrow",
+          "amount": 1
+        },
+        {
+          "stat_name": "inv_chitin throwing star",
+          "display_label": "Hold Chitin Throwing Star",
+          "amount": 1
+        },
+        {
+          "stat_name": "inv_chitin war axe",
+          "display_label": "Hold Chitin War Axe",
+          "amount": 1
+        },
+        {
+          "stat_name": "inv_chitin shortsword",
+          "display_label": "Hold Chitin Shortsword",
+          "amount": 1
+        }
+      ],
+      "type": ""
+    },
+    {
+      "id": "MW_COL_NETCH_LEATHER_ARMOR",
+      "parent_id": "",
+      "name": "Netch Leather Armor",
+      "description": "Complete a full set of the Netch Leather armor",
+      "points": 5,
+      "icon": "random",
+      "category": "Collection",
+      "order": 71,
+      "regions": [],
+      "factions": [],
+      "target_value": 0,
+      "tracked_stat": "",
+      "notification_step": 1,
+      "trigger": {
+        "type": "Loot"
+      },
+      "objectives": [
+        {
+          "stat_name": "inv_netch_leather_boots",
+          "display_label": "Hold Netch Leather Boots",
+          "amount": 1
+        },
+        {
+          "stat_name": "inv_netch_leather_cuirass",
+          "display_label": "Hold Netch Leather Cuirass",
+          "amount": 1
+        },
+        {
+          "stat_name": "inv_netch_leather_greaves",
+          "display_label": "Hold Netch Leather Greaves",
+          "amount": 1
+        },
+        {
+          "stat_name": "inv_netch_leather_gauntlet_left",
+          "display_label": "Hold Netch Leather Left Gauntlet",
+          "amount": 1
+        },
+        {
+          "stat_name": "inv_netch_leather_gauntlet_right",
+          "display_label": "Hold Netch Leather Right Gauntlet",
+          "amount": 1
+        },
+        {
+          "stat_name": "inv_netch_leather_helm",
+          "display_label": "Hold Netch Leather Helm",
+          "amount": 1
+        },
+        {
+          "stat_name": "inv_netch_leather_pauldron_left",
+          "display_label": "Hold Netch Leather Left Pauldron",
+          "amount": 1
+        },
+        {
+          "stat_name": "inv_netch_leather_pauldron_right",
+          "display_label": "Hold Netch Leather Right Pauldron",
+          "amount": 1
+        },
+        {
+          "stat_name": "inv_netch_leather_shield",
+          "display_label": "Hold Netch Leather Shield",
+          "amount": 1
+        },
+        {
+          "stat_name": "inv_netch_leather_towershield",
+          "display_label": "Hold Netch Leather Tower Shield",
+          "amount": 1
+        }
+      ],
+      "type": "",
+      "progress_bar": false
+    },
+    {
+      "id": "MW_COL_NORDIC_LIGHT_ARMOR",
+      "parent_id": "",
+      "name": "Nordic Fur Armor",
+      "description": "Complete a full set of the Nordic Fur armor",
+      "points": 5,
+      "icon": "random",
+      "category": "Collection",
+      "order": 72,
+      "type": "",
+      "progress_bar": false,
+      "regions": [],
+      "factions": [],
+      "target_value": 0,
+      "tracked_stat": "",
+      "notification_step": 1,
+      "trigger": {
+        "type": "Loot"
+      },
+      "objectives": [
+        {
+          "stat_name": "inv_fur_boots",
+          "display_label": "Hold Nordic Fur Boots",
+          "amount": 1
+        },
+        {
+          "stat_name": "inv_fur_bracer_left",
+          "display_label": "Hold Nordic Fur Left Bracer",
+          "amount": 1
+        },
+        {
+          "stat_name": "inv_fur_bracer_right",
+          "display_label": "Hold Nordic Fur Right Bracer",
+          "amount": 1
+        },
+        {
+          "stat_name": "inv_fur_cuirass",
+          "display_label": "Hold Nordic Fur Cuirass",
+          "amount": 1
+        },
+        {
+          "stat_name": "inv_fur_gauntlet_left",
+          "display_label": "Hold Nordic Fur Left Gauntlet",
+          "amount": 1
+        },
+        {
+          "stat_name": "inv_fur_gauntlet_right",
+          "display_label": "Hold Nordic Fur Right Gauntlet",
+          "amount": 1
+        },
+        {
+          "stat_name": "inv_fur_helm",
+          "display_label": "Hold Nordic Fur Helm",
+          "amount": 1
+        },
+        {
+          "stat_name": "inv_fur_greaves",
+          "display_label": "Hold Nordic Fur Greaves",
+          "amount": 1
+        },
+        {
+          "stat_name": "inv_fur_pauldron_left",
+          "display_label": "Hold Nordic Fur Left Pauldron",
+          "amount": 1
+        },
+        {
+          "stat_name": "inv_fur_pauldron_right",
+          "display_label": "Hold Nordic Fur Right Pauldron",
+          "amount": 1
+        }
+      ]
+    },
+    {
+      "id": "MW_COL_GLASS_ARMOR",
+      "parent_id": "",
+      "name": "Glass Armor",
+      "description": "Complete a full set of the Glass armor",
+      "points": 5,
+      "icon": "random",
+      "category": "Collection",
+      "order": 73,
+      "regions": [],
+      "factions": [],
+      "target_value": 0,
+      "tracked_stat": "",
+      "notification_step": 1,
+      "trigger": {
+        "type": "Loot"
+      },
+      "objectives": [
+        {
+          "stat_name": "inv_glass_boots",
+          "display_label": "Hold Glass Boots",
+          "amount": 1
+        },
+        {
+          "stat_name": "inv_glass_cuirass",
+          "display_label": "Hold Glass Cuirass",
+          "amount": 1
+        },
+        {
+          "stat_name": "inv_glass_greaves",
+          "display_label": "Hold Glass Greaves",
+          "amount": 1
+        },
+        {
+          "stat_name": "inv_glass_helm",
+          "display_label": "Hold Glass Helm",
+          "amount": 1
+        },
+        {
+          "stat_name": "inv_glass_pauldron_left",
+          "display_label": "Hold Glass Left Pauldron",
+          "amount": 1
+        },
+        {
+          "stat_name": "inv_glass_pauldron_right",
+          "display_label": "Hold Glass Right Pauldron",
+          "amount": 1
+        },
+        {
+          "stat_name": "inv_glass_shield",
+          "display_label": "Hold Glass Shield",
+          "amount": 1
+        },
+        {
+          "stat_name": "inv_glass_towershield",
+          "display_label": "Hold Glass Tower Shield",
+          "amount": 1
+        },
+        {
+          "stat_name": "inv_glass_bracer_left",
+          "display_label": "Hold Left Glass Bracer",
+          "amount": 1
+        },
+        {
+          "stat_name": "inv_glass_bracer_right",
+          "display_label": "Hold Right Glass Bracer",
+          "amount": 1
+        }
+      ],
+      "type": "",
+      "progress_bar": false
+    },
+    {
+      "id": "MW_COL_GLASS_WEAPON",
+      "parent_id": "",
+      "name": "Glass Arsenal",
+      "description": "Own every type of Glass weapons",
+      "points": 5,
+      "icon": "random",
+      "category": "Collection",
+      "order": 74,
+      "regions": [],
+      "factions": [],
+      "target_value": 0,
+      "tracked_stat": "",
+      "notification_step": 1,
+      "trigger": {
+        "type": "Loot"
+      },
+      "objectives": [
+        {
+          "stat_name": "inv_glass longsword",
+          "display_label": "Hold Glass Longsword",
+          "amount": 1
+        },
+        {
+          "stat_name": "inv_glass arrow",
+          "display_label": "Hold Glass Arrow",
+          "amount": 1
+        },
+        {
+          "stat_name": "inv_glass claymore",
+          "display_label": "Hold Glass Claymore",
+          "amount": 1
+        },
+        {
+          "stat_name": "inv_glass dagger",
+          "display_label": "Hold Glass Dagger",
+          "amount": 1
+        },
+        {
+          "stat_name": "inv_glass staff",
+          "display_label": "Hold Glass Staff",
+          "amount": 1
+        },
+        {
+          "stat_name": "inv_glass halberd",
+          "display_label": "Hold Glass Halberd",
+          "amount": 1
+        },
+        {
+          "stat_name": "inv_glass throwing knife",
+          "display_label": "Hold Glass Throwing Knife",
+          "amount": 1
+        },
+        {
+          "stat_name": "inv_glass throwing star",
+          "display_label": "Hold Glass Throwing Star",
+          "amount": 1
+        }
+      ],
+      "type": "",
+      "progress_bar": false
+    },
+    {
+      "id": "MW_COL_ORCISH_ARMOR",
+      "parent_id": "",
+      "name": "Orcish Armor",
+      "description": "Complete a full set of the Orcish armor",
+      "points": 5,
+      "icon": "random",
+      "category": "Collection",
+      "order": 75,
+      "type": "",
+      "progress_bar": false,
+      "regions": [],
+      "factions": [],
+      "notification_step": 1,
+      "trigger": {
+        "type": "Loot"
+      },
+      "objectives": [
+        {
+          "stat_name": "inv_orcish_boots",
+          "display_label": "Hold Orcish Boots",
+          "amount": 1
+        },
+        {
+          "stat_name": "inv_orcish_bracer_left",
+          "display_label": "Hold Orcish Left Bracer",
+          "amount": 1
+        },
+        {
+          "stat_name": "inv_orcish_bracer_right",
+          "display_label": "Hold Orcish Right Bracer",
+          "amount": 1
+        },
+        {
+          "stat_name": "inv_orcish_cuirass",
+          "display_label": "Hold Orcish Cuirass",
+          "amount": 1
+        },
+        {
+          "stat_name": "inv_orcish_greaves",
+          "display_label": "Hold Orcish Greaves",
+          "amount": 1
+        },
+        {
+          "stat_name": "inv_orcish_helm",
+          "display_label": "Hold Orcish Helm",
+          "amount": 1
+        },
+        {
+          "stat_name": "inv_orcish_pauldron_left",
+          "display_label": "Hold Orcish Left Pauldron",
+          "amount": 1
+        },
+        {
+          "stat_name": "inv_orcish_pauldron_right",
+          "display_label": "Hold Orcish Right Pauldron",
+          "amount": 1
+        },
+        {
+          "stat_name": "inv_orcish_towershield",
+          "display_label": "Hold Orcish Tower Shield",
+          "amount": 1
+        }
+      ],
+      "tracked_stat": "",
+      "target_value": 0
+    },
+    {
+      "id": "MW_COL_ORCISH_WEAPON",
+      "parent_id": "",
+      "name": "Orcish Arsenal",
+      "description": "Own every type of Orcish weapons",
+      "points": 5,
+      "icon": "random",
+      "category": "Collection",
+      "order": 76,
+      "type": "",
+      "progress_bar": false,
+      "regions": [],
+      "factions": [],
+      "target_value": 0,
+      "tracked_stat": "",
+      "notification_step": 1,
+      "trigger": {
+        "type": "Loot"
+      },
+      "objectives": [
+        {
+          "stat_name": "inv_orcish battle axe",
+          "display_label": "Hold Orcish Battle Axe",
+          "amount": 1
+        },
+        {
+          "stat_name": "inv_orcish warhammer",
+          "display_label": "Hold Orc Warhammer",
+          "amount": 1
+        },
+        {
+          "stat_name": "inv_orcish bolt",
+          "display_label": "Hold Orcish Bolt",
+          "amount": 1
+        }
+      ]
+    },
+    {
+      "id": "MW_COL_BONEMOLD_ARMOR",
+      "parent_id": "",
+      "name": "Bonemold Armor",
+      "description": "Complete a full set of the Bonemold armor",
+      "points": 5,
+      "icon": "random",
+      "category": "Collection",
+      "order": 77,
+      "type": "",
+      "progress_bar": false,
+      "regions": [],
+      "factions": [],
+      "target_value": 0,
+      "tracked_stat": "",
+      "notification_step": 1,
+      "trigger": {
+        "type": "Loot"
+      },
+      "objectives": [
+        {
+          "stat_name": "inv_bonemold_boots",
+          "display_label": "Hold Bonemold Boots",
+          "amount": 1
+        },
+        {
+          "stat_name": "inv_bonemold_bracer_left",
+          "display_label": "Hold Bonemold Left Bracer",
+          "amount": 1
+        },
+        {
+          "stat_name": "inv_bonemold_bracer_right",
+          "display_label": "Hold Bonemold Right Bracer",
+          "amount": 1
+        },
+        {
+          "stat_name": "inv_bonemold_cuirass",
+          "display_label": "Hold Bonemold Cuirass",
+          "amount": 1
+        },
+        {
+          "stat_name": "inv_bonemold_greaves",
+          "display_label": "Hold Bonemold Greaves",
+          "amount": 1
+        },
+        {
+          "stat_name": "inv_bonemold_helm",
+          "display_label": "Hold Bonemold Helm",
+          "amount": 1
+        },
+        {
+          "stat_name": "inv_bonemold_pauldron_l",
+          "display_label": "Hold Bonemold L Pauldron",
+          "amount": 1
+        },
+        {
+          "stat_name": "inv_bonemold_pauldron_r",
+          "display_label": "Hold Bonemold R Pauldron",
+          "amount": 1
+        },
+        {
+          "stat_name": "inv_bonemold_shield",
+          "display_label": "Hold Bonemold Shield",
+          "amount": 1
+        },
+        {
+          "stat_name": "inv_bonemold_towershield",
+          "display_label": "Hold Bonemold Tower Shield",
+          "amount": 1
+        }
+      ]
+    },
+    {
+      "id": "MW_COL_BONEMOLD_ARMUN_ARMOR",
+      "parent_id": "",
+      "name": "Armun-An Bonemold Armor",
+      "description": "Complete a full set of the Armun-An Bonemold armor",
+      "points": 5,
+      "icon": "random",
+      "category": "Loot",
+      "order": 78,
+      "type": "",
+      "progress_bar": false,
+      "regions": [],
+      "factions": [],
+      "target_value": 0,
+      "tracked_stat": "",
+      "notification_step": 1,
+      "trigger": {
+        "type": "Loot"
+      },
+      "objectives": [
+        {
+          "stat_name": "loot_bonemold_armun-an_cuirass",
+          "display_label": "Loot Armun-An Bonemold Cuirass",
+          "amount": 1
+        },
+        {
+          "stat_name": "loot_bonemold_armun-an_helm",
+          "display_label": "Loot Native Armun-An Bonemold Helm",
+          "amount": 1
+        },
+        {
+          "stat_name": "loot_bonemold_armun-an_pauldron_l",
+          "display_label": "Loot Armun-An Bonemold L Pauldron",
+          "amount": 1
+        },
+        {
+          "stat_name": "loot_bonemold_armun-an_pauldron_r",
+          "display_label": "Loot Armun-An Bonemold R Pauldron",
+          "amount": 1
+        }
+      ]
+    },
+    {
+      "id": "MW_COL_BONEMOLD_GAH_ARMOR",
+      "parent_id": "",
+      "name": "Gah-Julan Bonemold Armor",
+      "description": "Complete a full set of the Gah-Julan Bonemold armor",
+      "points": 5,
+      "icon": "random",
+      "category": "Collection",
+      "order": 79,
+      "type": "",
+      "progress_bar": false,
+      "regions": [],
+      "factions": [],
+      "target_value": 0,
+      "tracked_stat": "",
+      "notification_step": 1,
+      "trigger": {
+        "type": "Loot"
+      },
+      "objectives": [
+        {
+          "stat_name": "inv_bonemold_gah-julan_cuirass",
+          "display_label": "Hold Gah-Julan Bonemold Cuirass",
+          "amount": 1
+        },
+        {
+          "stat_name": "inv_bonemold_gah-julan_helm",
+          "display_label": "Hold Native Gah-Julan Bonemold Helm",
+          "amount": 1,
+          "group": "g1",
+          "any_of": true
+        },
+        {
+          "stat_name": "inv_bonemold_gah-julan_hhda",
+          "display_label": "Hold Native Gah-Julan Bonemold Helm",
+          "amount": 1,
+          "group": "g1",
+          "any_of": true
+        },
+        {
+          "stat_name": "inv_bonemold_gah-julan_pauldron_l",
+          "display_label": "Hold Gah-Julan Bonemold L Pauldron",
+          "amount": 1
+        },
+        {
+          "stat_name": "inv_bonemold_gah-julan_pauldron_r",
+          "display_label": "Hold Gah-Julan Bonemold R Pauldron",
+          "amount": 1
+        }
+      ]
+    },
+    {
+      "id": "MW_COL_DAEDRIC_ARMOR",
+      "parent_id": "",
+      "name": "Daedric Armor",
+      "description": "Complete a full set of the Daedric armor",
+      "points": 10,
+      "icon": "random",
+      "category": "Collection",
+      "order": 80,
+      "type": "",
+      "progress_bar": false,
+      "regions": [],
+      "factions": [],
+      "target_value": 0,
+      "tracked_stat": "",
+      "notification_step": 1,
+      "trigger": {
+        "type": "Loot"
+      },
+      "objectives": [
+        {
+          "stat_name": "inv_daedric_boots",
+          "display_label": "Hold Daedric Boots",
+          "amount": 1
+        },
+        {
+          "stat_name": "inv_daedric_cuirass",
+          "display_label": "Hold Daedric Cuirass",
+          "amount": 1
+        },
+        {
+          "stat_name": "inv_daedric_gauntlet_left",
+          "display_label": "Hold Daedric Left Gauntlet",
+          "amount": 1
+        },
+        {
+          "stat_name": "inv_daedric_gauntlet_right",
+          "display_label": "Hold Daedric Right Gauntlet",
+          "amount": 1
+        },
+        {
+          "stat_name": "inv_daedric_greaves",
+          "display_label": "Hold Daedric Greaves",
+          "amount": 1
+        },
+        {
+          "stat_name": "inv_daedric_pauldron_left",
+          "display_label": "Hold Daedric Left Pauldron",
+          "amount": 1
+        },
+        {
+          "stat_name": "inv_daedric_pauldron_right",
+          "display_label": "Hold Daedric Right Pauldron",
+          "amount": 1
+        },
+        {
+          "stat_name": "inv_daedric_fountain_helm",
+          "display_label": "Hold Daedric Face of Inspiration",
+          "amount": 1
+        },
+        {
+          "stat_name": "inv_daedric_god_helm",
+          "display_label": "Hold Daedric Face of God",
+          "amount": 1
+        },
+        {
+          "stat_name": "inv_daedric_terrifying_helm",
+          "display_label": "Hold Daedric Face of Terror",
+          "amount": 1
+        },
+        {
+          "stat_name": "inv_daedric_shield",
+          "display_label": "Hold Daedric Shield",
+          "amount": 1
+        },
+        {
+          "stat_name": "inv_daedric_towershield",
+          "display_label": "Hold Daedric Tower Shield",
+          "amount": 1
+        }
+      ]
+    },
+    {
+      "id": "MW_COL_DAEDRIC_WEAPON",
+      "parent_id": "",
+      "name": "Daedric Arsenal",
+      "description": "Own every type of Daedric weapons",
+      "points": 25,
+      "icon": "random",
+      "category": "Collection",
+      "order": 81,
+      "type": "",
+      "progress_bar": false,
+      "regions": [],
+      "factions": [],
+      "target_value": 0,
+      "tracked_stat": "",
+      "notification_step": 1,
+      "trigger": {
+        "type": "Loot"
+      },
+      "objectives": [
+        {
+          "stat_name": "inv_daedric arrow",
+          "display_label": "Hold Daedric Arrow",
+          "amount": 1
+        },
+        {
+          "stat_name": "inv_daedric battle axe",
+          "display_label": "Hold Daedric Battle Axe",
+          "amount": 1
+        },
+        {
+          "stat_name": "inv_daedric claymore",
+          "display_label": "Hold Daedric Claymore",
+          "amount": 1
+        },
+        {
+          "stat_name": "inv_daedric club",
+          "display_label": "Hold Daedric Club",
+          "amount": 1
+        },
+        {
+          "stat_name": "inv_daedric dagger",
+          "display_label": "Hold Daedric Dagger",
+          "amount": 1
+        },
+        {
+          "stat_name": "inv_daedric dai-katana",
+          "display_label": "Hold Daedric Dai-katana",
+          "amount": 1
+        },
+        {
+          "stat_name": "inv_daedric katana",
+          "display_label": "Hold Daedric Katana",
+          "amount": 1
+        },
+        {
+          "stat_name": "inv_daedric dart",
+          "display_label": "Hold Daedric Dart",
+          "amount": 1
+        },
+        {
+          "stat_name": "inv_daedric long bow",
+          "display_label": "Hold Daedric Long Bow",
+          "amount": 1
+        },
+        {
+          "stat_name": "inv_daedric longsword",
+          "display_label": "Hold Daedric Longsword",
+          "amount": 1
+        },
+        {
+          "stat_name": "inv_daedric mace",
+          "display_label": "Hold Daedric Mace",
+          "amount": 1
+        },
+        {
+          "stat_name": "inv_daedric spear",
+          "display_label": "Hold Daedric Spear",
+          "amount": 1
+        },
+        {
+          "stat_name": "inv_daedric staff",
+          "display_label": "Hold Daedric Staff",
+          "amount": 1
+        },
+        {
+          "stat_name": "inv_daedric tanto",
+          "display_label": "Hold Daedric Tanto",
+          "amount": 1
+        },
+        {
+          "stat_name": "inv_daedric wakizashi",
+          "display_label": "Hold Daedric Wakizashi",
+          "amount": 1
+        },
+        {
+          "stat_name": "inv_daedric war axe",
+          "display_label": "Hold Daedric War Axe",
+          "amount": 1
+        },
+        {
+          "stat_name": "inv_daedric warhammer",
+          "display_label": "Hold Daedric Warhammer",
+          "amount": 1
+        },
+        {
+          "stat_name": "inv_daedric shortsword",
+          "display_label": "Hold Daedric Shortsword",
+          "amount": 1
+        }
+      ]
+    },
+    {
+      "id": "MW_COL_DWEMER_ARMOR",
+      "parent_id": "",
+      "name": "Dwemer Armor",
+      "description": "Complete a full set of the Dwemer armor",
+      "points": 5,
+      "icon": "random",
+      "category": "Collection",
+      "order": 82,
+      "type": "",
+      "progress_bar": false,
+      "regions": [],
+      "factions": [],
+      "target_value": 0,
+      "tracked_stat": "",
+      "notification_step": 1,
+      "trigger": {
+        "type": "Loot"
+      },
+      "objectives": [
+        {
+          "stat_name": "inv_dwemer_boots",
+          "display_label": "Hold Dwemer Boots",
+          "amount": 1
+        },
+        {
+          "stat_name": "inv_dwemer_bracer_left",
+          "display_label": "Hold Dwemer Left Bracer",
+          "amount": 1
+        },
+        {
+          "stat_name": "inv_dwemer_bracer_right",
+          "display_label": "Hold Dwemer Right Bracer",
+          "amount": 1
+        },
+        {
+          "stat_name": "inv_dwemer_cuirass",
+          "display_label": "Hold Dwemer Cuirass",
+          "amount": 1
+        },
+        {
+          "stat_name": "inv_dwemer_greaves",
+          "display_label": "Hold Dwemer Greaves",
+          "amount": 1
+        },
+        {
+          "stat_name": "inv_dwemer_helm",
+          "display_label": "Hold Dwemer Helm",
+          "amount": 1
+        },
+        {
+          "stat_name": "inv_dwemer_pauldron_left",
+          "display_label": "Hold Dwemer Left Pauldron",
+          "amount": 1
+        },
+        {
+          "stat_name": "inv_dwemer_pauldron_right",
+          "display_label": "Hold Dwemer Right Pauldron",
+          "amount": 1
+        },
+        {
+          "stat_name": "inv_dwemer_shield",
+          "display_label": "Hold Dwemer Shield",
+          "amount": 1
+        }
+      ]
+    },
+    {
+      "id": "MW_COL_DWEMER_WEAPON",
+      "parent_id": "",
+      "name": "Dwemer Arsenal",
+      "description": "Own every type of Dwemer weapons",
+      "points": 5,
+      "icon": "random",
+      "category": "Collection",
+      "order": 83,
+      "type": "",
+      "progress_bar": false,
+      "regions": [],
+      "factions": [],
+      "target_value": 0,
+      "tracked_stat": "",
+      "notification_step": 1,
+      "trigger": {
+        "type": "Loot"
+      },
+      "objectives": [
+        {
+          "stat_name": "inv_dwarven battle axe",
+          "display_label": "Hold Dwarven Battle Axe",
+          "amount": 1
+        },
+        {
+          "stat_name": "inv_dwarven claymore",
+          "display_label": "Hold Dwarven Claymore",
+          "amount": 1
+        },
+        {
+          "stat_name": "inv_dwarven crossbow",
+          "display_label": "Hold Dwarven Crossbow",
+          "amount": 1
+        },
+        {
+          "stat_name": "inv_dwarven halberd",
+          "display_label": "Hold Dwarven Halberd",
+          "amount": 1
+        },
+        {
+          "stat_name": "inv_dwarven mace",
+          "display_label": "Hold Dwarven Mace",
+          "amount": 1
+        },
+        {
+          "stat_name": "inv_dwarven shortsword",
+          "display_label": "Hold Dwarven Shortsword",
+          "amount": 1
+        },
+        {
+          "stat_name": "inv_dwarven spear",
+          "display_label": "Hold Dwarven Spear",
+          "amount": 1
+        },
+        {
+          "stat_name": "inv_dwarven war axe",
+          "display_label": "Hold Dwarven War Axe",
+          "amount": 1
+        },
+        {
+          "stat_name": "inv_dwarven warhammer",
+          "display_label": "Hold Dwarven Warhammer",
+          "amount": 1
+        }
+      ]
+    },
+    {
+      "id": "MW_COL_EBONY_ARMOR",
+      "parent_id": "",
+      "name": "Ebony Armor",
+      "description": "Complete a full set of the Ebony armor",
+      "points": 5,
+      "icon": "random",
+      "category": "Collection",
+      "order": 84,
+      "type": "",
+      "progress_bar": false,
+      "regions": [],
+      "factions": [],
+      "target_value": 0,
+      "tracked_stat": "",
+      "notification_step": 1,
+      "trigger": {
+        "type": "Loot"
+      },
+      "objectives": [
+        {
+          "stat_name": "inv_ebony_boots",
+          "display_label": "Hold Ebony Boots",
+          "amount": 1
+        },
+        {
+          "stat_name": "inv_ebony_bracer_left",
+          "display_label": "Hold Ebony Left Bracer",
+          "amount": 1,
+          "group": "g3",
+          "any_of": true
+        },
+        {
+          "stat_name": "inv_ebony_bracer_left_tgeb",
+          "display_label": "Hold Ebony Right Bracer",
+          "amount": 1,
+          "group": "g3",
+          "any_of": true
+        },
+        {
+          "stat_name": "inv_ebony_bracer_right",
+          "display_label": "Hold Ebony Right Bracer",
+          "amount": 1,
+          "group": "g4",
+          "any_of": true
+        },
+        {
+          "stat_name": "inv_ebony_bracer_right_tgeb",
+          "display_label": "Hold Ebony Right Bracer",
+          "amount": 1,
+          "group": "g4",
+          "any_of": true
+        },
+        {
+          "stat_name": "inv_ebony_closed_helm",
+          "display_label": "Hold Ebony Closed Helm",
+          "amount": 1
+        },
+        {
+          "stat_name": "inv_ebony_cuirass",
+          "display_label": "Hold Ebony Cuirass",
+          "amount": 1
+        },
+        {
+          "stat_name": "inv_ebony_greaves",
+          "display_label": "Hold Ebony Greaves",
+          "amount": 1
+        },
+        {
+          "stat_name": "inv_ebony_pauldron_left",
+          "display_label": "Hold Ebony Left Pauldron",
+          "amount": 1,
+          "group": "g1",
+          "any_of": true
+        },
+        {
+          "stat_name": "inv_ebony_pauldron_right",
+          "display_label": "Hold Ebony Right Pauldron",
+          "amount": 1,
+          "group": "g2",
+          "any_of": true
+        },
+        {
+          "stat_name": "inv_ebony_shield",
+          "display_label": "Hold Ebony Shield",
+          "amount": 1
+        },
+        {
+          "stat_name": "inv_ebony_towershield",
+          "display_label": "Hold Ebony Tower Shield",
+          "amount": 1
+        }
+      ]
+    },
+    {
+      "id": "MW_COL_EBONY_WEAPON",
+      "parent_id": "",
+      "name": "Ebony Arsenal",
+      "description": "Own every type of Ebony weapons",
+      "points": 5,
+      "icon": "random",
+      "category": "Collection",
+      "order": 85,
+      "type": "",
+      "progress_bar": false,
+      "regions": [],
+      "factions": [],
+      "target_value": 0,
+      "tracked_stat": "",
+      "notification_step": 1,
+      "trigger": {
+        "type": "Loot"
+      },
+      "objectives": [
+        {
+          "stat_name": "inv_ebony arrow",
+          "display_label": "Hold Ebony Arrow",
+          "amount": 1
+        },
+        {
+          "stat_name": "inv_ebony dart",
+          "display_label": "Hold Ebony Dart",
+          "amount": 1
+        },
+        {
+          "stat_name": "inv_ebony longsword",
+          "display_label": "Hold Ebony Longsword",
+          "amount": 1
+        },
+        {
+          "stat_name": "inv_ebony broadsword",
+          "display_label": "Hold Ebony Broadsword",
+          "amount": 1
+        },
+        {
+          "stat_name": "inv_ebony mace",
+          "display_label": "Hold Ebony Mace",
+          "amount": 1
+        },
+        {
+          "stat_name": "inv_ebony scimitar",
+          "display_label": "Hold Ebony Scimitar",
+          "amount": 1
+        },
+        {
+          "stat_name": "inv_ebony shortsword",
+          "display_label": "Hold Ebony Shortsword",
+          "amount": 1
+        },
+        {
+          "stat_name": "inv_ebony spear",
+          "display_label": "Hold Ebony Spear",
+          "amount": 1
+        },
+        {
+          "stat_name": "inv_ebony staff",
+          "display_label": "Hold Ebony Staff",
+          "amount": 1
+        },
+        {
+          "stat_name": "inv_ebony throwing star",
+          "display_label": "Hold Ebony Throwing Star",
+          "amount": 1
+        }
+      ]
+    },
+    {
+      "id": "MW_COL_IMP_STEEL_ARMOR",
+      "parent_id": "",
+      "name": "Imperial Steel Armor",
+      "description": "Complete a full set of the Imperial Steel armor",
+      "points": 5,
+      "icon": "random",
+      "category": "Collection",
+      "order": 86,
+      "type": "",
+      "progress_bar": false,
+      "regions": [],
+      "factions": [],
+      "target_value": 0,
+      "tracked_stat": "",
+      "notification_step": 1,
+      "trigger": {
+        "type": "Loot"
+      },
+      "objectives": [
+        {
+          "stat_name": "inv_imperial boots",
+          "display_label": "Hold Imperial Steel Boots",
+          "amount": 1
+        },
+        {
+          "stat_name": "inv_imperial cuirass_armor",
+          "display_label": "Hold Imperial Steel Cuirass",
+          "amount": 1
+        },
+        {
+          "stat_name": "inv_imperial helmet armor",
+          "display_label": "Hold Imperial Steel Helmet",
+          "amount": 1
+        },
+        {
+          "stat_name": "inv_imperial left gauntlet",
+          "display_label": "Hold Imperial Steel Left Gauntlet",
+          "amount": 1
+        },
+        {
+          "stat_name": "inv_imperial right gauntlet",
+          "display_label": "Hold Imperial Steel Right Gauntlet",
+          "amount": 1
+        },
+        {
+          "stat_name": "inv_imperial left pauldron",
+          "display_label": "Hold Imperial Steel Left Pauldron",
+          "amount": 1
+        },
+        {
+          "stat_name": "inv_imperial right pauldron",
+          "display_label": "Hold Imperial Steel Right Pauldron",
+          "amount": 1
+        },
+        {
+          "stat_name": "inv_imperial shield",
+          "display_label": "Hold Imperial Shield",
+          "amount": 1
+        },
+        {
+          "stat_name": "inv_imperial_greaves",
+          "display_label": "Hold Imperial Steel Greaves",
+          "amount": 1
+        }
+      ]
+    },
+    {
+      "id": "MW_COL_IMP_TEMP_ARMOR",
+      "parent_id": "",
+      "name": "Imperial Templar Armor",
+      "description": "Complete a full set of the Imperial Templar armor",
+      "points": 5,
+      "icon": "random",
+      "category": "Collection",
+      "order": 87,
+      "type": "",
+      "progress_bar": false,
+      "regions": [],
+      "factions": [],
+      "target_value": 0,
+      "tracked_stat": "",
+      "notification_step": 1,
+      "trigger": {
+        "type": "Loot"
+      },
+      "objectives": [
+        {
+          "stat_name": "inv_templar_cuirass",
+          "display_label": "Hold Imperial Templar Knight Cuirass",
+          "amount": 1
+        },
+        {
+          "stat_name": "inv_templar_greaves",
+          "display_label": "Hold Imperial Templar Greaves",
+          "amount": 1
+        },
+        {
+          "stat_name": "inv_templar_helmet_armor",
+          "display_label": "Hold Imperial Templar Helmet",
+          "amount": 1
+        },
+        {
+          "stat_name": "inv_templar_pauldron_left",
+          "display_label": "Hold Imperial Templar Left Pauldron",
+          "amount": 1
+        },
+        {
+          "stat_name": "inv_templar_pauldron_right",
+          "display_label": "Hold Imperial Templar Right Pauldron",
+          "amount": 1
+        },
+        {
+          "stat_name": "inv_templar boots",
+          "display_label": "Hold Imperial Templar Boots",
+          "amount": 1
+        },
+        {
+          "stat_name": "inv_templar bracer left",
+          "display_label": "Hold Imperial Templar Left Bracer",
+          "amount": 1
+        },
+        {
+          "stat_name": "inv_templar bracer right",
+          "display_label": "Hold Imperial Templar Right Bracer",
+          "amount": 1
+        }
+      ]
+    },
+    {
+      "id": "MW_COL_INDORIL_ARMOR",
+      "parent_id": "",
+      "name": "Indoril Armor",
+      "description": "Complete a full set of the Indoril armor",
+      "points": 5,
+      "icon": "random",
+      "category": "Collection",
+      "order": 88,
+      "type": "",
+      "progress_bar": false,
+      "regions": [],
+      "factions": [],
+      "target_value": 0,
+      "tracked_stat": "",
+      "notification_step": 1,
+      "trigger": {
+        "type": "Loot"
+      },
+      "objectives": [
+        {
+          "stat_name": "inv_indoril boots",
+          "display_label": "Hold Indoril Boots",
+          "amount": 1
+        },
+        {
+          "stat_name": "inv_indoril cuirass",
+          "display_label": "Hold Indoril Cuirass",
+          "amount": 1
+        },
+        {
+          "stat_name": "inv_indoril helmet",
+          "display_label": "Hold Indoril Helmet",
+          "amount": 1
+        },
+        {
+          "stat_name": "inv_indoril left gauntlet",
+          "display_label": "Hold Indoril Left Gauntlet",
+          "amount": 1
+        },
+        {
+          "stat_name": "inv_indoril right gauntlet",
+          "display_label": "Hold Indoril Right Gauntlet",
+          "amount": 1
+        },
+        {
+          "stat_name": "inv_indoril pauldron left",
+          "display_label": "Hold Indoril Left Pauldron",
+          "amount": 1
+        },
+        {
+          "stat_name": "inv_indoril pauldron right",
+          "display_label": "Hold Indoril Right Pauldron",
+          "amount": 1
+        },
+        {
+          "stat_name": "inv_indoril shield",
+          "display_label": "Hold Indoril Shield",
+          "amount": 1
+        }
+      ]
+    },
+    {
+      "id": "MW_COL_IRON_ARMOR",
+      "parent_id": "",
+      "name": "Iron Armor",
+      "description": "Complete a full set of the Iron armor",
+      "points": 5,
+      "icon": "random",
+      "category": "Collection",
+      "order": 89,
+      "type": "",
+      "progress_bar": false,
+      "regions": [],
+      "factions": [],
+      "target_value": 0,
+      "tracked_stat": "",
+      "notification_step": 1,
+      "trigger": {
+        "type": "Loot"
+      },
+      "objectives": [
+        {
+          "stat_name": "inv_iron_cuirass",
+          "display_label": "Hold Iron Left Gauntlet",
+          "amount": 1
+        },
+        {
+          "stat_name": "inv_iron_greaves",
+          "display_label": "Hold Iron Greaves",
+          "amount": 1
+        },
+        {
+          "stat_name": "inv_iron_helmet",
+          "display_label": "Hold Iron Helmet",
+          "amount": 1
+        },
+        {
+          "stat_name": "inv_iron_bracer_left",
+          "display_label": "Hold Iron Left Bracer",
+          "amount": 1
+        },
+        {
+          "stat_name": "inv_iron_bracer_right",
+          "display_label": "Hold Iron Right Bracer",
+          "amount": 1
+        },
+        {
+          "stat_name": "inv_iron_gauntlet_left",
+          "display_label": "Hold Iron Left Gauntlet",
+          "amount": 1
+        },
+        {
+          "stat_name": "inv_iron_gauntlet_right",
+          "display_label": "Hold Iron Right Gauntlet",
+          "amount": 1
+        },
+        {
+          "stat_name": "inv_iron_pauldron_left",
+          "display_label": "Hold Iron Left Pauldron",
+          "amount": 1
+        },
+        {
+          "stat_name": "inv_iron_pauldron_right",
+          "display_label": "Hold Iron Right Pauldron",
+          "amount": 1
+        },
+        {
+          "stat_name": "inv_iron_shield",
+          "display_label": "Hold Iron Shield",
+          "amount": 1
+        },
+        {
+          "stat_name": "inv_iron_towershield",
+          "display_label": "Hold Iron Tower Shield",
+          "amount": 1
+        },
+        {
+          "stat_name": "inv_iron boots",
+          "display_label": "Hold Iron Boots",
+          "amount": 1
+        }
+      ]
+    },
+    {
+      "id": "MW_COL_IRON_WEAPON",
+      "parent_id": "",
+      "name": "Iron Arsenal",
+      "description": "Own every type of Iron weapons",
+      "points": 10,
+      "icon": "random",
+      "category": "Collection",
+      "order": 90,
+      "type": "",
+      "progress_bar": false,
+      "regions": [],
+      "factions": [],
+      "target_value": 0,
+      "tracked_stat": "",
+      "notification_step": 1,
+      "trigger": {
+        "type": "Loot"
+      },
+      "objectives": [
+        {
+          "stat_name": "inv_iron arrow",
+          "display_label": "Hold Iron Arrow",
+          "amount": 1
+        },
+        {
+          "stat_name": "inv_iron bolt",
+          "display_label": "Hold Iron Bolt",
+          "amount": 1
+        },
+        {
+          "stat_name": "inv_iron battle axe",
+          "display_label": "Hold Iron Battle Axe",
+          "amount": 1
+        },
+        {
+          "stat_name": "inv_iron broadsword",
+          "display_label": "Hold Iron Broadsword",
+          "amount": 1
+        },
+        {
+          "stat_name": "inv_iron claymore",
+          "display_label": "Hold Iron Claymore",
+          "amount": 1
+        },
+        {
+          "stat_name": "inv_iron dagger",
+          "display_label": "Hold Iron Dagger",
+          "amount": 1
+        },
+        {
+          "stat_name": "inv_iron club",
+          "display_label": "Hold Iron Club",
+          "amount": 1
+        },
+        {
+          "stat_name": "inv_iron halberd",
+          "display_label": "Hold Iron Halberd",
+          "amount": 1
+        },
+        {
+          "stat_name": "inv_iron longsword",
+          "display_label": "Hold Iron Longsword",
+          "amount": 1
+        },
+        {
+          "stat_name": "inv_iron mace",
+          "display_label": "Hold Iron Mace",
+          "amount": 1
+        },
+        {
+          "stat_name": "inv_iron saber",
+          "display_label": "Hold Iron Saber",
+          "amount": 1
+        },
+        {
+          "stat_name": "inv_iron shortsword",
+          "display_label": "Hold Iron Shortsword",
+          "amount": 1
+        },
+        {
+          "stat_name": "inv_iron tanto",
+          "display_label": "Hold Iron Tanto",
+          "amount": 1
+        },
+        {
+          "stat_name": "inv_iron throwing knife",
+          "display_label": "Hold Iron Throwing Knife",
+          "amount": 1
+        },
+        {
+          "stat_name": "inv_iron wakizashi",
+          "display_label": "Hold Iron Wakizashi",
+          "amount": 1
+        },
+        {
+          "stat_name": "inv_iron war axe",
+          "display_label": "Hold Iron War Axe",
+          "amount": 1
+        },
+        {
+          "stat_name": "inv_long bow",
+          "display_label": "Hold Long Bow",
+          "amount": 1
+        },
+        {
+          "stat_name": "inv_iron warhammer",
+          "display_label": "Hold Iron Warhammer",
+          "amount": 1
+        },
+        {
+          "stat_name": "inv_iron spear",
+          "display_label": "Hold Iron Spear",
+          "amount": 1,
+          "group": "g1",
+          "any_of": true
+        },
+        {
+          "stat_name": "inv_iron long spear",
+          "display_label": "Hold Iron Spear",
+          "amount": 1,
+          "group": "g1",
+          "any_of": true
+        }
+      ]
+    },
+    {
+      "id": "MW_COL_SILVER_WEAPON",
+      "parent_id": "",
+      "name": "Silver Arsenal",
+      "description": "Own every type of Silver weapons",
+      "points": 5,
+      "icon": "random",
+      "category": "Collection",
+      "order": 91,
+      "type": "",
+      "progress_bar": false,
+      "regions": [],
+      "factions": [],
+      "target_value": 0,
+      "tracked_stat": "",
+      "notification_step": 1,
+      "trigger": {
+        "type": "Loot"
+      },
+      "objectives": [
+        {
+          "stat_name": "inv_silver arrow",
+          "display_label": "Hold Silver Arrow",
+          "amount": 1
+        },
+        {
+          "stat_name": "inv_silver bolt",
+          "display_label": "Hold Silver Bolt",
+          "amount": 1
+        },
+        {
+          "stat_name": "inv_silver claymore",
+          "display_label": "Hold Silver Claymore",
+          "amount": 1
+        },
+        {
+          "stat_name": "inv_silver dagger",
+          "display_label": "Hold Silver Dagger",
+          "amount": 1
+        },
+        {
+          "stat_name": "inv_silver dart",
+          "display_label": "Hold Silver Dart",
+          "amount": 1
+        },
+        {
+          "stat_name": "inv_silver longsword",
+          "display_label": "Hold Silver Longsword",
+          "amount": 1
+        },
+        {
+          "stat_name": "inv_silver shortsword",
+          "display_label": "Hold Silver Shortsword",
+          "amount": 1
+        },
+        {
+          "stat_name": "inv_silver spear",
+          "display_label": "Hold Silver Spear",
+          "amount": 1
+        },
+        {
+          "stat_name": "inv_silver staff",
+          "display_label": "Hold Silver Staff",
+          "amount": 1
+        },
+        {
+          "stat_name": "inv_silver throwing star",
+          "display_label": "Hold Silver Throwing Star",
+          "amount": 1
+        },
+        {
+          "stat_name": "inv_silver war axe",
+          "display_label": "Hold Silver War Axe",
+          "amount": 1
+        }
+      ]
+    },
+    {
+      "id": "MW_COL_STEEL_ARMOR",
+      "parent_id": "",
+      "name": "Steel Armor",
+      "description": "Complete a full set of the Steel armor",
+      "points": 5,
+      "icon": "random",
+      "category": "Collection",
+      "order": 92,
+      "type": "",
+      "progress_bar": false,
+      "regions": [],
+      "factions": [],
+      "target_value": 0,
+      "tracked_stat": "",
+      "notification_step": 1,
+      "trigger": {
+        "type": "Loot"
+      },
+      "objectives": [
+        {
+          "stat_name": "inv_steel_boots",
+          "display_label": "Hold Steel Boots",
+          "amount": 1
+        },
+        {
+          "stat_name": "inv_steel_cuirass",
+          "display_label": "Hold Steel Cuirass",
+          "amount": 1
+        },
+        {
+          "stat_name": "inv_steel_gauntlet_left",
+          "display_label": "Hold Steel Left Gauntlet",
+          "amount": 1
+        },
+        {
+          "stat_name": "inv_steel_gauntlet_right",
+          "display_label": "Hold Steel Right Gauntlet",
+          "amount": 1
+        },
+        {
+          "stat_name": "inv_steel_greaves",
+          "display_label": "Hold Steel Greaves",
+          "amount": 1
+        },
+        {
+          "stat_name": "inv_steel_helm",
+          "display_label": "Hold Steel Helm",
+          "amount": 1
+        },
+        {
+          "stat_name": "inv_steel_pauldron_left",
+          "display_label": "Hold Steel Left Pauldron",
+          "amount": 1
+        },
+        {
+          "stat_name": "inv_steel_pauldron_right",
+          "display_label": "Hold Steel Right Pauldron",
+          "amount": 1
+        },
+        {
+          "stat_name": "inv_steel_shield",
+          "display_label": "Hold Steel Shield",
+          "amount": 1
+        },
+        {
+          "stat_name": "inv_steel_towershield",
+          "display_label": "Hold Steel Tower Shield",
+          "amount": 1
+        }
+      ]
+    },
+    {
+      "id": "MW_COL_STEEL_WEAPON",
+      "parent_id": "",
+      "name": "Steel Arsenal",
+      "description": "Own every type of Steel weapons",
+      "points": 10,
+      "icon": "random",
+      "category": "Collection",
+      "order": 93,
+      "type": "",
+      "progress_bar": false,
+      "regions": [],
+      "factions": [],
+      "target_value": 0,
+      "tracked_stat": "",
+      "notification_step": 1,
+      "trigger": {
+        "type": "Loot"
+      },
+      "objectives": [
+        {
+          "stat_name": "inv_short bow",
+          "display_label": "Hold Short Bow",
+          "amount": 1
+        },
+        {
+          "stat_name": "inv_steel arrow",
+          "display_label": "Hold Steel Arrow",
+          "amount": 1
+        },
+        {
+          "stat_name": "inv_steel axe",
+          "display_label": "Hold Steel Axe",
+          "amount": 1
+        },
+        {
+          "stat_name": "inv_steel battle axe",
+          "display_label": "Hold Steel Battle Axe",
+          "amount": 1
+        },
+        {
+          "stat_name": "inv_steel bolt",
+          "display_label": "Hold Steel Bolt",
+          "amount": 1
+        },
+        {
+          "stat_name": "inv_steel broadsword",
+          "display_label": "Hold Steel Broadsword",
+          "amount": 1
+        },
+        {
+          "stat_name": "inv_steel claymore",
+          "display_label": "Hold Steel Claymore",
+          "amount": 1
+        },
+        {
+          "stat_name": "inv_steel club",
+          "display_label": "Hold Steel Club",
+          "amount": 1
+        },
+        {
+          "stat_name": "inv_steel crossbow",
+          "display_label": "Hold Steel Crossbow",
+          "amount": 1
+        },
+        {
+          "stat_name": "inv_steel dagger",
+          "display_label": "Hold Steel Dagger",
+          "amount": 1
+        },
+        {
+          "stat_name": "inv_steel dai-katana",
+          "display_label": "Hold Steel Dai-katana",
+          "amount": 1
+        },
+        {
+          "stat_name": "inv_steel dart",
+          "display_label": "Hold Steel Dart",
+          "amount": 1
+        },
+        {
+          "stat_name": "inv_steel halberd",
+          "display_label": "Hold Steel Halberd",
+          "amount": 1
+        },
+        {
+          "stat_name": "inv_steel katana",
+          "display_label": "Hold Steel Katana",
+          "amount": 1
+        },
+        {
+          "stat_name": "inv_steel longbow",
+          "display_label": "Hold Steel Longbow",
+          "amount": 1
+        },
+        {
+          "stat_name": "inv_steel longsword",
+          "display_label": "Hold Steel Longsword",
+          "amount": 1
+        },
+        {
+          "stat_name": "inv_steel mace",
+          "display_label": "Hold Steel Mace",
+          "amount": 1
+        },
+        {
+          "stat_name": "inv_steel saber",
+          "display_label": "Hold Steel Saber",
+          "amount": 1
+        },
+        {
+          "stat_name": "inv_steel shortsword",
+          "display_label": "Hold Steel Shortsword",
+          "amount": 1
+        },
+        {
+          "stat_name": "inv_steel spear",
+          "display_label": "Hold Steel Spear",
+          "amount": 1
+        },
+        {
+          "stat_name": "inv_steel staff",
+          "display_label": "Hold Steel Staff",
+          "amount": 1
+        },
+        {
+          "stat_name": "inv_steel tanto",
+          "display_label": "Hold Steel Tanto",
+          "amount": 1
+        },
+        {
+          "stat_name": "inv_steel throwing knife",
+          "display_label": "Hold Steel Throwing Knife",
+          "amount": 1
+        },
+        {
+          "stat_name": "inv_steel throwing star",
+          "display_label": "Hold Steel Throwing Star",
+          "amount": 1
+        },
+        {
+          "stat_name": "inv_steel wakizashi",
+          "display_label": "Hold Steel Wakizashi",
+          "amount": 1
+        },
+        {
+          "stat_name": "inv_steel war axe",
+          "display_label": "Hold Steel War Axe",
+          "amount": 1
+        },
+        {
+          "stat_name": "inv_steel warhammer",
+          "display_label": "Hold Steel Warhammer",
+          "amount": 1
+        }
+      ]
+    },
+    {
+      "id": "MW_KILL_VAMPIRE_10",
+      "parent_id": "",
+      "name": "Not My Blood",
+      "description": "Kill at least 10 vampires",
+      "points": 3,
+      "icon": "random",
+      "category": "Combat",
+      "order": 94,
+      "type": "",
+      "progress_bar": true,
+      "regions": [],
+      "factions": [],
+      "notification_step": 1,
+      "trigger": {
+        "type": "Kill"
+      },
+      "objectives": [
+        {
+          "stat_name": "npc_kill_vampire",
+          "display_label": "Kill Vampire",
+          "amount": 10
+        }
+      ]
+    },
+    {
+      "id": "MW_KILL_VAMPIRE_50",
+      "parent_id": "MW_KILL_VAMPIRE_10",
+      "name": "Garlic Lover",
+      "description": "Kill at least 50 vampires",
+      "points": 5,
+      "icon": "random",
+      "category": "Combat",
+      "order": 95,
+      "type": "",
+      "progress_bar": true,
+      "regions": [],
+      "factions": [],
+      "notification_step": 1,
+      "trigger": {
+        "type": "Kill"
+      },
+      "objectives": [
+        {
+          "stat_name": "npc_kill_vampire",
+          "display_label": "Kill Vampire",
+          "amount": 50
+        }
+      ]
+    },
+    {
+      "id": "MW_KILL_VAMPIRE_100",
+      "parent_id": "MW_KILL_VAMPIRE_10",
+      "name": "Vampire Slayer",
+      "description": "Kill at least 100 vampires",
+      "points": 5,
+      "icon": "random",
+      "category": "Combat",
+      "order": 96,
+      "type": "",
+      "progress_bar": true,
+      "regions": [],
+      "factions": [],
+      "notification_step": 1,
+      "trigger": {
+        "type": "Kill"
+      },
+      "objectives": [
+        {
+          "stat_name": "npc_kill_vampire",
+          "display_label": "Kill Vampire",
+          "amount": 100
+        }
+      ]
+    },
+    {
+      "id": "MW_SOUL_1",
+      "parent_id": "",
+      "name": "You're Mine Now",
+      "description": "Capture a soul inside a gem",
+      "points": 2,
+      "icon": "random",
+      "category": "Combat",
+      "order": 97,
+      "type": "",
+      "progress_bar": false,
+      "regions": [],
+      "factions": [],
+      "notification_step": 1,
+      "trigger": {
+        "type": "Global"
+      },
+      "objectives": [
+        {
+          "stat_name": "souls_trapped",
+          "display_label": "",
+          "amount": 1
+        }
+      ]
+    },
+    {
+      "id": "MW_SOUL_25",
+      "parent_id": "MW_SOUL_1",
+      "name": "You're Mine Now",
+      "description": "Capture 25 souls",
+      "points": 5,
+      "icon": "random",
+      "category": "Combat",
+      "order": 98,
+      "type": "",
+      "progress_bar": true,
+      "regions": [],
+      "factions": [],
+      "notification_step": 1,
+      "trigger": {
+        "type": "Global"
+      },
+      "objectives": [
+        {
+          "stat_name": "souls_trapped",
+          "display_label": "",
+          "amount": 25
+        }
+      ]
+    },
+    {
+      "id": "MW_SOUL_100",
+      "parent_id": "MW_SOUL_1",
+      "name": "Soul Master",
+      "description": "Capture 100 souls",
+      "points": 5,
+      "icon": "random",
+      "category": "Combat",
+      "order": 99,
+      "type": "",
+      "progress_bar": true,
+      "regions": [],
+      "factions": [],
+      "notification_step": 1,
+      "trigger": {
+        "type": "Global"
+      },
+      "objectives": [
+        {
+          "stat_name": "souls_trapped",
+          "display_label": "",
+          "amount": 100
+        }
+      ]
+    },
+    {
+      "id": "MW_SOUL_ALL",
+      "parent_id": "",
+      "name": "Gotta Catch'em All",
+      "description": "Capture every Vvanderfeld's creature souls",
+      "points": 50,
+      "icon": "random",
+      "category": "Combat",
+      "order": 100,
+      "type": "",
+      "progress_bar": false,
+      "regions": [],
+      "factions": [],
+      "notification_step": 1,
+      "trigger": {
+        "type": "SoulTrap"
+      },
+      "objectives": [
+        {
+          "stat_name": "soul_mudcrab",
+          "display_label": "Capture the soul of a Mudcrab",
+          "amount": 1,
+          "group": "g1",
+          "any_of": true
+        },
+        {
+          "stat_name": "soul_diseased mudcrab",
+          "display_label": "Capture the soul of a Mudcrab",
+          "amount": 1,
+          "group": "g1",
+          "any_of": true
+        },
+        {
+          "stat_name": "soul_kwama worker",
+          "display_label": "Capture the soul of a Kwama Worker",
+          "amount": 1,
+          "group": "g2",
+          "any_of": true
+        },
+        {
+          "stat_name": "soul_diseased kwama worker",
+          "display_label": "Capture the soul of a Kwama Worker",
+          "amount": 1,
+          "group": "g2",
+          "any_of": true
+        },
+        {
+          "stat_name": "soul_rat",
+          "display_label": "Capture the soul of a Rat",
+          "amount": 1,
+          "group": "g3",
+          "any_of": true
+        },
+        {
+          "stat_name": "soul_cave rat",
+          "display_label": "Capture the soul of a Rat",
+          "amount": 1,
+          "group": "g3",
+          "any_of": true
+        },
+        {
+          "stat_name": "soul_blighted game rat",
+          "display_label": "Capture the soul of a Rat",
+          "amount": 1,
+          "group": "g3",
+          "any_of": true
+        },
+        {
+          "stat_name": "soul_diseased rat",
+          "display_label": "Capture the soul of a Rat",
+          "amount": 1,
+          "group": "g3",
+          "any_of": true
+        },
+        {
+          "stat_name": "soul_game rat",
+          "display_label": "Capture the soul of a Rat",
+          "amount": 1,
+          "group": "g3",
+          "any_of": true
+        },
+        {
+          "stat_name": "soul_blighted rat",
+          "display_label": "Capture the soul of a Rat",
+          "amount": 1,
+          "group": "g3",
+          "any_of": true
+        },
+        {
+          "stat_name": "soul_nix-hound",
+          "display_label": "Capture the soul of a Nix-Hound",
+          "amount": 1,
+          "group": "g4",
+          "any_of": true
+        },
+        {
+          "stat_name": "soul_blighted nix-hound",
+          "display_label": "Capture the soul of a Nix-Hound",
+          "amount": 1,
+          "group": "g4",
+          "any_of": true
+        },
+        {
+          "stat_name": "soul_bull netch",
+          "display_label": "Capture the soul of a Bull Netch",
+          "amount": 1
+        },
+        {
+          "stat_name": "soul_creeper",
+          "display_label": "Capture the soul of a Creeper",
+          "amount": 1
+        },
+        {
+          "stat_name": "soul_scamp",
+          "display_label": "Capture the soul of a Scamp",
+          "amount": 1
+        },
+        {
+          "stat_name": "soul_skeleton",
+          "display_label": "Capture the soul of a Skeleton",
+          "amount": 1,
+          "group": "g5",
+          "any_of": true
+        },
+        {
+          "stat_name": "soul_skeleton archer",
+          "display_label": "Capture the soul of a Skeleton",
+          "amount": 1,
+          "group": "g5",
+          "any_of": true
+        },
+        {
+          "stat_name": "soul_skeleton warrior",
+          "display_label": "Capture the soul of a Skeleton",
+          "amount": 1,
+          "group": "g5",
+          "any_of": true
+        },
+        {
+          "stat_name": "soul_scrib",
+          "display_label": "Capture the soul of a Scrib",
+          "amount": 1,
+          "group": "g6",
+          "any_of": true
+        },
+        {
+          "stat_name": "soul_blighted scrib",
+          "display_label": "Capture the soul of a Scrib",
+          "amount": 1,
+          "group": "g6",
+          "any_of": true
+        },
+        {
+          "stat_name": "soul_diseased scrib",
+          "display_label": "Capture the soul of a Scrib",
+          "amount": 1,
+          "group": "g6",
+          "any_of": true
+        },
+        {
+          "stat_name": "soul_hive scrib",
+          "display_label": "Capture the soul of a Scrib",
+          "amount": 1,
+          "group": "g6",
+          "any_of": true
+        },
+        {
+          "stat_name": "soul_kwama forager",
+          "display_label": "Capture the soul of a Kwama Forager",
+          "amount": 1
+        },
+        {
+          "stat_name": "soul_alit",
+          "display_label": "Capture the soul of a Alit",
+          "amount": 1,
+          "group": "g7",
+          "any_of": true
+        },
+        {
+          "stat_name": "soul_blighted alit",
+          "display_label": "Capture the soul of a Alit",
+          "amount": 1,
+          "group": "g7",
+          "any_of": true
+        },
+        {
+          "stat_name": "soul_diseased alit",
+          "display_label": "Capture the soul of a Alit",
+          "amount": 1,
+          "group": "g7",
+          "any_of": true
+        },
+        {
+          "stat_name": "soul_cliff racer",
+          "display_label": "Capture the soul of a Cliff Racer",
+          "amount": 1,
+          "group": "g8",
+          "any_of": true
+        },
+        {
+          "stat_name": "soul_blighted cliff racer",
+          "display_label": "Capture the soul of a Cliff Racer",
+          "amount": 1,
+          "group": "g8",
+          "any_of": true
+        },
+        {
+          "stat_name": "soul_diseased cliff racer",
+          "display_label": "Capture the soul of a Cliff Racer",
+          "amount": 1,
+          "group": "g8",
+          "any_of": true
+        },
+        {
+          "stat_name": "soul_kagouti",
+          "display_label": "Capture the soul of a Kagouti",
+          "amount": 1,
+          "group": "g9",
+          "any_of": true
+        },
+        {
+          "stat_name": "soul_blighted kagouti",
+          "display_label": "Capture the soul of a Kagouti",
+          "amount": 1,
+          "group": "g9",
+          "any_of": true
+        },
+        {
+          "stat_name": "soul_diseased kagouti",
+          "display_label": "Capture the soul of a Kagouti",
+          "amount": 1,
+          "group": "g9",
+          "any_of": true
+        },
+        {
+          "stat_name": "soul_mating kagouti",
+          "display_label": "Capture the soul of a Kagouti",
+          "amount": 1,
+          "group": "g9",
+          "any_of": true
+        },
+        {
+          "stat_name": "soul_guar",
+          "display_label": "Capture the soul of a Guar",
+          "amount": 1,
+          "group": "g10",
+          "any_of": true
+        },
+        {
+          "stat_name": "soul_pack guar",
+          "display_label": "Capture the soul of a Guar",
+          "amount": 1,
+          "group": "g10",
+          "any_of": true
+        },
+        {
+          "stat_name": "soul_wild guar",
+          "display_label": "Capture the soul of a Guar",
+          "amount": 1,
+          "group": "g10",
+          "any_of": true
+        },
+        {
+          "stat_name": "soul_tarvyn's guar",
+          "display_label": "Capture the soul of a Guar",
+          "amount": 1,
+          "group": "g10",
+          "any_of": true
+        },
+        {
+          "stat_name": "soul_kwama warrior",
+          "display_label": "Capture the soul of a Kwama Warrior",
+          "amount": 1,
+          "group": "g11",
+          "any_of": true
+        },
+        {
+          "stat_name": "soul_blighted kwama warrior",
+          "display_label": "Capture the soul of a Blighted Kwama Warrior",
+          "amount": 1,
+          "group": "g11",
+          "any_of": true
+        },
+        {
+          "stat_name": "soul_shalk",
+          "display_label": "Capture the soul of a Shalk",
+          "amount": 1,
+          "group": "g12",
+          "any_of": true
+        },
+        {
+          "stat_name": "soul_blighted shalk",
+          "display_label": "Capture the soul of a Shalk",
+          "amount": 1,
+          "group": "g12",
+          "any_of": true
+        },
+        {
+          "stat_name": "soul_kwama queen",
+          "display_label": "Capture the soul of a Kwama Queen",
+          "amount": 1
+        },
+        {
+          "stat_name": "soul_spider centurion",
+          "display_label": "Capture the soul of a Spider Centurion",
+          "amount": 1,
+          "group": "g13",
+          "any_of": true
+        },
+        {
+          "stat_name": "soul_centurion spider",
+          "display_label": "Capture the soul of a Spider Centurion",
+          "amount": 1,
+          "group": "g13",
+          "any_of": true
+        },
+        {
+          "stat_name": "soul_bonewalker",
+          "display_label": "Capture the soul of a Bonewalker",
+          "amount": 1,
+          "group": "g14",
+          "any_of": true
+        },
+        {
+          "stat_name": "soul_lesser bonewalker",
+          "display_label": "Capture the soul of a Bonewalker",
+          "amount": 1,
+          "group": "g14",
+          "any_of": true
+        },
+        {
+          "stat_name": "soul_greater bonewalker",
+          "display_label": "Capture the soul of a Greater Bonewalker",
+          "amount": 1
+        },
+        {
+          "stat_name": "soul_ogrim",
+          "display_label": "Capture the soul of a Ogrim",
+          "amount": 1,
+          "group": "g15",
+          "any_of": true
+        },
+        {
+          "stat_name": "soul_ogrim titan",
+          "display_label": "Capture the soul of a Ogrim",
+          "amount": 1,
+          "group": "g15",
+          "any_of": true
+        },
+        {
+          "stat_name": "soul_dreugh",
+          "display_label": "Capture the soul of a Dreugh",
+          "amount": 1,
+          "group": "g16",
+          "any_of": true
+        },
+        {
+          "stat_name": "soul_dreugh warlord",
+          "display_label": "Capture the soul of a Dreugh",
+          "amount": 1,
+          "group": "g16",
+          "any_of": true
+        },
+        {
+          "stat_name": "soul_ancestor ghost",
+          "display_label": "Capture the soul of a Ancestor Ghost",
+          "amount": 1,
+          "group": "g17",
+          "any_of": true
+        },
+        {
+          "stat_name": "soul_ghost of galos heleran",
+          "display_label": "Capture the soul of a Ancestor Ghost",
+          "amount": 1,
+          "group": "g17",
+          "any_of": true
+        },
+        {
+          "stat_name": "soul_wraith of sul-senipul",
+          "display_label": "Capture the soul of a Wraith of Sul-Senipul",
+          "amount": 1,
+          "group": "g17",
+          "any_of": true
+        },
+        {
+          "stat_name": "soul_ancestor guardian",
+          "display_label": "Capture the soul of a Ancestor Guardian",
+          "amount": 1
+        },
+        {
+          "stat_name": "soul_ash slave",
+          "display_label": "Capture the soul of a Ash Slave",
+          "amount": 1
+        },
+        {
+          "stat_name": "soul_ash ghoul",
+          "display_label": "Capture the soul of a Ash Ghoul",
+          "amount": 1
+        },
+        {
+          "stat_name": "soul_ash zombie",
+          "display_label": "Capture the soul of a Ash Zombie",
+          "amount": 1
+        },
+        {
+          "stat_name": "soul_bonelord",
+          "display_label": "Capture the soul of a Bonelord",
+          "amount": 1
+        },
+        {
+          "stat_name": "soul_clannfear",
+          "display_label": "Capture the soul of a Clannfear",
+          "amount": 1
+        },
+        {
+          "stat_name": "soul_corprus stalker",
+          "display_label": "Capture the soul of a Corprus Stalker",
+          "amount": 1
+        },
+        {
+          "stat_name": "soul_dremora",
+          "display_label": "Capture the soul of a Dremora",
+          "amount": 1
+        },
+        {
+          "stat_name": "soul_dremora lord",
+          "display_label": "Capture the soul of a Dremora Lord",
+          "amount": 1
+        },
+        {
+          "stat_name": "soul_flame atronach",
+          "display_label": "Capture the soul of a Flame Atronach",
+          "amount": 1
+        },
+        {
+          "stat_name": "soul_frost  atronach",
+          "display_label": "Capture the soul of a Frost  Atronach",
+          "amount": 1,
+          "group": "g18",
+          "any_of": true
+        },
+        {
+          "stat_name": "soul_storm atronach",
+          "display_label": "Capture the soul of a Storm Atronach",
+          "amount": 1
+        },
+        {
+          "stat_name": "soul_daedroth",
+          "display_label": "Capture the soul of a Daedroth",
+          "amount": 1,
+          "group": "g19",
+          "any_of": true
+        },
+        {
+          "stat_name": "soul_hrelvesuu",
+          "display_label": "Capture the soul of a Hrelvesuu",
+          "amount": 1,
+          "group": "g19",
+          "any_of": true
+        },
+        {
+          "stat_name": "soul_dwarven spectre",
+          "display_label": "Capture the soul of a Dwarven Spectre",
+          "amount": 1
+        },
+        {
+          "stat_name": "soul_ascended sleeper",
+          "display_label": "Capture the soul of a Ascended Sleeper",
+          "amount": 1
+        },
+        {
+          "stat_name": "soul_golden saint",
+          "display_label": "Capture the soul of a Golden Saint",
+          "amount": 1
+        },
+        {
+          "stat_name": "soul_skeleton champion",
+          "display_label": "Capture the soul of a Skeleton Champion",
+          "amount": 1
+        }
+      ],
+      "tracked_stat": "",
+      "target_value": 0
     }
-  },
-  {
-    "id": "MQ_1",
-    "parent_id": "",
-    "name": "First Contact",
-    "description": "Talk to Caius Cosades in Balmora",
-    "points": 5,
-    "icon": "random",
-    "category": "Quest",
-    "order": 1,
-    "target_value": 0,
-    "tracked_stat": "",
-    "notification_step": 1,
-    "objectives": [
-      {
-        "stat_name": "quest_finished_A1_1_FindSpymaster",
-        "display_label": "Report to Caius Cosades",
-        "amount": 1
-      }
-    ],
-    "trigger": {
-      "type": "QuestComplete"
-    }
-  },
-  {
-    "id": "MQ_2",
-    "parent_id": "",
-    "name": "Antabolis Informant",
-    "description": "Bring Hasphat a Dwemer puzzle box and return to Caius Cosades",
-    "points": 5,
-    "icon": "random",
-    "category": "Quest",
-    "order": 2,
-    "target_value": 0,
-    "tracked_stat": "",
-    "notification_step": 1,
-    "trigger": {
-      "type": "QuestComplete"
-    },
-    "objectives": [
-      {
-        "stat_name": "quest_finished_A1_2_AntabolisInformant",
-        "display_label": "Antabolis Informant",
-        "amount": 1
-      }
-    ]
-  },
-  {
-    "id": "LOCK_25",
-    "parent_id": "",
-    "name": "This is Mine Now",
-    "description": "Successfully perform a lockpicking with a difficulty of 25",
-    "points": 1,
-    "icon": "random",
-    "category": "Misc",
-    "order": 3,
-    "target_value": 0,
-    "tracked_stat": "",
-    "notification_step": 1,
-    "objectives": [
-      {
-        "stat_name": "lock_difficulty",
-        "display_label": "Pick a lock of difficulty 25",
-        "amount": 25
-      }
-    ],
-    "trigger": {
-      "type": "Lockpick"
-    }
-  },
-  {
-    "id": "LOCK_50",
-    "parent_id": "LOCK_25",
-    "name": "Click Clack",
-    "description": "Successfully perform a lockpicking with a difficulty of 50",
-    "points": 50,
-    "icon": "random",
-    "category": "Combat",
-    "order": 4,
-    "target_value": 0,
-    "tracked_stat": "",
-    "notification_step": 1,
-    "objectives": [
-      {
-        "stat_name": "lock_difficulty",
-        "display_label": "Pick a lock of difficulty 50",
-        "amount": 50
-      }
-    ],
-    "trigger": {
-      "type": "Lockpick"
-    }
-  },
-  {
-    "id": "LOCK_100",
-    "parent_id": "LOCK_25",
-    "name": "The Lockwhisperer",
-    "description": "Successfully perform a lockpicking with a difficulty of 100",
-    "points": 5,
-    "icon": "random",
-    "category": "Combat",
-    "order": 5,
-    "target_value": 0,
-    "tracked_stat": "",
-    "notification_step": 1,
-    "objectives": [
-      {
-        "stat_name": "lock_difficulty",
-        "display_label": "Pick a lock of difficulty 100",
-        "amount": 100
-      }
-    ],
-    "trigger": {
-      "type": "Lockpick"
-    }
-  },
-  {
-    "id": "SKILLBOOK_1",
-    "parent_id": "",
-    "name": "Student",
-    "description": "Increase one of your skill with a book",
-    "points": 1,
-    "icon": "random",
-    "category": "Quest",
-    "order": 6,
-    "target_value": 0,
-    "tracked_stat": "",
-    "notification_step": 1,
-    "objectives": []
-  },
-  {
-    "id": "STEAL_100",
-    "parent_id": "",
-    "name": "Burglar",
-    "description": "Steal a total of 100 items",
-    "points": 5,
-    "icon": "random",
-    "category": "Exploration",
-    "order": 7,
-    "target_value": 100,
-    "tracked_stat": "items_stolen",
-    "notification_step": 10,
-    "objectives": []
-  },
-  {
-    "id": "PICK_GOLD",
-    "parent_id": "",
-    "name": "Cold Hard Cash",
-    "description": "Steal some gold without being detected",
-    "points": 2,
-    "icon": "random",
-    "category": "Misc",
-    "order": 8,
-    "target_value": 0,
-    "tracked_stat": "",
-    "notification_step": 1,
-    "objectives": []
-  },
-  {
-    "id": "BESTIARY_BITTER_COAST",
-    "parent_id": "",
-    "name": "Bitter Coast Bestiary",
-    "description": "Kill various creatures on the Bitter Coast",
-    "points": 10,
-    "icon": "random",
-    "category": "Combat",
-    "order": 9,
-    "target_value": 0,
-    "tracked_stat": "",
-    "notification_step": 1,
-    "objectives": [
-      {
-        "stat_name": "creature_kill_mudcrab",
-        "display_label": "Kill 10 Mudcrabs",
-        "amount": 10
-      },
-      {
-        "stat_name": "creature_kill_rat",
-        "display_label": "Kill 5 Rats",
-        "amount": 5
-      },
-      {
-        "stat_name": "creature_kill_scrib",
-        "display_label": "Kill 5 Scribs",
-        "amount": 5
-      },
-      {
-        "stat_name": "creature_kill_kwama forager",
-        "display_label": "Kill 5 Kwama Foragers",
-        "amount": 5
-      }
-    ],
-    "trigger": {
-      "type": "Kill"
-    }
-  },
-  {
-    "id": "FG_QUEST_1",
-    "parent_id": "",
-    "name": "The New Fighter",
-    "description": "Finish 3 quests for Eydis Fire-Eye at Balmora's Fighters Guild",
-    "points": 10,
-    "icon": "random",
-    "category": "Quest",
-    "order": 10,
-    "target_value": 0,
-    "tracked_stat": "",
-    "notification_step": 1,
-    "trigger": {
-      "type": "QuestComplete"
-    },
-    "objectives": [
-      {
-        "stat_name": "quest_finished_FG_RatHunt",
-        "display_label": "Exterminator",
-        "amount": 1
-      },
-      {
-        "stat_name": "quest_finished_FG_Egg_Poachers",
-        "display_label": "The Egg Poachers",
-        "amount": 1
-      },
-      {
-        "stat_name": "quest_finished_FG_Telvanni_agents",
-        "display_label": "The Telvanni Agents",
-        "amount": 1
-      }
-    ]
-  },
-  {
-    "id": "FG_QUEST_2",
-    "parent_id": "",
-    "name": "Eyris' Underling",
-    "description": "Finish 3 quests for Eydis Fire-Eye at Balmora's Fighters Guild",
-    "points": 10,
-    "icon": "random",
-    "category": "Quest",
-    "order": 11,
-    "target_value": 0,
-    "tracked_stat": "",
-    "notification_step": 1,
-    "trigger": {
-      "type": "QuestComplete"
-    },
-    "objectives": [
-      {
-        "stat_name": "quest_finished_FG_Sottilde",
-        "display_label": "The Code Book",
-        "amount": 1
-      },
-      {
-        "stat_name": "quest_finished_FG_DeseleDebt",
-        "display_label": "Desele's Debt",
-        "amount": 1
-      },
-      {
-        "stat_name": "quest_finished_FG_OrcBounty",
-        "display_label": "Gra-Bol's Bounty",
-        "amount": 1
-      }
-    ]
-  },
-  {
-    "id": "FG_QUEST_3",
-    "parent_id": "",
-    "name": "Eyris' Favorite",
-    "description": "Finish every quest for Eydis Fire-Eye at Balmora's Fighters Guild",
-    "points": 10,
-    "icon": "random",
-    "category": "Quest",
-    "order": 12,
-    "target_value": 0,
-    "tracked_stat": "",
-    "notification_step": 1,
-    "trigger": {
-      "type": "QuestComplete"
-    },
-    "objectives": [
-      {
-        "stat_name": "quest_finished_FG_AlofsFarm",
-        "display_label": "Alof and the Orcs",
-        "amount": 1
-      },
-      {
-        "stat_name": "quest_finished_FG_VerethiGang",
-        "display_label": "The Verethi Gang",
-        "amount": 1
-      },
-      {
-        "stat_name": "quest_finished_FG_HungerLoose",
-        "display_label": "Hunger in the Sarano Tomb",
-        "amount": 1
-      }
-    ]
-  },
-  {
-    "id": "FG_QUEST_4",
-    "parent_id": "",
-    "name": "Lorbumol gro-Aglakh's Underling",
-    "description": "Finish 3 quests for Lorbumol gro-Aglakh at Vivec's Fighters Guild",
-    "points": 10,
-    "icon": "random",
-    "category": "Quest",
-    "order": 13,
-    "target_value": 0,
-    "tracked_stat": "",
-    "notification_step": 1,
-    "trigger": {
-      "type": "QuestComplete"
-    },
-    "objectives": [
-      {
-        "stat_name": "quest_finished_FG_DebtOrc",
-        "display_label": "Juicedaw Ring",
-        "amount": 1
-      },
-      {
-        "stat_name": "quest_finished_FG_TongueToad",
-        "display_label": "Silence Tongue-Toad",
-        "amount": 1
-      },
-      {
-        "stat_name": "quest_finished_FG_KhajiitBounty",
-        "display_label": "Dro'Sakhar's Bounty",
-        "amount": 1
-      }
-    ]
-  },
-  {
-    "id": "FG_QUEST_5",
-    "parent_id": "",
-    "name": "Lorbumol gro-Aglakh's Favorite",
-    "description": "Finish every quest for Lorbumol gro-Aglakh at Vivec's Fighters Guild",
-    "points": 10,
-    "icon": "random",
-    "category": "Quest",
-    "order": 14,
-    "target_value": 0,
-    "tracked_stat": "",
-    "notification_step": 1,
-    "trigger": {
-      "type": "QuestComplete"
-    },
-    "objectives": [
-      {
-        "stat_name": "quest_finished_FG_DebtStoine",
-        "display_label": "Lirielle's Debt",
-        "amount": 1
-      },
-      {
-        "stat_name": "quest_finished_FG_SilenceTaxgirl",
-        "display_label": "Vandacia's Bounty",
-        "amount": 1
-      },
-      {
-        "stat_name": "quest_finished_FG_SilenceMagistrate",
-        "display_label": "Alleius' Bounty",
-        "amount": 1
-      }
-    ]
-  },
-  {
-    "id": "FG_QUEST_6",
-    "parent_id": "",
-    "name": "Hrundi's Underling",
-    "description": "Finish 3 quests for Hrundi at Wolverine Hall's Fighters Guild",
-    "points": 10,
-    "icon": "random",
-    "category": "Quest",
-    "order": 15,
-    "target_value": 0,
-    "tracked_stat": "",
-    "notification_step": 1,
-    "trigger": {
-      "type": "QuestComplete"
-    },
-    "objectives": [
-      {
-        "stat_name": "quest_finished_FG_Nchurdamz",
-        "display_label": "Battle at Nchurdamz",
-        "amount": 1
-      },
-      {
-        "stat_name": "quest_finished_FG_DissaplaMine",
-        "display_label": "The Dissapla Mine",
-        "amount": 1
-      },
-      {
-        "stat_name": "quest_finished_FG_CorprusStalker",
-        "display_label": "Berwen's Stalker",
-        "amount": 1
-      },
-      {
-        "stat_name": "quest_finished_FG_TenimBounty",
-        "display_label": "Tenim's Bounty",
-        "amount": 1
-      }
-    ]
-  },
-  {
-    "id": "FG_QUEST_7",
-    "parent_id": "",
-    "name": "Hrundi's Favorite",
-    "description": "Finish every quest for Hrundi at Wolverine Hall's Fighters Guild",
-    "points": 10,
-    "icon": "random",
-    "category": "Quest",
-    "order": 16,
-    "target_value": 0,
-    "tracked_stat": "",
-    "notification_step": 1,
-    "trigger": {
-      "type": "QuestComplete"
-    },
-    "objectives": [
-      {
-        "stat_name": "quest_finished_FG_DuniraiSupply",
-        "display_label": "Sujamma to Dunirai",
-        "amount": 1
-      },
-      {
-        "stat_name": "quest_finished_FG_Telasero",
-        "display_label": "Sondaale",
-        "amount": 1
-      },
-      {
-        "stat_name": "quest_finished_FG_EngaerBounty",
-        "display_label": "Engaer's Bounty",
-        "amount": 1
-      },
-      {
-        "stat_name": "quest_finished_FG_FindPudai",
-        "display_label": "The Pudai Eggmine",
-        "amount": 1
-      }
-    ]
-  },
-  {
-    "id": "FG_QUEST_8",
-    "parent_id": "",
-    "name": "Percius Mercius' Underling",
-    "description": "Finish 3 quests for Percius Mercius at Ald'ruhn's Fighters Guild",
-    "points": 10,
-    "icon": "random",
-    "category": "Quest",
-    "order": 17,
-    "target_value": 0,
-    "tracked_stat": "",
-    "notification_step": 1,
-    "trigger": {
-      "type": "QuestComplete"
-    },
-    "objectives": [
-      {
-        "stat_name": "quest_finished_FG_Vas",
-        "display_label": "The Necromancer of Vas",
-        "amount": 1
-      },
-      {
-        "stat_name": "quest_finished_FG_BeneranBounty",
-        "display_label": "Beneran's Bounty",
-        "amount": 1
-      }
-    ]
-  },
-  {
-    "id": "FG_QUEST_9",
-    "parent_id": "",
-    "name": "Percius Mercius' Favorite",
-    "description": "Finish every quest for Percius Mercius at Ald'ruhn's Fighters Guild",
-    "points": 10,
-    "icon": "random",
-    "category": "Quest",
-    "order": 18,
-    "target_value": 0,
-    "tracked_stat": "",
-    "notification_step": 1,
-    "trigger": {
-      "type": "QuestComplete"
-    },
-    "objectives": [
-      {
-        "stat_name": "quest_finished_FG_ElithPalSupply",
-        "display_label": "Flin for Elith-Pal",
-        "amount": 1
-      },
-      {
-        "stat_name": "quest_finished_FG_KillCronies",
-        "display_label": "Remove Sjoring's Supporters",
-        "amount": 1
-      },
-      {
-        "stat_name": "quest_finished_FG_KillHardHeart",
-        "display_label": "Kill Hard-Heart",
-        "amount": 1
-      }
-    ]
-  },
-  {
-    "id": "FG_QUEST_10",
-    "parent_id": "",
-    "name": "Master of the Fighters Guild",
-    "description": "Finish the Fighters Guild questline and become Master of the Fighters Guild",
-    "points": 25,
-    "icon": "random",
-    "category": "Quest",
-    "order": 19,
-    "target_value": 0,
-    "tracked_stat": "",
-    "notification_step": 1,
-    "trigger": {
-      "type": "QuestComplete"
-    },
-    "objectives": [
-      {
-        "stat_name": "quest_finished_FG_KillBosses",
-        "display_label": "Remove the Heads of the Thieves Guild",
-        "amount": 1
-      },
-      {
-        "stat_name": "quest_finished_FG_BigBosses",
-        "display_label": "Kill the Master Thief",
-        "amount": 1
-      }
-    ]
-  },
-  {
-    "id": "MORROWIND_LEVEL_2",
-    "parent_id": "MORROWIND_LEVEL_2",
-    "name": "Novice",
-    "description": "Reach level 2",
-    "points": 2,
-    "icon": "random",
-    "category": "Combat",
-    "order": 20,
-    "target_value": 0,
-    "tracked_stat": "",
-    "notification_step": 1,
-    "objectives": [
-      {
-        "stat_name": "level",
-        "display_label": "level",
-        "amount": 2
-      }
-    ],
-    "trigger": {
-      "type": "HeroStats"
-    }
-  },
-  {
-    "id": "MORROWIND_LEVEL_5",
-    "parent_id": "MORROWIND_LEVEL_2",
-    "name": "Traveler",
-    "description": "Reach level 5",
-    "points": 5,
-    "icon": "random",
-    "category": "Combat",
-    "order": 21,
-    "target_value": 0,
-    "tracked_stat": "",
-    "notification_step": 1,
-    "objectives": [
-      {
-        "stat_name": "level",
-        "display_label": "",
-        "amount": 5
-      }
-    ],
-    "trigger": {
-      "type": "HeroStats"
-    }
-  },
-  {
-    "id": "MORROWIND_LEVEL_10",
-    "parent_id": "MORROWIND_LEVEL_2",
-    "name": "Adventurer",
-    "description": "Reach level 10",
-    "points": 10,
-    "icon": "random",
-    "category": "Combat",
-    "order": 22,
-    "target_value": 0,
-    "tracked_stat": "",
-    "notification_step": 1,
-    "objectives": [
-      {
-        "stat_name": "level",
-        "display_label": "",
-        "amount": 10
-      }
-    ],
-    "trigger": {
-      "type": "HeroStats"
-    }
-  },
-  {
-    "id": "MORROWIND_LEVEL_25",
-    "parent_id": "MORROWIND_LEVEL_2",
-    "name": "Champion",
-    "description": "Reach level 25",
-    "points": 25,
-    "icon": "random",
-    "category": "Combat",
-    "order": 23,
-    "target_value": 0,
-    "tracked_stat": "",
-    "notification_step": 1,
-    "objectives": [
-      {
-        "stat_name": "level",
-        "display_label": "",
-        "amount": 25
-      }
-    ],
-    "trigger": {
-      "type": "HeroStats"
-    }
-  },
-  {
-    "id": "MORROWIND_LEVEL_50",
-    "parent_id": "MORROWIND_LEVEL_2",
-    "name": "Vvardenfell Legend",
-    "description": "Reach level 50",
-    "points": 50,
-    "icon": "random",
-    "category": "Combat",
-    "order": 24,
-    "target_value": 0,
-    "tracked_stat": "",
-    "notification_step": 1,
-    "objectives": [
-      {
-        "stat_name": "level",
-        "display_label": "",
-        "amount": 50
-      }
-    ],
-    "trigger": {
-      "type": "HeroStats"
-    }
-  },
-  {
-    "id": "QUEST_FARGOTH_RING",
-    "parent_id": "",
-    "name": "My Precious",
-    "description": "Return the missing ring to Fargoth in Seyda Neen",
-    "points": 5,
-    "icon": "random",
-    "category": "Quest",
-    "order": 25,
-    "target_value": 0,
-    "tracked_stat": "",
-    "notification_step": 1,
-    "trigger": {
-      "type": "QuestComplete"
-    },
-    "objectives": [
-      {
-        "stat_name": "quest_finished_MS_FargothRing",
-        "display_label": "Fargoth's Ring",
-        "amount": 1
-      }
-    ]
-  },
-  {
-    "id": "QUEST_FARGOTH_HIDING",
-    "parent_id": "",
-    "name": "Fargoth's Hiding Place",
-    "description": "Find Fargoth's hidden stash and bring back the money to Hrisskar in Seyda Neen",
-    "points": 5,
-    "icon": "random",
-    "category": "Quest",
-    "order": 26,
-    "target_value": 0,
-    "tracked_stat": "",
-    "notification_step": 1,
-    "objectives": [
-      {
-        "stat_name": "quest_finished_MS_Lookout",
-        "display_label": "Fargoth's Hiding Place",
-        "amount": 1
-      }
-    ],
-    "trigger": {
-      "type": "QuestComplete"
-    }
-  },
-  {
-    "id": "QUEST_TAXMAN",
-    "parent_id": "",
-    "name": "Death of a Taxman",
-    "description": "Finish the questline around the death of a taxman in Seyda Neen",
-    "points": 5,
-    "icon": "random",
-    "category": "Quest",
-    "order": 27,
-    "target_value": 0,
-    "tracked_stat": "",
-    "notification_step": 1,
-    "trigger": {
-      "type": "QuestProgress"
-    },
-    "objectives": [
-      {
-        "stat_name": "quest_stage_MV_DeadTaxman",
-        "display_label": "Death of a Taxman",
-        "amount": 90
-      }
-    ]
-  },
-  {
-    "id": "QUEST_NUCCIUS",
-    "parent_id": "",
-    "name": "The Cursed Ring",
-    "description": "Buy a Cursed Ring from Vodunius Nuccius in Seyda Neen",
-    "points": 2,
-    "icon": "random",
-    "category": "Quest",
-    "order": 28,
-    "target_value": 0,
-    "tracked_stat": "",
-    "notification_step": 1,
-    "objectives": [
-      {
-        "stat_name": "quest_finished_MS_Nuccius",
-        "display_label": "The Cursed Ring",
-        "amount": 1
-      }
-    ],
-    "trigger": {
-      "type": "QuestComplete"
-    }
-  },
-  {
-    "id": "CLEAR_ADDAMASARTUS",
-    "parent_id": "",
-    "name": "Bandit Slayer",
-    "description": "Kill the three bandits of Addamasartus",
-    "points": 2,
-    "icon": "random",
-    "category": "Combat",
-    "order": 29,
-    "target_value": 0,
-    "tracked_stat": "",
-    "notification_step": 1,
-    "objectives": [
-      {
-        "stat_name": "npc_kill_Melar Baram",
-        "display_label": "Kill Melar Baram",
-        "amount": 1
-      },
-      {
-        "stat_name": "npc_kill_Mulvisie Othril",
-        "display_label": "Kill Mulvisie Othril",
-        "amount": 1
-      },
-      {
-        "stat_name": "npc_kill_Tanisie Verethi",
-        "display_label": "Kill Tanisie Verethi",
-        "amount": 1
-      }
-    ],
-    "trigger": {
-      "type": "Kill"
-    }
-  },
-  {
-    "id": "TEST_LOCKPICKING",
-    "parent_id": "",
-    "name": "Burglar",
-    "description": "Reach level 11 in security",
-    "points": 1,
-    "icon": "random",
-    "category": "Misc",
-    "order": 30,
-    "target_value": 0,
-    "tracked_stat": "",
-    "notification_step": 1,
-    "trigger": {
-      "type": "HeroStats"
-    },
-    "objectives": [
-      {
-        "stat_name": "skill_security",
-        "display_label": "",
-        "amount": 11
-      }
-    ]
-  },
-  {
-    "id": "HARVEST_1",
-    "parent_id": "",
-    "name": "Gardener",
-    "description": "Harvest a total of 10 plants",
-    "points": 1,
-    "icon": "random",
-    "category": "Misc",
-    "order": 31,
-    "target_value": 0,
-    "tracked_stat": "",
-    "notification_step": 10,
-    "trigger": {
-      "type": "Harvest"
-    },
-    "objectives": [
-      {
-        "stat_name": "harvest_count",
-        "display_label": "",
-        "amount": 10
-      }
-    ]
-  },
-  {
-    "id": "HARVEST_2",
-    "parent_id": "HARVEST_1",
-    "name": "Herborist",
-    "description": "Harvest a total of 100 plants",
-    "points": 5,
-    "icon": "random",
-    "category": "Misc",
-    "order": 32,
-    "target_value": 0,
-    "tracked_stat": "",
-    "notification_step": 10,
-    "trigger": {
-      "type": "Harvest"
-    },
-    "objectives": [
-      {
-        "stat_name": "harvest_count",
-        "display_label": "",
-        "amount": 100
-      }
-    ]
-  },
-  {
-    "id": "HARVEST_3",
-    "parent_id": "HARVEST_1",
-    "name": "Flower Power",
-    "description": "Harvest a total of 250 plants",
-    "points": 10,
-    "icon": "random",
-    "category": "Misc",
-    "order": 33,
-    "target_value": 0,
-    "tracked_stat": "",
-    "notification_step": 10,
-    "trigger": {
-      "type": "Harvest"
-    },
-    "objectives": [
-      {
-        "stat_name": "harvest_count",
-        "display_label": "",
-        "amount": 250
-      }
-    ]
-  },
-  {
-    "id": "LOOT_TARHIEL_JOURNAL",
-    "parent_id": "",
-    "name": "It's Raining Men",
-    "description": "Find Tarhiel's Journal",
-    "points": 2,
-    "icon": "random",
-    "category": "Exploration",
-    "order": 34,
-    "target_value": 0,
-    "tracked_stat": "",
-    "notification_step": 1,
-    "trigger": {
-      "type": "Loot"
-    },
-    "objectives": [
-      {
-        "stat_name": "loot_bk_falljournal_unique",
-        "display_label": "Loot Journal of Tarhiel",
-        "amount": 1
-      }
-    ]
-  },
-  {
-    "id": "TOMB_BITTER_COAST",
-    "parent_id": "",
-    "name": "Bitter Coast Tomb Raider",
-    "description": "Clear every Ancestral Tombs on the Bitter Coast",
-    "points": 5,
-    "icon": "random",
-    "category": "Exploration",
-    "order": 35,
-    "target_value": 0,
-    "tracked_stat": "",
-    "notification_step": 1,
-    "trigger": {
-      "type": "CellClear"
-    },
-    "objectives": [
-      {
-        "stat_name": "cellclear_Samarys Ancestral Tomb",
-        "display_label": "Clear Samarys Ancestral Tomb",
-        "amount": 1,
-        "group": "g1"
-      },
-      {
-        "stat_name": "loot_devote_brinne_dust_00",
-        "display_label": "Find Ashes of Lord Brinne",
-        "amount": 1,
-        "group": "g1"
-      },
-      {
-        "stat_name": "loot_ring_mentor_unique",
-        "display_label": "Find Mentor's Ring",
-        "amount": 1,
-        "group": "g1"
-      },
-      {
-        "stat_name": "cellclear_Heran Ancestral Tomb",
-        "display_label": "Clear Heran Ancestral Tomb",
-        "amount": 1,
-        "group": "g2"
-      },
-      {
-        "stat_name": "loot_bookskill_light armor5",
-        "display_label": "Find 36 Lessons of Vivec, Sermon 28",
-        "amount": 1,
-        "group": "g2"
-      },
-      {
-        "stat_name": "cellclear_Norvayn Ancestral Tomb",
-        "display_label": "Clear Norvayn Ancestral Tomb",
-        "amount": 1,
-        "group": "g3"
-      },
-      {
-        "stat_name": "cellunlocked_Norvayn Ancestral Tomb",
-        "display_label": "Unlock everything in Norvayn Ancestral Tomb",
-        "amount": 1,
-        "group": "g3"
-      },
-      {
-        "stat_name": "cellclear_Sarys Ancestral Tomb",
-        "display_label": "Clear Sarys Ancestral Tomb",
-        "amount": 1,
-        "group": "g4"
-      },
-      {
-        "stat_name": "cellunlocked_Sarys Ancestral Tomb",
-        "display_label": "Unlock everything in Sarys Ancestral Tomb",
-        "amount": 1,
-        "group": "g4"
-      },
-      {
-        "stat_name": "cellclear_Thelas Ancestral Tomb",
-        "display_label": "Clear Thelas Ancestral Tomb",
-        "amount": 1,
-        "group": "g5"
-      },
-      {
-        "stat_name": "cellunlocked_Thelas Ancestral Tomb",
-        "display_label": "Unlock everything in Thelas Ancestral Tomb",
-        "amount": 1,
-        "group": "g5"
-      }
-    ]
-  },
-  {
-    "id": "SLAVE_1",
-    "parent_id": "",
-    "name": "Good Samaritan",
-    "description": "Save at least 5 slaves",
-    "points": 2,
-    "icon": "random",
-    "category": "Misc",
-    "order": 36,
-    "target_value": 0,
-    "tracked_stat": "",
-    "notification_step": 1,
-    "trigger": {
-      "type": "Global"
-    },
-    "objectives": [
-      {
-        "stat_name": "global_freedslavescounter",
-        "display_label": "Slaves freed",
-        "amount": 5
-      }
-    ]
-  },
-  {
-    "id": "TOMB_ASHLANDS",
-    "parent_id": "",
-    "name": "Ashlands Tomb Raider",
-    "description": "Clear every Ancestral Tomb in the Ashlands",
-    "points": 25,
-    "icon": "random",
-    "category": "Exploration",
-    "order": 37,
-    "target_value": 0,
-    "tracked_stat": "",
-    "notification_step": 1,
-    "trigger": {
-      "type": "CellClear"
-    },
-    "objectives": [
-      {
-        "stat_name": "cellclear_Aryon Ancestral Tomb",
-        "display_label": "Clear Aryon Ancestral Tomb",
-        "amount": 1,
-        "group": "g1"
-      },
-      {
-        "stat_name": "cellloot_aryon ancestral tomb_bookskill_alteration5",
-        "display_label": "Find The Lunar Lorkhan",
-        "amount": 1,
-        "group": "g1"
-      },
-      {
-        "stat_name": "cellclear_Dareleth Ancestral Tomb",
-        "display_label": "Clear Dareleth Ancestral Tomb",
-        "amount": 1,
-        "group": "g2"
-      },
-      {
-        "stat_name": "cellloot_dareleth ancestral tomb_bk_ancestorsandthedunmer",
-        "display_label": "Find Ancestors and the Dunmer",
-        "amount": 1,
-        "group": "g2"
-      },
-      {
-        "stat_name": "cellclear_Drath Ancestral Tomb",
-        "display_label": "Clear Drath Ancestral Tomb",
-        "amount": 1,
-        "group": "g3"
-      },
-      {
-        "stat_name": "cellloot_drath ancestral tomb_bookskill_blunt weapon1",
-        "display_label": "Find The Hope of the Redoran",
-        "amount": 1,
-        "group": "g3"
-      },
-      {
-        "stat_name": "cellclear_Drinith Ancestral Tomb",
-        "display_label": "Clear Drinith Ancestral Tomb",
-        "amount": 1,
-        "group": "g4"
-      },
-      {
-        "stat_name": "cellloot_drinith ancestral tomb_bookskill_short blade5",
-        "display_label": "Find 36 Lessons of Vivec, Sermon 30",
-        "amount": 1,
-        "group": "g4"
-      },
-      {
-        "stat_name": "cellclear_Fadathram Ancestral Tomb",
-        "display_label": "Clear Fadathram Ancestral Tomb",
-        "amount": 1,
-        "group": "g5"
-      },
-      {
-        "stat_name": "cellloot_fadathram ancestral tomb_bonemold_tshield_redoranguard",
-        "display_label": "Find Redoran Guard Shield",
-        "amount": 1,
-        "group": "g5"
-      },
-      {
-        "stat_name": "cellclear_Helas Ancestral Tomb",
-        "display_label": "Clear Helas Ancestral Tomb",
-        "amount": 1,
-        "group": "g6"
-      },
-      {
-        "stat_name": "cellloot_helas ancestral tomb_bookskill_sneak5",
-        "display_label": "Find 36 Lessons of Vivec, Sermon 26",
-        "amount": 1,
-        "group": "g6"
-      },
-      {
-        "stat_name": "cellloot_helas ancestral tomb_bookskill_unarmored5",
-        "display_label": "Find 36 Lessons of Vivec, Sermon 34",
-        "amount": 1,
-        "group": "g6"
-      },
-      {
-        "stat_name": "cellclear_Indaren Ancestral Tomb",
-        "display_label": "Clear Indaren Ancestral Tomb",
-        "amount": 1,
-        "group": "g7"
-      },
-      {
-        "stat_name": "cellloot_indaren ancestral tomb_ingred_dae_cursed_emerald_01",
-        "display_label": "Find Emerald",
-        "amount": 1,
-        "group": "g7"
-      },
-      {
-        "stat_name": "cellclear_Llando Ancestral Tomb",
-        "display_label": "Clear Llando Ancestral Tomb",
-        "amount": 1,
-        "group": "g8"
-      },
-      {
-        "stat_name": "cellloot_llando ancestral tomb_sc_celerity",
-        "display_label": "Find Scroll of Celerity",
-        "amount": 1,
-        "group": "g8"
-      },
-      {
-        "stat_name": "cellclear_Omalen Ancestral Tomb",
-        "display_label": "Clear Omalen Ancestral Tomb",
-        "amount": 1,
-        "group": "g9"
-      },
-      {
-        "stat_name": "cellloot_omalen ancestral tomb_bk_homiliesofblessedalmalexia",
-        "display_label": "Find Homilies of Blessed Almalexia",
-        "amount": 1,
-        "group": "g9"
-      },
-      {
-        "stat_name": "cellloot_omalen ancestral tomb_bookskill_block1",
-        "display_label": "Find Death Blow of Abernanit",
-        "amount": 1,
-        "group": "g9"
-      },
-      {
-        "stat_name": "cellloot_omalen ancestral tomb_sc_indie",
-        "display_label": "Find A dying man's last words",
-        "amount": 1,
-        "group": "g9"
-      },
-      {
-        "stat_name": "cellclear_Rothan Ancestral Tomb",
-        "display_label": "Clear Rothan Ancestral Tomb",
-        "amount": 1,
-        "group": "g10"
-      },
-      {
-        "stat_name": "cellclear_Salvel Ancestral Tomb",
-        "display_label": "Clear Salvel Ancestral Tomb",
-        "amount": 1,
-        "group": "g11"
-      },
-      {
-        "stat_name": "cellloot_salvel ancestral tomb_bk_doorsofthespirit",
-        "display_label": "Find The Doors of the Spirit",
-        "amount": 1,
-        "group": "g11"
-      },
-      {
-        "stat_name": "cellloot_salvel ancestral tomb_dust_adept_helm",
-        "display_label": "Find Telvanni Dust Adept Helm",
-        "amount": 1,
-        "group": "g11"
-      },
-      {
-        "stat_name": "cellclear_Sandus Ancestral Tomb",
-        "display_label": "Clear Sandus Ancestral Tomb",
-        "amount": 1,
-        "group": "g12"
-      },
-      {
-        "stat_name": "cellloot_sandus ancestral tomb_bonemold_chuzei_helm",
-        "display_label": "Find Native Chuzei Bonemold Helm",
-        "amount": 1,
-        "group": "g12"
-      },
-      {
-        "stat_name": "cellclear_Thalas Ancestral Tomb",
-        "display_label": "Clear Thalas Ancestral Tomb",
-        "amount": 1,
-        "group": "g13"
-      },
-      {
-        "stat_name": "cellloot_thalas ancestral tomb_bk_overviewofgodsandworship",
-        "display_label": "Find Overview of Gods and Worship",
-        "amount": 1,
-        "group": "g13"
-      }
-    ]
-  },
-  {
-    "id": "TOMB_AZURA_COAST",
-    "parent_id": "",
-    "name": "Azura's Coast Tomb Raider",
-    "description": "Clear every Ancestral Tomb on Azura's Coast",
-    "points": 25,
-    "icon": "random",
-    "category": "Exploration",
-    "order": 38,
-    "target_value": 0,
-    "tracked_stat": "",
-    "notification_step": 1,
-    "trigger": {
-      "type": "CellClear"
-    },
-    "objectives": [
-      {
-        "stat_name": "cellclear_Andalen Ancestral Tomb",
-        "display_label": "Clear Andalen Ancestral Tomb",
-        "amount": 1,
-        "group": "g1"
-      },
-      {
-        "stat_name": "cellclear_Andas Ancestral Tomb",
-        "display_label": "Clear Andas Ancestral Tomb",
-        "amount": 1,
-        "group": "g2"
-      },
-      {
-        "stat_name": "cellclear_Arano Ancestral Tomb",
-        "display_label": "Clear Arano Ancestral Tomb",
-        "amount": 1,
-        "group": "g3"
-      },
-      {
-        "stat_name": "cellclear_Arenim Ancestral Tomb",
-        "display_label": "Clear Arenim Ancestral Tomb",
-        "amount": 1,
-        "group": "g4"
-      },
-      {
-        "stat_name": "cellclear_Arys Ancestral Tomb",
-        "display_label": "Clear Arys Ancestral Tomb",
-        "amount": 1,
-        "group": "g5"
-      },
-      {
-        "stat_name": "cellclear_Baram Ancestral Tomb",
-        "display_label": "Clear Baram Ancestral Tomb",
-        "amount": 1,
-        "group": "g6"
-      },
-      {
-        "stat_name": "cellclear_Beran Ancestral Tomb",
-        "display_label": "Clear Beran Ancestral Tomb",
-        "amount": 1,
-        "group": "g7"
-      },
-      {
-        "stat_name": "cellclear_Dreloth Ancestral Tomb",
-        "display_label": "Clear Dreloth Ancestral Tomb",
-        "amount": 1,
-        "group": "g8"
-      },
-      {
-        "stat_name": "cellclear_Hlaalu Ancestral Tomb",
-        "display_label": "Clear Hlaalu Ancestral Tomb",
-        "amount": 1,
-        "group": "g9"
-      },
-      {
-        "stat_name": "cellclear_Hlervi Ancestral Tomb",
-        "display_label": "Clear Hlervi Ancestral Tomb",
-        "amount": 1,
-        "group": "g10"
-      },
-      {
-        "stat_name": "cellclear_Hlervu Ancestral Tomb",
-        "display_label": "Clear Hlervu Ancestral Tomb",
-        "amount": 1,
-        "group": "g11"
-      },
-      {
-        "stat_name": "cellclear_Marvani Ancestral Tomb",
-        "display_label": "Clear Marvani Ancestral Tomb",
-        "amount": 1,
-        "group": "g12"
-      },
-      {
-        "stat_name": "cellclear_Omaren Ancestral Tomb",
-        "display_label": "Clear Omaren Ancestral Tomb",
-        "amount": 1,
-        "group": "g13"
-      },
-      {
-        "stat_name": "cellclear_Ravel Ancestral Tomb",
-        "display_label": "Clear Ravel Ancestral Tomb",
-        "amount": 1,
-        "group": "g14"
-      },
-      {
-        "stat_name": "cellclear_Redas Ancestral Tomb",
-        "display_label": "Clear Redas Ancestral Tomb",
-        "amount": 1,
-        "group": "g15"
-      },
-      {
-        "stat_name": "cellclear_Releth Ancestral Tomb",
-        "display_label": "Clear Releth Ancestral Tomb",
-        "amount": 1,
-        "group": "g16"
-      },
-      {
-        "stat_name": "cellclear_Sadryon Ancestral Tomb",
-        "display_label": "Clear Sadryon Ancestral Tomb",
-        "amount": 1,
-        "group": "g17"
-      },
-      {
-        "stat_name": "cellclear_Savel Ancestral Tomb",
-        "display_label": "Clear Savel Ancestral Tomb",
-        "amount": 1,
-        "group": "g18"
-      },
-      {
-        "stat_name": "cellclear_Tukushapal",
-        "display_label": "Clear Tukushapal",
-        "amount": 1,
-        "group": "g19"
-      },
-      {
-        "stat_name": "cellclear_Verelnim Ancestral Tomb",
-        "display_label": "Clear Verelnim Ancestral Tomb",
-        "amount": 1,
-        "group": "g20"
-      }
-    ]
-  },
-  {
-    "id": "TOMB_WEST_GASH",
-    "parent_id": "",
-    "name": "West Gash Tomb Raider",
-    "description": "Clear every Ancestral Tomb in the West Gash",
-    "points": 25,
-    "icon": "random",
-    "category": "Exploration",
-    "order": 39,
-    "target_value": 0,
-    "tracked_stat": "",
-    "notification_step": 1,
-    "trigger": {
-      "type": "CellClear"
-    },
-    "objectives": [
-      {
-        "stat_name": "cellclear_Alen Ancestral Tomb",
-        "display_label": "Clear Alen Ancestral Tomb",
-        "amount": 1,
-        "group": "g1"
-      },
-      {
-        "stat_name": "cellclear_Andrethi Ancestral Tomb",
-        "display_label": "Clear Andrethi Ancestral Tomb",
-        "amount": 1,
-        "group": "g2"
-      },
-      {
-        "stat_name": "cellclear_Falas Ancestral Tomb",
-        "display_label": "Clear Falas Ancestral Tomb",
-        "amount": 1,
-        "group": "g3"
-      },
-      {
-        "stat_name": "cellclear_Ginith Ancestral Tomb",
-        "display_label": "Clear Ginith Ancestral Tomb",
-        "amount": 1,
-        "group": "g4"
-      },
-      {
-        "stat_name": "cellclear_Heleran Ancestral Tomb",
-        "display_label": "Clear Heleran Ancestral Tomb",
-        "amount": 1,
-        "group": "g5"
-      },
-      {
-        "stat_name": "cellclear_Hleran Ancestral Tomb",
-        "display_label": "Clear Hleran Ancestral Tomb",
-        "amount": 1,
-        "group": "g6"
-      },
-      {
-        "stat_name": "cellclear_Indalen Ancestral Tomb",
-        "display_label": "Clear Indalen Ancestral Tomb",
-        "amount": 1,
-        "group": "g7"
-      },
-      {
-        "stat_name": "cellclear_Llervu Ancestral Tomb",
-        "display_label": "Clear Llervu Ancestral Tomb",
-        "amount": 1,
-        "group": "g8"
-      },
-      {
-        "stat_name": "cellclear_Randas Ancestral Tomb",
-        "display_label": "Clear Randas Ancestral Tomb",
-        "amount": 1,
-        "group": "g9"
-      },
-      {
-        "stat_name": "cellclear_Reloth Ancestral Tomb",
-        "display_label": "Clear Reloth Ancestral Tomb",
-        "amount": 1,
-        "group": "g10"
-      },
-      {
-        "stat_name": "cellclear_Rethandus Ancestral Tomb",
-        "display_label": "Clear Rethandus Ancestral Tomb",
-        "amount": 1,
-        "group": "g11"
-      },
-      {
-        "stat_name": "cellclear_Salothan Ancestral Tomb",
-        "display_label": "Clear Salothan Ancestral Tomb",
-        "amount": 1,
-        "group": "g12"
-      },
-      {
-        "stat_name": "cellclear_Salothran Ancestral Tomb",
-        "display_label": "Clear Salothran Ancestral Tomb",
-        "amount": 1,
-        "group": "g13"
-      },
-      {
-        "stat_name": "cellclear_Sarethi Ancestral Tomb",
-        "display_label": "Clear Sarethi Ancestral Tomb",
-        "amount": 1,
-        "group": "g14"
-      },
-      {
-        "stat_name": "cellclear_Seran Ancestral Tomb",
-        "display_label": "Clear Seran Ancestral Tomb",
-        "amount": 1,
-        "group": "g15"
-      },
-      {
-        "stat_name": "cellclear_Telvayn Ancestral Tomb",
-        "display_label": "Clear Telvayn Ancestral Tomb",
-        "amount": 1,
-        "group": "g16"
-      },
-      {
-        "stat_name": "cellclear_Tharys Ancestral Tomb",
-        "display_label": "Clear Tharys Ancestral Tomb",
-        "amount": 1,
-        "group": "g17"
-      },
-      {
-        "stat_name": "cellclear_Uveran Ancestral Tomb",
-        "display_label": "Clear Uveran Ancestral Tomb",
-        "amount": 1,
-        "group": "g18"
-      },
-      {
-        "stat_name": "cellclear_Veloth Ancestral Tomb",
-        "display_label": "Clear Veloth Ancestral Tomb",
-        "amount": 1,
-        "group": "g19"
-      }
-    ]
-  },
-  {
-    "id": "TOMB_ASCADIAN_ISLES",
-    "parent_id": "",
-    "name": "Ascadian Isles Tomb Raider",
-    "description": "Clear every Ancestral Tomb in the Ascadian Isles",
-    "points": 5,
-    "icon": "random",
-    "category": "Exploration",
-    "order": 40,
-    "target_value": 0,
-    "tracked_stat": "",
-    "notification_step": 1,
-    "trigger": {
-      "type": "CellClear"
-    },
-    "objectives": [
-      {
-        "stat_name": "cellclear_Andrano Ancestral Tomb",
-        "display_label": "Clear Andrano Ancestral Tomb",
-        "amount": 1,
-        "group": "g1"
-      },
-      {
-        "stat_name": "cellclear_Lleran Ancestral Tomb",
-        "display_label": "Clear Lleran Ancestral Tomb",
-        "amount": 1,
-        "group": "g2"
-      },
-      {
-        "stat_name": "cellclear_Sandas Ancestral Tomb",
-        "display_label": "Clear Sandas Ancestral Tomb",
-        "amount": 1,
-        "group": "g3"
-      },
-      {
-        "stat_name": "cellclear_Sarano Ancestral Tomb",
-        "display_label": "Clear Sarano Ancestral Tomb",
-        "amount": 1,
-        "group": "g4"
-      }
-    ]
-  },
-  {
-    "id": "TOMB_GRAZELANDS",
-    "parent_id": "",
-    "name": "Grazelands Tomb Raider",
-    "description": "Clear every Ancestral Tomb in the Grazelands",
-    "points": 10,
-    "icon": "random",
-    "category": "Exploration",
-    "order": 41,
-    "target_value": 0,
-    "tracked_stat": "",
-    "notification_step": 1,
-    "trigger": {
-      "type": "CellClear"
-    },
-    "objectives": [
-      {
-        "stat_name": "cellclear_Andalor Ancestral Tomb",
-        "display_label": "Clear Andalor Ancestral Tomb",
-        "amount": 1,
-        "group": "g1"
-      },
-      {
-        "stat_name": "cellclear_Aralen Ancestral Tomb",
-        "display_label": "Clear Aralen Ancestral Tomb",
-        "amount": 1,
-        "group": "g2"
-      },
-      {
-        "stat_name": "cellclear_Favel Ancestral Tomb",
-        "display_label": "Clear Favel Ancestral Tomb",
-        "amount": 1,
-        "group": "g3"
-      },
-      {
-        "stat_name": "cellclear_Ienith Ancestral Tomb",
-        "display_label": "Clear Ienith Ancestral Tomb",
-        "amount": 1,
-        "group": "g4"
-      },
-      {
-        "stat_name": "cellclear_Nerano Ancestral Tomb",
-        "display_label": "Clear Nerano Ancestral Tomb",
-        "amount": 1,
-        "group": "g5"
-      },
-      {
-        "stat_name": "cellclear_Sethan Ancestral Tomb",
-        "display_label": "Clear Sethan Ancestral Tomb",
-        "amount": 1,
-        "group": "g6"
-      },
-      {
-        "stat_name": "cellclear_Thiralas Ancestral Tomb",
-        "display_label": "Clear Thiralas Ancestral Tomb",
-        "amount": 1,
-        "group": "g7"
-      },
-      {
-        "stat_name": "cellclear_Venim Ancestral Tomb",
-        "display_label": "Clear Venim Ancestral Tomb",
-        "amount": 1,
-        "group": "g8"
-      }
-    ]
-  },
-  {
-    "id": "TOMB_MOLAG_AMUR",
-    "parent_id": "",
-    "name": "Molag Amur Tomb Raider",
-    "description": "Clear every Ancestral Tomb in Molag Amur",
-    "points": 10,
-    "icon": "random",
-    "category": "Exploration",
-    "order": 42,
-    "target_value": 0,
-    "tracked_stat": "",
-    "notification_step": 1,
-    "trigger": {
-      "type": "CellClear"
-    },
-    "objectives": [
-      {
-        "stat_name": "cellclear_Andules Ancestral Tomb",
-        "display_label": "Clear Andules Ancestral Tomb",
-        "amount": 1,
-        "group": "g1"
-      },
-      {
-        "stat_name": "cellclear_Aran Ancestral Tomb",
-        "display_label": "Clear Aran Ancestral Tomb",
-        "amount": 1,
-        "group": "g2"
-      },
-      {
-        "stat_name": "cellclear_Arethan Ancestral Tomb",
-        "display_label": "Clear Arethan Ancestral Tomb",
-        "amount": 1,
-        "group": "g3"
-      },
-      {
-        "stat_name": "cellclear_Dulo Ancestral Tomb",
-        "display_label": "Clear Dulo Ancestral Tomb",
-        "amount": 1,
-        "group": "g4"
-      },
-      {
-        "stat_name": "cellclear_Gimothran Ancestral Tomb",
-        "display_label": "Clear Gimothran Ancestral Tomb",
-        "amount": 1,
-        "group": "g5"
-      },
-      {
-        "stat_name": "cellclear_Helan Ancestral Tomb",
-        "display_label": "Clear Helan Ancestral Tomb",
-        "amount": 1,
-        "group": "g6"
-      },
-      {
-        "stat_name": "cellclear_Maren Ancestral Tomb",
-        "display_label": "Clear Maren Ancestral Tomb",
-        "amount": 1,
-        "group": "g7"
-      },
-      {
-        "stat_name": "cellclear_Raviro Ancestral Tomb",
-        "display_label": "Clear Raviro Ancestral Tomb",
-        "amount": 1,
-        "group": "g8"
-      },
-      {
-        "stat_name": "cellclear_Serano Ancestral Tomb",
-        "display_label": "Clear Serano Ancestral Tomb",
-        "amount": 1,
-        "group": "g9"
-      },
-      {
-        "stat_name": "cellclear_Vandus Ancestral Tomb",
-        "display_label": "Clear Vandus Ancestral Tomb",
-        "amount": 1,
-        "group": "g10"
-      },
-      {
-        "stat_name": "cellclear_Velas Ancestral Tomb",
-        "display_label": "Clear Velas Ancestral Tomb",
-        "amount": 1,
-        "group": "g11"
-      }
-    ]
-  },
-  {
-    "id": "TOMB_SHEOGORAD",
-    "parent_id": "",
-    "name": "Sheogorad Tomb Raider",
-    "description": "Clear every Ancestral Tomb in Sheogorad",
-    "points": 10,
-    "icon": "random",
-    "category": "Exploration",
-    "order": 43,
-    "target_value": 0,
-    "tracked_stat": "",
-    "notification_step": 1,
-    "trigger": {
-      "type": "CellClear"
-    },
-    "objectives": [
-      {
-        "stat_name": "cellclear_Andavel Ancestral Tomb",
-        "display_label": "Clear Andavel Ancestral Tomb",
-        "amount": 1,
-        "group": "g1"
-      },
-      {
-        "stat_name": "cellclear_Ashmelech",
-        "display_label": "Clear Ashmelech",
-        "amount": 1,
-        "group": "g2"
-      },
-      {
-        "stat_name": "cellclear_Dralas Ancestral Tomb",
-        "display_label": "Clear Dralas Ancestral Tomb",
-        "amount": 1,
-        "group": "g3"
-      },
-      {
-        "stat_name": "cellclear_Drethan Ancestral Tomb",
-        "display_label": "Clear Drethan Ancestral Tomb",
-        "amount": 1,
-        "group": "g4"
-      },
-      {
-        "stat_name": "cellclear_Nelas Ancestral Tomb",
-        "display_label": "Clear Nelas Ancestral Tomb",
-        "amount": 1,
-        "group": "g5"
-      },
-      {
-        "stat_name": "cellclear_Orethi Ancestral Tomb",
-        "display_label": "Clear Orethi Ancestral Tomb",
-        "amount": 1,
-        "group": "g6"
-      },
-      {
-        "stat_name": "cellclear_Senim Ancestral Tomb",
-        "display_label": "Clear Senim Ancestral Tomb",
-        "amount": 1,
-        "group": "g7"
-      }
-    ]
-  },
-  {
-    "id": "TOMB_VIVEC",
-    "parent_id": "",
-    "name": "Vivec Tomb Raider",
-    "description": "Clear every tomb hidden beneath Vivec",
-    "points": 5,
-    "icon": "random",
-    "category": "Exploration",
-    "order": 44,
-    "target_value": 0,
-    "tracked_stat": "",
-    "notification_step": 1,
-    "trigger": {
-      "type": "CellClear"
-    },
-    "objectives": [
-      {
-        "stat_name": "cellclear_Vivec, Foreign Quarter Tomb",
-        "display_label": "Clear Vivec, Foreign Quarter Tomb",
-        "amount": 1,
-        "group": "g1"
-      },
-      {
-        "stat_name": "cellclear_Vivec, Hlaalu Ancestral Vaults",
-        "display_label": "Clear Vivec, Hlaalu Ancestral Vaults",
-        "amount": 1,
-        "group": "g2"
-      },
-      {
-        "stat_name": "cellclear_Vivec, Redoran Ancestral Vaults",
-        "display_label": "Clear Vivec, Redoran Ancestral Vaults",
-        "amount": 1,
-        "group": "g3"
-      },
-      {
-        "stat_name": "cellclear_Othrelas Ancestral Tomb",
-        "display_label": "Clear Othrelas Ancestral Tomb",
-        "amount": 1,
-        "group": "g4"
-      }
-    ]
-  }
-]
+  ]
+}

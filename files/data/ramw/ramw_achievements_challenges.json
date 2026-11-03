@@ -1,0 +1,3578 @@
+{
+  "set": "Challenge",
+  "prefix": "CH",
+  "achievements": [
+    {
+      "id": "CH_DAGOTH_10",
+      "parent_id": "",
+      "name": "Ur so Young",
+      "description": "Defeat Dagoth Ur before level 10",
+      "points": 25,
+      "icon": "random",
+      "category": "Misc",
+      "order": 0,
+      "type": "missable",
+      "progress_bar": false,
+      "locations": [],
+      "regions": [],
+      "factions": [],
+      "target_value": 0,
+      "tracked_stat": "",
+      "notification_step": 1,
+      "trigger": {
+        "type": "QuestComplete"
+      },
+      "objectives": [
+        {
+          "stat_name": "quest_finished_C3_DestroyDagoth",
+          "display_label": "The Citadels of the Sixth House",
+          "amount": 1
+        }
+      ],
+      "requirements": [
+        {
+          "stat": "level",
+          "op": "<=",
+          "amount": 9
+        }
+      ]
+    },
+    {
+      "id": "CH_RUN_ACROBAT",
+      "parent_id": "",
+      "name": "The Acrobat",
+      "description": "Complete the main quest of Morrowind as an Argonian Acrobat",
+      "points": 50,
+      "icon": "random",
+      "category": "Quest",
+      "order": 1,
+      "type": "",
+      "progress_bar": false,
+      "locations": [],
+      "regions": [],
+      "factions": [],
+      "target_value": 0,
+      "tracked_stat": "",
+      "notification_step": 1,
+      "trigger": {
+        "type": "QuestComplete"
+      },
+      "objectives": [
+        {
+          "stat_name": "quest_finished_A1_1_FindSpymaster",
+          "display_label": "Report to Caius Cosades",
+          "amount": 1
+        },
+        {
+          "stat_name": "quest_finished_A2_2_6thHouse",
+          "display_label": "Sixth House Base",
+          "amount": 1
+        },
+        {
+          "stat_name": "quest_finished_B5_RedoranHort",
+          "display_label": "Redoran Hortator",
+          "amount": 1
+        },
+        {
+          "stat_name": "quest_finished_B6_HlaaluHort",
+          "display_label": "Hlaalu Hortator",
+          "amount": 1
+        },
+        {
+          "stat_name": "quest_finished_B7_TelvanniHort",
+          "display_label": "Telvanni Hortator",
+          "amount": 1
+        },
+        {
+          "stat_name": "quest_finished_B1_UnifyUrshilaku",
+          "display_label": "Urshilaku Nerevarine",
+          "amount": 1
+        },
+        {
+          "stat_name": "quest_finished_B2_AhemmusaSafe",
+          "display_label": "Ahemmusa Nerevarine",
+          "amount": 1
+        },
+        {
+          "stat_name": "quest_finished_B3_ZainabBride",
+          "display_label": "Zainab Nerevarine",
+          "amount": 1
+        },
+        {
+          "stat_name": "quest_finished_B4_KillWarLovers",
+          "display_label": "Erabenimsun Nerevarine",
+          "amount": 1
+        },
+        {
+          "stat_name": "quest_finished_C3_DestroyDagoth",
+          "display_label": "Defeat Dagoth Ur",
+          "amount": 1
+        }
+      ],
+      "requirements": [
+        {
+          "stat": "race",
+          "value": [
+            "argonian"
+          ]
+        },
+        {
+          "stat": "class",
+          "value": [
+            "acrobat"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "CH_RUN_ASSASSIN",
+      "parent_id": "",
+      "name": "The Assassin",
+      "description": "Complete the main quest of Morrowind as a Dunmer Assassin",
+      "points": 50,
+      "icon": "random",
+      "category": "Quest",
+      "order": 2,
+      "type": "",
+      "progress_bar": false,
+      "locations": [],
+      "regions": [],
+      "factions": [],
+      "target_value": 0,
+      "tracked_stat": "",
+      "notification_step": 1,
+      "trigger": {
+        "type": "QuestComplete"
+      },
+      "objectives": [
+        {
+          "stat_name": "quest_finished_A1_1_FindSpymaster",
+          "display_label": "Report to Caius Cosades",
+          "amount": 1
+        },
+        {
+          "stat_name": "quest_finished_A2_2_6thHouse",
+          "display_label": "Sixth House Base",
+          "amount": 1
+        },
+        {
+          "stat_name": "quest_finished_B5_RedoranHort",
+          "display_label": "Redoran Hortator",
+          "amount": 1
+        },
+        {
+          "stat_name": "quest_finished_B6_HlaaluHort",
+          "display_label": "Hlaalu Hortator",
+          "amount": 1
+        },
+        {
+          "stat_name": "quest_finished_B7_TelvanniHort",
+          "display_label": "Telvanni Hortator",
+          "amount": 1
+        },
+        {
+          "stat_name": "quest_finished_B1_UnifyUrshilaku",
+          "display_label": "Urshilaku Nerevarine",
+          "amount": 1
+        },
+        {
+          "stat_name": "quest_finished_B2_AhemmusaSafe",
+          "display_label": "Ahemmusa Nerevarine",
+          "amount": 1
+        },
+        {
+          "stat_name": "quest_finished_B3_ZainabBride",
+          "display_label": "Zainab Nerevarine",
+          "amount": 1
+        },
+        {
+          "stat_name": "quest_finished_B4_KillWarLovers",
+          "display_label": "Erabenimsun Nerevarine",
+          "amount": 1
+        },
+        {
+          "stat_name": "quest_finished_C3_DestroyDagoth",
+          "display_label": "Defeat Dagoth Ur",
+          "amount": 1
+        }
+      ],
+      "requirements": [
+        {
+          "stat": "race",
+          "value": [
+            "dark elf"
+          ]
+        },
+        {
+          "stat": "class",
+          "value": [
+            "assassin"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "CH_RUN_AGENT",
+      "parent_id": "",
+      "name": "The Agent",
+      "description": "Complete the main quest of Morrowind as an Imperial Agent",
+      "points": 50,
+      "icon": "random",
+      "category": "Quest",
+      "order": 3,
+      "type": "",
+      "progress_bar": false,
+      "locations": [],
+      "regions": [],
+      "factions": [],
+      "target_value": 0,
+      "tracked_stat": "",
+      "notification_step": 1,
+      "trigger": {
+        "type": "QuestComplete"
+      },
+      "objectives": [
+        {
+          "stat_name": "quest_finished_A1_1_FindSpymaster",
+          "display_label": "Report to Caius Cosades",
+          "amount": 1
+        },
+        {
+          "stat_name": "quest_finished_A2_2_6thHouse",
+          "display_label": "Sixth House Base",
+          "amount": 1
+        },
+        {
+          "stat_name": "quest_finished_B5_RedoranHort",
+          "display_label": "Redoran Hortator",
+          "amount": 1
+        },
+        {
+          "stat_name": "quest_finished_B6_HlaaluHort",
+          "display_label": "Hlaalu Hortator",
+          "amount": 1
+        },
+        {
+          "stat_name": "quest_finished_B7_TelvanniHort",
+          "display_label": "Telvanni Hortator",
+          "amount": 1
+        },
+        {
+          "stat_name": "quest_finished_B1_UnifyUrshilaku",
+          "display_label": "Urshilaku Nerevarine",
+          "amount": 1
+        },
+        {
+          "stat_name": "quest_finished_B2_AhemmusaSafe",
+          "display_label": "Ahemmusa Nerevarine",
+          "amount": 1
+        },
+        {
+          "stat_name": "quest_finished_B3_ZainabBride",
+          "display_label": "Zainab Nerevarine",
+          "amount": 1
+        },
+        {
+          "stat_name": "quest_finished_B4_KillWarLovers",
+          "display_label": "Erabenimsun Nerevarine",
+          "amount": 1
+        },
+        {
+          "stat_name": "quest_finished_C3_DestroyDagoth",
+          "display_label": "Defeat Dagoth Ur",
+          "amount": 1
+        }
+      ],
+      "requirements": [
+        {
+          "stat": "race",
+          "value": [
+            "imperial"
+          ]
+        },
+        {
+          "stat": "class",
+          "value": [
+            "agent"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "CH_RUN_ARCHER",
+      "parent_id": "",
+      "name": "The Archer",
+      "description": "Complete the main quest of Morrowind as a Bosmer Archer",
+      "points": 50,
+      "icon": "random",
+      "category": "Quest",
+      "order": 4,
+      "type": "",
+      "progress_bar": false,
+      "locations": [],
+      "regions": [],
+      "factions": [],
+      "target_value": 0,
+      "tracked_stat": "",
+      "notification_step": 1,
+      "trigger": {
+        "type": "QuestComplete"
+      },
+      "objectives": [
+        {
+          "stat_name": "quest_finished_A1_1_FindSpymaster",
+          "display_label": "Report to Caius Cosades",
+          "amount": 1
+        },
+        {
+          "stat_name": "quest_finished_A2_2_6thHouse",
+          "display_label": "Sixth House Base",
+          "amount": 1
+        },
+        {
+          "stat_name": "quest_finished_B5_RedoranHort",
+          "display_label": "Redoran Hortator",
+          "amount": 1
+        },
+        {
+          "stat_name": "quest_finished_B6_HlaaluHort",
+          "display_label": "Hlaalu Hortator",
+          "amount": 1
+        },
+        {
+          "stat_name": "quest_finished_B7_TelvanniHort",
+          "display_label": "Telvanni Hortator",
+          "amount": 1
+        },
+        {
+          "stat_name": "quest_finished_B1_UnifyUrshilaku",
+          "display_label": "Urshilaku Nerevarine",
+          "amount": 1
+        },
+        {
+          "stat_name": "quest_finished_B2_AhemmusaSafe",
+          "display_label": "Ahemmusa Nerevarine",
+          "amount": 1
+        },
+        {
+          "stat_name": "quest_finished_B3_ZainabBride",
+          "display_label": "Zainab Nerevarine",
+          "amount": 1
+        },
+        {
+          "stat_name": "quest_finished_B4_KillWarLovers",
+          "display_label": "Erabenimsun Nerevarine",
+          "amount": 1
+        },
+        {
+          "stat_name": "quest_finished_C3_DestroyDagoth",
+          "display_label": "Defeat Dagoth Ur",
+          "amount": 1
+        }
+      ],
+      "requirements": [
+        {
+          "stat": "race",
+          "value": [
+            "wood elf"
+          ]
+        },
+        {
+          "stat": "class",
+          "value": [
+            "archer"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "CH_RUN_BARBAR",
+      "parent_id": "",
+      "name": "The Barbarian",
+      "description": "Complete the main quest of Morrowind as a Nord Barbarian",
+      "points": 50,
+      "icon": "random",
+      "category": "Quest",
+      "order": 5,
+      "type": "",
+      "progress_bar": false,
+      "locations": [],
+      "regions": [],
+      "factions": [],
+      "target_value": 0,
+      "tracked_stat": "",
+      "notification_step": 1,
+      "trigger": {
+        "type": "QuestComplete"
+      },
+      "objectives": [
+        {
+          "stat_name": "quest_finished_A1_1_FindSpymaster",
+          "display_label": "Report to Caius Cosades",
+          "amount": 1
+        },
+        {
+          "stat_name": "quest_finished_A2_2_6thHouse",
+          "display_label": "Sixth House Base",
+          "amount": 1
+        },
+        {
+          "stat_name": "quest_finished_B5_RedoranHort",
+          "display_label": "Redoran Hortator",
+          "amount": 1
+        },
+        {
+          "stat_name": "quest_finished_B6_HlaaluHort",
+          "display_label": "Hlaalu Hortator",
+          "amount": 1
+        },
+        {
+          "stat_name": "quest_finished_B7_TelvanniHort",
+          "display_label": "Telvanni Hortator",
+          "amount": 1
+        },
+        {
+          "stat_name": "quest_finished_B1_UnifyUrshilaku",
+          "display_label": "Urshilaku Nerevarine",
+          "amount": 1
+        },
+        {
+          "stat_name": "quest_finished_B2_AhemmusaSafe",
+          "display_label": "Ahemmusa Nerevarine",
+          "amount": 1
+        },
+        {
+          "stat_name": "quest_finished_B3_ZainabBride",
+          "display_label": "Zainab Nerevarine",
+          "amount": 1
+        },
+        {
+          "stat_name": "quest_finished_B4_KillWarLovers",
+          "display_label": "Erabenimsun Nerevarine",
+          "amount": 1
+        },
+        {
+          "stat_name": "quest_finished_C3_DestroyDagoth",
+          "display_label": "Defeat Dagoth Ur",
+          "amount": 1
+        }
+      ],
+      "requirements": [
+        {
+          "stat": "race",
+          "value": [
+            "nord"
+          ]
+        },
+        {
+          "stat": "class",
+          "value": [
+            "barbarian"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "CH_RUN_BARD",
+      "parent_id": "",
+      "name": "The Bard",
+      "description": "Complete the main quest of Morrowind as a Bard",
+      "points": 50,
+      "icon": "random",
+      "category": "Quest",
+      "order": 6,
+      "type": "",
+      "progress_bar": false,
+      "locations": [],
+      "regions": [],
+      "factions": [],
+      "target_value": 0,
+      "tracked_stat": "",
+      "notification_step": 1,
+      "trigger": {
+        "type": "QuestComplete"
+      },
+      "objectives": [
+        {
+          "stat_name": "quest_finished_A1_1_FindSpymaster",
+          "display_label": "Report to Caius Cosades",
+          "amount": 1
+        },
+        {
+          "stat_name": "quest_finished_A2_2_6thHouse",
+          "display_label": "Sixth House Base",
+          "amount": 1
+        },
+        {
+          "stat_name": "quest_finished_B5_RedoranHort",
+          "display_label": "Redoran Hortator",
+          "amount": 1
+        },
+        {
+          "stat_name": "quest_finished_B6_HlaaluHort",
+          "display_label": "Hlaalu Hortator",
+          "amount": 1
+        },
+        {
+          "stat_name": "quest_finished_B7_TelvanniHort",
+          "display_label": "Telvanni Hortator",
+          "amount": 1
+        },
+        {
+          "stat_name": "quest_finished_B1_UnifyUrshilaku",
+          "display_label": "Urshilaku Nerevarine",
+          "amount": 1
+        },
+        {
+          "stat_name": "quest_finished_B2_AhemmusaSafe",
+          "display_label": "Ahemmusa Nerevarine",
+          "amount": 1
+        },
+        {
+          "stat_name": "quest_finished_B3_ZainabBride",
+          "display_label": "Zainab Nerevarine",
+          "amount": 1
+        },
+        {
+          "stat_name": "quest_finished_B4_KillWarLovers",
+          "display_label": "Erabenimsun Nerevarine",
+          "amount": 1
+        },
+        {
+          "stat_name": "quest_finished_C3_DestroyDagoth",
+          "display_label": "Defeat Dagoth Ur",
+          "amount": 1
+        }
+      ],
+      "requirements": [
+        {
+          "stat": "class",
+          "value": [
+            "bard"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "CH_RUN_BM",
+      "parent_id": "",
+      "name": "The Battlemage",
+      "description": "Complete the main quest of Morrowind as an Altmer Battlemage",
+      "points": 50,
+      "icon": "random",
+      "category": "Quest",
+      "order": 7,
+      "type": "",
+      "progress_bar": false,
+      "locations": [],
+      "regions": [],
+      "factions": [],
+      "target_value": 0,
+      "tracked_stat": "",
+      "notification_step": 1,
+      "trigger": {
+        "type": "QuestComplete"
+      },
+      "objectives": [
+        {
+          "stat_name": "quest_finished_A1_1_FindSpymaster",
+          "display_label": "Report to Caius Cosades",
+          "amount": 1
+        },
+        {
+          "stat_name": "quest_finished_A2_2_6thHouse",
+          "display_label": "Sixth House Base",
+          "amount": 1
+        },
+        {
+          "stat_name": "quest_finished_B5_RedoranHort",
+          "display_label": "Redoran Hortator",
+          "amount": 1
+        },
+        {
+          "stat_name": "quest_finished_B6_HlaaluHort",
+          "display_label": "Hlaalu Hortator",
+          "amount": 1
+        },
+        {
+          "stat_name": "quest_finished_B7_TelvanniHort",
+          "display_label": "Telvanni Hortator",
+          "amount": 1
+        },
+        {
+          "stat_name": "quest_finished_B1_UnifyUrshilaku",
+          "display_label": "Urshilaku Nerevarine",
+          "amount": 1
+        },
+        {
+          "stat_name": "quest_finished_B2_AhemmusaSafe",
+          "display_label": "Ahemmusa Nerevarine",
+          "amount": 1
+        },
+        {
+          "stat_name": "quest_finished_B3_ZainabBride",
+          "display_label": "Zainab Nerevarine",
+          "amount": 1
+        },
+        {
+          "stat_name": "quest_finished_B4_KillWarLovers",
+          "display_label": "Erabenimsun Nerevarine",
+          "amount": 1
+        },
+        {
+          "stat_name": "quest_finished_C3_DestroyDagoth",
+          "display_label": "Defeat Dagoth Ur",
+          "amount": 1
+        }
+      ],
+      "requirements": [
+        {
+          "stat": "class",
+          "value": [
+            "battlemage"
+          ]
+        },
+        {
+          "stat": "race",
+          "value": [
+            "high elf"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "CH_RUN_MONK",
+      "parent_id": "",
+      "name": "The Monk",
+      "description": "Complete the main quest of Morrowind as a Monk",
+      "points": 50,
+      "icon": "random",
+      "category": "Quest",
+      "order": 8,
+      "type": "",
+      "progress_bar": false,
+      "locations": [],
+      "regions": [],
+      "factions": [],
+      "target_value": 0,
+      "tracked_stat": "",
+      "notification_step": 1,
+      "trigger": {
+        "type": "QuestComplete"
+      },
+      "objectives": [
+        {
+          "stat_name": "quest_finished_A1_1_FindSpymaster",
+          "display_label": "Report to Caius Cosades",
+          "amount": 1
+        },
+        {
+          "stat_name": "quest_finished_A2_2_6thHouse",
+          "display_label": "Sixth House Base",
+          "amount": 1
+        },
+        {
+          "stat_name": "quest_finished_B5_RedoranHort",
+          "display_label": "Redoran Hortator",
+          "amount": 1
+        },
+        {
+          "stat_name": "quest_finished_B6_HlaaluHort",
+          "display_label": "Hlaalu Hortator",
+          "amount": 1
+        },
+        {
+          "stat_name": "quest_finished_B7_TelvanniHort",
+          "display_label": "Telvanni Hortator",
+          "amount": 1
+        },
+        {
+          "stat_name": "quest_finished_B1_UnifyUrshilaku",
+          "display_label": "Urshilaku Nerevarine",
+          "amount": 1
+        },
+        {
+          "stat_name": "quest_finished_B2_AhemmusaSafe",
+          "display_label": "Ahemmusa Nerevarine",
+          "amount": 1
+        },
+        {
+          "stat_name": "quest_finished_B3_ZainabBride",
+          "display_label": "Zainab Nerevarine",
+          "amount": 1
+        },
+        {
+          "stat_name": "quest_finished_B4_KillWarLovers",
+          "display_label": "Erabenimsun Nerevarine",
+          "amount": 1
+        },
+        {
+          "stat_name": "quest_finished_C3_DestroyDagoth",
+          "display_label": "Defeat Dagoth Ur",
+          "amount": 1
+        }
+      ],
+      "requirements": [
+        {
+          "stat": "class",
+          "value": [
+            "monk"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "CH_RUN_CRUSADER",
+      "parent_id": "",
+      "name": "The Crusader",
+      "description": "Complete the main quest of Morrowind as a Crusader",
+      "points": 50,
+      "icon": "random",
+      "category": "Quest",
+      "order": 9,
+      "type": "",
+      "progress_bar": false,
+      "locations": [],
+      "regions": [],
+      "factions": [],
+      "target_value": 0,
+      "tracked_stat": "",
+      "notification_step": 1,
+      "trigger": {
+        "type": "QuestComplete"
+      },
+      "objectives": [
+        {
+          "stat_name": "quest_finished_A1_1_FindSpymaster",
+          "display_label": "Report to Caius Cosades",
+          "amount": 1
+        },
+        {
+          "stat_name": "quest_finished_A2_2_6thHouse",
+          "display_label": "Sixth House Base",
+          "amount": 1
+        },
+        {
+          "stat_name": "quest_finished_B5_RedoranHort",
+          "display_label": "Redoran Hortator",
+          "amount": 1
+        },
+        {
+          "stat_name": "quest_finished_B6_HlaaluHort",
+          "display_label": "Hlaalu Hortator",
+          "amount": 1
+        },
+        {
+          "stat_name": "quest_finished_B7_TelvanniHort",
+          "display_label": "Telvanni Hortator",
+          "amount": 1
+        },
+        {
+          "stat_name": "quest_finished_B1_UnifyUrshilaku",
+          "display_label": "Urshilaku Nerevarine",
+          "amount": 1
+        },
+        {
+          "stat_name": "quest_finished_B2_AhemmusaSafe",
+          "display_label": "Ahemmusa Nerevarine",
+          "amount": 1
+        },
+        {
+          "stat_name": "quest_finished_B3_ZainabBride",
+          "display_label": "Zainab Nerevarine",
+          "amount": 1
+        },
+        {
+          "stat_name": "quest_finished_B4_KillWarLovers",
+          "display_label": "Erabenimsun Nerevarine",
+          "amount": 1
+        },
+        {
+          "stat_name": "quest_finished_C3_DestroyDagoth",
+          "display_label": "Defeat Dagoth Ur",
+          "amount": 1
+        }
+      ],
+      "requirements": [
+        {
+          "stat": "class",
+          "value": [
+            "crusader"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "CH_RUN_HEALER",
+      "parent_id": "",
+      "name": "The Healer",
+      "description": "Complete the main quest of Morrowind as a Breton Healer",
+      "points": 50,
+      "icon": "random",
+      "category": "Quest",
+      "order": 10,
+      "type": "",
+      "progress_bar": false,
+      "locations": [],
+      "regions": [],
+      "factions": [],
+      "target_value": 0,
+      "tracked_stat": "",
+      "notification_step": 1,
+      "trigger": {
+        "type": "QuestComplete"
+      },
+      "objectives": [
+        {
+          "stat_name": "quest_finished_A1_1_FindSpymaster",
+          "display_label": "Report to Caius Cosades",
+          "amount": 1
+        },
+        {
+          "stat_name": "quest_finished_A2_2_6thHouse",
+          "display_label": "Sixth House Base",
+          "amount": 1
+        },
+        {
+          "stat_name": "quest_finished_B5_RedoranHort",
+          "display_label": "Redoran Hortator",
+          "amount": 1
+        },
+        {
+          "stat_name": "quest_finished_B6_HlaaluHort",
+          "display_label": "Hlaalu Hortator",
+          "amount": 1
+        },
+        {
+          "stat_name": "quest_finished_B7_TelvanniHort",
+          "display_label": "Telvanni Hortator",
+          "amount": 1
+        },
+        {
+          "stat_name": "quest_finished_B1_UnifyUrshilaku",
+          "display_label": "Urshilaku Nerevarine",
+          "amount": 1
+        },
+        {
+          "stat_name": "quest_finished_B2_AhemmusaSafe",
+          "display_label": "Ahemmusa Nerevarine",
+          "amount": 1
+        },
+        {
+          "stat_name": "quest_finished_B3_ZainabBride",
+          "display_label": "Zainab Nerevarine",
+          "amount": 1
+        },
+        {
+          "stat_name": "quest_finished_B4_KillWarLovers",
+          "display_label": "Erabenimsun Nerevarine",
+          "amount": 1
+        },
+        {
+          "stat_name": "quest_finished_C3_DestroyDagoth",
+          "display_label": "Defeat Dagoth Ur",
+          "amount": 1
+        }
+      ],
+      "requirements": [
+        {
+          "stat": "class",
+          "value": [
+            "healer"
+          ]
+        },
+        {
+          "stat": "race",
+          "value": [
+            "breton"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "CH_RUN_KNIGHT",
+      "parent_id": "",
+      "name": "The Knight",
+      "description": "Complete the main quest of Morrowind as a Knight",
+      "points": 50,
+      "icon": "random",
+      "category": "Quest",
+      "order": 11,
+      "type": "",
+      "progress_bar": false,
+      "locations": [],
+      "regions": [],
+      "factions": [],
+      "target_value": 0,
+      "tracked_stat": "",
+      "notification_step": 1,
+      "trigger": {
+        "type": "QuestComplete"
+      },
+      "objectives": [
+        {
+          "stat_name": "quest_finished_A1_1_FindSpymaster",
+          "display_label": "Report to Caius Cosades",
+          "amount": 1
+        },
+        {
+          "stat_name": "quest_finished_A2_2_6thHouse",
+          "display_label": "Sixth House Base",
+          "amount": 1
+        },
+        {
+          "stat_name": "quest_finished_B5_RedoranHort",
+          "display_label": "Redoran Hortator",
+          "amount": 1
+        },
+        {
+          "stat_name": "quest_finished_B6_HlaaluHort",
+          "display_label": "Hlaalu Hortator",
+          "amount": 1
+        },
+        {
+          "stat_name": "quest_finished_B7_TelvanniHort",
+          "display_label": "Telvanni Hortator",
+          "amount": 1
+        },
+        {
+          "stat_name": "quest_finished_B1_UnifyUrshilaku",
+          "display_label": "Urshilaku Nerevarine",
+          "amount": 1
+        },
+        {
+          "stat_name": "quest_finished_B2_AhemmusaSafe",
+          "display_label": "Ahemmusa Nerevarine",
+          "amount": 1
+        },
+        {
+          "stat_name": "quest_finished_B3_ZainabBride",
+          "display_label": "Zainab Nerevarine",
+          "amount": 1
+        },
+        {
+          "stat_name": "quest_finished_B4_KillWarLovers",
+          "display_label": "Erabenimsun Nerevarine",
+          "amount": 1
+        },
+        {
+          "stat_name": "quest_finished_C3_DestroyDagoth",
+          "display_label": "Defeat Dagoth Ur",
+          "amount": 1
+        }
+      ],
+      "requirements": [
+        {
+          "stat": "class",
+          "value": [
+            "knight"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "CH_RUN_MAGE",
+      "parent_id": "",
+      "name": "The Mage",
+      "description": "Complete the main quest of Morrowind as a Mage",
+      "points": 50,
+      "icon": "random",
+      "category": "Quest",
+      "order": 12,
+      "type": "",
+      "progress_bar": false,
+      "locations": [],
+      "regions": [],
+      "factions": [],
+      "target_value": 0,
+      "tracked_stat": "",
+      "notification_step": 1,
+      "trigger": {
+        "type": "QuestComplete"
+      },
+      "objectives": [
+        {
+          "stat_name": "quest_finished_A1_1_FindSpymaster",
+          "display_label": "Report to Caius Cosades",
+          "amount": 1
+        },
+        {
+          "stat_name": "quest_finished_A2_2_6thHouse",
+          "display_label": "Sixth House Base",
+          "amount": 1
+        },
+        {
+          "stat_name": "quest_finished_B5_RedoranHort",
+          "display_label": "Redoran Hortator",
+          "amount": 1
+        },
+        {
+          "stat_name": "quest_finished_B6_HlaaluHort",
+          "display_label": "Hlaalu Hortator",
+          "amount": 1
+        },
+        {
+          "stat_name": "quest_finished_B7_TelvanniHort",
+          "display_label": "Telvanni Hortator",
+          "amount": 1
+        },
+        {
+          "stat_name": "quest_finished_B1_UnifyUrshilaku",
+          "display_label": "Urshilaku Nerevarine",
+          "amount": 1
+        },
+        {
+          "stat_name": "quest_finished_B2_AhemmusaSafe",
+          "display_label": "Ahemmusa Nerevarine",
+          "amount": 1
+        },
+        {
+          "stat_name": "quest_finished_B3_ZainabBride",
+          "display_label": "Zainab Nerevarine",
+          "amount": 1
+        },
+        {
+          "stat_name": "quest_finished_B4_KillWarLovers",
+          "display_label": "Erabenimsun Nerevarine",
+          "amount": 1
+        },
+        {
+          "stat_name": "quest_finished_C3_DestroyDagoth",
+          "display_label": "Defeat Dagoth Ur",
+          "amount": 1
+        }
+      ],
+      "requirements": [
+        {
+          "stat": "class",
+          "value": [
+            "mage"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "CH_RUN_NIGHTBLADE",
+      "parent_id": "",
+      "name": "The Nightblade",
+      "description": "Complete the main quest of Morrowind as a Nightblade",
+      "points": 50,
+      "icon": "random",
+      "category": "Quest",
+      "order": 13,
+      "type": "",
+      "progress_bar": false,
+      "locations": [],
+      "regions": [],
+      "factions": [],
+      "target_value": 0,
+      "tracked_stat": "",
+      "notification_step": 1,
+      "trigger": {
+        "type": "QuestComplete"
+      },
+      "objectives": [
+        {
+          "stat_name": "quest_finished_A1_1_FindSpymaster",
+          "display_label": "Report to Caius Cosades",
+          "amount": 1
+        },
+        {
+          "stat_name": "quest_finished_A2_2_6thHouse",
+          "display_label": "Sixth House Base",
+          "amount": 1
+        },
+        {
+          "stat_name": "quest_finished_B5_RedoranHort",
+          "display_label": "Redoran Hortator",
+          "amount": 1
+        },
+        {
+          "stat_name": "quest_finished_B6_HlaaluHort",
+          "display_label": "Hlaalu Hortator",
+          "amount": 1
+        },
+        {
+          "stat_name": "quest_finished_B7_TelvanniHort",
+          "display_label": "Telvanni Hortator",
+          "amount": 1
+        },
+        {
+          "stat_name": "quest_finished_B1_UnifyUrshilaku",
+          "display_label": "Urshilaku Nerevarine",
+          "amount": 1
+        },
+        {
+          "stat_name": "quest_finished_B2_AhemmusaSafe",
+          "display_label": "Ahemmusa Nerevarine",
+          "amount": 1
+        },
+        {
+          "stat_name": "quest_finished_B3_ZainabBride",
+          "display_label": "Zainab Nerevarine",
+          "amount": 1
+        },
+        {
+          "stat_name": "quest_finished_B4_KillWarLovers",
+          "display_label": "Erabenimsun Nerevarine",
+          "amount": 1
+        },
+        {
+          "stat_name": "quest_finished_C3_DestroyDagoth",
+          "display_label": "Defeat Dagoth Ur",
+          "amount": 1
+        }
+      ],
+      "requirements": [
+        {
+          "stat": "class",
+          "value": [
+            "nightblade"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "CH_RUN_PILGRIM",
+      "parent_id": "",
+      "name": "The Pilgrim",
+      "description": "Complete the main quest of Morrowind as a Pilgrim",
+      "points": 50,
+      "icon": "random",
+      "category": "Quest",
+      "order": 14,
+      "type": "",
+      "progress_bar": false,
+      "locations": [],
+      "regions": [],
+      "factions": [],
+      "target_value": 0,
+      "tracked_stat": "",
+      "notification_step": 1,
+      "trigger": {
+        "type": "QuestComplete"
+      },
+      "objectives": [
+        {
+          "stat_name": "quest_finished_A1_1_FindSpymaster",
+          "display_label": "Report to Caius Cosades",
+          "amount": 1
+        },
+        {
+          "stat_name": "quest_finished_A2_2_6thHouse",
+          "display_label": "Sixth House Base",
+          "amount": 1
+        },
+        {
+          "stat_name": "quest_finished_B5_RedoranHort",
+          "display_label": "Redoran Hortator",
+          "amount": 1
+        },
+        {
+          "stat_name": "quest_finished_B6_HlaaluHort",
+          "display_label": "Hlaalu Hortator",
+          "amount": 1
+        },
+        {
+          "stat_name": "quest_finished_B7_TelvanniHort",
+          "display_label": "Telvanni Hortator",
+          "amount": 1
+        },
+        {
+          "stat_name": "quest_finished_B1_UnifyUrshilaku",
+          "display_label": "Urshilaku Nerevarine",
+          "amount": 1
+        },
+        {
+          "stat_name": "quest_finished_B2_AhemmusaSafe",
+          "display_label": "Ahemmusa Nerevarine",
+          "amount": 1
+        },
+        {
+          "stat_name": "quest_finished_B3_ZainabBride",
+          "display_label": "Zainab Nerevarine",
+          "amount": 1
+        },
+        {
+          "stat_name": "quest_finished_B4_KillWarLovers",
+          "display_label": "Erabenimsun Nerevarine",
+          "amount": 1
+        },
+        {
+          "stat_name": "quest_finished_C3_DestroyDagoth",
+          "display_label": "Defeat Dagoth Ur",
+          "amount": 1
+        }
+      ],
+      "requirements": [
+        {
+          "stat": "class",
+          "value": [
+            "pilgrim"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "CH_RUN_ROGUE",
+      "parent_id": "",
+      "name": "The Rogue",
+      "description": "Complete the main quest of Morrowind as a Rogue",
+      "points": 50,
+      "icon": "random",
+      "category": "Quest",
+      "order": 15,
+      "type": "",
+      "progress_bar": false,
+      "locations": [],
+      "regions": [],
+      "factions": [],
+      "target_value": 0,
+      "tracked_stat": "",
+      "notification_step": 1,
+      "trigger": {
+        "type": "QuestComplete"
+      },
+      "objectives": [
+        {
+          "stat_name": "quest_finished_A1_1_FindSpymaster",
+          "display_label": "Report to Caius Cosades",
+          "amount": 1
+        },
+        {
+          "stat_name": "quest_finished_A2_2_6thHouse",
+          "display_label": "Sixth House Base",
+          "amount": 1
+        },
+        {
+          "stat_name": "quest_finished_B5_RedoranHort",
+          "display_label": "Redoran Hortator",
+          "amount": 1
+        },
+        {
+          "stat_name": "quest_finished_B6_HlaaluHort",
+          "display_label": "Hlaalu Hortator",
+          "amount": 1
+        },
+        {
+          "stat_name": "quest_finished_B7_TelvanniHort",
+          "display_label": "Telvanni Hortator",
+          "amount": 1
+        },
+        {
+          "stat_name": "quest_finished_B1_UnifyUrshilaku",
+          "display_label": "Urshilaku Nerevarine",
+          "amount": 1
+        },
+        {
+          "stat_name": "quest_finished_B2_AhemmusaSafe",
+          "display_label": "Ahemmusa Nerevarine",
+          "amount": 1
+        },
+        {
+          "stat_name": "quest_finished_B3_ZainabBride",
+          "display_label": "Zainab Nerevarine",
+          "amount": 1
+        },
+        {
+          "stat_name": "quest_finished_B4_KillWarLovers",
+          "display_label": "Erabenimsun Nerevarine",
+          "amount": 1
+        },
+        {
+          "stat_name": "quest_finished_C3_DestroyDagoth",
+          "display_label": "Defeat Dagoth Ur",
+          "amount": 1
+        }
+      ],
+      "requirements": [
+        {
+          "stat": "class",
+          "value": [
+            "rogue"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "CH_RUN_SCOUT",
+      "parent_id": "",
+      "name": "The Scout",
+      "description": "Complete the main quest of Morrowind as a Scout",
+      "points": 50,
+      "icon": "random",
+      "category": "Quest",
+      "order": 16,
+      "type": "",
+      "progress_bar": false,
+      "locations": [],
+      "regions": [],
+      "factions": [],
+      "target_value": 0,
+      "tracked_stat": "",
+      "notification_step": 1,
+      "trigger": {
+        "type": "QuestComplete"
+      },
+      "objectives": [
+        {
+          "stat_name": "quest_finished_A1_1_FindSpymaster",
+          "display_label": "Report to Caius Cosades",
+          "amount": 1
+        },
+        {
+          "stat_name": "quest_finished_A2_2_6thHouse",
+          "display_label": "Sixth House Base",
+          "amount": 1
+        },
+        {
+          "stat_name": "quest_finished_B5_RedoranHort",
+          "display_label": "Redoran Hortator",
+          "amount": 1
+        },
+        {
+          "stat_name": "quest_finished_B6_HlaaluHort",
+          "display_label": "Hlaalu Hortator",
+          "amount": 1
+        },
+        {
+          "stat_name": "quest_finished_B7_TelvanniHort",
+          "display_label": "Telvanni Hortator",
+          "amount": 1
+        },
+        {
+          "stat_name": "quest_finished_B1_UnifyUrshilaku",
+          "display_label": "Urshilaku Nerevarine",
+          "amount": 1
+        },
+        {
+          "stat_name": "quest_finished_B2_AhemmusaSafe",
+          "display_label": "Ahemmusa Nerevarine",
+          "amount": 1
+        },
+        {
+          "stat_name": "quest_finished_B3_ZainabBride",
+          "display_label": "Zainab Nerevarine",
+          "amount": 1
+        },
+        {
+          "stat_name": "quest_finished_B4_KillWarLovers",
+          "display_label": "Erabenimsun Nerevarine",
+          "amount": 1
+        },
+        {
+          "stat_name": "quest_finished_C3_DestroyDagoth",
+          "display_label": "Defeat Dagoth Ur",
+          "amount": 1
+        }
+      ],
+      "requirements": [
+        {
+          "stat": "class",
+          "value": [
+            "scout"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "CH_RUN_SORCERER",
+      "parent_id": "",
+      "name": "The Sorcerer",
+      "description": "Complete the main quest of Morrowind as a Sorcerer",
+      "points": 50,
+      "icon": "random",
+      "category": "Quest",
+      "order": 17,
+      "type": "",
+      "progress_bar": false,
+      "locations": [],
+      "regions": [],
+      "factions": [],
+      "target_value": 0,
+      "tracked_stat": "",
+      "notification_step": 1,
+      "trigger": {
+        "type": "QuestComplete"
+      },
+      "objectives": [
+        {
+          "stat_name": "quest_finished_A1_1_FindSpymaster",
+          "display_label": "Report to Caius Cosades",
+          "amount": 1
+        },
+        {
+          "stat_name": "quest_finished_A2_2_6thHouse",
+          "display_label": "Sixth House Base",
+          "amount": 1
+        },
+        {
+          "stat_name": "quest_finished_B5_RedoranHort",
+          "display_label": "Redoran Hortator",
+          "amount": 1
+        },
+        {
+          "stat_name": "quest_finished_B6_HlaaluHort",
+          "display_label": "Hlaalu Hortator",
+          "amount": 1
+        },
+        {
+          "stat_name": "quest_finished_B7_TelvanniHort",
+          "display_label": "Telvanni Hortator",
+          "amount": 1
+        },
+        {
+          "stat_name": "quest_finished_B1_UnifyUrshilaku",
+          "display_label": "Urshilaku Nerevarine",
+          "amount": 1
+        },
+        {
+          "stat_name": "quest_finished_B2_AhemmusaSafe",
+          "display_label": "Ahemmusa Nerevarine",
+          "amount": 1
+        },
+        {
+          "stat_name": "quest_finished_B3_ZainabBride",
+          "display_label": "Zainab Nerevarine",
+          "amount": 1
+        },
+        {
+          "stat_name": "quest_finished_B4_KillWarLovers",
+          "display_label": "Erabenimsun Nerevarine",
+          "amount": 1
+        },
+        {
+          "stat_name": "quest_finished_C3_DestroyDagoth",
+          "display_label": "Defeat Dagoth Ur",
+          "amount": 1
+        }
+      ],
+      "requirements": [
+        {
+          "stat": "class",
+          "value": [
+            "sorcerer"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "CH_RUN_SPELLSWORD",
+      "parent_id": "",
+      "name": "The Spellsword",
+      "description": "Complete the main quest of Morrowind as a Spellsword",
+      "points": 50,
+      "icon": "random",
+      "category": "Quest",
+      "order": 18,
+      "type": "",
+      "progress_bar": false,
+      "locations": [],
+      "regions": [],
+      "factions": [],
+      "target_value": 0,
+      "tracked_stat": "",
+      "notification_step": 1,
+      "trigger": {
+        "type": "QuestComplete"
+      },
+      "objectives": [
+        {
+          "stat_name": "quest_finished_A1_1_FindSpymaster",
+          "display_label": "Report to Caius Cosades",
+          "amount": 1
+        },
+        {
+          "stat_name": "quest_finished_A2_2_6thHouse",
+          "display_label": "Sixth House Base",
+          "amount": 1
+        },
+        {
+          "stat_name": "quest_finished_B5_RedoranHort",
+          "display_label": "Redoran Hortator",
+          "amount": 1
+        },
+        {
+          "stat_name": "quest_finished_B6_HlaaluHort",
+          "display_label": "Hlaalu Hortator",
+          "amount": 1
+        },
+        {
+          "stat_name": "quest_finished_B7_TelvanniHort",
+          "display_label": "Telvanni Hortator",
+          "amount": 1
+        },
+        {
+          "stat_name": "quest_finished_B1_UnifyUrshilaku",
+          "display_label": "Urshilaku Nerevarine",
+          "amount": 1
+        },
+        {
+          "stat_name": "quest_finished_B2_AhemmusaSafe",
+          "display_label": "Ahemmusa Nerevarine",
+          "amount": 1
+        },
+        {
+          "stat_name": "quest_finished_B3_ZainabBride",
+          "display_label": "Zainab Nerevarine",
+          "amount": 1
+        },
+        {
+          "stat_name": "quest_finished_B4_KillWarLovers",
+          "display_label": "Erabenimsun Nerevarine",
+          "amount": 1
+        },
+        {
+          "stat_name": "quest_finished_C3_DestroyDagoth",
+          "display_label": "Defeat Dagoth Ur",
+          "amount": 1
+        }
+      ],
+      "requirements": [
+        {
+          "stat": "class",
+          "value": [
+            "spellsword"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "CH_RUN_THIEF",
+      "parent_id": "",
+      "name": "The Thief",
+      "description": "Complete the main quest of Morrowind as a Khajiit Thief",
+      "points": 50,
+      "icon": "random",
+      "category": "Quest",
+      "order": 19,
+      "type": "",
+      "progress_bar": false,
+      "locations": [],
+      "regions": [],
+      "factions": [],
+      "target_value": 0,
+      "tracked_stat": "",
+      "notification_step": 1,
+      "trigger": {
+        "type": "QuestComplete"
+      },
+      "objectives": [
+        {
+          "stat_name": "quest_finished_A1_1_FindSpymaster",
+          "display_label": "Report to Caius Cosades",
+          "amount": 1
+        },
+        {
+          "stat_name": "quest_finished_A2_2_6thHouse",
+          "display_label": "Sixth House Base",
+          "amount": 1
+        },
+        {
+          "stat_name": "quest_finished_B5_RedoranHort",
+          "display_label": "Redoran Hortator",
+          "amount": 1
+        },
+        {
+          "stat_name": "quest_finished_B6_HlaaluHort",
+          "display_label": "Hlaalu Hortator",
+          "amount": 1
+        },
+        {
+          "stat_name": "quest_finished_B7_TelvanniHort",
+          "display_label": "Telvanni Hortator",
+          "amount": 1
+        },
+        {
+          "stat_name": "quest_finished_B1_UnifyUrshilaku",
+          "display_label": "Urshilaku Nerevarine",
+          "amount": 1
+        },
+        {
+          "stat_name": "quest_finished_B2_AhemmusaSafe",
+          "display_label": "Ahemmusa Nerevarine",
+          "amount": 1
+        },
+        {
+          "stat_name": "quest_finished_B3_ZainabBride",
+          "display_label": "Zainab Nerevarine",
+          "amount": 1
+        },
+        {
+          "stat_name": "quest_finished_B4_KillWarLovers",
+          "display_label": "Erabenimsun Nerevarine",
+          "amount": 1
+        },
+        {
+          "stat_name": "quest_finished_C3_DestroyDagoth",
+          "display_label": "Defeat Dagoth Ur",
+          "amount": 1
+        }
+      ],
+      "requirements": [
+        {
+          "stat": "race",
+          "value": [
+            "khajiit"
+          ]
+        },
+        {
+          "stat": "class",
+          "value": [
+            "thief"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "CH_RUN_WARRIOR",
+      "parent_id": "",
+      "name": "The Warrior",
+      "description": "Complete the main quest of Morrowind as a Orc Warrior",
+      "points": 50,
+      "icon": "random",
+      "category": "Quest",
+      "order": 20,
+      "type": "",
+      "progress_bar": false,
+      "locations": [],
+      "regions": [],
+      "factions": [],
+      "target_value": 0,
+      "tracked_stat": "",
+      "notification_step": 1,
+      "trigger": {
+        "type": "QuestComplete"
+      },
+      "objectives": [
+        {
+          "stat_name": "quest_finished_A1_1_FindSpymaster",
+          "display_label": "Report to Caius Cosades",
+          "amount": 1
+        },
+        {
+          "stat_name": "quest_finished_A2_2_6thHouse",
+          "display_label": "Sixth House Base",
+          "amount": 1
+        },
+        {
+          "stat_name": "quest_finished_B5_RedoranHort",
+          "display_label": "Redoran Hortator",
+          "amount": 1
+        },
+        {
+          "stat_name": "quest_finished_B6_HlaaluHort",
+          "display_label": "Hlaalu Hortator",
+          "amount": 1
+        },
+        {
+          "stat_name": "quest_finished_B7_TelvanniHort",
+          "display_label": "Telvanni Hortator",
+          "amount": 1
+        },
+        {
+          "stat_name": "quest_finished_B1_UnifyUrshilaku",
+          "display_label": "Urshilaku Nerevarine",
+          "amount": 1
+        },
+        {
+          "stat_name": "quest_finished_B2_AhemmusaSafe",
+          "display_label": "Ahemmusa Nerevarine",
+          "amount": 1
+        },
+        {
+          "stat_name": "quest_finished_B3_ZainabBride",
+          "display_label": "Zainab Nerevarine",
+          "amount": 1
+        },
+        {
+          "stat_name": "quest_finished_B4_KillWarLovers",
+          "display_label": "Erabenimsun Nerevarine",
+          "amount": 1
+        },
+        {
+          "stat_name": "quest_finished_C3_DestroyDagoth",
+          "display_label": "Defeat Dagoth Ur",
+          "amount": 1
+        }
+      ],
+      "requirements": [
+        {
+          "stat": "race",
+          "value": [
+            "orc"
+          ]
+        },
+        {
+          "stat": "class",
+          "value": [
+            "warrior"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "CH_RUN_WITCHHUNTER",
+      "parent_id": "",
+      "name": "The Witch Hunter",
+      "description": "Complete the main quest of Morrowind as a Witch Hunter",
+      "points": 50,
+      "icon": "random",
+      "category": "Quest",
+      "order": 21,
+      "type": "",
+      "progress_bar": false,
+      "locations": [],
+      "regions": [],
+      "factions": [],
+      "target_value": 0,
+      "tracked_stat": "",
+      "notification_step": 1,
+      "trigger": {
+        "type": "QuestComplete"
+      },
+      "objectives": [
+        {
+          "stat_name": "quest_finished_A1_1_FindSpymaster",
+          "display_label": "Report to Caius Cosades",
+          "amount": 1
+        },
+        {
+          "stat_name": "quest_finished_A2_2_6thHouse",
+          "display_label": "Sixth House Base",
+          "amount": 1
+        },
+        {
+          "stat_name": "quest_finished_B5_RedoranHort",
+          "display_label": "Redoran Hortator",
+          "amount": 1
+        },
+        {
+          "stat_name": "quest_finished_B6_HlaaluHort",
+          "display_label": "Hlaalu Hortator",
+          "amount": 1
+        },
+        {
+          "stat_name": "quest_finished_B7_TelvanniHort",
+          "display_label": "Telvanni Hortator",
+          "amount": 1
+        },
+        {
+          "stat_name": "quest_finished_B1_UnifyUrshilaku",
+          "display_label": "Urshilaku Nerevarine",
+          "amount": 1
+        },
+        {
+          "stat_name": "quest_finished_B2_AhemmusaSafe",
+          "display_label": "Ahemmusa Nerevarine",
+          "amount": 1
+        },
+        {
+          "stat_name": "quest_finished_B3_ZainabBride",
+          "display_label": "Zainab Nerevarine",
+          "amount": 1
+        },
+        {
+          "stat_name": "quest_finished_B4_KillWarLovers",
+          "display_label": "Erabenimsun Nerevarine",
+          "amount": 1
+        },
+        {
+          "stat_name": "quest_finished_C3_DestroyDagoth",
+          "display_label": "Defeat Dagoth Ur",
+          "amount": 1
+        }
+      ],
+      "requirements": [
+        {
+          "stat": "class",
+          "value": [
+            "witchhunter"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "CH_MW_PLAYER_SK_ALTERATION_75",
+      "parent_id": "",
+      "name": "Alteration Efficiency",
+      "description": "Increase your Alteration skill to 75 without using a trainer",
+      "points": 10,
+      "icon": "random",
+      "category": "Character",
+      "order": 22,
+      "type": "missable",
+      "progress_bar": true,
+      "locations": [],
+      "regions": [],
+      "factions": [],
+      "notification_step": 1,
+      "trigger": {
+        "type": "HeroStats"
+      },
+      "objectives": [
+        {
+          "stat_name": "skill_alteration",
+          "display_label": "",
+          "amount": 75
+        }
+      ],
+      "requirements": [
+        {
+          "stat": "train_alteration",
+          "op": "==",
+          "amount": 0
+        }
+      ]
+    },
+    {
+      "id": "CH_MW_PLAYER_SK_ALTERATION_100",
+      "parent_id": "CH_MW_PLAYER_SK_ALTERATION_75",
+      "name": "Alteration Mastery",
+      "description": "Increase your Alteration skill to 100 without using a trainer",
+      "points": 25,
+      "icon": "random",
+      "category": "Character",
+      "order": 23,
+      "type": "missable",
+      "progress_bar": true,
+      "locations": [],
+      "regions": [],
+      "factions": [],
+      "notification_step": 1,
+      "trigger": {
+        "type": "HeroStats"
+      },
+      "objectives": [
+        {
+          "stat_name": "skill_alteration",
+          "display_label": "",
+          "amount": 100
+        }
+      ],
+      "requirements": [
+        {
+          "stat": "train_alteration",
+          "op": "==",
+          "amount": 0
+        }
+      ]
+    },
+    {
+      "id": "CH_MW_PLAYER_SK_BLOCK_75",
+      "parent_id": "",
+      "name": "Block Efficiency",
+      "description": "Increase your Block skill to 75 without using a trainer",
+      "points": 10,
+      "icon": "random",
+      "category": "Character",
+      "order": 24,
+      "type": "missable",
+      "progress_bar": true,
+      "locations": [],
+      "regions": [],
+      "factions": [],
+      "notification_step": 1,
+      "trigger": {
+        "type": "HeroStats"
+      },
+      "objectives": [
+        {
+          "stat_name": "skill_block",
+          "display_label": "",
+          "amount": 75
+        }
+      ],
+      "requirements": [
+        {
+          "stat": "train_block",
+          "op": "==",
+          "amount": 0
+        }
+      ]
+    },
+    {
+      "id": "CH_MW_PLAYER_SK_BLOCK_100",
+      "parent_id": "CH_MW_PLAYER_SK_BLOCK_75",
+      "name": "Block Mastery",
+      "description": "Increase your Block skill to 100 without using a trainer",
+      "points": 25,
+      "icon": "random",
+      "category": "Character",
+      "order": 25,
+      "type": "missable",
+      "progress_bar": true,
+      "locations": [],
+      "regions": [],
+      "factions": [],
+      "notification_step": 1,
+      "trigger": {
+        "type": "HeroStats"
+      },
+      "objectives": [
+        {
+          "stat_name": "skill_block",
+          "display_label": "",
+          "amount": 100
+        }
+      ],
+      "requirements": [
+        {
+          "stat": "train_block",
+          "op": "==",
+          "amount": 0
+        }
+      ]
+    },
+    {
+      "id": "CH_MW_PLAYER_SK_ARMORER_75",
+      "parent_id": "",
+      "name": "Armorer Efficiency",
+      "description": "Increase your Armorer skill to 75 without using a trainer",
+      "points": 10,
+      "icon": "random",
+      "category": "Character",
+      "order": 26,
+      "type": "missable",
+      "progress_bar": true,
+      "locations": [],
+      "regions": [],
+      "factions": [],
+      "notification_step": 1,
+      "trigger": {
+        "type": "HeroStats"
+      },
+      "objectives": [
+        {
+          "stat_name": "skill_armorer",
+          "display_label": "",
+          "amount": 75
+        }
+      ],
+      "requirements": [
+        {
+          "stat": "train_armorer",
+          "op": "==",
+          "amount": 0
+        }
+      ]
+    },
+    {
+      "id": "CH_MW_PLAYER_SK_ARMORER_100",
+      "parent_id": "CH_MW_PLAYER_SK_ARMORER_75",
+      "name": "Armorer Mastery",
+      "description": "Increase your Armorer skill to 100 without using a trainer",
+      "points": 25,
+      "icon": "random",
+      "category": "Character",
+      "order": 27,
+      "type": "missable",
+      "progress_bar": true,
+      "locations": [],
+      "regions": [],
+      "factions": [],
+      "notification_step": 1,
+      "trigger": {
+        "type": "HeroStats"
+      },
+      "objectives": [
+        {
+          "stat_name": "skill_armorer",
+          "display_label": "",
+          "amount": 100
+        }
+      ],
+      "requirements": [
+        {
+          "stat": "train_armorer",
+          "op": "==",
+          "amount": 0
+        }
+      ]
+    },
+    {
+      "id": "CH_MW_PLAYER_SK_MEDIUM_ARMOR_75",
+      "parent_id": "",
+      "name": "Medium Armor Efficiency",
+      "description": "Increase your Medium Armor skill to 75 without using a trainer",
+      "points": 10,
+      "icon": "random",
+      "category": "Character",
+      "order": 28,
+      "type": "missable",
+      "progress_bar": true,
+      "locations": [],
+      "regions": [],
+      "factions": [],
+      "notification_step": 1,
+      "trigger": {
+        "type": "HeroStats"
+      },
+      "objectives": [
+        {
+          "stat_name": "skill_medium_armor",
+          "display_label": "",
+          "amount": 75
+        }
+      ],
+      "requirements": [
+        {
+          "stat": "train_mediumarmor",
+          "op": "==",
+          "amount": 0
+        }
+      ]
+    },
+    {
+      "id": "CH_MW_PLAYER_SK_MEDIUM_ARMOR_100",
+      "parent_id": "CH_MW_PLAYER_SK_MEDIUM_ARMOR_75",
+      "name": "Medium Armor Mastery",
+      "description": "Increase your Medium Armor skill to 100 without using a trainer",
+      "points": 25,
+      "icon": "random",
+      "category": "Character",
+      "order": 29,
+      "type": "missable",
+      "progress_bar": true,
+      "locations": [],
+      "regions": [],
+      "factions": [],
+      "notification_step": 1,
+      "trigger": {
+        "type": "HeroStats"
+      },
+      "objectives": [
+        {
+          "stat_name": "skill_medium_armor",
+          "display_label": "",
+          "amount": 100
+        }
+      ],
+      "requirements": [
+        {
+          "stat": "train_mediumarmor",
+          "op": "==",
+          "amount": 0
+        }
+      ]
+    },
+    {
+      "id": "CH_MW_PLAYER_SK_HEAVY_ARMOR_75",
+      "parent_id": "",
+      "name": "Heavy Armor Efficiency",
+      "description": "Increase your Heavy Armor skill to 75 without using a trainer",
+      "points": 10,
+      "icon": "random",
+      "category": "Character",
+      "order": 30,
+      "type": "missable",
+      "progress_bar": true,
+      "locations": [],
+      "regions": [],
+      "factions": [],
+      "notification_step": 1,
+      "trigger": {
+        "type": "HeroStats"
+      },
+      "objectives": [
+        {
+          "stat_name": "skill_heavy_armor",
+          "display_label": "",
+          "amount": 75
+        }
+      ],
+      "requirements": [
+        {
+          "stat": "train_heavyarmor",
+          "op": "==",
+          "amount": 0
+        }
+      ]
+    },
+    {
+      "id": "CH_MW_PLAYER_SK_HEAVY_ARMOR_100",
+      "parent_id": "CH_MW_PLAYER_SK_HEAVY_ARMOR_75",
+      "name": "Heavy Armor Mastery",
+      "description": "Increase your Heavy Armor skill to 100 without using a trainer",
+      "points": 25,
+      "icon": "random",
+      "category": "Character",
+      "order": 31,
+      "type": "missable",
+      "progress_bar": true,
+      "locations": [],
+      "regions": [],
+      "factions": [],
+      "notification_step": 1,
+      "trigger": {
+        "type": "HeroStats"
+      },
+      "objectives": [
+        {
+          "stat_name": "skill_heavy_armor",
+          "display_label": "",
+          "amount": 100
+        }
+      ],
+      "requirements": [
+        {
+          "stat": "train_heavyarmor",
+          "op": "==",
+          "amount": 0
+        }
+      ]
+    },
+    {
+      "id": "CH_MW_PLAYER_SK_BLUNT_WEAPON_75",
+      "parent_id": "",
+      "name": "Blunt Weapon Efficiency",
+      "description": "Increase your Blunt Weapon skill to 75 without using a trainer",
+      "points": 10,
+      "icon": "random",
+      "category": "Character",
+      "order": 32,
+      "type": "missable",
+      "progress_bar": true,
+      "locations": [],
+      "regions": [],
+      "factions": [],
+      "notification_step": 1,
+      "trigger": {
+        "type": "HeroStats"
+      },
+      "objectives": [
+        {
+          "stat_name": "skill_blunt_weapon",
+          "display_label": "",
+          "amount": 75
+        }
+      ],
+      "requirements": [
+        {
+          "stat": "train_bluntweapon",
+          "op": "==",
+          "amount": 0
+        }
+      ]
+    },
+    {
+      "id": "CH_MW_PLAYER_SK_BLUNT_WEAPON_100",
+      "parent_id": "CH_MW_PLAYER_SK_BLUNT_WEAPON_75",
+      "name": "Blunt Weapon Mastery",
+      "description": "Increase your Blunt Weapon skill to 100 without using a trainer",
+      "points": 25,
+      "icon": "random",
+      "category": "Character",
+      "order": 33,
+      "type": "missable",
+      "progress_bar": true,
+      "locations": [],
+      "regions": [],
+      "factions": [],
+      "notification_step": 1,
+      "trigger": {
+        "type": "HeroStats"
+      },
+      "objectives": [
+        {
+          "stat_name": "skill_blunt_weapon",
+          "display_label": "",
+          "amount": 100
+        }
+      ],
+      "requirements": [
+        {
+          "stat": "train_bluntweapon",
+          "op": "==",
+          "amount": 0
+        }
+      ]
+    },
+    {
+      "id": "CH_MW_PLAYER_SK_LONG_BLADE_75",
+      "parent_id": "",
+      "name": "Long Blade Efficiency",
+      "description": "Increase your Long Blade skill to 75 without using a trainer",
+      "points": 10,
+      "icon": "random",
+      "category": "Character",
+      "order": 34,
+      "type": "missable",
+      "progress_bar": true,
+      "locations": [],
+      "regions": [],
+      "factions": [],
+      "notification_step": 1,
+      "trigger": {
+        "type": "HeroStats"
+      },
+      "objectives": [
+        {
+          "stat_name": "skill_long_blade",
+          "display_label": "",
+          "amount": 75
+        }
+      ],
+      "requirements": [
+        {
+          "stat": "train_longblade",
+          "op": "==",
+          "amount": 0
+        }
+      ]
+    },
+    {
+      "id": "CH_MW_PLAYER_SK_LONG_BLADE_100",
+      "parent_id": "CH_MW_PLAYER_SK_LONG_BLADE_75",
+      "name": "Long Blade Mastery",
+      "description": "Increase your Long Blade skill to 100 without using a trainer",
+      "points": 25,
+      "icon": "random",
+      "category": "Character",
+      "order": 35,
+      "type": "missable",
+      "progress_bar": true,
+      "locations": [],
+      "regions": [],
+      "factions": [],
+      "notification_step": 1,
+      "trigger": {
+        "type": "HeroStats"
+      },
+      "objectives": [
+        {
+          "stat_name": "skill_long_blade",
+          "display_label": "",
+          "amount": 100
+        }
+      ],
+      "requirements": [
+        {
+          "stat": "train_longblade",
+          "op": "==",
+          "amount": 0
+        }
+      ]
+    },
+    {
+      "id": "CH_MW_PLAYER_SK_AXE_75",
+      "parent_id": "",
+      "name": "Axe Efficiency",
+      "description": "Increase your Axe skill to 75 without using a trainer",
+      "points": 10,
+      "icon": "random",
+      "category": "Character",
+      "order": 36,
+      "type": "missable",
+      "progress_bar": true,
+      "locations": [],
+      "regions": [],
+      "factions": [],
+      "notification_step": 1,
+      "trigger": {
+        "type": "HeroStats"
+      },
+      "objectives": [
+        {
+          "stat_name": "skill_axe",
+          "display_label": "",
+          "amount": 75
+        }
+      ],
+      "requirements": [
+        {
+          "stat": "train_axe",
+          "op": "==",
+          "amount": 0
+        }
+      ]
+    },
+    {
+      "id": "CH_MW_PLAYER_SK_AXE_100",
+      "parent_id": "CH_MW_PLAYER_SK_AXE_75",
+      "name": "Axe Mastery",
+      "description": "Increase your Axe skill to 100 without using a trainer",
+      "points": 25,
+      "icon": "random",
+      "category": "Character",
+      "order": 37,
+      "type": "missable",
+      "progress_bar": true,
+      "locations": [],
+      "regions": [],
+      "factions": [],
+      "notification_step": 1,
+      "trigger": {
+        "type": "HeroStats"
+      },
+      "objectives": [
+        {
+          "stat_name": "skill_axe",
+          "display_label": "",
+          "amount": 100
+        }
+      ],
+      "requirements": [
+        {
+          "stat": "train_axe",
+          "op": "==",
+          "amount": 0
+        }
+      ]
+    },
+    {
+      "id": "CH_MW_PLAYER_SK_SPEAR_75",
+      "parent_id": "",
+      "name": "Spear Efficiency",
+      "description": "Increase your Spear skill to 75 without using a trainer",
+      "points": 10,
+      "icon": "random",
+      "category": "Character",
+      "order": 38,
+      "type": "missable",
+      "progress_bar": true,
+      "locations": [],
+      "regions": [],
+      "factions": [],
+      "notification_step": 1,
+      "trigger": {
+        "type": "HeroStats"
+      },
+      "objectives": [
+        {
+          "stat_name": "skill_spear",
+          "display_label": "",
+          "amount": 75
+        }
+      ],
+      "requirements": [
+        {
+          "stat": "train_spear",
+          "op": "==",
+          "amount": 0
+        }
+      ]
+    },
+    {
+      "id": "CH_MW_PLAYER_SK_SPEAR_100",
+      "parent_id": "CH_MW_PLAYER_SK_SPEAR_75",
+      "name": "Spear Mastery",
+      "description": "Increase your Spear skill to 100 without using a trainer",
+      "points": 25,
+      "icon": "random",
+      "category": "Character",
+      "order": 39,
+      "type": "missable",
+      "progress_bar": true,
+      "locations": [],
+      "regions": [],
+      "factions": [],
+      "notification_step": 1,
+      "trigger": {
+        "type": "HeroStats"
+      },
+      "objectives": [
+        {
+          "stat_name": "skill_spear",
+          "display_label": "",
+          "amount": 100
+        }
+      ],
+      "requirements": [
+        {
+          "stat": "train_spear",
+          "op": "==",
+          "amount": 0
+        }
+      ]
+    },
+    {
+      "id": "CH_MW_PLAYER_SK_ATHLETICS_75",
+      "parent_id": "",
+      "name": "Athletics Efficiency",
+      "description": "Increase your Athletics skill to 75 without using a trainer",
+      "points": 10,
+      "icon": "random",
+      "category": "Character",
+      "order": 40,
+      "type": "missable",
+      "progress_bar": true,
+      "locations": [],
+      "regions": [],
+      "factions": [],
+      "notification_step": 1,
+      "trigger": {
+        "type": "HeroStats"
+      },
+      "objectives": [
+        {
+          "stat_name": "skill_athletics",
+          "display_label": "",
+          "amount": 75
+        }
+      ],
+      "requirements": [
+        {
+          "stat": "train_athletics",
+          "op": "==",
+          "amount": 0
+        }
+      ]
+    },
+    {
+      "id": "CH_MW_PLAYER_SK_ATHLETICS_100",
+      "parent_id": "CH_MW_PLAYER_SK_ATHLETICS_75",
+      "name": "Athletics Mastery",
+      "description": "Increase your Athletics skill to 100 without using a trainer",
+      "points": 25,
+      "icon": "random",
+      "category": "Character",
+      "order": 41,
+      "type": "missable",
+      "progress_bar": true,
+      "locations": [],
+      "regions": [],
+      "factions": [],
+      "notification_step": 1,
+      "trigger": {
+        "type": "HeroStats"
+      },
+      "objectives": [
+        {
+          "stat_name": "skill_athletics",
+          "display_label": "",
+          "amount": 100
+        }
+      ],
+      "requirements": [
+        {
+          "stat": "train_athletics",
+          "op": "==",
+          "amount": 0
+        }
+      ]
+    },
+    {
+      "id": "CH_MW_PLAYER_SK_ENCHANT_75",
+      "parent_id": "",
+      "name": "Enchant Efficiency",
+      "description": "Increase your Enchant skill to 75 without using a trainer",
+      "points": 10,
+      "icon": "random",
+      "category": "Character",
+      "order": 42,
+      "type": "missable",
+      "progress_bar": true,
+      "locations": [],
+      "regions": [],
+      "factions": [],
+      "notification_step": 1,
+      "trigger": {
+        "type": "HeroStats"
+      },
+      "objectives": [
+        {
+          "stat_name": "skill_enchant",
+          "display_label": "",
+          "amount": 75
+        }
+      ],
+      "requirements": [
+        {
+          "stat": "train_enchant",
+          "op": "==",
+          "amount": 0
+        }
+      ]
+    },
+    {
+      "id": "CH_MW_PLAYER_SK_ENCHANT_100",
+      "parent_id": "CH_MW_PLAYER_SK_ENCHANT_75",
+      "name": "Enchant Mastery",
+      "description": "Increase your Enchant skill to 100 without using a trainer",
+      "points": 25,
+      "icon": "random",
+      "category": "Character",
+      "order": 43,
+      "type": "missable",
+      "progress_bar": true,
+      "locations": [],
+      "regions": [],
+      "factions": [],
+      "notification_step": 1,
+      "trigger": {
+        "type": "HeroStats"
+      },
+      "objectives": [
+        {
+          "stat_name": "skill_enchant",
+          "display_label": "",
+          "amount": 100
+        }
+      ],
+      "requirements": [
+        {
+          "stat": "train_enchant",
+          "op": "==",
+          "amount": 0
+        }
+      ]
+    },
+    {
+      "id": "CH_MW_PLAYER_SK_DESTRUCTION_75",
+      "parent_id": "",
+      "name": "Destruction Efficiency",
+      "description": "Increase your Destruction skill to 75 without using a trainer",
+      "points": 10,
+      "icon": "random",
+      "category": "Character",
+      "order": 44,
+      "type": "missable",
+      "progress_bar": true,
+      "locations": [],
+      "regions": [],
+      "factions": [],
+      "notification_step": 1,
+      "trigger": {
+        "type": "HeroStats"
+      },
+      "objectives": [
+        {
+          "stat_name": "skill_destruction",
+          "display_label": "",
+          "amount": 75
+        }
+      ],
+      "requirements": [
+        {
+          "stat": "train_destruction",
+          "op": "==",
+          "amount": 0
+        }
+      ]
+    },
+    {
+      "id": "CH_MW_PLAYER_SK_DESTRUCTION_100",
+      "parent_id": "CH_MW_PLAYER_SK_DESTRUCTION_75",
+      "name": "Destruction Mastery",
+      "description": "Increase your Destruction skill to 100 without using a trainer",
+      "points": 25,
+      "icon": "random",
+      "category": "Character",
+      "order": 45,
+      "type": "missable",
+      "progress_bar": true,
+      "locations": [],
+      "regions": [],
+      "factions": [],
+      "notification_step": 1,
+      "trigger": {
+        "type": "HeroStats"
+      },
+      "objectives": [
+        {
+          "stat_name": "skill_destruction",
+          "display_label": "",
+          "amount": 100
+        }
+      ],
+      "requirements": [
+        {
+          "stat": "train_destruction",
+          "op": "==",
+          "amount": 0
+        }
+      ]
+    },
+    {
+      "id": "CH_MW_PLAYER_SK_ILLUSION_75",
+      "parent_id": "",
+      "name": "Illusion Efficiency",
+      "description": "Increase your Illusion skill to 75 without using a trainer",
+      "points": 10,
+      "icon": "random",
+      "category": "Character",
+      "order": 46,
+      "type": "missable",
+      "progress_bar": true,
+      "locations": [],
+      "regions": [],
+      "factions": [],
+      "notification_step": 1,
+      "trigger": {
+        "type": "HeroStats"
+      },
+      "objectives": [
+        {
+          "stat_name": "skill_illusion",
+          "display_label": "",
+          "amount": 75
+        }
+      ],
+      "requirements": [
+        {
+          "stat": "train_illusion",
+          "op": "==",
+          "amount": 0
+        }
+      ]
+    },
+    {
+      "id": "CH_MW_PLAYER_SK_ILLUSION_100",
+      "parent_id": "CH_MW_PLAYER_SK_ILLUSION_75",
+      "name": "Illusion Mastery",
+      "description": "Increase your Illusion skill to 100 without using a trainer",
+      "points": 25,
+      "icon": "random",
+      "category": "Character",
+      "order": 47,
+      "type": "missable",
+      "progress_bar": true,
+      "locations": [],
+      "regions": [],
+      "factions": [],
+      "notification_step": 1,
+      "trigger": {
+        "type": "HeroStats"
+      },
+      "objectives": [
+        {
+          "stat_name": "skill_illusion",
+          "display_label": "",
+          "amount": 100
+        }
+      ],
+      "requirements": [
+        {
+          "stat": "train_illusion",
+          "op": "==",
+          "amount": 0
+        }
+      ]
+    },
+    {
+      "id": "CH_MW_PLAYER_SK_CONJURATION_75",
+      "parent_id": "",
+      "name": "Conjuration Efficiency",
+      "description": "Increase your Conjuration skill to 75 without using a trainer",
+      "points": 10,
+      "icon": "random",
+      "category": "Character",
+      "order": 48,
+      "type": "missable",
+      "progress_bar": true,
+      "locations": [],
+      "regions": [],
+      "factions": [],
+      "notification_step": 1,
+      "trigger": {
+        "type": "HeroStats"
+      },
+      "objectives": [
+        {
+          "stat_name": "skill_conjuration",
+          "display_label": "",
+          "amount": 75
+        }
+      ],
+      "requirements": [
+        {
+          "stat": "train_conjuration",
+          "op": "==",
+          "amount": 0
+        }
+      ]
+    },
+    {
+      "id": "CH_MW_PLAYER_SK_CONJURATION_100",
+      "parent_id": "CH_MW_PLAYER_SK_CONJURATION_75",
+      "name": "Conjuration Mastery",
+      "description": "Increase your Conjuration skill to 100 without using a trainer",
+      "points": 25,
+      "icon": "random",
+      "category": "Character",
+      "order": 49,
+      "type": "missable",
+      "progress_bar": true,
+      "locations": [],
+      "regions": [],
+      "factions": [],
+      "notification_step": 1,
+      "trigger": {
+        "type": "HeroStats"
+      },
+      "objectives": [
+        {
+          "stat_name": "skill_conjuration",
+          "display_label": "",
+          "amount": 100
+        }
+      ],
+      "requirements": [
+        {
+          "stat": "train_conjuration",
+          "op": "==",
+          "amount": 0
+        }
+      ]
+    },
+    {
+      "id": "CH_MW_PLAYER_SK_MYSTICISM_75",
+      "parent_id": "",
+      "name": "Mysticism Efficiency",
+      "description": "Increase your Mysticism skill to 75 without using a trainer",
+      "points": 10,
+      "icon": "random",
+      "category": "Character",
+      "order": 50,
+      "type": "missable",
+      "progress_bar": true,
+      "locations": [],
+      "regions": [],
+      "factions": [],
+      "notification_step": 1,
+      "trigger": {
+        "type": "HeroStats"
+      },
+      "objectives": [
+        {
+          "stat_name": "skill_mysticism",
+          "display_label": "",
+          "amount": 75
+        }
+      ],
+      "requirements": [
+        {
+          "stat": "train_mysticism",
+          "op": "==",
+          "amount": 0
+        }
+      ]
+    },
+    {
+      "id": "CH_MW_PLAYER_SK_MYSTICISM_100",
+      "parent_id": "CH_MW_PLAYER_SK_MYSTICISM_75",
+      "name": "Mysticism Mastery",
+      "description": "Increase your Mysticism skill to 100 without using a trainer",
+      "points": 25,
+      "icon": "random",
+      "category": "Character",
+      "order": 51,
+      "type": "missable",
+      "progress_bar": true,
+      "locations": [],
+      "regions": [],
+      "factions": [],
+      "notification_step": 1,
+      "trigger": {
+        "type": "HeroStats"
+      },
+      "objectives": [
+        {
+          "stat_name": "skill_mysticism",
+          "display_label": "",
+          "amount": 100
+        }
+      ],
+      "requirements": [
+        {
+          "stat": "train_mysticism",
+          "op": "==",
+          "amount": 0
+        }
+      ]
+    },
+    {
+      "id": "CH_MW_PLAYER_SK_RESTORATION_75",
+      "parent_id": "",
+      "name": "Restoration Efficiency",
+      "description": "Increase your Restoration skill to 75 without using a trainer",
+      "points": 10,
+      "icon": "random",
+      "category": "Character",
+      "order": 52,
+      "type": "missable",
+      "progress_bar": true,
+      "locations": [],
+      "regions": [],
+      "factions": [],
+      "notification_step": 1,
+      "trigger": {
+        "type": "HeroStats"
+      },
+      "objectives": [
+        {
+          "stat_name": "skill_restoration",
+          "display_label": "",
+          "amount": 75
+        }
+      ],
+      "requirements": [
+        {
+          "stat": "train_restoration",
+          "op": "==",
+          "amount": 0
+        }
+      ]
+    },
+    {
+      "id": "CH_MW_PLAYER_SK_RESTORATION_100",
+      "parent_id": "CH_MW_PLAYER_SK_RESTORATION_75",
+      "name": "Restoration Mastery",
+      "description": "Increase your Restoration skill to 100 without using a trainer",
+      "points": 25,
+      "icon": "random",
+      "category": "Character",
+      "order": 53,
+      "type": "missable",
+      "progress_bar": true,
+      "locations": [],
+      "regions": [],
+      "factions": [],
+      "notification_step": 1,
+      "trigger": {
+        "type": "HeroStats"
+      },
+      "objectives": [
+        {
+          "stat_name": "skill_restoration",
+          "display_label": "",
+          "amount": 100
+        }
+      ],
+      "requirements": [
+        {
+          "stat": "train_restoration",
+          "op": "==",
+          "amount": 0
+        }
+      ]
+    },
+    {
+      "id": "CH_MW_PLAYER_SK_ALCHEMY_75",
+      "parent_id": "",
+      "name": "Alchemy Efficiency",
+      "description": "Increase your Alchemy skill to 75 without using a trainer",
+      "points": 10,
+      "icon": "random",
+      "category": "Character",
+      "order": 54,
+      "type": "missable",
+      "progress_bar": true,
+      "locations": [],
+      "regions": [],
+      "factions": [],
+      "notification_step": 1,
+      "trigger": {
+        "type": "HeroStats"
+      },
+      "objectives": [
+        {
+          "stat_name": "skill_alchemy",
+          "display_label": "",
+          "amount": 75
+        }
+      ],
+      "requirements": [
+        {
+          "stat": "train_alchemy",
+          "op": "==",
+          "amount": 0
+        }
+      ]
+    },
+    {
+      "id": "CH_MW_PLAYER_SK_ALCHEMY_100",
+      "parent_id": "CH_MW_PLAYER_SK_ALCHEMY_75",
+      "name": "Alchemy Mastery",
+      "description": "Increase your Alchemy skill to 100 without using a trainer",
+      "points": 25,
+      "icon": "random",
+      "category": "Character",
+      "order": 55,
+      "type": "missable",
+      "progress_bar": true,
+      "locations": [],
+      "regions": [],
+      "factions": [],
+      "notification_step": 1,
+      "trigger": {
+        "type": "HeroStats"
+      },
+      "objectives": [
+        {
+          "stat_name": "skill_alchemy",
+          "display_label": "",
+          "amount": 100
+        }
+      ],
+      "requirements": [
+        {
+          "stat": "train_alchemy",
+          "op": "==",
+          "amount": 0
+        }
+      ]
+    },
+    {
+      "id": "CH_MW_PLAYER_SK_UNARMORED_75",
+      "parent_id": "",
+      "name": "Unarmored Efficiency",
+      "description": "Increase your Unarmored skill to 75 without using a trainer",
+      "points": 10,
+      "icon": "random",
+      "category": "Character",
+      "order": 56,
+      "type": "missable",
+      "progress_bar": true,
+      "locations": [],
+      "regions": [],
+      "factions": [],
+      "notification_step": 1,
+      "trigger": {
+        "type": "HeroStats"
+      },
+      "objectives": [
+        {
+          "stat_name": "skill_unarmored",
+          "display_label": "",
+          "amount": 75
+        }
+      ],
+      "requirements": [
+        {
+          "stat": "train_unarmored",
+          "op": "==",
+          "amount": 0
+        }
+      ]
+    },
+    {
+      "id": "CH_MW_PLAYER_SK_UNARMORED_100",
+      "parent_id": "CH_MW_PLAYER_SK_UNARMORED_75",
+      "name": "Unarmored Mastery",
+      "description": "Increase your Unarmored skill to 100 without using a trainer",
+      "points": 25,
+      "icon": "random",
+      "category": "Character",
+      "order": 57,
+      "type": "missable",
+      "progress_bar": true,
+      "locations": [],
+      "regions": [],
+      "factions": [],
+      "notification_step": 1,
+      "trigger": {
+        "type": "HeroStats"
+      },
+      "objectives": [
+        {
+          "stat_name": "skill_unarmored",
+          "display_label": "",
+          "amount": 100
+        }
+      ],
+      "requirements": [
+        {
+          "stat": "train_unarmored",
+          "op": "==",
+          "amount": 0
+        }
+      ]
+    },
+    {
+      "id": "CH_MW_PLAYER_SK_SECURITY_75",
+      "parent_id": "",
+      "name": "Security Efficiency",
+      "description": "Increase your Security skill to 75 without using a trainer",
+      "points": 10,
+      "icon": "random",
+      "category": "Character",
+      "order": 58,
+      "type": "missable",
+      "progress_bar": true,
+      "locations": [],
+      "regions": [],
+      "factions": [],
+      "notification_step": 1,
+      "trigger": {
+        "type": "HeroStats"
+      },
+      "objectives": [
+        {
+          "stat_name": "skill_security",
+          "display_label": "",
+          "amount": 75
+        }
+      ],
+      "requirements": [
+        {
+          "stat": "train_security",
+          "op": "==",
+          "amount": 0
+        }
+      ]
+    },
+    {
+      "id": "CH_MW_PLAYER_SK_SECURITY_100",
+      "parent_id": "CH_MW_PLAYER_SK_SECURITY_75",
+      "name": "Security Mastery",
+      "description": "Increase your Security skill to 100 without using a trainer",
+      "points": 25,
+      "icon": "random",
+      "category": "Character",
+      "order": 59,
+      "type": "missable",
+      "progress_bar": true,
+      "locations": [],
+      "regions": [],
+      "factions": [],
+      "notification_step": 1,
+      "trigger": {
+        "type": "HeroStats"
+      },
+      "objectives": [
+        {
+          "stat_name": "skill_security",
+          "display_label": "",
+          "amount": 100
+        }
+      ],
+      "requirements": [
+        {
+          "stat": "train_security",
+          "op": "==",
+          "amount": 0
+        }
+      ]
+    },
+    {
+      "id": "CH_MW_PLAYER_SK_SNEAK_75",
+      "parent_id": "",
+      "name": "Sneak Efficiency",
+      "description": "Increase your Sneak skill to 75 without using a trainer",
+      "points": 10,
+      "icon": "random",
+      "category": "Character",
+      "order": 60,
+      "type": "missable",
+      "progress_bar": true,
+      "locations": [],
+      "regions": [],
+      "factions": [],
+      "notification_step": 1,
+      "trigger": {
+        "type": "HeroStats"
+      },
+      "objectives": [
+        {
+          "stat_name": "skill_sneak",
+          "display_label": "",
+          "amount": 75
+        }
+      ],
+      "requirements": [
+        {
+          "stat": "train_sneak",
+          "op": "==",
+          "amount": 0
+        }
+      ]
+    },
+    {
+      "id": "CH_MW_PLAYER_SK_SNEAK_100",
+      "parent_id": "CH_MW_PLAYER_SK_SNEAK_75",
+      "name": "Sneak Mastery",
+      "description": "Increase your Sneak skill to 100 without using a trainer",
+      "points": 25,
+      "icon": "random",
+      "category": "Character",
+      "order": 61,
+      "type": "missable",
+      "progress_bar": true,
+      "locations": [],
+      "regions": [],
+      "factions": [],
+      "notification_step": 1,
+      "trigger": {
+        "type": "HeroStats"
+      },
+      "objectives": [
+        {
+          "stat_name": "skill_sneak",
+          "display_label": "",
+          "amount": 100
+        }
+      ],
+      "requirements": [
+        {
+          "stat": "train_sneak",
+          "op": "==",
+          "amount": 0
+        }
+      ]
+    },
+    {
+      "id": "CH_MW_PLAYER_SK_ACROBATICS_75",
+      "parent_id": "",
+      "name": "Acrobatics Efficiency",
+      "description": "Increase your Acrobatics skill to 75 without using a trainer",
+      "points": 10,
+      "icon": "random",
+      "category": "Character",
+      "order": 62,
+      "type": "missable",
+      "progress_bar": true,
+      "locations": [],
+      "regions": [],
+      "factions": [],
+      "notification_step": 1,
+      "trigger": {
+        "type": "HeroStats"
+      },
+      "objectives": [
+        {
+          "stat_name": "skill_acrobatics",
+          "display_label": "",
+          "amount": 75
+        }
+      ],
+      "requirements": [
+        {
+          "stat": "train_acrobatics",
+          "op": "==",
+          "amount": 0
+        }
+      ]
+    },
+    {
+      "id": "CH_MW_PLAYER_SK_ACROBATICS_100",
+      "parent_id": "CH_MW_PLAYER_SK_ACROBATICS_75",
+      "name": "Acrobatics Mastery",
+      "description": "Increase your Acrobatics skill to 100 without using a trainer",
+      "points": 25,
+      "icon": "random",
+      "category": "Character",
+      "order": 63,
+      "type": "missable",
+      "progress_bar": true,
+      "locations": [],
+      "regions": [],
+      "factions": [],
+      "notification_step": 1,
+      "trigger": {
+        "type": "HeroStats"
+      },
+      "objectives": [
+        {
+          "stat_name": "skill_acrobatics",
+          "display_label": "",
+          "amount": 100
+        }
+      ],
+      "requirements": [
+        {
+          "stat": "train_acrobatics",
+          "op": "==",
+          "amount": 0
+        }
+      ]
+    },
+    {
+      "id": "CH_MW_PLAYER_SK_LIGHT_ARMOR_75",
+      "parent_id": "",
+      "name": "Light Armor Efficiency",
+      "description": "Increase your Light Armor skill to 75 without using a trainer",
+      "points": 10,
+      "icon": "random",
+      "category": "Character",
+      "order": 64,
+      "type": "missable",
+      "progress_bar": true,
+      "locations": [],
+      "regions": [],
+      "factions": [],
+      "notification_step": 1,
+      "trigger": {
+        "type": "HeroStats"
+      },
+      "objectives": [
+        {
+          "stat_name": "skill_light_armor",
+          "display_label": "",
+          "amount": 75
+        }
+      ],
+      "requirements": [
+        {
+          "stat": "train_lightarmor",
+          "op": "==",
+          "amount": 0
+        }
+      ]
+    },
+    {
+      "id": "CH_MW_PLAYER_SK_LIGHT_ARMOR_100",
+      "parent_id": "CH_MW_PLAYER_SK_LIGHT_ARMOR_75",
+      "name": "Light Armor Mastery",
+      "description": "Increase your Light Armor skill to 100 without using a trainer",
+      "points": 25,
+      "icon": "random",
+      "category": "Character",
+      "order": 65,
+      "type": "missable",
+      "progress_bar": true,
+      "locations": [],
+      "regions": [],
+      "factions": [],
+      "notification_step": 1,
+      "trigger": {
+        "type": "HeroStats"
+      },
+      "objectives": [
+        {
+          "stat_name": "skill_light_armor",
+          "display_label": "",
+          "amount": 100
+        }
+      ],
+      "requirements": [
+        {
+          "stat": "train_lightarmor",
+          "op": "==",
+          "amount": 0
+        }
+      ]
+    },
+    {
+      "id": "CH_MW_PLAYER_SK_SHORT_BLADE_75",
+      "parent_id": "",
+      "name": "Short Blade Efficiency",
+      "description": "Increase your Short Blade skill to 75 without using a trainer",
+      "points": 10,
+      "icon": "random",
+      "category": "Character",
+      "order": 66,
+      "type": "missable",
+      "progress_bar": true,
+      "locations": [],
+      "regions": [],
+      "factions": [],
+      "notification_step": 1,
+      "trigger": {
+        "type": "HeroStats"
+      },
+      "objectives": [
+        {
+          "stat_name": "skill_short_blade",
+          "display_label": "",
+          "amount": 75
+        }
+      ],
+      "requirements": [
+        {
+          "stat": "train_shortblade",
+          "op": "==",
+          "amount": 0
+        }
+      ]
+    },
+    {
+      "id": "CH_MW_PLAYER_SK_SHORT_BLADE_100",
+      "parent_id": "CH_MW_PLAYER_SK_SHORT_BLADE_75",
+      "name": "Short Blade Mastery",
+      "description": "Increase your Short Blade skill to 100 without using a trainer",
+      "points": 25,
+      "icon": "random",
+      "category": "Character",
+      "order": 67,
+      "type": "missable",
+      "progress_bar": true,
+      "locations": [],
+      "regions": [],
+      "factions": [],
+      "notification_step": 1,
+      "trigger": {
+        "type": "HeroStats"
+      },
+      "objectives": [
+        {
+          "stat_name": "skill_short_blade",
+          "display_label": "",
+          "amount": 100
+        }
+      ],
+      "requirements": [
+        {
+          "stat": "train_shortblade",
+          "op": "==",
+          "amount": 0
+        }
+      ]
+    },
+    {
+      "id": "CH_MW_PLAYER_SK_MARKSMAN_75",
+      "parent_id": "",
+      "name": "Marksman Efficiency",
+      "description": "Increase your Marksman skill to 75 without using a trainer",
+      "points": 10,
+      "icon": "random",
+      "category": "Character",
+      "order": 68,
+      "type": "missable",
+      "progress_bar": true,
+      "locations": [],
+      "regions": [],
+      "factions": [],
+      "notification_step": 1,
+      "trigger": {
+        "type": "HeroStats"
+      },
+      "objectives": [
+        {
+          "stat_name": "skill_marksman",
+          "display_label": "",
+          "amount": 75
+        }
+      ],
+      "requirements": [
+        {
+          "stat": "train_marksman",
+          "op": "==",
+          "amount": 0
+        }
+      ]
+    },
+    {
+      "id": "CH_MW_PLAYER_SK_MARKSMAN_100",
+      "parent_id": "CH_MW_PLAYER_SK_MARKSMAN_75",
+      "name": "Marksman Mastery",
+      "description": "Increase your Marksman skill to 100 without using a trainer",
+      "points": 25,
+      "icon": "random",
+      "category": "Character",
+      "order": 69,
+      "type": "missable",
+      "progress_bar": true,
+      "locations": [],
+      "regions": [],
+      "factions": [],
+      "notification_step": 1,
+      "trigger": {
+        "type": "HeroStats"
+      },
+      "objectives": [
+        {
+          "stat_name": "skill_marksman",
+          "display_label": "",
+          "amount": 100
+        }
+      ],
+      "requirements": [
+        {
+          "stat": "train_marksman",
+          "op": "==",
+          "amount": 0
+        }
+      ]
+    },
+    {
+      "id": "CH_MW_PLAYER_SK_MERCANTILE_75",
+      "parent_id": "",
+      "name": "Mercantile Efficiency",
+      "description": "Increase your Mercantile skill to 75 without using a trainer",
+      "points": 10,
+      "icon": "random",
+      "category": "Character",
+      "order": 70,
+      "type": "missable",
+      "progress_bar": true,
+      "locations": [],
+      "regions": [],
+      "factions": [],
+      "notification_step": 1,
+      "trigger": {
+        "type": "HeroStats"
+      },
+      "objectives": [
+        {
+          "stat_name": "skill_mercantile",
+          "display_label": "",
+          "amount": 75
+        }
+      ],
+      "requirements": [
+        {
+          "stat": "train_mercantile",
+          "op": "==",
+          "amount": 0
+        }
+      ]
+    },
+    {
+      "id": "CH_MW_PLAYER_SK_MERCANTILE_100",
+      "parent_id": "CH_MW_PLAYER_SK_MERCANTILE_75",
+      "name": "Mercantile Mastery",
+      "description": "Increase your Mercantile skill to 100 without using a trainer",
+      "points": 25,
+      "icon": "random",
+      "category": "Character",
+      "order": 71,
+      "type": "missable",
+      "progress_bar": true,
+      "locations": [],
+      "regions": [],
+      "factions": [],
+      "notification_step": 1,
+      "trigger": {
+        "type": "HeroStats"
+      },
+      "objectives": [
+        {
+          "stat_name": "skill_mercantile",
+          "display_label": "",
+          "amount": 100
+        }
+      ],
+      "requirements": [
+        {
+          "stat": "train_mercantile",
+          "op": "==",
+          "amount": 0
+        }
+      ]
+    },
+    {
+      "id": "CH_MW_PLAYER_SK_SPEECHCRAFT_75",
+      "parent_id": "",
+      "name": "Speechcraft Efficiency",
+      "description": "Increase your Speechcraft skill to 75 without using a trainer",
+      "points": 10,
+      "icon": "random",
+      "category": "Character",
+      "order": 72,
+      "type": "missable",
+      "progress_bar": true,
+      "locations": [],
+      "regions": [],
+      "factions": [],
+      "notification_step": 1,
+      "trigger": {
+        "type": "HeroStats"
+      },
+      "objectives": [
+        {
+          "stat_name": "skill_speechcraft",
+          "display_label": "",
+          "amount": 75
+        }
+      ],
+      "requirements": [
+        {
+          "stat": "train_speechcraft",
+          "op": "==",
+          "amount": 0
+        }
+      ]
+    },
+    {
+      "id": "CH_MW_PLAYER_SK_SPEECHCRAFT_100",
+      "parent_id": "CH_MW_PLAYER_SK_SPEECHCRAFT_75",
+      "name": "Speechcraft Mastery",
+      "description": "Increase your Speechcraft skill to 100 without using a trainer",
+      "points": 25,
+      "icon": "random",
+      "category": "Character",
+      "order": 73,
+      "type": "missable",
+      "progress_bar": true,
+      "locations": [],
+      "regions": [],
+      "factions": [],
+      "notification_step": 1,
+      "trigger": {
+        "type": "HeroStats"
+      },
+      "objectives": [
+        {
+          "stat_name": "skill_speechcraft",
+          "display_label": "",
+          "amount": 100
+        }
+      ],
+      "requirements": [
+        {
+          "stat": "train_speechcraft",
+          "op": "==",
+          "amount": 0
+        }
+      ]
+    },
+    {
+      "id": "CH_MW_PLAYER_SK_HAND_TO_HAND_75",
+      "parent_id": "",
+      "name": "Hand-to-hand Efficiency",
+      "description": "Increase your Hand-to-hand skill to 75 without using a trainer",
+      "points": 10,
+      "icon": "random",
+      "category": "Character",
+      "order": 74,
+      "type": "missable",
+      "progress_bar": true,
+      "locations": [],
+      "regions": [],
+      "factions": [],
+      "notification_step": 1,
+      "trigger": {
+        "type": "HeroStats"
+      },
+      "objectives": [
+        {
+          "stat_name": "skill_hand_to_hand",
+          "display_label": "",
+          "amount": 75
+        }
+      ],
+      "requirements": [
+        {
+          "stat": "train_handtohand",
+          "op": "==",
+          "amount": 0
+        }
+      ]
+    },
+    {
+      "id": "CH_MW_PLAYER_SK_HAND_TO_HAND_100",
+      "parent_id": "CH_MW_PLAYER_SK_HAND_TO_HAND_75",
+      "name": "Hand-to-hand Mastery",
+      "description": "Increase your Hand-to-hand skill to 100 without using a trainer",
+      "points": 25,
+      "icon": "random",
+      "category": "Character",
+      "order": 75,
+      "type": "missable",
+      "progress_bar": true,
+      "locations": [],
+      "regions": [],
+      "factions": [],
+      "notification_step": 1,
+      "trigger": {
+        "type": "HeroStats"
+      },
+      "objectives": [
+        {
+          "stat_name": "skill_hand_to_hand",
+          "display_label": "",
+          "amount": 100
+        }
+      ],
+      "requirements": [
+        {
+          "stat": "train_handtohand",
+          "op": "==",
+          "amount": 0
+        }
+      ]
+    }
+  ]
+}

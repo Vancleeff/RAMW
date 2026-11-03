@@ -1,0 +1,1955 @@
+{
+  "set": "Tribunal",
+  "prefix": "TR",
+  "achievements": [
+    {
+      "id": "TR_MQ_1",
+      "parent_id": "",
+      "name": "A city of light and magic",
+      "description": "Enter Mournhold, the Temple City of Morrowind",
+      "points": 2,
+      "icon": "random",
+      "category": "Exploration",
+      "order": 0,
+      "regions": [
+        "Mournhold Region"
+      ],
+      "factions": [],
+      "target_value": 0,
+      "tracked_stat": "",
+      "notification_step": 1,
+      "trigger": {
+        "type": "Location"
+      },
+      "objectives": [
+        {
+          "stat_name": "visited_mournhold, royal palace: reception area",
+          "display_label": "Mournhold",
+          "amount": 1
+        }
+      ],
+      "type": "progression"
+    },
+    {
+      "id": "TR_MQ_2",
+      "parent_id": "",
+      "name": "Hunt the Dark Brotherhood",
+      "description": "Follow the trail of clues leading to the Dark Brotherhood in the sewers and ruins beneath Mournhold",
+      "points": 5,
+      "icon": "random",
+      "category": "Quest",
+      "order": 1,
+      "regions": [
+        "Mournhold Region"
+      ],
+      "factions": [],
+      "target_value": 0,
+      "tracked_stat": "",
+      "notification_step": 1,
+      "trigger": {
+        "type": "QuestComplete"
+      },
+      "objectives": [
+        {
+          "stat_name": "quest_finished_TR_DBHunt",
+          "display_label": "",
+          "amount": 1
+        }
+      ],
+      "type": "progression",
+      "quest_line": "Tribunal Quest Line"
+    },
+    {
+      "id": "TR_MQ_3",
+      "parent_id": "",
+      "name": "Queen Barenziah",
+      "description": "Finish the storyline in the Royal Palace of Mournhold and speak to Queen Barenziah",
+      "points": 10,
+      "icon": "random",
+      "category": "Quest",
+      "order": 2,
+      "regions": [
+        "Mournhold Region"
+      ],
+      "factions": [],
+      "target_value": 0,
+      "tracked_stat": "",
+      "notification_step": 1,
+      "trigger": {
+        "type": "QuestComplete"
+      },
+      "objectives": [
+        {
+          "stat_name": "quest_finished_TR09_Journalist",
+          "display_label": "",
+          "amount": 1
+        }
+      ],
+      "type": "progression"
+    },
+    {
+      "id": "TR_MQ_4",
+      "parent_id": "TR_MQ_2",
+      "name": "The Goblin Army",
+      "description": "Investigate the rumors of a Goblin army being gathered by Lord Helseth",
+      "points": 5,
+      "icon": "random",
+      "category": "Quest",
+      "order": 3,
+      "regions": [
+        "Mournhold Region"
+      ],
+      "factions": [],
+      "target_value": 0,
+      "tracked_stat": "",
+      "notification_step": 1,
+      "trigger": {
+        "type": "QuestComplete"
+      },
+      "objectives": [
+        {
+          "stat_name": "quest_finished_TR_KillGoblins",
+          "display_label": "",
+          "amount": 1
+        }
+      ],
+      "type": "progression"
+    },
+    {
+      "id": "TR_MQ_5",
+      "parent_id": "TR_MQ_2",
+      "name": "The Shrine of the Dead",
+      "description": "Explore the Temple Sewers to find and cleanse this forgotten shrine",
+      "points": 5,
+      "icon": "random",
+      "category": "Quest",
+      "order": 4,
+      "regions": [
+        "Mournhold Region"
+      ],
+      "factions": [],
+      "target_value": 0,
+      "tracked_stat": "",
+      "notification_step": 1,
+      "trigger": {
+        "type": "QuestComplete"
+      },
+      "objectives": [
+        {
+          "stat_name": "quest_finished_TR_ShrineDead",
+          "display_label": "",
+          "amount": 1
+        }
+      ],
+      "type": "progression"
+    },
+    {
+      "id": "TR_MQ_6",
+      "parent_id": "TR_MQ_2",
+      "name": "Barilzar's Mazed Band",
+      "description": "Find a powerful artifact hidden beneath the Mournhold Temple and return it to Almalexia",
+      "points": 5,
+      "icon": "random",
+      "category": "Quest",
+      "order": 5,
+      "regions": [
+        "Mournhold Region"
+      ],
+      "factions": [],
+      "target_value": 0,
+      "tracked_stat": "",
+      "notification_step": 1,
+      "trigger": {
+        "type": "QuestComplete"
+      },
+      "objectives": [
+        {
+          "stat_name": "quest_finished_TR_MazedBand",
+          "display_label": "",
+          "amount": 1
+        }
+      ],
+      "type": "progression"
+    },
+    {
+      "id": "TR_MQ_7",
+      "parent_id": "TR_MQ_2",
+      "name": "An Attack on Mournhold",
+      "description": "Defend the Mournhold Plaza from a Fabricant attack",
+      "points": 5,
+      "icon": "random",
+      "category": "Quest",
+      "order": 6,
+      "regions": [
+        "Mournhold Region"
+      ],
+      "factions": [],
+      "target_value": 0,
+      "tracked_stat": "",
+      "notification_step": 1,
+      "trigger": {
+        "type": "QuestComplete"
+      },
+      "objectives": [
+        {
+          "stat_name": "quest_finished_TR_MHAttack",
+          "display_label": "",
+          "amount": 1
+        }
+      ],
+      "type": "progression"
+    },
+    {
+      "id": "TR_MQ_8",
+      "parent_id": "TR_MQ_2",
+      "name": "Bamz-Amschend",
+      "description": "Explore a newly-discovered ruin and find out where the fabricants originate",
+      "points": 5,
+      "icon": "random",
+      "category": "Quest",
+      "order": 7,
+      "regions": [
+        "Mournhold Region"
+      ],
+      "factions": [],
+      "target_value": 0,
+      "tracked_stat": "",
+      "notification_step": 1,
+      "trigger": {
+        "type": "QuestComplete"
+      },
+      "objectives": [
+        {
+          "stat_name": "quest_finished_TR_Bamz",
+          "display_label": "",
+          "amount": 1
+        }
+      ],
+      "type": "progression"
+    },
+    {
+      "id": "TR_MQ_9",
+      "parent_id": "TR_MQ_2",
+      "name": "Assassination Attempt",
+      "description": "Discover a possible plot to kill King Helseth",
+      "points": 5,
+      "icon": "random",
+      "category": "Quest",
+      "order": 8,
+      "regions": [
+        "Mournhold Region"
+      ],
+      "factions": [],
+      "target_value": 0,
+      "tracked_stat": "",
+      "notification_step": 1,
+      "trigger": {
+        "type": "QuestComplete"
+      },
+      "objectives": [
+        {
+          "stat_name": "quest_finished_TR_Assassins",
+          "display_label": "",
+          "amount": 1
+        }
+      ],
+      "type": "progression"
+    },
+    {
+      "id": "TR_MQ_10",
+      "parent_id": "TR_MQ_2",
+      "name": "Helseth's Champion",
+      "description": "Prove your worth to King Helseth by dueling his personal bodyguard",
+      "points": 5,
+      "icon": "random",
+      "category": "Quest",
+      "order": 9,
+      "regions": [
+        "Mournhold Region"
+      ],
+      "factions": [],
+      "target_value": 0,
+      "tracked_stat": "",
+      "notification_step": 1,
+      "trigger": {
+        "type": "QuestComplete"
+      },
+      "objectives": [
+        {
+          "stat_name": "quest_finished_TR_Champion",
+          "display_label": "",
+          "amount": 1
+        }
+      ],
+      "type": "progression"
+    },
+    {
+      "id": "TR_MQ_11",
+      "parent_id": "TR_MQ_2",
+      "name": "A Show of Power",
+      "description": "Further investigate the Plaza attack for Helseth by working for Almalexia",
+      "points": 5,
+      "icon": "random",
+      "category": "Quest",
+      "order": 10,
+      "regions": [
+        "Mournhold Region"
+      ],
+      "factions": [],
+      "target_value": 0,
+      "tracked_stat": "",
+      "notification_step": 1,
+      "trigger": {
+        "type": "QuestComplete"
+      },
+      "objectives": [
+        {
+          "stat_name": "quest_finished_TR_ShowPower",
+          "display_label": "",
+          "amount": 1
+        }
+      ],
+      "type": "progression"
+    },
+    {
+      "id": "TR_MQ_12",
+      "parent_id": "TR_MQ_2",
+      "name": "The Missing Hand",
+      "description": "Take care of one of the Hands of Almalexia who has abandoned his post",
+      "points": 10,
+      "icon": "random",
+      "category": "Quest",
+      "order": 11,
+      "regions": [
+        "Mournhold Region"
+      ],
+      "factions": [],
+      "target_value": 0,
+      "tracked_stat": "",
+      "notification_step": 1,
+      "trigger": {
+        "type": "QuestComplete"
+      },
+      "objectives": [
+        {
+          "stat_name": "quest_finished_TR_MissingHand_02",
+          "display_label": "",
+          "amount": 1
+        }
+      ],
+      "type": "progression"
+    },
+    {
+      "id": "TR_MQ_13",
+      "parent_id": "TR_MQ_2",
+      "name": "The Blade of Nerevar",
+      "description": "Gather the three broken pieces of this legendary blade to reforge it",
+      "points": 10,
+      "icon": "random",
+      "category": "Quest",
+      "order": 12,
+      "regions": [
+        "Mournhold Region"
+      ],
+      "factions": [],
+      "target_value": 0,
+      "tracked_stat": "",
+      "notification_step": 1,
+      "trigger": {
+        "type": "QuestComplete"
+      },
+      "objectives": [
+        {
+          "stat_name": "quest_finished_TR_Blade",
+          "display_label": "",
+          "amount": 1
+        }
+      ],
+      "type": "progression"
+    },
+    {
+      "id": "TR_MQ_FINAL",
+      "parent_id": "",
+      "name": "The Mad God",
+      "description": "Finish the story line of Morrowind: Tribunal",
+      "points": 25,
+      "icon": "random",
+      "category": "Quest",
+      "order": 13,
+      "regions": [
+        "Mournhold Region"
+      ],
+      "factions": [],
+      "target_value": 0,
+      "tracked_stat": "",
+      "notification_step": 1,
+      "trigger": {
+        "type": "QuestComplete"
+      },
+      "objectives": [
+        {
+          "stat_name": "quest_finished_TR_SothaSil",
+          "display_label": "",
+          "amount": 1
+        }
+      ],
+      "type": "win_condition"
+    },
+    {
+      "id": "TR_QUEST_THEATER_1",
+      "parent_id": "",
+      "name": "A Star is Born",
+      "description": "Help a theater troupe by replacing their missing actor",
+      "points": 5,
+      "icon": "random",
+      "category": "Quest",
+      "order": 14,
+      "regions": [],
+      "factions": [],
+      "target_value": 0,
+      "tracked_stat": "",
+      "notification_step": 1,
+      "trigger": {
+        "type": "QuestComplete"
+      },
+      "objectives": [
+        {
+          "stat_name": "quest_finished_MS_Performers",
+          "display_label": "",
+          "amount": 1
+        }
+      ],
+      "type": ""
+    },
+    {
+      "id": "TR_QUEST_THEATER_2",
+      "parent_id": "",
+      "name": "The Amulet of Verbosity",
+      "description": "During \"A Star is Born\", make fewer than 3 mistakes on stage and receive the Amulet of Verbosity.",
+      "points": 5,
+      "icon": "random",
+      "category": "Quest",
+      "order": 15,
+      "regions": [],
+      "factions": [],
+      "notification_step": 1,
+      "trigger": {
+        "type": "Loot"
+      },
+      "objectives": [
+        {
+          "stat_name": "loot_amulet of verbosity",
+          "display_label": "Loot Amulet of Verbosity",
+          "amount": 1
+        }
+      ],
+      "type": "missable",
+      "progress_bar": false
+    },
+    {
+      "id": "TR_QUEST_BARBARIANBOOK",
+      "parent_id": "",
+      "name": "The Barbarian and the Book",
+      "description": "Aid poor Thrud in finding his missing wizard friend Dilborn in the Godsreach sewers and receive Thrud's favorite book",
+      "points": 5,
+      "icon": "random",
+      "category": "Quest",
+      "order": 16,
+      "regions": [
+        "Mournhold Region"
+      ],
+      "factions": [],
+      "target_value": 0,
+      "tracked_stat": "",
+      "notification_step": 1,
+      "trigger": {
+        "type": "QuestComplete"
+      },
+      "objectives": [
+        {
+          "stat_name": "quest_finished_MS_BarbarianBook",
+          "display_label": "",
+          "amount": 1
+        }
+      ],
+      "type": "missable"
+    },
+    {
+      "id": "TR_QUEST_BOUNCER",
+      "parent_id": "",
+      "name": "The Bouncer",
+      "description": "Fill in for a missing bouncer for Hession in the Winged Guar",
+      "points": 5,
+      "icon": "random",
+      "category": "Quest",
+      "order": 17,
+      "type": "",
+      "regions": [
+        "Mournhold Region"
+      ],
+      "factions": [],
+      "target_value": 0,
+      "tracked_stat": "",
+      "notification_step": 1,
+      "trigger": {
+        "type": "QuestComplete"
+      },
+      "objectives": [
+        {
+          "stat_name": "quest_finished_MS_Bouncer",
+          "display_label": "",
+          "amount": 1
+        }
+      ]
+    },
+    {
+      "id": "TR_QUEST_CLUTTER",
+      "parent_id": "",
+      "name": "The Champion of Clutter",
+      "description": "Help Detritus Caria complete his exhaustive collection of junk and secured you position as the Champion of Clutter for all time",
+      "points": 5,
+      "icon": "random",
+      "category": "Quest",
+      "order": 18,
+      "type": "missable",
+      "regions": [
+        "Mournhold Region"
+      ],
+      "factions": [],
+      "target_value": 0,
+      "tracked_stat": "",
+      "notification_step": 1,
+      "trigger": {
+        "type": "QuestProgress"
+      },
+      "objectives": [
+        {
+          "stat_name": "quest_stage_MS_ClutterCollector",
+          "display_label": "I have delivered the Dwemer tableware to Detritus Caria, ...",
+          "amount": 50
+        }
+      ]
+    },
+    {
+      "id": "TR_QUEST_BATTLEBOT",
+      "parent_id": "",
+      "name": "Dwemer Warbots",
+      "description": "Help Ignatius Flaccus repair his robots in the basement of his home in Godsreach",
+      "points": 5,
+      "icon": "random",
+      "category": "Misc",
+      "order": 19,
+      "type": "",
+      "regions": [
+        "Mournhold Region"
+      ],
+      "factions": [],
+      "target_value": 0,
+      "tracked_stat": "",
+      "notification_step": 1,
+      "trigger": {
+        "type": "QuestComplete"
+      },
+      "objectives": [
+        {
+          "stat_name": "quest_finished_MS_BattleBots1",
+          "display_label": "",
+          "amount": 1
+        }
+      ]
+    },
+    {
+      "id": "TR_QUEST_BATTLBOT_M",
+      "parent_id": "",
+      "name": "New Achievement",
+      "description": "Win a bet on Ignatius Flaccus' battle bots in Godsreach",
+      "points": 2,
+      "icon": "random",
+      "category": "Misc",
+      "order": 20,
+      "type": "missable",
+      "regions": [],
+      "factions": [],
+      "target_value": 0,
+      "tracked_stat": "",
+      "notification_step": 1,
+      "trigger": {
+        "type": "QuestProgress"
+      },
+      "objectives": [
+        {
+          "stat_name": "quest_stage_MS_BattleBots1",
+          "display_label": "I bet on Ignatius Flaccus' battle bots and won double my ...",
+          "amount": 80
+        }
+      ]
+    },
+    {
+      "id": "TR_COL_DB_ARMOR",
+      "parent_id": "",
+      "name": "Dark Brotherhood Armor",
+      "description": "Complete a full set of the Dark Brotherhood armor",
+      "points": 5,
+      "icon": "random",
+      "category": "Collection",
+      "order": 21,
+      "regions": [],
+      "factions": [],
+      "target_value": 0,
+      "tracked_stat": "",
+      "notification_step": 1,
+      "trigger": {
+        "type": "Loot"
+      },
+      "objectives": [
+        {
+          "stat_name": "inv_darkbrotherhood boots",
+          "display_label": "Hold Dark Brotherhood Boots",
+          "amount": 1
+        },
+        {
+          "stat_name": "inv_darkbrotherhood cuirass",
+          "display_label": "Hold Dark Brotherhood Cuirass",
+          "amount": 1
+        },
+        {
+          "stat_name": "inv_darkbrotherhood gauntlet_l",
+          "display_label": "Hold Dark Brotherhood Left Gauntlet",
+          "amount": 1
+        },
+        {
+          "stat_name": "inv_darkbrotherhood gauntlet_r",
+          "display_label": "Hold Dark Brotherhood Right Gauntlet",
+          "amount": 1
+        },
+        {
+          "stat_name": "inv_darkbrotherhood greaves",
+          "display_label": "Hold Dark Brotherhood Greaves",
+          "amount": 1
+        },
+        {
+          "stat_name": "inv_darkbrotherhood helm",
+          "display_label": "Hold Dark Brotherhood Helm",
+          "amount": 1
+        },
+        {
+          "stat_name": "inv_darkbrotherhood pauldron_l",
+          "display_label": "Hold Dark Brotherhood Left Pauldron",
+          "amount": 1
+        },
+        {
+          "stat_name": "inv_darkbrotherhood pauldron_r",
+          "display_label": "Hold Dark Brotherhood Right Pauldron",
+          "amount": 1
+        }
+      ],
+      "type": "",
+      "progress_bar": false
+    },
+    {
+      "id": "TR_COL_ADAM_ARMOR",
+      "parent_id": "",
+      "name": "Adamantium Armor",
+      "description": "Complete a full set of the Adamantium armor",
+      "points": 5,
+      "icon": "random",
+      "category": "Collection",
+      "order": 22,
+      "regions": [],
+      "factions": [],
+      "target_value": 0,
+      "tracked_stat": "",
+      "notification_step": 1,
+      "trigger": {
+        "type": "Loot"
+      },
+      "objectives": [
+        {
+          "stat_name": "inv_adamantium boots",
+          "display_label": "Hold Adamantium Boots",
+          "amount": 1
+        },
+        {
+          "stat_name": "inv_adamantium_bracer_left",
+          "display_label": "Hold Adamantium Left Bracer",
+          "amount": 1
+        },
+        {
+          "stat_name": "inv_adamantium_bracer_right",
+          "display_label": "Hold Adamantium Right Bracer",
+          "amount": 1
+        },
+        {
+          "stat_name": "inv_adamantium_cuirass",
+          "display_label": "Hold Adamantium Cuirass",
+          "amount": 1
+        },
+        {
+          "stat_name": "inv_adamantium_greaves",
+          "display_label": "Hold Adamantium Greaves",
+          "amount": 1
+        },
+        {
+          "stat_name": "inv_adamantium_pauldron_left",
+          "display_label": "Hold Adamantium Left Pauldron",
+          "amount": 1
+        },
+        {
+          "stat_name": "inv_adamantium_pauldron_right",
+          "display_label": "Hold Adamantium Right Pauldron",
+          "amount": 1
+        },
+        {
+          "stat_name": "inv_adamantium_helm",
+          "display_label": "Hold Adamantium Helm",
+          "amount": 1
+        }
+      ],
+      "type": "",
+      "progress_bar": false
+    },
+    {
+      "id": "TR_COL_ROYAL_ARMOR",
+      "parent_id": "",
+      "name": "Royal Guard Armor",
+      "description": "Complete a full set of the Royal Guard armor",
+      "points": 5,
+      "icon": "random",
+      "category": "Collection",
+      "order": 23,
+      "regions": [],
+      "factions": [],
+      "target_value": 0,
+      "tracked_stat": "",
+      "notification_step": 1,
+      "trigger": {
+        "type": "Loot"
+      },
+      "objectives": [
+        {
+          "stat_name": "inv_helsethguard_boots",
+          "display_label": "Hold Royal Guard Boots",
+          "amount": 1
+        },
+        {
+          "stat_name": "inv_helsethguard_cuirass",
+          "display_label": "Hold Royal Guard Cuirass",
+          "amount": 1
+        },
+        {
+          "stat_name": "inv_helsethguard_gauntlet_left",
+          "display_label": "Hold Royal Guard Left Gauntlet",
+          "amount": 1
+        },
+        {
+          "stat_name": "inv_helsethguard_gauntlet_right",
+          "display_label": "Hold Royal Guard Right Gauntlet",
+          "amount": 1
+        },
+        {
+          "stat_name": "inv_helsethguard_greaves",
+          "display_label": "Hold Royal Guard Helm",
+          "amount": 1
+        },
+        {
+          "stat_name": "inv_helsethguard_helmet",
+          "display_label": "Hold Royal Guard Helm",
+          "amount": 1
+        },
+        {
+          "stat_name": "inv_helsethguard_pauldron_left",
+          "display_label": "Hold Royal Guard Left Pauldron",
+          "amount": 1
+        },
+        {
+          "stat_name": "inv_helsethguard_pauldron_right",
+          "display_label": "Hold Royal Guard Right Pauldron",
+          "amount": 1
+        }
+      ],
+      "type": ""
+    },
+    {
+      "id": "TR_COL_HERHANDS_ARMOR",
+      "parent_id": "",
+      "name": "Her Hand's Armor",
+      "description": "Complete a full set of Her Hand's armor",
+      "points": 5,
+      "icon": "random",
+      "category": "Collection",
+      "order": 24,
+      "regions": [],
+      "factions": [],
+      "target_value": 0,
+      "tracked_stat": "",
+      "notification_step": 1,
+      "trigger": {
+        "type": "Loot"
+      },
+      "objectives": [
+        {
+          "stat_name": "inv_indoril_mh_guard_boots",
+          "display_label": "Hold Her Hand's Boots",
+          "amount": 1
+        },
+        {
+          "stat_name": "inv_indoril_mh_guard_cuirass",
+          "display_label": "Hold Her Hand's Cuirass",
+          "amount": 1
+        },
+        {
+          "stat_name": "inv_indoril_mh_guard_gauntlet_l",
+          "display_label": "Hold Her Hand's Left Gauntlet",
+          "amount": 1
+        },
+        {
+          "stat_name": "inv_indoril_mh_guard_gauntlet_r",
+          "display_label": "Hold Her Hand's Right Gauntlet",
+          "amount": 1
+        },
+        {
+          "stat_name": "inv_indoril_mh_guard_greaves",
+          "display_label": "Hold Her Hand's Greaves",
+          "amount": 1
+        },
+        {
+          "stat_name": "inv_indoril_mh_guard_helmet",
+          "display_label": "Hold Her Hand's Helmet",
+          "amount": 1
+        },
+        {
+          "stat_name": "inv_indoril_mh_guard_pauldron_l",
+          "display_label": "Hold Her Hand's Left Pauldron",
+          "amount": 1
+        },
+        {
+          "stat_name": "inv_indoril_mh_guard_pauldron_r",
+          "display_label": "Hold Her Hand's Right Pauldron",
+          "amount": 1
+        },
+        {
+          "stat_name": "inv_indoril_mh_guard_shield",
+          "display_label": "Hold Her Hand's Shield",
+          "amount": 1
+        }
+      ],
+      "type": ""
+    },
+    {
+      "id": "TR_COL_ADAM_WEAPON",
+      "parent_id": "",
+      "name": "Adamantium Arsenal",
+      "description": "Own every type of Adamantium weapons",
+      "points": 5,
+      "icon": "random",
+      "category": "Collection",
+      "order": 25,
+      "regions": [],
+      "factions": [],
+      "target_value": 0,
+      "tracked_stat": "",
+      "notification_step": 1,
+      "trigger": {
+        "type": "Loot"
+      },
+      "objectives": [
+        {
+          "stat_name": "inv_adamantium_axe",
+          "display_label": "Hold Admantium Axe",
+          "amount": 1
+        },
+        {
+          "stat_name": "inv_adamantium_claymore",
+          "display_label": "Hold Adamantium Claymore",
+          "amount": 1
+        },
+        {
+          "stat_name": "inv_adamantium_mace",
+          "display_label": "Hold Adamantium Mace",
+          "amount": 1
+        },
+        {
+          "stat_name": "inv_adamantium_shortsword",
+          "display_label": "Hold Adamantium Shortsword",
+          "amount": 1
+        },
+        {
+          "stat_name": "inv_adamantium_spear",
+          "display_label": "Hold Adamantium Spear",
+          "amount": 1
+        }
+      ],
+      "type": "",
+      "progress_bar": false
+    },
+    {
+      "id": "TR_QUEST_BATTLEBOT2",
+      "parent_id": "",
+      "name": "Robot Arena",
+      "description": "Save Ignatius Flaccus from his own robots",
+      "points": 5,
+      "icon": "random",
+      "category": "Quest",
+      "order": 26,
+      "type": "",
+      "progress_bar": false,
+      "regions": [
+        "Mournhold Region"
+      ],
+      "factions": [],
+      "target_value": 0,
+      "tracked_stat": "",
+      "notification_step": 1,
+      "trigger": {
+        "type": "QuestComplete"
+      },
+      "objectives": [
+        {
+          "stat_name": "quest_finished_MS_BattleBots2",
+          "display_label": "",
+          "amount": 1
+        }
+      ]
+    },
+    {
+      "id": "TR_QUEST_SMITH",
+      "parent_id": "",
+      "name": "The Smith's Apprentice",
+      "description": "Meet this unhappy apprentice in the Craftsmen's Hall",
+      "points": 5,
+      "icon": "random",
+      "category": "Quest",
+      "order": 27,
+      "type": "",
+      "progress_bar": false,
+      "regions": [
+        "Mournhold Region"
+      ],
+      "factions": [],
+      "target_value": 0,
+      "tracked_stat": "",
+      "notification_step": 1,
+      "trigger": {
+        "type": "QuestComplete"
+      },
+      "objectives": [
+        {
+          "stat_name": "quest_finished_MS_JobHunt",
+          "display_label": "",
+          "amount": 1
+        }
+      ]
+    },
+    {
+      "id": "TR_QUEST_INFIDELITIES",
+      "parent_id": "",
+      "name": "Infidelities",
+      "description": "Investigate Deldrise Andoren's possibly unfaithful husband",
+      "points": 5,
+      "icon": "random",
+      "category": "Quest",
+      "order": 28,
+      "type": "",
+      "progress_bar": false,
+      "regions": [
+        "Mournhold Region"
+      ],
+      "factions": [],
+      "target_value": 0,
+      "tracked_stat": "",
+      "notification_step": 1,
+      "trigger": {
+        "type": "QuestComplete"
+      },
+      "objectives": [
+        {
+          "stat_name": "quest_finished_MS_Adulterer",
+          "display_label": "",
+          "amount": 1
+        }
+      ]
+    },
+    {
+      "id": "TR_QUEST_THIEF",
+      "parent_id": "",
+      "name": "The Thief",
+      "description": "Investigate a mad woman yields an unexpected adventure",
+      "points": 5,
+      "icon": "random",
+      "category": "Quest",
+      "order": 29,
+      "type": "",
+      "progress_bar": false,
+      "regions": [
+        "Mournhold Region"
+      ],
+      "factions": [],
+      "target_value": 0,
+      "tracked_stat": "",
+      "notification_step": 1,
+      "trigger": {
+        "type": "QuestComplete"
+      },
+      "objectives": [
+        {
+          "stat_name": "quest_finished_MS_Thief",
+          "display_label": "",
+          "amount": 1
+        }
+      ]
+    },
+    {
+      "id": "TR_QUEST_WARLORDS",
+      "parent_id": "",
+      "name": "The Warlords",
+      "description": "Help a band of rebels in the Vacant Manor kill and take valuable items from local nobles",
+      "points": 5,
+      "icon": "random",
+      "category": "Quest",
+      "order": 30,
+      "type": "missable",
+      "progress_bar": false,
+      "regions": [
+        "Mournhold Region"
+      ],
+      "factions": [],
+      "target_value": 0,
+      "tracked_stat": "",
+      "notification_step": 1,
+      "trigger": {
+        "type": "QuestProgress"
+      },
+      "objectives": [
+        {
+          "stat_name": "quest_stage_MS_Warlords",
+          "display_label": "I have completed all the tasks that Dovor Oren required o...",
+          "amount": 120,
+          "op": "=="
+        }
+      ]
+    },
+    {
+      "id": "TR_QUEST_WARLORDS2",
+      "parent_id": "",
+      "name": "Stopping the Murders",
+      "description": "Convince Felvan Ienith and Olvyne Dobar to turn themselves in for their crimes and stop Dovor Oren's ambitions",
+      "points": 5,
+      "icon": "random",
+      "category": "Quest",
+      "order": 31,
+      "type": "missable",
+      "progress_bar": false,
+      "regions": [
+        "Mournhold Region"
+      ],
+      "factions": [],
+      "target_value": 0,
+      "tracked_stat": "",
+      "notification_step": 1,
+      "trigger": {
+        "type": "QuestComplete"
+      },
+      "objectives": [
+        {
+          "stat_name": "quest_finished_MS_Warlords_a",
+          "display_label": "",
+          "amount": 1
+        }
+      ]
+    },
+    {
+      "id": "TR_QUEST_GRIEVANCE",
+      "parent_id": "",
+      "name": "Wood Elf with a Grievance",
+      "description": "Help High-Pockets with a bully in The Winged Guar",
+      "points": 5,
+      "icon": "random",
+      "category": "Quest",
+      "order": 32,
+      "type": "",
+      "progress_bar": false,
+      "regions": [],
+      "factions": [],
+      "target_value": 0,
+      "tracked_stat": "",
+      "notification_step": 1,
+      "trigger": {
+        "type": "QuestProgress"
+      },
+      "objectives": [
+        {
+          "stat_name": "quest_stage_MS_HolyElf",
+          "display_label": "Holmar was drunk and belligerent, but I offered to buy hi...",
+          "amount": 130
+        }
+      ]
+    },
+    {
+      "id": "TR_QUEST_GRIEVANCE2",
+      "parent_id": "",
+      "name": "Saryoni's Sermons",
+      "description": "Have a naked Wood Elf in front of The Winged Guar",
+      "points": 5,
+      "icon": "random",
+      "category": "Quest",
+      "order": 33,
+      "type": "missable",
+      "progress_bar": false,
+      "regions": [],
+      "factions": [],
+      "target_value": 0,
+      "tracked_stat": "",
+      "notification_step": 1,
+      "trigger": {
+        "type": "QuestProgress"
+      },
+      "objectives": [
+        {
+          "stat_name": "quest_stage_MS_HolyElf",
+          "display_label": "I returned to find High-Pockets standing almost naked by ...",
+          "amount": 100,
+          "op": "=="
+        }
+      ]
+    },
+    {
+      "id": "TR_QUEST_DART_GANG",
+      "parent_id": "",
+      "name": "The Black Dart Gang",
+      "description": "Help a woman avenge her dead lover by killing his killers, the Black Dart Gang",
+      "points": 5,
+      "icon": "random",
+      "category": "Quest",
+      "order": 34,
+      "type": "",
+      "progress_bar": false,
+      "regions": [
+        "Mournhold Region"
+      ],
+      "factions": [],
+      "target_value": 0,
+      "tracked_stat": "",
+      "notification_step": 1,
+      "trigger": {
+        "type": "QuestComplete"
+      },
+      "objectives": [
+        {
+          "stat_name": "quest_finished_MS_BlackDart",
+          "display_label": "",
+          "amount": 1
+        }
+      ]
+    },
+    {
+      "id": "TR_QUEST_MATCHMAKER",
+      "parent_id": "",
+      "name": "The MatchMaker",
+      "description": "Help a lonely woman meet a nice man at the Great Bazaar",
+      "points": 5,
+      "icon": "random",
+      "category": "Quest",
+      "order": 35,
+      "type": "",
+      "progress_bar": false,
+      "regions": [
+        "Mournhold Region"
+      ],
+      "factions": [],
+      "target_value": 0,
+      "tracked_stat": "",
+      "notification_step": 1,
+      "trigger": {
+        "type": "QuestComplete"
+      },
+      "objectives": [
+        {
+          "stat_name": "quest_finished_MS_MatchMaker",
+          "display_label": "",
+          "amount": 1
+        }
+      ]
+    },
+    {
+      "id": "TR_QUEST_SCROLL_SALES",
+      "parent_id": "",
+      "name": "Scroll Sales",
+      "description": "Find out the source of the special offers available in the Pawnbroker's shop",
+      "points": 5,
+      "icon": "random",
+      "category": "Quest",
+      "order": 36,
+      "type": "",
+      "progress_bar": false,
+      "regions": [
+        "Mournhold Region"
+      ],
+      "factions": [],
+      "target_value": 0,
+      "tracked_stat": "",
+      "notification_step": 1,
+      "trigger": {
+        "type": "QuestComplete"
+      },
+      "objectives": [
+        {
+          "stat_name": "quest_finished_MS_ScrollSales",
+          "display_label": "",
+          "amount": 1
+        }
+      ]
+    },
+    {
+      "id": "TR_QUEST_SUMMONER",
+      "parent_id": "",
+      "name": "The Summoner",
+      "description": "Hear and investigate a rumor of a wizard named Velas who just moved at the Great Bazaar",
+      "points": 5,
+      "icon": "random",
+      "category": "Quest",
+      "order": 37,
+      "type": "",
+      "progress_bar": false,
+      "regions": [
+        "Mournhold Region"
+      ],
+      "factions": [],
+      "target_value": 0,
+      "tracked_stat": "",
+      "notification_step": 1,
+      "trigger": {
+        "type": "QuestComplete"
+      },
+      "objectives": [
+        {
+          "stat_name": "quest_finished_MS_Summoner",
+          "display_label": "",
+          "amount": 1
+        }
+      ]
+    },
+    {
+      "id": "TR_QUEST_PLAGUE",
+      "parent_id": "",
+      "name": "Crimson Plague",
+      "description": "Solve a recent epidemic caused by a number of infected rats in the Tribunal Temple",
+      "points": 5,
+      "icon": "random",
+      "category": "Quest",
+      "order": 38,
+      "type": "",
+      "progress_bar": false,
+      "regions": [],
+      "factions": [],
+      "target_value": 0,
+      "tracked_stat": "",
+      "notification_step": 1,
+      "trigger": {
+        "type": "QuestProgress"
+      },
+      "objectives": [
+        {
+          "stat_name": "quest_stage_MS_CrimsonPlague",
+          "display_label": "Nerile Andaren thanked me for killing Gedna Relvel, and s...",
+          "amount": 170,
+          "op": "=="
+        }
+      ]
+    },
+    {
+      "id": "TR_QUEST_NATURAL",
+      "parent_id": "",
+      "name": "The Natural",
+      "description": "Meet a Wood Elf who wants you to donate vast sums of money in the Temple Courtyard",
+      "points": 10,
+      "icon": "random",
+      "category": "Quest",
+      "order": 39,
+      "type": "",
+      "progress_bar": false,
+      "regions": [
+        "Mournhold Region"
+      ],
+      "factions": [],
+      "target_value": 0,
+      "tracked_stat": "",
+      "notification_step": 1,
+      "trigger": {
+        "type": "QuestComplete"
+      },
+      "objectives": [
+        {
+          "stat_name": "quest_finished_MS_Natural",
+          "display_label": "",
+          "amount": 1
+        }
+      ]
+    },
+    {
+      "id": "TR_SOUL_ALL",
+      "parent_id": "",
+      "name": "Mourning Souls",
+      "description": "",
+      "points": 10,
+      "icon": "random",
+      "category": "Combat",
+      "order": 40,
+      "type": "",
+      "progress_bar": true,
+      "regions": [
+        "Mournhold Region"
+      ],
+      "factions": [],
+      "notification_step": 1,
+      "trigger": {
+        "type": "SoulTrap"
+      },
+      "objectives": [
+        {
+          "stat_name": "soul_diseased durzog",
+          "display_label": "Capture the soul of a Durzog",
+          "amount": 1,
+          "group": "g1",
+          "any_of": true
+        },
+        {
+          "stat_name": "soul_wild durzog",
+          "display_label": "Capture the soul of a Durzog",
+          "amount": 1,
+          "group": "g1",
+          "any_of": true
+        },
+        {
+          "stat_name": "soul_infected rat",
+          "display_label": "Capture the soul of a Infected Rat",
+          "amount": 1
+        },
+        {
+          "stat_name": "soul_pack rat",
+          "display_label": "Capture the soul of a Pack Rat",
+          "amount": 1
+        },
+        {
+          "stat_name": "soul_goblin",
+          "display_label": "Capture the soul of a Goblin",
+          "amount": 1
+        },
+        {
+          "stat_name": "soul_war durzog",
+          "display_label": "Capture the soul of a War Durzog",
+          "amount": 1
+        },
+        {
+          "stat_name": "soul_goblin footsoldier",
+          "display_label": "Capture the soul of a Goblin Footsoldier",
+          "amount": 1
+        },
+        {
+          "stat_name": "soul_goblin bruiser",
+          "display_label": "Capture the soul of a Goblin Bruiser",
+          "amount": 1
+        },
+        {
+          "stat_name": "soul_goblin handler",
+          "display_label": "Capture the soul of a Goblin Handler",
+          "amount": 1
+        },
+        {
+          "stat_name": "soul_goblin officer",
+          "display_label": "Capture the soul of a Goblin Officer",
+          "amount": 1
+        },
+        {
+          "stat_name": "soul_hulking fabricant",
+          "display_label": "Capture the soul of a Hulking Fabricant",
+          "amount": 1
+        },
+        {
+          "stat_name": "soul_greater ancestor ghost",
+          "display_label": "Capture the soul of a Greater Ancestor Ghost",
+          "amount": 1
+        },
+        {
+          "stat_name": "soul_lich",
+          "display_label": "Capture the soul of a Lich",
+          "amount": 1,
+          "group": "g2",
+          "any_of": true
+        },
+        {
+          "stat_name": "soul_profane acolyte",
+          "display_label": "Capture the soul of a Profane Acolyte",
+          "amount": 1,
+          "group": "g2",
+          "any_of": true
+        }
+      ],
+      "tracked_stat": "",
+      "target_value": 0
+    },
+    {
+      "id": "TR_MUSEUM_ALL",
+      "parent_id": "",
+      "name": "Patron",
+      "description": "Complete the Museum of Artifacts in Mournhold",
+      "points": 25,
+      "icon": "random",
+      "category": "Misc",
+      "order": 41,
+      "type": "",
+      "progress_bar": false,
+      "regions": [
+        "Mournhold Region"
+      ],
+      "factions": [],
+      "target_value": 0,
+      "tracked_stat": "",
+      "notification_step": 1,
+      "trigger": {
+        "type": "CellClear"
+      },
+      "objectives": [
+        {
+          "stat_name": "enabled_ebony_bow_auriel_x",
+          "display_label": "Donate or sell Auriel's Bow",
+          "amount": 1
+        },
+        {
+          "stat_name": "enabled_ebony_shield_auriel_x",
+          "display_label": "Donate or sell Auriel's Shield",
+          "amount": 1
+        },
+        {
+          "stat_name": "enabled_bipolar blade_x",
+          "display_label": "Donate or sell BiPolar Blade",
+          "amount": 1
+        },
+        {
+          "stat_name": "enabled_bloodworm_helm_unique_x",
+          "display_label": "Donate or sell Bloodworm Helm",
+          "amount": 1
+        },
+        {
+          "stat_name": "enabled_boots of blinding speed_x",
+          "display_label": "Donate or sell Boots of Blinding Speed",
+          "amount": 1
+        },
+        {
+          "stat_name": "enabled_boots_apostle_unique_x",
+          "display_label": "Donate or sell Boots of the Apostle",
+          "amount": 1
+        },
+        {
+          "stat_name": "enabled_longbow_shadows_unique_x",
+          "display_label": "Donate or sell Bow of Shadows",
+          "amount": 1
+        },
+        {
+          "stat_name": "enabled_claymore_chrysamere_unique_x",
+          "display_label": "Donate or sell Chrysamere",
+          "amount": 1
+        },
+        {
+          "stat_name": "enabled_cuirass_savior_unique_x",
+          "display_label": "Donate or sell Cuirass of the Savior's Hide",
+          "amount": 1
+        },
+        {
+          "stat_name": "enabled_glass dagger_symmachus_unique_x",
+          "display_label": "Donate or sell Dagger of Symmachus",
+          "amount": 1
+        },
+        {
+          "stat_name": "enabled_dragonbone_cuirass_unique_x",
+          "display_label": "Donate or sell Dragonbone Cuirass",
+          "amount": 1
+        },
+        {
+          "stat_name": "enabled_ebon_plate_cuirass_unique_x",
+          "display_label": "Donate or sell Ebony Mail",
+          "amount": 1
+        },
+        {
+          "stat_name": "enabled_towershield_eleidon_unique_x",
+          "display_label": "Donate or sell Eleidon's Ward",
+          "amount": 1
+        },
+        {
+          "stat_name": "enabled_dagger_fang_unique_x",
+          "display_label": "Donate or sell Fang of Haynekhtnamet",
+          "amount": 1
+        },
+        {
+          "stat_name": "enabled_katana_goldbrand_unique_x",
+          "display_label": "Donate or sell Goldbrand",
+          "amount": 1
+        },
+        {
+          "stat_name": "enabled_helm_bearclaw_unique_x",
+          "display_label": "Donate or sell Helm of Oreyn Bearclaw",
+          "amount": 1
+        },
+        {
+          "stat_name": "enabled_claymore_iceblade_unique_x",
+          "display_label": "Donate or sell Ice Blade of the Monarch",
+          "amount": 1
+        },
+        {
+          "stat_name": "enabled_lords_cuirass_unique_x",
+          "display_label": "Donate or sell Lord's Mail",
+          "amount": 1
+        },
+        {
+          "stat_name": "enabled_mace of molag bal_unique_x",
+          "display_label": "Donate or sell Mace of Molag Bal",
+          "amount": 1
+        },
+        {
+          "stat_name": "enabled_mace of slurring_x",
+          "display_label": "Donate or sell Mace of Slurring",
+          "amount": 1
+        },
+        {
+          "stat_name": "enabled_ring_phynaster_unique_x",
+          "display_label": "Donate or sell Ring of Phynaster",
+          "amount": 1
+        },
+        {
+          "stat_name": "enabled_robe_lich_unique_x",
+          "display_label": "Donate or sell Robe of the Lich",
+          "amount": 1
+        },
+        {
+          "stat_name": "enabled_warhammer_crusher_unique_x",
+          "display_label": "Donate or sell Skull Crusher",
+          "amount": 1
+        },
+        {
+          "stat_name": "enabled_spear_mercy_unique_x",
+          "display_label": "Donate or sell Spear of Bitter Mercy",
+          "amount": 1
+        },
+        {
+          "stat_name": "enabled_spell_breaker_unique_x",
+          "display_label": "Donate or sell Spell Breaker",
+          "amount": 1
+        },
+        {
+          "stat_name": "enabled_staff_hasedoki_unique_x",
+          "display_label": "Donate or sell Staff of Hasedoki",
+          "amount": 1
+        },
+        {
+          "stat_name": "enabled_staff_magnus_unique_x",
+          "display_label": "Donate or sell Staff of Magnus",
+          "amount": 1
+        },
+        {
+          "stat_name": "enabled_tenpaceboots_x",
+          "display_label": "Donate or sell Ten Pace Boots",
+          "amount": 1
+        },
+        {
+          "stat_name": "enabled_longsword_umbra_unique_x",
+          "display_label": "Donate or sell Umbra Sword",
+          "amount": 1
+        },
+        {
+          "stat_name": "enabled_ring_vampiric_unique_x",
+          "display_label": "Donate or sell Vampiric Ring",
+          "amount": 1
+        },
+        {
+          "stat_name": "enabled_daedric warhammer_ttgd_x",
+          "display_label": "Donate or sell Veloth's Judgement",
+          "amount": 1
+        },
+        {
+          "stat_name": "enabled_ring_warlock_unique_x",
+          "display_label": "Donate or sell Warlock's Ring",
+          "amount": 1
+        }
+      ]
+    },
+    {
+      "id": "TR_KILL_DURZOG_1",
+      "parent_id": "",
+      "name": "Durzog Hunter",
+      "description": "Kill at least 10 Durzogs",
+      "points": 2,
+      "icon": "random",
+      "category": "Combat",
+      "order": 42,
+      "type": "",
+      "locations": [],
+      "regions": [],
+      "factions": [],
+      "target_value": 10,
+      "notification_step": 1,
+      "trigger": {
+        "type": "Kill",
+        "sum": true
+      },
+      "objectives": [
+        {
+          "stat_name": "creature_kill_diseased durzog",
+          "display_label": "Kill Diseased Durzog",
+          "amount": 1
+        },
+        {
+          "stat_name": "creature_kill_war durzog",
+          "display_label": "Kill War Durzog",
+          "amount": 1
+        },
+        {
+          "stat_name": "creature_kill_wild durzog",
+          "display_label": "Kill Wild Durzog",
+          "amount": 1
+        }
+      ]
+    },
+    {
+      "id": "TR_KILL_DURZOG_2",
+      "parent_id": "TR_KILL_DURZOG_1",
+      "name": "Durzog Destroyer",
+      "description": "Kill at least 25 Durzogs",
+      "points": 3,
+      "icon": "random",
+      "category": "Combat",
+      "order": 43,
+      "type": "",
+      "locations": [],
+      "regions": [],
+      "factions": [],
+      "target_value": 25,
+      "notification_step": 1,
+      "trigger": {
+        "type": "Kill",
+        "sum": true
+      },
+      "objectives": [
+        {
+          "stat_name": "creature_kill_diseased durzog",
+          "display_label": "Kill Diseased Durzog",
+          "amount": 1
+        },
+        {
+          "stat_name": "creature_kill_war durzog",
+          "display_label": "Kill War Durzog",
+          "amount": 1
+        },
+        {
+          "stat_name": "creature_kill_wild durzog",
+          "display_label": "Kill Wild Durzog",
+          "amount": 1
+        }
+      ]
+    },
+    {
+      "id": "TR_KILL_DURZOG_3",
+      "parent_id": "TR_KILL_DURZOG_1",
+      "name": "Durzog Slayer",
+      "description": "Kill at least 50 Durzogs",
+      "points": 5,
+      "icon": "random",
+      "category": "Combat",
+      "order": 44,
+      "type": "",
+      "locations": [],
+      "regions": [],
+      "factions": [],
+      "target_value": 50,
+      "notification_step": 1,
+      "trigger": {
+        "type": "Kill",
+        "sum": true
+      },
+      "objectives": [
+        {
+          "stat_name": "creature_kill_diseased durzog",
+          "display_label": "Kill Diseased Durzog",
+          "amount": 1
+        },
+        {
+          "stat_name": "creature_kill_war durzog",
+          "display_label": "Kill War Durzog",
+          "amount": 1
+        },
+        {
+          "stat_name": "creature_kill_wild durzog",
+          "display_label": "Kill Wild Durzog",
+          "amount": 1
+        }
+      ]
+    },
+    {
+      "id": "TR_KILL_DWE_ARCHER",
+      "parent_id": "",
+      "name": "Gattling",
+      "description": "Kill at least 25 Centurion Archers",
+      "points": 5,
+      "icon": "random",
+      "category": "Combat",
+      "order": 45,
+      "type": "",
+      "locations": [],
+      "regions": [],
+      "factions": [],
+      "target_value": 25,
+      "notification_step": 1,
+      "trigger": {
+        "type": "Kill",
+        "sum": true
+      },
+      "objectives": [
+        {
+          "stat_name": "creature_kill_centurion archer",
+          "display_label": "Kill Centurion Archer",
+          "amount": 1
+        }
+      ]
+    },
+    {
+      "id": "TR_KILL_DWE_ARCHER_copy",
+      "parent_id": "",
+      "name": "Gattling",
+      "description": "Kill at least 25 Centurion Archers",
+      "points": 5,
+      "icon": "random",
+      "category": "Combat",
+      "order": 46,
+      "type": "",
+      "locations": [],
+      "regions": [],
+      "factions": [],
+      "target_value": 25,
+      "notification_step": 1,
+      "trigger": {
+        "type": "Kill",
+        "sum": true
+      },
+      "objectives": [
+        {
+          "stat_name": "creature_kill_fabr",
+          "display_label": "Kill Centurion Archer",
+          "amount": 1
+        }
+      ]
+    },
+    {
+      "id": "TR_KILL_GOBLIN_1",
+      "parent_id": "",
+      "name": "Goblin Hunter",
+      "description": "Kill at least 25 Goblins",
+      "points": 2,
+      "icon": "random",
+      "category": "Combat",
+      "order": 47,
+      "type": "",
+      "locations": [],
+      "regions": [],
+      "factions": [],
+      "target_value": 25,
+      "notification_step": 1,
+      "trigger": {
+        "type": "Kill",
+        "sum": true
+      },
+      "objectives": [
+        {
+          "stat_name": "creature_kill_goblin",
+          "display_label": "Kill Goblin",
+          "amount": 1
+        },
+        {
+          "stat_name": "creature_kill_goblin bruiser",
+          "display_label": "Kill Goblin Bruiser",
+          "amount": 1
+        },
+        {
+          "stat_name": "creature_kill_goblin footsoldier",
+          "display_label": "Kill Goblin Footsoldier",
+          "amount": 1
+        },
+        {
+          "stat_name": "creature_kill_goblin handler",
+          "display_label": "Kill Goblin Handler",
+          "amount": 1
+        },
+        {
+          "stat_name": "creature_kill_goblin officer",
+          "display_label": "Kill Goblin Officer",
+          "amount": 1
+        }
+      ],
+      "requirements": []
+    },
+    {
+      "id": "TR_KILL_GOBLIN_2",
+      "parent_id": "TR_KILL_GOBLIN_1",
+      "name": "Goblin Destroyer",
+      "description": "Kill at least 50 Goblins",
+      "points": 3,
+      "icon": "random",
+      "category": "Combat",
+      "order": 48,
+      "type": "",
+      "locations": [],
+      "regions": [],
+      "factions": [],
+      "target_value": 50,
+      "notification_step": 1,
+      "trigger": {
+        "type": "Kill",
+        "sum": true
+      },
+      "objectives": [
+        {
+          "stat_name": "creature_kill_goblin",
+          "display_label": "Kill Goblin",
+          "amount": 1
+        },
+        {
+          "stat_name": "creature_kill_goblin bruiser",
+          "display_label": "Kill Goblin Bruiser",
+          "amount": 1
+        },
+        {
+          "stat_name": "creature_kill_goblin footsoldier",
+          "display_label": "Kill Goblin Footsoldier",
+          "amount": 1
+        },
+        {
+          "stat_name": "creature_kill_goblin handler",
+          "display_label": "Kill Goblin Handler",
+          "amount": 1
+        },
+        {
+          "stat_name": "creature_kill_goblin officer",
+          "display_label": "Kill Goblin Officer",
+          "amount": 1
+        }
+      ],
+      "requirements": []
+    },
+    {
+      "id": "TR_KILL_GOBLIN_3",
+      "parent_id": "TR_KILL_GOBLIN_1",
+      "name": "Goblin Slayer",
+      "description": "Kill at least 100 Goblins",
+      "points": 5,
+      "icon": "random",
+      "category": "Combat",
+      "order": 49,
+      "type": "",
+      "locations": [],
+      "regions": [],
+      "factions": [],
+      "target_value": 50,
+      "notification_step": 1,
+      "trigger": {
+        "type": "Kill",
+        "sum": true
+      },
+      "objectives": [
+        {
+          "stat_name": "creature_kill_goblin",
+          "display_label": "Kill Goblin",
+          "amount": 1
+        },
+        {
+          "stat_name": "creature_kill_goblin bruiser",
+          "display_label": "Kill Goblin Bruiser",
+          "amount": 1
+        },
+        {
+          "stat_name": "creature_kill_goblin footsoldier",
+          "display_label": "Kill Goblin Footsoldier",
+          "amount": 1
+        },
+        {
+          "stat_name": "creature_kill_goblin handler",
+          "display_label": "Kill Goblin Handler",
+          "amount": 1
+        },
+        {
+          "stat_name": "creature_kill_goblin officer",
+          "display_label": "Kill Goblin Officer",
+          "amount": 1
+        },
+        {
+          "stat_name": "creature_kill_warchief durgoc",
+          "display_label": "Kill Warchief Durgoc",
+          "amount": 1
+        },
+        {
+          "stat_name": "creature_kill_warchief kurog",
+          "display_label": "Kill Warchief Kurog",
+          "amount": 1
+        }
+      ],
+      "requirements": []
+    },
+    {
+      "id": "TR_KILL_LICH",
+      "parent_id": "",
+      "name": "Lich King",
+      "description": "Kill at least 10 Liches",
+      "points": 5,
+      "icon": "random",
+      "category": "Combat",
+      "order": 50,
+      "type": "",
+      "locations": [],
+      "regions": [],
+      "factions": [],
+      "target_value": 10,
+      "notification_step": 1,
+      "trigger": {
+        "type": "Kill",
+        "sum": true
+      },
+      "objectives": [
+        {
+          "stat_name": "creature_kill_lich",
+          "display_label": "Kill Lich",
+          "amount": 1
+        }
+      ],
+      "requirements": []
+    },
+    {
+      "id": "TR_KILL_LICH_copy",
+      "parent_id": "",
+      "name": "Defab the Fabricants",
+      "description": "Kill at least 25 Fabricants during \"An Attack on Mournhold\" quest.",
+      "points": 5,
+      "icon": "random",
+      "category": "Combat",
+      "order": 51,
+      "type": "missable",
+      "locations": [],
+      "regions": [],
+      "factions": [],
+      "target_value": 25,
+      "notification_step": 1,
+      "trigger": {
+        "type": "Kill",
+        "sum": true
+      },
+      "objectives": [
+        {
+          "stat_name": "creature_kill_hulking fabricant",
+          "display_label": "Kill Hulking Fabricant",
+          "amount": 1
+        },
+        {
+          "stat_name": "creature_kill_verminous fabricant",
+          "display_label": "Kill Verminous Fabricant",
+          "amount": 1
+        }
+      ],
+      "requirements": []
+    }
+  ]
+}
